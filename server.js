@@ -60,6 +60,36 @@ const SYSTEM = [
  '動画、YouTube、URL、外部サイトの案内は表示しないでください。',
  '個人情報、会員個人を特定できる記録、著作物の本文入力は避けるよう案内してください。'
 ].join('\n');
+// Only independently written, rights-cleared, page-verified instructor notes may reach Gemini.
+// The copyrighted source PDFs and all unreviewed source catalog entries remain server-side only.
+function getApprovedKnowledge(question) {
+ try {
+  const dir=path.join(__dirname,'knowledge');
+  const sources=JSON.parse(fs.readFileSync(path.join(dir,'sources.json'),'utf8')).sources || [];
+  const records=JSON.parse(fs.readFileSync(path.join(dir,'techniques.json'),'utf8')).techniques || [];
+  const q=String(question||'').toLowerCase();
+  const approved=records.filter(t=>{
+   if(!t || t.ai_enabled!==true || t.source_checked!==true || t.technical_accuracy_checked!==true ||
+      t.rights_status!=='verified_for_ai_use' || typeof t.rights_evidence!=='string' || !t.rights_evidence.trim() ||
+      typeof t.reviewer!=='string' || !t.reviewer.trim() || typeof t.ai_summary_ja!=='string' ||
+      !t.ai_summary_ja.trim() || t.ai_summary_ja.length>1000) return false;
+   const src=sources.find(x=>x.id===t.source_id);
+   if(!src || src.source_access_status!=='verified' || src.ai_enabled!==true ||
+      src.rights?.ai_inference_use!=='verified_for_ai_use' ||
+      !Number.isInteger(src.pdf_page_count) || !Number.isInteger(t.source_pdf_page) ||
+      t.source_pdf_page<1 || t.source_pdf_page>src.pdf_page_count) return false;
+   const names=[t.name_ja,...(Array.isArray(t.aliases)?t.aliases:[]),t.start_position].filter(x=>typeof x==='string' && x.length>=2);
+   return names.some(name=>q.includes(name.toLowerCase())) ||
+      (q.includes('スイープ') && t.category==='sweep');
+  }).slice(0,6);
+  if(!approved.length)return '';
+  const memo=approved.map(t=>'・'+String(t.name_ja||'')+'（PDF '+t.source_pdf_page+'ページ、指導メモ確認済み）: '+t.ai_summary_ja).join('\n');
+  return '\n\n以下はRRTが別途作成し、内容とAIへの利用権限を確認した独立した指導メモです。原PDFの本文は送信していません。\n'+memo;
+ }catch(error){
+  console.warn('Knowledge catalog unavailable; disabled:',error.message);
+  return '';
+ }
+}
 async function chat(req,res,id){
  if(!API_KEY || API_KEY.length<12)return out(res,503,{error:'Gemini APIキーがまだ設定されていません。管理者に連絡してください。'});
  const day=new Date().toISOString().slice(0,10);if(day!==dayKey){dayKey=day;totalToday=0;sessionUsage.clear()}
@@ -70,7 +100,7 @@ async function chat(req,res,id){
  if(typeof data.question!=='string'||!data.question.trim()||data.question.length>1500)return out(res,400,{error:'質問は1〜1500字で入力してください。'});
  const history=(Array.isArray(data.history)?data.history:[]).slice(-8).filter(x=>x && ['user','assistant'].includes(x.role)&&typeof x.content==='string').map(x=>({role:x.role==='user'?'user':'model',parts:[{text:x.content.slice(0,1200)}]}));
  totalToday++;sessionUsage.set(id,n+1);
- const payload={systemInstruction:{parts:[{text:SYSTEM}]},contents:[...history,{role:'user',parts:[{text:data.question.trim()}]}],generationConfig:{temperature:0.4,maxOutputTokens:1400}};
+ const payload={systemInstruction:{parts:[{text:SYSTEM+getApprovedKnowledge(data.question)}]},contents:[...history,{role:'user',parts:[{text:data.question.trim()}]}],generationConfig:{temperature:0.4,maxOutputTokens:1400}};
  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),35000);
  try{
   const response=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(MODEL)+':generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':API_KEY},body:JSON.stringify(payload),signal:controller.signal});
