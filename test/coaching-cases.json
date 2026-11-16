@@ -645,5 +645,117 @@
     "includes": "大会名と帯",
     "videos": [],
     "history": []
+  },
+  {
+    "id": "F57",
+    "question": "スパーリングのまなー",
+    "expected": [],
+    "includes": "最大7組",
+    "excludes": [
+      "どのポジション"
+    ],
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F58",
+    "question": "コヨーテについて",
+    "expected": [
+      "coyote-half"
+    ],
+    "includes": "コヨーテハーフは",
+    "excludes": [
+      "ウィザー"
+    ],
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F59",
+    "question": "コヨーテでウィザーをかけられた",
+    "expected": [
+      "coyote-half"
+    ],
+    "option": "blocked",
+    "includes": "自由な手と膝",
+    "excludes": [
+      "コヨーテハーフは"
+    ],
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F60",
+    "question": "コヨーテとドッグファイトの違い",
+    "expected": [
+      "coyote-half",
+      "dogfight"
+    ],
+    "includes": "横並びになったポジション",
+    "excludes": [
+      "ウィザー"
+    ],
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F61",
+    "question": "ニーカット中に下から脇を差された",
+    "expected": [
+      "knee-cut"
+    ],
+    "option": "underhook",
+    "includes": "フリーの脚",
+    "excludes": [
+      "相手の膝が戻ったら"
+    ],
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F62",
+    "question": "なぜ？",
+    "expected": [
+      "half-top-vs-underhook"
+    ],
+    "includes": "相手は肘か手で床を押して",
+    "excludes": [
+      "トップですか"
+    ],
+    "videos": [],
+    "history": [
+      {
+        "role": "user",
+        "content": "ハーフガードで相手に脇を差されたら？"
+      },
+      {
+        "role": "user",
+        "content": "トップです"
+      }
+    ]
+  },
+  {
+    "id": "F63",
+    "question": "混んでるときは？",
+    "expected": [],
+    "includes": "埋まっていたら空くまで待ち",
+    "videos": [],
+    "history": [
+      {
+        "role": "user",
+        "content": "スパーリングのまなー"
+      }
+    ]
+  },
+  {
+    "id": "F64",
+    "question": "ハーフガードでなぜ脇を差されたらいけないの？",
+    "expected": [],
+    "includes": "自分が上なら",
+    "excludes": [
+      "トップですか"
+    ],
+    "videos": [],
+    "history": []
   }
 ]

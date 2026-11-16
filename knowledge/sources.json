@@ -600,6 +600,18 @@
         "ai_inference_use": "not_authorized_or_verified",
         "reproduction": "external_reference_only"
       }
+    },
+    {
+      "id": "leite-coyote-public",
+      "display_title": "Lucas Leite／Coyote Half Guard 公開実演解説",
+      "source_url": "https://bjjfanatics.com/blogs/news/lucas-leite-s-coyote-half-guard-for-no-gi-yes-please",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
     }
   ]
 }

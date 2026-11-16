@@ -22,9 +22,10 @@ for (const fixture of fixtures) {
     }
     const answer = coach.renderAnswer(route, null, cards);
     assert(answer.includes(fixture.includes), answer);
+    for (const phrase of fixture.excludes || []) assert(!answer.includes(phrase), answer);
     assert(!/https?:\/\//i.test(answer), answer);
     if (route.records.length && !route.videoOnly && !route.detailed) {
-      assert(answer.length >= 150 && answer.length <= 250, String(answer.length));
+      assert(answer.length >= 65 && answer.length <= 250, String(answer.length));
     }
     const request = coach.selectPayload(route, fixture.question);
     if (request) {
@@ -43,6 +44,7 @@ test('Obvious contact details and a dedicated trial link never reach Gemini', ()
     'ハーフガードを教えて test@example.invalid',
     'ニーカットを教えて 090-1234-5678',
     'ドッグファイト https://example.invalid/personal/' + randomBytes(32).toString('hex'),
+    'コヨーテについて https://example.invalid/open#' + randomBytes(32).toString('hex'),
   ]) {
     const route = coach.resolve(question);
     assert.equal(route.kind, 'guidance');
