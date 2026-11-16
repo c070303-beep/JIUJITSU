@@ -99,15 +99,33 @@ async function chat(req,res,id){
  const history=(Array.isArray(data.history)?data.history:[]).slice(-8).filter(x=>x && ['user','assistant'].includes(x.role)&&typeof x.content==='string').map(x=>({role:x.role==='user'?'user':'model',parts:[{text:x.content.slice(0,1200)}]}));
  totalToday++;sessionUsage.set(id,n+1);
  const payload={systemInstruction:{parts:[{text:SYSTEM+getApprovedKnowledge(data.question)}]},contents:[...history,{role:'user',parts:[{text:data.question.trim()}]}],generationConfig:{temperature:0.4,maxOutputTokens:1400}};
- const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),35000);
+ const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),45000);
  try{
-  const response=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(MODEL)+':generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':API_KEY},body:JSON.stringify(payload),signal:controller.signal});
-  if(!response.ok){return out(res,response.status===429?429:502,{error:response.status===429?'Gemini APIの利用上限に達しました。':response.status===404?'Geminiモデル名を管理者が確認してください。':response.status===401||response.status===403?'Gemini APIキーの設定を確認してください。':'Gemini APIでエラーが発生しました（'+response.status+'）。'});}
+  const url='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(MODEL)+':generateContent';
+  const request={method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':API_KEY},body:JSON.stringify(payload),signal:controller.signal};
+  let response;
+  for(let attempt=0;attempt<3;attempt++){
+   response=await fetch(url,request);
+   if(response.status!==503)break;
+   console.warn('[Gemini] transient 503; model='+MODEL+' attempt='+(attempt+1)+'/3');
+   if(attempt<2){
+    await response.body?.cancel();
+    await new Promise(resolve=>setTimeout(resolve,attempt===0?800:2000));
+   }
+  }
+  if(response.status===503)return out(res,503,{error:'Gemini側が混雑しています。自動再試行しましたが応答できませんでした。少し時間を空けて再度お試しください。'});
+  if(!response.ok){
+   console.warn('[Gemini] non-success HTTP status='+response.status+' model='+MODEL);
+   return out(res,response.status===429?429:502,{error:response.status===429?'Gemini APIの利用上限に達しました。':response.status===404?'Geminiモデル名を管理者が確認してください。':response.status===401||response.status===403?'Gemini APIキーの設定を確認してください。':'Gemini APIでエラーが発生しました（'+response.status+'）。'});
+  }
   const result=await response.json();
   const answer=(result.candidates?.[0]?.content?.parts||[]).map(x=>x.text||'').join('\n').trim();
   if(!answer)return out(res,502,{error:'AIの回答を取得できませんでした。'});
   return out(res,200,{answer,model:MODEL});
- }catch(e){return out(res,502,{error:e.name==='AbortError'?'AIの応答がタイムアウトしました。':'Gemini APIへ接続できませんでした。'});}finally{clearTimeout(timer)}
+ }catch(e){
+  console.warn('[Gemini] request failure: '+(e.name==='AbortError'?'timeout':'network'));
+  return out(res,502,{error:e.name==='AbortError'?'AIの応答がタイムアウトしました。':'Gemini APIへ接続できませんでした。'});
+ }finally{clearTimeout(timer)}
 }
 const server=http.createServer((req,res)=>{(async()=>{
  const u=new URL(req.url,'https://localhost');const p=u.pathname;
