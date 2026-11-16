@@ -152,6 +152,27 @@ function matchCoachingNotes(question, history) {
   '\nこのメモは元資料の転載でも道場の正式教則でもありません。質問に関係する箇所だけ使い、状況が不明な場合は断言しないでください。';
 }
 
+// Metadata-only references to public article pages, never their original full text.
+const publicArticleRefs=(()=>{
+ try { const j=JSON.parse(fs.readFileSync(path.join(__dirname,'knowledge','new_reference_articles.json'),'utf8'));return Array.isArray(j.entries)?j.entries:[]; }
+ catch(e){console.warn('[References] article catalog unavailable');return [];}
+})();
+function referencesForQuestion(question,history) {
+ let q=String(question||'').trim().toLowerCase();
+ const generic=/(動画|参考|おすすめ|記事|サイト|リンク)/;
+ if(q.length<30 && generic.test(q)){
+  const last=(Array.isArray(history)?history:[]).slice().reverse().find(m=>m?.role==='user' && typeof m.content==='string' && !generic.test(m.content));
+  if(last)q+=' '+String(last.content).toLowerCase();
+ }
+ return publicArticleRefs.map(item=>{
+  const matched=(item.tags||[]).filter(tag=>q.includes(String(tag).toLowerCase()));
+  const score=matched.reduce((v,t)=>v+Math.min(12,String(t).length),0);
+  return {item,score};
+ }).filter(x=>x.score>=3).sort((a,b)=>b.score-a.score).slice(0,2).map(({item})=>({
+  title:item.title,url:item.url,source:item.source_id,focus:item.focus,status:"記事の参照先（全文はAIに取り込んでいません）"
+ }));
+}
+
 async function chat(req,res,id){
  if(!API_KEY || API_KEY.length<12)return out(res,503,{error:'Gemini APIキーがまだ設定されていません。管理者に連絡してください。'});
  const day=new Date().toISOString().slice(0,10);if(day!==dayKey){dayKey=day;totalToday=0;sessionUsage.clear()}
@@ -186,7 +207,7 @@ async function chat(req,res,id){
   const result=await response.json();
   const answer=(result.candidates?.[0]?.content?.parts||[]).map(x=>x.text||'').join('\n').trim();
   if(!answer)return out(res,502,{error:'AIの回答を取得できませんでした。'});
-  return out(res,200,{answer,model:MODEL,...videosForQuestion(data.question,data.history)});
+  return out(res,200,{answer,model:MODEL,...videosForQuestion(data.question,data.history),references:referencesForQuestion(data.question,data.history)});
  }catch(e){
   console.warn('[Gemini] request failure: '+(e.name==='AbortError'?'timeout':'network'));
   return out(res,502,{error:e.name==='AbortError'?'AIの応答がタイムアウトしました。':'Gemini APIへ接続できませんでした。'});
