@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "generated_on": "2026-11-16",
+  "comparison_target": "yawara-sweep-textbook-ja",
+  "comparison_status": "source_unavailable_not_compared",
+  "existing_dataset": "RRT_柔術AI_教材データ_132本.json（シュラプネル索引タイトルと分類のみ）",
+  "interpretation": "以下は既存索引のスイープ関連タイトル候補であり、指定PDFと重複していることを意味しない。",
+  "title_candidates": [
+    {
+      "existing_id": "1441",
+      "title": "クローズドガードからシザースイープ",
+      "starting_position_category": "クローズドガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1441",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1457",
+      "title": "ヒップスロー",
+      "starting_position_category": "クローズドガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1457",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1477",
+      "title": "腕十字とフラワースイープ",
+      "starting_position_category": "クローズドガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1477",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1474",
+      "title": "両足草刈りスイープ",
+      "starting_position_category": "クローズドガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1474",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1458",
+      "title": "マーメイドスイープ",
+      "starting_position_category": "クローズドガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1458",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1434",
+      "title": "片襟片袖ガードから巴スイープ",
+      "starting_position_category": "片襟片袖ガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1434",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1427",
+      "title": "草刈りスイープ",
+      "starting_position_category": "片襟片袖ガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1427",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1407",
+      "title": "スパイダーガードのキープとスイープ",
+      "starting_position_category": "スパイダーガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1407",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1406",
+      "title": "スパイダーガードからシザースイープ",
+      "starting_position_category": "スパイダーガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1406",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1417",
+      "title": "ラッソーガードのキープとスイープ",
+      "starting_position_category": "ラッソーガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1417",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1420",
+      "title": "襟持ちデラヒーバからシングルレッグスイープ",
+      "starting_position_category": "デラヒーバガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1420",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1412",
+      "title": "スピンスイープ",
+      "starting_position_category": "デラヒーバガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1412",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1402",
+      "title": "シッティングガードの基本とアンクルピックスイープ",
+      "starting_position_category": "シッティングガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1402",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1423",
+      "title": "左右へのフックスイープ",
+      "starting_position_category": "シッティングガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1423",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1386",
+      "title": "レッグスクープスイープ",
+      "starting_position_category": "ハーフガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1386",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    },
+    {
+      "existing_id": "1368",
+      "title": "クロスフェイスハーフへのブリッジスイープ",
+      "starting_position_category": "ハーフガード",
+      "source_url": "https://shrapnel-online.com/library.html?video=1368",
+      "existing_content_status": "metadata_only",
+      "comparison_to_new_pdf": "not_assessed"
+    }
+  ],
+  "confirmed_overlap": [],
+  "confirmed_differences": [],
+  "confirmed_new_knowledge": []
+}
