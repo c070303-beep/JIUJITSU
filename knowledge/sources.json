@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "sources": [
     {
       "id": "yawara-sweep-textbook-ja",
@@ -105,6 +105,69 @@
       },
       "ai_enabled": false,
       "notes": "ハーフガード・試行錯誤・試合判断の自伝的な記事。教則の詳細手順ではない。noteのAIデータ提供規約はRRTへの自由使用許諾ではない。"
+    },
+    {
+      "id": "andy-bjj-philosophy-note",
+      "display_title": "柔術哲学｜note",
+      "source_url": "https://note.com/andy_s_rocky",
+      "format": "website_articles",
+      "language": "ja",
+      "author": "note表示名：柔術哲学（記事内の署名：アンディ）",
+      "publisher": "note.com",
+      "checked_at": "2026-11-17",
+      "source_access_status": "verified",
+      "source_review_status": "public_profile_and_selected_free_posts_reviewed",
+      "ai_enabled": false,
+      "rights": {
+        "license": "no_open_license_confirmed",
+        "license_url": "https://terms.help-note.com/",
+        "rights_holder": "author_or_applicable_rightsholder",
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "not_authorized_or_verified"
+      },
+      "notes": "指導記録、練習法、パス、スパイダーの無料公開記事を確認。全文保存や第三者の教則転載なし。記事ごとに公開・有料範囲を区別。"
+    },
+    {
+      "id": "letsbjj-editorial-site",
+      "display_title": "Let's BJJ 柔術しようぜ！！〜大人の部活〜",
+      "source_url": "https://letsbjj.site/",
+      "format": "website_articles",
+      "language": "ja",
+      "author": "サイト表示：藤原、記事表記：invaderbjj",
+      "publisher": "letsbjj.site",
+      "checked_at": "2026-11-17",
+      "source_access_status": "verified",
+      "source_review_status": "public_homepage_and_selected_article_pages_reviewed",
+      "ai_enabled": false,
+      "rights": {
+        "license": "no_open_license_confirmed",
+        "license_url": null,
+        "rights_holder": "site_or_applicable_rightsholder",
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "all_rights_reserved_on_site"
+      },
+      "notes": "初心者向け基礎知識と練習法、公開動画への案内、技術記事。教則販売と宣伝も混在。動画の中身は未検証。"
+    },
+    {
+      "id": "yamawaki-bjj-note",
+      "display_title": "YAMAWAKI_BJJ｜note",
+      "source_url": "https://note.com/08230000",
+      "format": "website_articles",
+      "language": "ja",
+      "author": "note表示名：YAMAWAKI_BJJ",
+      "publisher": "note.com",
+      "checked_at": "2026-11-17",
+      "source_access_status": "verified",
+      "source_review_status": "profile_and_free_closed_guard_article_reviewed",
+      "ai_enabled": false,
+      "rights": {
+        "license": "no_open_license_confirmed",
+        "license_url": "https://terms.help-note.com/",
+        "rights_holder": "author_or_applicable_rightsholder",
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "not_authorized_or_verified"
+      },
+      "notes": "クローズドガードの無料公開索引、技術動画チャンネルへのリンクを確認。有料記事（300円など）もあり本文は未収録。動画60本以上の全編は未確認。"
     }
   ]
 }
