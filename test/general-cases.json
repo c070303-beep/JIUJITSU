@@ -1,0 +1,508 @@
+[
+  {
+    "id": "G01",
+    "question": "道場のまなーを教えて",
+    "expected": "general-mat-etiquette",
+    "includes": [
+      "強度を合わせ",
+      "受付"
+    ],
+    "excludes": [
+      "最大7組"
+    ],
+    "history": []
+  },
+  {
+    "id": "G02",
+    "question": "一般的なスパーのマナーは？",
+    "expected": "general-mat-etiquette",
+    "includes": [
+      "隣の組",
+      "道場による"
+    ],
+    "excludes": [
+      "最大7組"
+    ],
+    "history": []
+  },
+  {
+    "id": "G03",
+    "question": "道着は毎回洗う？爪はどうする？",
+    "expected": "general-hygiene",
+    "includes": [
+      "洗って乾かした",
+      "爪を短く"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G04",
+    "question": "練習に遅刻したら途中参加していい？",
+    "expected": "general-mat-arrival",
+    "includes": [
+      "マットの端",
+      "先生に声"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G05",
+    "question": "初めての出稽古は何を確認する？",
+    "expected": "general-visit",
+    "includes": [
+      "予約",
+      "料金",
+      "訪問先"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G06",
+    "question": "初めての道場を見学したい",
+    "expected": "general-visit",
+    "includes": [
+      "見学のとき",
+      "受付"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G07",
+    "question": "練習を撮影してインスタに上げていい？",
+    "expected": "general-filming",
+    "includes": [
+      "映る相手",
+      "公開してよいか"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G08",
+    "question": "初スパーでどうすればいい？",
+    "expected": "general-first-roll",
+    "includes": [
+      "軽めでお願いします",
+      "課題を一つ"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G09",
+    "question": "誘いを断っていい？",
+    "expected": "general-spar-intensity",
+    "includes": [
+      "この一本は休みます",
+      "先生"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G10",
+    "question": "体格差が大きいときのスパーは？",
+    "expected": "general-spar-intensity",
+    "includes": [
+      "軽め",
+      "相手選び"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G11",
+    "question": "タプしたと言われたけど何？",
+    "expected": "general-tap",
+    "includes": [
+      "合図",
+      "すぐ力を抜いて"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G12",
+    "question": "スパーリングのまなー",
+    "expected": "general-rrt-sparring",
+    "includes": [
+      "最大7組",
+      "飛びつき"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G13",
+    "question": "トップとボトムが分からない",
+    "expected": "general-top-bottom",
+    "includes": [
+      "自分が上ならトップ",
+      "下ならボトム"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G14",
+    "question": "パスガードとは？",
+    "expected": "general-guard-pass",
+    "includes": [
+      "下の人",
+      "上の人",
+      "脚を越え"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G15",
+    "question": "スイープとエスケープの違いは？",
+    "expected": "general-sweep-escape",
+    "includes": [
+      "ガードから",
+      "不利な位置から"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G16",
+    "question": "ギとノウギで何が違う？",
+    "expected": "general-gi-nogi",
+    "includes": [
+      "襟や袖",
+      "手首"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G17",
+    "question": "柔術のフレームって何？",
+    "expected": "general-frame-posture",
+    "includes": [
+      "距離を保つ",
+      "腕や膝"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G18",
+    "question": "支点って何？",
+    "expected": "general-frame-posture",
+    "includes": [
+      "体を支えている接点"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G19",
+    "question": "ドリルとスパーはどう使い分ける？",
+    "expected": "general-drilling",
+    "includes": [
+      "反復練習",
+      "状況スパー",
+      "自由スパー"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G20",
+    "question": "同じ形から始めるスパーって？",
+    "expected": "general-drilling",
+    "includes": [
+      "開始位置と目的"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G21",
+    "question": "白帯は何から練習すればいい？",
+    "expected": "general-white-roadmap",
+    "includes": [
+      "タップ",
+      "動きを一つ"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G22",
+    "question": "柔術を始めたばかりで練習の順番がわからない",
+    "expected": "general-white-roadmap",
+    "includes": [
+      "できたこと",
+      "迷ったこと"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G23",
+    "question": "青帯です。得意技が止まる。どう練習すればいい？",
+    "expected": "general-blue-roadmap",
+    "includes": [
+      "その位置に入れない",
+      "止まる直前",
+      "第二の選択肢"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G24",
+    "question": "練習日記には何を残すといい？",
+    "expected": "general-training-review",
+    "includes": [
+      "どの位置から",
+      "相手が何をしたら"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G25",
+    "question": "トライフォスの基礎クラスは？",
+    "expected": "general-triforce",
+    "includes": [
+      "30レッスン",
+      "支部"
+    ],
+    "excludes": [
+      "スパーは任意"
+    ],
+    "history": []
+  },
+  {
+    "id": "G26",
+    "question": "カルペディエムのスパーリングのマナーを教えて",
+    "expected": "general-carpediem",
+    "includes": [
+      "青山",
+      "自由が丘",
+      "任意"
+    ],
+    "excludes": [
+      "最大7組"
+    ],
+    "history": []
+  },
+  {
+    "id": "G27",
+    "question": "トライフォースとカルペディエムの白帯指導の違いは？",
+    "expected": "general-gym-comparison",
+    "includes": [
+      "共通の基礎カリキュラム",
+      "青山",
+      "開始位置"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G28",
+    "question": "早川光由さんのスマホのマナーの考え方は？",
+    "expected": "general-hayakawa",
+    "includes": [
+      "全員が同じ行動",
+      "クラス中"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G29",
+    "question": "石川祐樹さんは練習をどう考えてる？",
+    "expected": "general-ishikawa",
+    "includes": [
+      "設立ストーリー",
+      "仲間と"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G30",
+    "question": "金古一朗さんの初心者指導は？",
+    "expected": "general-kaneko",
+    "includes": [
+      "公開インタビュー",
+      "技術習得"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G31",
+    "question": "Roger Gracieは基本をどう磨いた？",
+    "expected": "general-roger",
+    "includes": [
+      "生徒たちと日々練習",
+      "自分の基本技"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G32",
+    "question": "マルセロ・ガルシアの練習の考え方は？",
+    "expected": "general-marcelo",
+    "includes": [
+      "公開講話",
+      "上手くいかない場面"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G33",
+    "question": "ラクラン・ジャイルズのガードの学び方は？",
+    "expected": "general-giles",
+    "includes": [
+      "公開コース概要",
+      "ガードを保つ"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G34",
+    "question": "ロジャー・グレイシーとマルセロ・ガルシアの練習方針を比較",
+    "expected": "general-coach-comparison",
+    "includes": [
+      "ロジャー",
+      "マルセロ",
+      "白帯",
+      "青帯"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G35",
+    "question": "クラスの練習と試合の違いは？",
+    "expected": "general-training-vs-rules",
+    "includes": [
+      "ハウスルール",
+      "主催団体",
+      "年齢区分"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G36",
+    "question": "トライフォースから出稽古する前に誰に連絡？",
+    "expected": "general-triforce-visit",
+    "includes": [
+      "所属会員",
+      "インストラクター"
+    ],
+    "excludes": [],
+    "history": []
+  },
+  {
+    "id": "G37",
+    "question": "詳しく教えて",
+    "expected": "general-first-roll",
+    "includes": [
+      "経験者が新人と組む",
+      "負荷を上げる前"
+    ],
+    "excludes": [],
+    "history": [
+      {
+        "role": "user",
+        "content": "初スパーどうする？"
+      }
+    ]
+  },
+  {
+    "id": "G38",
+    "question": "もう少し詳しく",
+    "expected": "general-drilling",
+    "includes": [
+      "ニーカット",
+      "脚を越える"
+    ],
+    "excludes": [],
+    "history": [
+      {
+        "role": "user",
+        "content": "状況スパーについて"
+      }
+    ]
+  },
+  {
+    "id": "G39",
+    "question": "この技は白帯でも使える？",
+    "expected": null,
+    "includes": [
+      "大会名と帯",
+      "大会・部門"
+    ],
+    "excludes": [],
+    "history": [],
+    "choices": 2
+  },
+  {
+    "id": "G40",
+    "question": "どっちを先にやればいい？",
+    "expected": null,
+    "includes": [
+      "近い項目を選んで"
+    ],
+    "excludes": [],
+    "history": [],
+    "choices": 4
+  },
+  {
+    "id": "G41",
+    "question": "知らない先生の12月限定ルールを教えて",
+    "expected": null,
+    "includes": [
+      "近い項目を選んで"
+    ],
+    "excludes": [],
+    "history": [],
+    "choices": 4
+  },
+  {
+    "id": "G42",
+    "question": "ヒールフックは青帯のノーギ大会で使える？",
+    "expected": null,
+    "includes": [
+      "大会名と帯",
+      "大会・部門"
+    ],
+    "excludes": [],
+    "history": [],
+    "choices": 2
+  },
+  {
+    "id": "G43",
+    "question": "IBJJF大会のルールの調べ方",
+    "expected": "general-training-vs-rules",
+    "history": [
+      {
+        "role": "user",
+        "content": "この技は白帯でも使える？"
+      }
+    ],
+    "includes": [
+      "主催団体",
+      "ギ・ノーギ",
+      "公式ルール"
+    ],
+    "excludes": []
+  }
+]

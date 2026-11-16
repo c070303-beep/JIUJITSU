@@ -8,6 +8,8 @@ const {once} = require('node:events');
 const path = require('node:path');
 const coach = require('../lib/coach.cjs');
 const fixtures = require('./coaching-cases.json');
+const generalCases = require('./general-cases.json');
+const generalKnowledge = require('../knowledge/general.json');
 
 for (const fixture of fixtures) {
   test(fixture.id + ' ' + fixture.question, () => {
@@ -38,6 +40,55 @@ for (const fixture of fixtures) {
     }
   });
 }
+
+for (const item of generalCases) {
+  test(item.id + ' ' + item.question, () => {
+    const route = coach.resolve(item.question, item.history);
+    const cards = coach.videoCards(route);
+    const answer = coach.renderAnswer(route, null, cards);
+    assert.equal(route.generalId ?? null, item.expected);
+    for (const phrase of item.includes) assert(answer.includes(phrase), answer);
+    for (const phrase of item.excludes) assert(!answer.includes(phrase), answer);
+    if (item.choices !== undefined) assert.equal(route.choices.length, item.choices);
+    assert.deepEqual(cards, []);
+    if (route.generalId) {
+      assert.equal(coach.selectPayload(route,item.question), null);
+      if (!item.history.length) assert(answer.length >= 150 && answer.length <= 250);
+    }
+  });
+}
+
+test('Gemini general IDs reject a fabricated reaction or additional data', () => {
+  const route = coach.resolve('回したやつをリールに流しても平気？');
+  const response = item => ({candidates:[{content:{parts:[{text:JSON.stringify(item)}]}}]});
+  const selection = {entry:'general-filming',intent:'how',branch:''};
+  assert.match(coach.renderAnswer(coach.interpretRoute(route,coach.readSelection(response(selection),route))),/公開してよいか/);
+  assert.equal(coach.readSelection(response({...selection,branch:'invented'}),route),null);
+  assert.equal(coach.readSelection(response({...selection,url:'https://example.invalid'}),route),null);
+});
+
+test('General answers point to registered sources and existing technique IDs', () => {
+  const {techniques} = require('../knowledge/techniques.json');
+  const techniquesById = new Set(techniques.map(item => item.id));
+  const ids = new Set();
+  const aliases = new Set();
+  for (const record of generalKnowledge.records) {
+    assert(!ids.has(record.id), record.id);
+    ids.add(record.id);
+    assert.deepEqual(record.levels, ['white','blue']);
+    assert(record.scope.trim() && record.answer.length >= 150 && record.detail.trim());
+    assert(record.source_ids.length && record.source_ids.every(id => generalKnowledge.sources[id]));
+    assert(record.related_ids.every(id => techniquesById.has(id)));
+    for (const alias of record.aliases) {
+      assert(!aliases.has(alias), alias);
+      aliases.add(alias);
+    }
+  }
+  for (const source of Object.values(generalKnowledge.sources)) {
+    assert.equal(new URL(source.url).protocol, 'https:');
+    assert(source.author && source.section && /^\d{4}-\d{2}-\d{2}$/.test(source.checked_on));
+  }
+});
 
 test('Unclear questions offer choices and a selected side resolves the original question', () => {
   const question = 'ハーフガードで相手に脇を差されたら？';
@@ -165,7 +216,15 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
     if (simulate === '429') return new Response('{}',{status:429});
     const payload = JSON.parse(options.body);
     if (payload.generationConfig?.responseSchema?.properties?.entry) {
-      return Response.json({candidates:[{content:{parts:[{text:JSON.stringify({entry:'clarify',intent:'position',branch:''})}]}}]});
+      const semantic = simulate === 'general'
+        ? {entry:'general-filming',intent:'how',branch:''}
+        : {entry:'clarify',intent:'position',branch:''};
+      if (simulate === 'general') {
+        assert(payload.generationConfig.responseSchema.properties.entry.enum.includes('general-filming'));
+        const body = JSON.parse(payload.contents[0].parts[0].text);
+        assert(body.catalog.some(entry => entry.id === semantic.entry && entry.scope && !entry.answer && !entry.source_ids));
+      }
+      return Response.json({candidates:[{content:{parts:[{text:JSON.stringify(semantic)}]}}]});
     }
     assert(payload.generationConfig?.responseSchema?.properties?.option?.enum.includes('far-knee'));
     const selection = simulate === 'invalid'
@@ -248,6 +307,22 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
   const resolved = await (await post('/api/chat',secondCookie,{question:reply.question,selection:reply.selection,history:[{role:'user',content:q}]})).json();
   assert.match(resolved.answer,/近いすね/);
   assert.equal(calls,beforeReaction);
+  const firstRoll = await (await post('/api/chat',secondCookie,{question:'初スパーでどうすればいい？'})).json();
+  assert.match(firstRoll.answer,/軽めでお願いします/);
+  assert.equal(firstRoll.mode,'knowledge');
+  assert.deepEqual(firstRoll.videos,[]);
+  assert.equal(calls,beforeReaction);
+  const rule = await (await post('/api/chat',secondCookie,{question:'この技は白帯でも使える？'})).json();
+  assert.equal(rule.choices.length,2);
+  const ruleHelp = await (await post('/api/chat',secondCookie,{question:rule.choices[0].question})).json();
+  assert.match(ruleHelp.answer,/公式ルール/);
+  assert.equal(calls,beforeReaction);
+
+  simulate = 'general';
+  const filming = await (await post('/api/chat',secondCookie,{question:'回したやつをリールに流しても平気？'})).json();
+  assert.equal(filming.mode,'gemini');
+  assert.match(filming.answer,/公開してよいか/);
+  assert.equal(calls,beforeReaction+1);
   const limitedCookie = await login();
   const before = calls;
   const batch = await Promise.all(Array.from({length:12},()=>post('/api/chat',limitedCookie,{question:'Jポイントの米倉式は？'})));
