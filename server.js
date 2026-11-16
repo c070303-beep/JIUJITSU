@@ -100,52 +100,64 @@ const videoCatalog = (()=>{
  catch(e){console.warn('[Videos] catalog unavailable');return {videos:[],priority_channels:[]};}
 })();
 const publicVideos=videoCatalog.videos||[];
-const preferredChannels=videoCatalog.priority_channels||[];
-function videosForQuestion(question,history) {
- let topic=String(question||'').trim().slice(0,160);
- const meta=/^(関連|参考|おすすめ|良い|わかりやすい)?(動画|ユーチューブ|YouTube|youtube).{0,35}$|^参考にできる動画はありますか[？?]?$/i;
- if(meta.test(topic)||(topic.includes('動画')&&topic.length<32)){
-  const last=(Array.isArray(history)?history:[]).slice().reverse().find(x=>x?.role==='user'&&typeof x.content==='string'&&!meta.test(x.content)&&!/動画/.test(x.content));
-  topic=last?last.content.slice(0,160):'ブラジリアン柔術 基礎';
+// Every result must map to a curated video ID, not a YouTube search results page.
+// Match the *specific technique* and whether the question is asked from top or bottom.
+const VIDEO_TOPICS=[
+ ['inside-camping',/インサイドキャンピング|インサイド・キャンピング|inside camping/i],
+ ['half-sweep',/(ハーフ|half guard).{0,22}(スイープ|返す|返し|崩し)|ジェフモンソン|モンソンスイープ/i],
+ ['arm-triangle',/肩固め|アームトライアングル|arm triangle/i],
+ ['armbar',/腕十字|腕ひしぎ|アームバー|armbar/i],
+ ['guard-retention',/ガードリテンション|リテンション|ガードを戻す|脚を戻す|足を戻す|フレームで守|パスを防ぐ/i],
+ ['inside-pass-defense',/(インサイドパス|ニーカット|ニースライス).{0,25}(防ぐ|守る|対策|リテンション|止める)|(?:防ぐ|守る|対策|リテンション).{0,25}(インサイドパス|ニーカット)/i],
+ ['outside-pass-defense',/(アウトサイドパス|トレアドール|レッグドラッグ).{0,25}(対策|防ぐ|守る|リテンション)|(?:対策|防ぐ|守る).{0,25}(アウトサイドパス|レッグドラッグ)/i],
+ ['spider-pass',/(スパイダー|spider).{0,20}(パス|解除|抜く)|(?:パス|解除).{0,15}(スパイダー|spider)/i],
+ ['butterfly',/バタフライ|butterfly|フックスイープ|ピボティングポイント/i],
+ ['berimbolo',/ベリンボロ|berimbolo/i],
+ ['sao-paulo-pass',/サンパウロパス|サンパウロ|sao paulo/i],
+ ['hip-bump',/ヒップバンプ|ヒップスロー|hip bump|hip sweep/i],
+ ['kimura',/キムラ|kimura/i],
+ ['flower-sweep',/フラワースイープ|フラワー・スイープ|flower sweep/i],
+ ['closed-hook-sweep',/フックスイープ|クローズド.{0,12}フック/i],
+ ['closed-side-sweep',/サイドスイープ|クローズド.{0,12}サイド/i],
+ ['collar-sleeve',/片襟片袖|カラースリーブ|collar and sleeve/i],
+ ['training-balance',/仕事.{0,15}柔術|柔術.{0,15}仕事|練習.{0,15}両立|モチベーション|練習頻度/i]
+];
+function videosForQuestion(question,history){
+ let query=String(question||'').trim().slice(0,180);
+ const generic=/(動画|YouTube|ユーチューブ|参考|おすすめ)/i;
+ if(generic.test(query)&&query.length<45) {
+  const older=(Array.isArray(history)?history:[]).slice().reverse().find(m=>m?.role==='user' && typeof m.content==='string' && !generic.test(m.content));
+  if(older)query+=' '+older.content.slice(0,150);
  }
- const q=topic.toLowerCase();
- const scoreTag=(tag)=> {
-  const t=String(tag||'').toLowerCase();
-  if(!t||!q.includes(t))return 0;
-  if(['柔術','ガード','パス','スイープ','bjj','half'].includes(t))return 1;
-  return 3+Math.min(12,t.length);
- };
- const ranked=preferredChannels.map(c=>{
-  const best=Math.max(0,...(c.tags||[]).map(scoreTag));
-  const total=(c.tags||[]).reduce((sum,t)=>sum+scoreTag(t),0);
-  return {channel:c,score:best*2+total};
- }).sort((a,b)=>b.score-a.score || a.channel.priority-b.channel.priority);
- const prefer=ranked.some(x=>x.score>0)?ranked.filter(x=>x.score>0):ranked;
- const channels=prefer.slice(0,2).map(({channel:c})=>{
-  const prompt=topic.replace(/(?:関連|参考)?動画|ユーチューブ|YouTube|ありますか|教えて|おすすめ|リンク/gi,' ').replace(/[？?。]/g,' ').trim().slice(0,70);
-  const label=(c.name_query+' '+(prompt==='ブラジリアン柔術 基礎'?'技術':prompt)).trim();
-  const url='https://www.youtube.com/results?search_query='+encodeURIComponent(label);
-  return {title:c.title,url,channel_url:c.channel_url||null,search_label:label};
- });
- const preferredIds=new Set(prefer.slice(0,4).map(x=>x.channel.id));
- const directTagScore=(tag)=>{
-  const t=String(tag||'').toLowerCase();
-  if(['柔術','ガード','パス','パスガード','スイープ','bjj','half','ハーフ','クローズド'].includes(t))return 0;
-  return scoreTag(t);
- };
- const videos=publicVideos.map(v=>{
-  const score=(v.tags||[]).reduce((sum,t)=>sum+directTagScore(t),0);
-  const topicConflict=(
-   (q.includes('アウトサイドキャンピング') && (v.tags||[]).includes('インサイドキャンピング') && !(v.tags||[]).includes('アウトサイドキャンピング')) ||
-   (q.includes('インサイドキャンピング') && (v.tags||[]).includes('アウトサイドキャンピング') && !(v.tags||[]).includes('インサイドキャンピング')) ||
-   (/(相手が立|相手の足を|相手は立|立ってき|スパイダーから|スパイダーガードで)/.test(q) && /スパイダー.*パスガード/.test(v.title))
-  );
-  return {video:v,score:topicConflict?0:score+(score>0&&preferredIds.has(v.channel_id)?2:0)};
- }).filter(x=>x.score>=6).sort((a,b)=>b.score-a.score).slice(0,2).map(x=>{
-  const v=x.video;
-  return {id:v.id,title:v.title,channel:v.channel,description:v.description,url:v.watch_url,thumbnail:v.thumbnail_url,language:v.language,preview_only:!!v.preview_only};
- });
- return {videos,channels};
+ const q=query.toLowerCase();
+ const concepts=VIDEO_TOPICS.filter(([,pattern])=>pattern.test(q)).map(([name])=>name);
+ // Do not recommend a related-but-different technique just because it shares "guard" or "sweep".
+ if(!concepts.length)return {videos:[]};
+ const passIntent=/(パスガード|パスを|パスした|抜きたい|トップ|上から|相手のガードを)/.test(q);
+ const bottomIntent=/(ボトム|下から|ガードで|ガードを戻|パスされ|潰され|スイープ|崩し|返し|引き込み)/.test(q);
+ const scored=publicVideos.map(v=>{
+  if(!v.verified_public_url || !/^[a-zA-Z0-9_-]{11}$/.test(v.id||''))return {v,score:0};
+  const overlap=(v.topics||[]).filter(t=>concepts.includes(t));
+  let score=overlap.length*25;
+  // Some clips are promotional previews; prefer full publicly instructional demonstrations.
+  if(v.preview_only)score-=7;
+  if(passIntent && !bottomIntent && v.position==='bottom')score=0;
+  if(bottomIntent && !passIntent && v.position==='top')score=0;
+  // When the question is about solving a bottom guard, a pass *against* that guard is the wrong direction.
+  if(/スパイダー/.test(q)&&!/(パス|解除|抜く|対策)/.test(q)&&v.topics?.includes('spider-pass'))score=0;
+  // Inside camping and outside camping are distinct systems.
+  if(/アウトサイドキャンピング/.test(q) && v.topics?.includes('inside-camping'))score=0;
+  if(/インサイドキャンピング/.test(q) && v.topics?.includes('outside-camping'))score=0;
+  return {v,score};
+ }).filter(x=>x.score>=18)
+   .sort((a,b)=>b.score-a.score||(a.v.preview_only?1:-1)-(b.v.preview_only?1:-1))
+   .slice(0,2);
+ return {videos:scored.map(({v})=>({
+  id:v.id,title:v.title,channel:v.channel,description:v.description,
+  url:'https://www.youtube.com/watch?v='+v.id,
+  thumbnail:'https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg',
+  language:v.language,preview_only:!!v.preview_only
+ }))};
 }
 
 /*
