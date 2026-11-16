@@ -128,10 +128,20 @@ function videosForQuestion(question,history) {
   return {title:c.title,url,channel_url:c.channel_url||null,search_label:label};
  });
  const preferredIds=new Set(prefer.slice(0,4).map(x=>x.channel.id));
+ const directTagScore=(tag)=>{
+  const t=String(tag||'').toLowerCase();
+  if(['柔術','ガード','パス','スイープ','bjj','half','ハーフ','クローズド'].includes(t))return 0;
+  return scoreTag(t);
+ };
  const videos=publicVideos.map(v=>{
-  const score=(v.tags||[]).reduce((sum,t)=>sum+scoreTag(t),0);
-  return {video:v,score:score+(preferredIds.has(v.channel_id)?2:0)};
- }).filter(x=>x.score>2).sort((a,b)=>b.score-a.score).slice(0,2).map(x=>{
+  const score=(v.tags||[]).reduce((sum,t)=>sum+directTagScore(t),0);
+  const topicConflict=(
+   (q.includes('アウトサイドキャンピング') && (v.tags||[]).includes('インサイドキャンピング') && !(v.tags||[]).includes('アウトサイドキャンピング')) ||
+   (q.includes('インサイドキャンピング') && (v.tags||[]).includes('アウトサイドキャンピング') && !(v.tags||[]).includes('インサイドキャンピング')) ||
+   (/(相手が立|相手の足を|相手は立|立ってき|スパイダーから|スパイダーガードで)/.test(q) && /スパイダー.*パスガード/.test(v.title))
+  );
+  return {video:v,score:topicConflict?0:score+(score>0&&preferredIds.has(v.channel_id)?2:0)};
+ }).filter(x=>x.score>=6).sort((a,b)=>b.score-a.score).slice(0,2).map(x=>{
   const v=x.video;
   return {id:v.id,title:v.title,channel:v.channel,description:v.description,url:v.watch_url,thumbnail:v.thumbnail_url,language:v.language,preview_only:!!v.preview_only};
  });
