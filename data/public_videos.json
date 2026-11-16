@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "review_date": "2026-11-17",
+  "policy": "Only direct video links verified as public YouTube watch pages. Video/audio/transcript not copied. If no matching item, present a clearly marked YouTube search link.",
+  "videos": [
+    {
+      "id": "PVXpWtRjUS4",
+      "title": "The Complete Underhook Half Guard System - Sweeps & Back Takes",
+      "channel": "Jiu Jitsu Brotherhood",
+      "description": "ハーフの脇差し→スイープ・バックテイク",
+      "language": "en",
+      "tags": [
+        "ハーフガード",
+        "ハーフ",
+        "half guard",
+        "underhook",
+        "脇差し",
+        "脇を差",
+        "脇をさ",
+        "ドッグファイト",
+        "dogfight",
+        "コヨーテ"
+      ],
+      "watch_url": "https://www.youtube.com/watch?v=PVXpWtRjUS4",
+      "thumbnail_url": "https://i.ytimg.com/vi/PVXpWtRjUS4/hqdefault.jpg",
+      "verified_public_url": true
+    },
+    {
+      "id": "NLiwZ3lW3TA",
+      "title": "Adam Wardzinski's Overhand Butterfly Guard | Jiu-Jitsu Breakdown",
+      "channel": "玉木強 / YOSHI JIU-JITSU TECH",
+      "description": "バタフライからの崩しとスイープ",
+      "language": "en",
+      "tags": [
+        "バタフライ",
+        "butterfly",
+        "フックスイープ",
+        "wardzinski",
+        "ワルジンスキ"
+      ],
+      "watch_url": "https://www.youtube.com/watch?v=NLiwZ3lW3TA",
+      "thumbnail_url": "https://i.ytimg.com/vi/NLiwZ3lW3TA/hqdefault.jpg",
+      "verified_public_url": true
+    },
+    {
+      "id": "20hA15yXEjA",
+      "title": "HOW TO DO A SCISSORS SWEEP IN JIU JITSU",
+      "channel": "Muito Mais Ação Jiu Jitsu",
+      "description": "シザースイープの基本（ポルトガル語）",
+      "language": "pt",
+      "tags": [
+        "シザース",
+        "シザー",
+        "scissor",
+        "ハサミ",
+        "クローズドガード",
+        "closed guard"
+      ],
+      "watch_url": "https://www.youtube.com/watch?v=20hA15yXEjA",
+      "thumbnail_url": "https://i.ytimg.com/vi/20hA15yXEjA/hqdefault.jpg",
+      "verified_public_url": true
+    },
+    {
+      "id": "9JCeqF5MgnI",
+      "title": "Guard Retention: You Have to Know in Order to Retain Your Guard",
+      "channel": "玉木強 / YOSHI JIU-JITSU TECH",
+      "description": "ニーカット・トレアドール・レッグドラッグ対策",
+      "language": "en",
+      "tags": [
+        "ガードリテンション",
+        "リテンション",
+        "retention",
+        "ニーカット",
+        "knee cut",
+        "レッグドラッグ",
+        "leg drag",
+        "トレアドール",
+        "トレアナ"
+      ],
+      "watch_url": "https://www.youtube.com/watch?v=9JCeqF5MgnI",
+      "thumbnail_url": "https://i.ytimg.com/vi/9JCeqF5MgnI/hqdefault.jpg",
+      "verified_public_url": true
+    },
+    {
+      "id": "zqQx9SsgdBw",
+      "title": "Smooth Side Control to Mount Transition | BJJ Fundamentals",
+      "channel": "Jiu Jitsu Brotherhood",
+      "description": "サイドからマウントへの移行とコントロール",
+      "language": "en",
+      "tags": [
+        "サイドコントロール",
+        "サイドからマウント",
+        "サイド→マウント",
+        "サイドから",
+        "マウント",
+        "side control",
+        "mount transition"
+      ],
+      "watch_url": "https://www.youtube.com/watch?v=zqQx9SsgdBw",
+      "thumbnail_url": "https://i.ytimg.com/vi/zqQx9SsgdBw/hqdefault.jpg",
+      "verified_public_url": true
+    },
+    {
+      "id": "I4GH7qX2k20",
+      "title": "Guard Retention is an Art (Levi Jones-Leary)",
+      "channel": "Xadrez Humano",
+      "description": "キャンピング、ニーカットなどのパスへの防御",
+      "language": "en",
+      "tags": [
+        "アウトサイドキャンピング",
+        "キャンピング",
+        "outside camping",
+        "インサイドパス",
+        "ガードリテンション",
+        "ニーカット",
+        "ガードが戻"
+      ],
+      "watch_url": "https://www.youtube.com/watch?v=I4GH7qX2k20",
+      "thumbnail_url": "https://i.ytimg.com/vi/I4GH7qX2k20/hqdefault.jpg",
+      "verified_public_url": true
+    }
+  ]
+}
