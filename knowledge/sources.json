@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "yawara-sweep-textbook-ja",
+      "display_title": "柔術スイープ教材（ファイル名に基づく仮称・正式タイトル未確認）",
+      "source_url": "https://jiujitsu.co.jp/textbook/yawara-sweep-textbook-ja.pdf",
+      "format": "application/pdf",
+      "language": "ja",
+      "publisher": null,
+      "author": null,
+      "version": null,
+      "pdf_page_count": null,
+      "source_integrity_sha256": null,
+      "source_access_status": "unavailable_in_current_environment",
+      "checked_at": "2026-11-16",
+      "source_review_status": "not_started",
+      "verified_pages": [],
+      "rights": {
+        "license": "not_verified",
+        "license_url": null,
+        "rights_holder": null,
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "not_authorized_or_verified"
+      },
+      "ai_enabled": false,
+      "notes": "2026-11-16: URLからPDF本文を取得できず。全ページ、技名、ページ番号、利用許諾は未確認。"
+    }
+  ]
+}
