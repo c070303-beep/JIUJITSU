@@ -119,9 +119,10 @@ async function chat(req, res, id) {
   const videos = coach.videoCards(route);
   const payload = API_KEY.length >= 12 ? coach.selectPayload(route, data.question) : null;
   const choice = payload ? await selectWithGemini(payload, route) : null;
-  const answer = coach.renderAnswer(route, choice, videos);
-  const mode = choice ? 'gemini' : route.kind === 'guidance' || route.videoOnly ? 'guidance' : 'knowledge';
-  return out(res, 200, {answer, model:MODEL, mode, videos});
+  const resolved = coach.interpretRoute(route, choice);
+  const answer = coach.renderAnswer(resolved, route.semantic ? null : choice, videos);
+  const mode = choice ? 'gemini' : resolved.kind === 'guidance' || resolved.videoOnly ? 'guidance' : 'knowledge';
+  return out(res, 200, {answer, model:MODEL, mode, videos, choices:resolved.choices || []});
 }
 
 function videosForQuestion(question, context) {

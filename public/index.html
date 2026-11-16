@@ -422,11 +422,27 @@ function updateChatBusy(flag){
   $('ai-submit').textContent=flag?'考えています…':'送信する';
   $('ai-question').disabled=flag;
 }
+function appendCoachChoices(choices,turn){
+  if(!Array.isArray(choices)||!choices.length)return;
+  const group=document.createElement('div');
+  group.className='quick-prompts coach-choices';
+  group.setAttribute('role','group');
+  group.setAttribute('aria-label','質問を絞る選択肢');
+  for(const choice of choices){
+    if(typeof choice?.label!=='string'||typeof choice?.question!=='string')continue;
+    const button=document.createElement('button');button.type='button';
+    button.textContent=choice.label;
+    button.addEventListener('click',()=>askCoach(choice.question));
+    group.appendChild(button);
+  }
+  if(group.childElementCount)turn.appendChild(group);
+}
 async function askCoach(question){
   if(chatBusy)return;
   const q=String(question||'').trim();if(!q)return;
   setChatError('');
   const previous=chatHistory.slice(-10);
+  chatBox.querySelectorAll('.coach-choices button').forEach(button=>{button.disabled=true;});
   const turn=appendBubble('user',q);chatHistory.push({role:'user',content:q});
   $('ai-question').value='';updateChatBusy(true);
   // Independent free public-video lookup; cards appear even when Gemini returns an error.
@@ -444,6 +460,7 @@ async function askCoach(question){
     if(typeof body.answer!=='string'||!body.answer.trim())throw Error('AIから回答がありませんでした。');
     if(!turn?.isConnected)return;
     appendBubble('assistant',body.answer,turn);
+    appendCoachChoices(body.choices,turn);
     // Videos load independently from /api/videos.
     chatHistory.push({role:'assistant',content:body.answer});
     if(chatHistory.length>30)chatHistory.splice(0,chatHistory.length-30);

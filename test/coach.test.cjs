@@ -39,6 +39,47 @@ for (const fixture of fixtures) {
   });
 }
 
+test('Unclear questions offer choices and a selected side resolves the original question', () => {
+  const question = 'ハーフガードで相手に脇を差されたら？';
+  const query = coach.resolve(question);
+  assert.equal(query.choices.length,2);
+  assert.deepEqual(query.choices.map(item => item.question),['トップです','ボトムです']);
+  assert.equal(coach.selectPayload(query,question),null);
+  const context = [{role:'user',content:question}];
+  assert.equal(coach.resolve(query.choices[0].question,context).records[0].id,'half-top-vs-underhook');
+  assert.equal(coach.resolve(query.choices[1].question,context).records[0].id,'half-crossface');
+  const open = coach.resolve('どうすれば上手くなれる？');
+  assert(open.choices.length >= 3);
+  const position = coach.resolve(open.choices[1].question);
+  assert.equal(position.choices.length,3);
+  assert.equal(coach.resolve(position.choices[0].question).records[0].id,'passing-grips');
+});
+
+test('Gemini interprets an unknown phrasing using registered IDs and falls back to choices', () => {
+  const question = '押し込まれたら、ひじを先に置く意味って？';
+  const route = coach.resolve(question);
+  assert(route.semantic);
+  const payload = coach.selectPayload(route,question);
+  assert(payload.generationConfig.responseSchema.properties.entry.enum.includes('guard-retention'));
+  const response = item => ({candidates:[{content:{parts:[{text:JSON.stringify(item)}]}}]});
+  const value = coach.readSelection(response({entry:'guard-retention',intent:'why',branch:''}),route);
+  assert.match(coach.renderAnswer(coach.interpretRoute(route,value)),/骨盤/);
+  for(const item of [
+    {entry:'unknown',intent:'why',branch:''},
+    {entry:'guard-retention',intent:'why',branch:'unknown'},
+    {entry:'guard-retention',intent:'why',branch:'',answer:'arbitrary'},
+    {entry:'clarify',intent:'why',branch:'unknown'},
+  ]) {
+    const rejected = coach.readSelection(response(item),route);
+    assert.equal(rejected,null);
+    assert(coach.interpretRoute(route,rejected).choices.length);
+  }
+  const uncertain = coach.readSelection(response({entry:'clarify',intent:'position',branch:''}),route);
+  assert.equal(coach.interpretRoute(route,uncertain).choices.length,3);
+  const manners = coach.readSelection(response({entry:'sparring-etiquette',intent:'overview',branch:''}),route);
+  assert.match(coach.renderAnswer(coach.interpretRoute(route,manners)),/最大7組/);
+});
+
 test('Obvious contact details and a dedicated trial link never reach Gemini', () => {
   for (const question of [
     'ハーフガードを教えて test@example.invalid',
@@ -96,6 +137,9 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
     if (simulate === '503') return new Response('{}',{status:503});
     if (simulate === '429') return new Response('{}',{status:429});
     const payload = JSON.parse(options.body);
+    if (payload.generationConfig?.responseSchema?.properties?.entry) {
+      return Response.json({candidates:[{content:{parts:[{text:JSON.stringify({entry:'clarify',intent:'position',branch:''})}]}}]});
+    }
     assert(payload.generationConfig?.responseSchema?.properties?.option?.enum.includes('far-knee'));
     const selection = simulate === 'invalid'
       ? {tip:'0',option:'invented',url:'https://example.invalid'} : {tip:'0',option:'far-knee'};
@@ -166,8 +210,12 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
     assert.deepEqual(fallback.videos,media.videos);
   }
   const secondCookie = await login();
+  simulate = 'ok';
+  const ask = await (await post('/api/chat',secondCookie,{question:'どうしたら良くなる？'})).json();
+  assert.equal(ask.choices.length,3);
+  const limitedCookie = await login();
   const before = calls;
-  const batch = await Promise.all(Array.from({length:12},()=>post('/api/chat',secondCookie,{question:'Jポイントの米倉式は？'})));
+  const batch = await Promise.all(Array.from({length:12},()=>post('/api/chat',limitedCookie,{question:'Jポイントの米倉式は？'})));
   assert.equal(batch.filter(response => response.status === 200).length,8);
   assert.equal(batch.filter(response => response.status === 429).length,4);
   assert.equal(calls,before);
@@ -179,6 +227,7 @@ test('Chat layout and background media lookup keep the v13 entry points', () => 
   assert(html.indexOf('id="ai-chat"') >= 0);
   assert(html.indexOf('id="ai-chat"') < html.indexOf('id="ai-form"'));
   assert.match(html, /chatBox\.scrollTop=chatBox\.scrollHeight/);
+  assert.match(html, /appendCoachChoices\(body\.choices,turn\)/);
   assert.match(html, /appendVideoReferences\(v\.videos,turn\)/);
   assert.match(html, /if\(!turn\?\.isConnected\)return/);
   assert.match(html, /fetch\('\/api\/videos',\{method:'POST'/);
