@@ -227,6 +227,82 @@
       "verified_public_url": true,
       "watch_url": "https://www.youtube.com/watch?v=dKIHSG-3EEA",
       "thumbnail_url": "https://i.ytimg.com/vi/dKIHSG-3EEA/hqdefault.jpg"
+    },
+    {
+      "id": "IHu38JiYTHU",
+      "title": "クローズドガード・フックスイープ",
+      "description": "クローズドからのスイープ解説",
+      "channel": "新・柔術日記Channel",
+      "channel_id": "jutsu-nikki",
+      "language": "ja",
+      "tags": [
+        "クローズド",
+        "クローズドガード",
+        "フックスイープ",
+        "スイープ",
+        "ガード"
+      ],
+      "verified_public_url": true,
+      "verification": "creator_note_links",
+      "watch_url": "https://www.youtube.com/watch?v=IHu38JiYTHU",
+      "thumbnail_url": "https://i.ytimg.com/vi/IHu38JiYTHU/hqdefault.jpg"
+    },
+    {
+      "id": "Z6sxXQHsvD8",
+      "title": "フラワースイープ",
+      "description": "クローズドガードの基本スイープ",
+      "channel": "新・柔術日記Channel",
+      "channel_id": "jutsu-nikki",
+      "language": "ja",
+      "tags": [
+        "フラワースイープ",
+        "フラワー",
+        "クローズドガード",
+        "クローズド",
+        "スイープ"
+      ],
+      "verified_public_url": true,
+      "verification": "creator_note_links",
+      "watch_url": "https://www.youtube.com/watch?v=Z6sxXQHsvD8",
+      "thumbnail_url": "https://i.ytimg.com/vi/Z6sxXQHsvD8/hqdefault.jpg"
+    },
+    {
+      "id": "Coh6o4poTlM",
+      "title": "ヒップスローからキムラロックを極めるコツ",
+      "description": "ヒップスローからの連係",
+      "channel": "新・柔術日記Channel",
+      "channel_id": "jutsu-nikki",
+      "language": "ja",
+      "tags": [
+        "ヒップスロー",
+        "ヒップバンプ",
+        "キムラ",
+        "クローズドガード",
+        "スイープ"
+      ],
+      "verified_public_url": true,
+      "verification": "creator_note_links",
+      "watch_url": "https://www.youtube.com/watch?v=Coh6o4poTlM",
+      "thumbnail_url": "https://i.ytimg.com/vi/Coh6o4poTlM/hqdefault.jpg"
+    },
+    {
+      "id": "tLpgh18xL3w",
+      "title": "クローズドガード② サイドスイープ",
+      "description": "クローズドからのサイドスイープ",
+      "channel": "新・柔術日記Channel",
+      "channel_id": "jutsu-nikki",
+      "language": "ja",
+      "tags": [
+        "サイドスイープ",
+        "クローズドガード",
+        "スイープ",
+        "腕十字",
+        "ガード"
+      ],
+      "verified_public_url": true,
+      "verification": "creator_note_links",
+      "watch_url": "https://www.youtube.com/watch?v=tLpgh18xL3w",
+      "thumbnail_url": "https://i.ytimg.com/vi/tLpgh18xL3w/hqdefault.jpg"
     }
   ]
 }
