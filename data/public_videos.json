@@ -1,7 +1,7 @@
 {
-  "schema_version": "3.0",
+  "schema_version": "3.1",
   "review_date": "2026-11-17",
-  "policy": "Display only verified, directly linked public videos with strong topic and position match; never show YouTube search UI. YouTube video and audio are not stored.",
+  "policy": "Curated YouTube watch-page IDs only. Show only topic-matched direct video thumbnails; do not show any search interface. Video suggestions are independent of AI response success.",
   "priority_channels": [
     {
       "id": "jutsu-nikki",
@@ -151,7 +151,8 @@
       "watch_url": "https://www.youtube.com/watch?v=z5dKtMkxX_Q",
       "thumbnail_url": "https://i.ytimg.com/vi/z5dKtMkxX_Q/hqdefault.jpg",
       "topics": [
-        "inside-camping"
+        "inside-camping",
+        "passing-basics"
       ],
       "position": "top"
     },
@@ -357,7 +358,8 @@
         "スイープ"
       ],
       "topics": [
-        "half-sweep"
+        "half-sweep",
+        "half-general"
       ],
       "position": "bottom",
       "language": "ja",
@@ -491,7 +493,8 @@
         "パスガード"
       ],
       "topics": [
-        "sao-paulo-pass"
+        "sao-paulo-pass",
+        "passing-basics"
       ],
       "position": "top",
       "language": "ja",
@@ -518,6 +521,57 @@
       "verified_public_url": true,
       "watch_url": "https://www.youtube.com/watch?v=EYeD5XXmAQs",
       "thumbnail_url": "https://i.ytimg.com/vi/EYeD5XXmAQs/hqdefault.jpg"
+    },
+    {
+      "id": "PVXpWtRjUS4",
+      "title": "The Complete Underhook Half Guard System - Sweeps & Back Takes",
+      "channel": "Jiu Jitsu Brotherhood",
+      "channel_id": "other",
+      "description": "ハーフガードの脇差し・バックテイク・スイープの連係",
+      "language": "en",
+      "tags": [
+        "ハーフガード",
+        "脇差し",
+        "アンダーフック",
+        "ドッグファイト",
+        "スイープ"
+      ],
+      "topics": [
+        "half-underhook",
+        "half-sweep",
+        "half-general",
+        "dogfight"
+      ],
+      "position": "bottom",
+      "verified_public_url": true,
+      "verification": "public_youtube_watch_page",
+      "watch_url": "https://www.youtube.com/watch?v=PVXpWtRjUS4",
+      "thumbnail_url": "https://i.ytimg.com/vi/PVXpWtRjUS4/hqdefault.jpg"
+    },
+    {
+      "id": "sjp3M_UogZ8",
+      "title": "Roll Under Sweep from Half Guard",
+      "channel": "Jiu Jitsu Brotherhood",
+      "channel_id": "other",
+      "description": "脇差し後にウィザーで止められた際のロールアンダースイープ",
+      "language": "en",
+      "tags": [
+        "ハーフガード",
+        "脇差し",
+        "ウィザー",
+        "バックテイク",
+        "ロールアンダー"
+      ],
+      "topics": [
+        "half-underhook",
+        "half-sweep",
+        "dogfight"
+      ],
+      "position": "bottom",
+      "verified_public_url": true,
+      "verification": "public_youtube_watch_page",
+      "watch_url": "https://www.youtube.com/watch?v=sjp3M_UogZ8",
+      "thumbnail_url": "https://i.ytimg.com/vi/sjp3M_UogZ8/hqdefault.jpg"
     }
   ]
 }
