@@ -1,0 +1,106 @@
+'use strict';
+const http = require('node:http');
+const crypto = require('node:crypto');
+const fs = require('node:fs');
+const path = require('node:path');
+const { URL } = require('node:url');
+
+const HOST = process.env.HOST || '0.0.0.0';
+const PORT = Number(process.env.PORT || 10000);
+const SECRET = process.env.DEMO_ACCESS_CODE || '';
+const API_KEY = process.env.GEMINI_API_KEY || '';
+const MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash-lite';
+const ALLOWED_ORIGIN = (process.env.PUBLIC_ORIGIN || process.env.RENDER_EXTERNAL_URL || '').replace(/\/+$/, '');
+const MAX_DAILY = Math.max(1, Math.min(Number(process.env.DEMO_DAILY_LIMIT || 100), 1000));
+const MAX_PER_SESSION = Math.max(1, Math.min(Number(process.env.DEMO_USER_DAILY_LIMIT || 20), 100));
+if (SECRET.length < 12) { console.error('DEMO_ACCESS_CODE must be at least 12 characters. Set it in Render Environment.'); process.exit(1); }
+const html = fs.readFileSync(path.join(__dirname, 'public', 'index.html'));
+const sessions = new Map();
+const loginAttempts = new Map();
+const sessionUsage = new Map();
+let dayKey = ''; let totalToday = 0;
+function out(res, code, payload, extra={}) {
+  res.writeHead(code, {'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','X-Frame-Options':'DENY',...extra});
+  res.end(JSON.stringify(payload));
+}
+function page(res, body) {
+  res.writeHead(200, {'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Frame-Options':'DENY','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"});
+  res.end(body);
+}
+function redirect(res, loc){res.writeHead(302,{'Location':loc,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}); res.end();}
+function rateLimit(key,windowMs,max) {const now=Date.now();const a=(loginAttempts.get(key)||[]).filter(x=>now-x<windowMs);if(a.length>=max){loginAttempts.set(key,a);return false}a.push(now);loginAttempts.set(key,a);return true;}
+function bearer(req) {
+ const cookies=(req.headers.cookie||'').split(';').map(x=>x.trim());
+ const raw=cookies.find(x=>x.startsWith('rrt_session='));
+ if (!raw) return null;
+ const id=raw.slice(12), item=sessions.get(id);
+ if(!item || item.expires<=Date.now()) {if(item)sessions.delete(id);return null;}
+ return id;
+}
+function checkOrigin(req) {
+ const v=req.headers.origin;
+ if(!v) return false;
+ try {const from=new URL(v);const host=req.headers.host||'';return from.protocol==='https:' && (ALLOWED_ORIGIN ? from.origin===new URL(ALLOWED_ORIGIN).origin : from.host===host);}catch{return false;}
+}
+async function json(req) {
+ let size=0, data=[];
+ for await (const chunk of req) {size+=chunk.length;if(size>20000)throw Object.assign(new Error('入力が長すぎます'),{http:413});data.push(chunk)}
+ try{return JSON.parse(Buffer.concat(data).toString('utf8'))}catch{throw Object.assign(new Error('JSON形式が不正です'),{http:400})}
+}
+const loginPage = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>RRT｜スタッフログイン</title><style>*{box-sizing:border-box}body{margin:0;background:#f6f4e9;color:#17221c;font-family:system-ui,-apple-system,Meiryo,sans-serif;min-height:100vh;display:grid;place-items:center;padding:20px}.card{width:100%;max-width:430px;background:#fffef5;border:1px solid #d8dbce;border-radius:20px;padding:30px;box-shadow:0 14px 30px #17221c15}.logo{display:inline-block;background:#d9ed57;color:#17221c;font-weight:900;padding:13px;border-radius:12px}h1{font-size:25px;margin:20px 0 5px}p{font-size:13px;color:#536257;line-height:1.8}label{display:block;font-size:13px;font-weight:700;margin:22px 0 8px}input{width:100%;padding:16px;border:1px solid #bdcbbd;border-radius:10px;font:inherit}button{background:#146643;color:white;border:0;border-radius:10px;font-weight:800;padding:15px;width:100%;margin-top:15px;font:inherit;cursor:pointer}.error{min-height:21px;color:#b22234;font-size:13px;margin-top:10px}</style></head><body><main class="card"><div class="logo">RRT</div><h1>らんじぇる先生 AIコーチ</h1><p>インストラクター向け試用ページです。スタッフ用の合言葉を入力してください。</p><form id="form"><label for="pass">スタッフ用合言葉</label><input type="password" id="pass" name="pass" autocomplete="off" required autofocus><button type="submit">ログインする</button></form><div id="err" class="error" role="status"></div><p>※ AIの回答は先生本人による回答・監修ではありません。</p></main><script>document.getElementById('form').addEventListener('submit',async(e)=>{e.preventDefault();const b=e.target.querySelector('button'),err=document.getElementById('err');b.disabled=true;err.textContent='認証中…';try{const r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:document.getElementById('pass').value})});const j=await r.json();if(r.ok)location.replace('/members/');else err.textContent=j.error||'ログインできませんでした';}catch{err.textContent='接続できませんでした';}finally{b.disabled=false}});</script></body></html>`;
+const SYSTEM = [
+ 'あなたはRRT BJJのインストラクター試用版「らんじぇる先生 AIコーチ」です。',
+ '質問には初心者にも分かる簡潔な日本語で直接答え、理由と安全上の注意を示します。',
+ 'ランジェル先生本人が回答または監修しているとは絶対に言わないでください。本人の独特の話し方を創作しないでください。',
+ 'これは試用版です。RRTの公式指導方針や特定の教則を学習済みと主張しないでください。',
+ 'シュラプネル・オンラインとKajabiの有料教則の動画・字幕・内容は学習していません。見たかのように装わないでください。',
+ '技術を説明する場合はトップ・ボトムを区別し、相手の反応と次の選択肢が分かるように説明してください。',
+ '関節技や絞め技ではタップの尊重、無理な負荷をかけないことを添えてください。',
+ '柔術競技ルールは所属団体・帯・年齢・大会日時で異なり得るため、最新ルールを未確認で断言しないでください。',
+ '動画、YouTube、URL、外部サイトの案内は表示しないでください。',
+ '個人情報、会員個人を特定できる記録、著作物の本文入力は避けるよう案内してください。'
+].join('\n');
+async function chat(req,res,id){
+ if(!API_KEY || API_KEY.length<12)return out(res,503,{error:'Gemini APIキーがまだ設定されていません。管理者に連絡してください。'});
+ const day=new Date().toISOString().slice(0,10);if(day!==dayKey){dayKey=day;totalToday=0;sessionUsage.clear()}
+ const n=sessionUsage.get(id)||0;
+ if(totalToday>=MAX_DAILY||n>=MAX_PER_SESSION)return out(res,429,{error:'本日の試用回数の上限に達しました。'});
+ if(!rateLimit('chat:'+id,60000,8))return out(res,429,{error:'短時間に多くの質問がありました。少し時間を空けてください。'});
+ const data=await json(req);
+ if(typeof data.question!=='string'||!data.question.trim()||data.question.length>1500)return out(res,400,{error:'質問は1〜1500字で入力してください。'});
+ const history=(Array.isArray(data.history)?data.history:[]).slice(-8).filter(x=>x && ['user','assistant'].includes(x.role)&&typeof x.content==='string').map(x=>({role:x.role==='user'?'user':'model',parts:[{text:x.content.slice(0,1200)}]}));
+ totalToday++;sessionUsage.set(id,n+1);
+ const payload={systemInstruction:{parts:[{text:SYSTEM}]},contents:[...history,{role:'user',parts:[{text:data.question.trim()}]}],generationConfig:{temperature:0.4,maxOutputTokens:1400}};
+ const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),35000);
+ try{
+  const response=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(MODEL)+':generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':API_KEY},body:JSON.stringify(payload),signal:controller.signal});
+  if(!response.ok){return out(res,response.status===429?429:502,{error:response.status===429?'Gemini APIの利用上限に達しました。':response.status===404?'Geminiモデル名を管理者が確認してください。':response.status===401||response.status===403?'Gemini APIキーの設定を確認してください。':'Gemini APIでエラーが発生しました（'+response.status+'）。'});}
+  const result=await response.json();
+  const answer=(result.candidates?.[0]?.content?.parts||[]).map(x=>x.text||'').join('\n').trim();
+  if(!answer)return out(res,502,{error:'AIの回答を取得できませんでした。'});
+  return out(res,200,{answer,model:MODEL});
+ }catch(e){return out(res,502,{error:e.name==='AbortError'?'AIの応答がタイムアウトしました。':'Gemini APIへ接続できませんでした。'});}finally{clearTimeout(timer)}
+}
+const server=http.createServer((req,res)=>{(async()=>{
+ const u=new URL(req.url,'https://localhost');const p=u.pathname;
+ if(req.method==='GET' && p==='/healthz')return out(res,200,{ok:true});
+ if(req.method==='GET'&&p==='/robots.txt'){res.writeHead(200,{'Content-Type':'text/plain','Cache-Control':'no-store'});return res.end('User-agent: *\nDisallow: /\n')}
+ if(req.method==='POST' && p==='/api/login'){
+  if(!checkOrigin(req))return out(res,403,{error:'不正なリクエストです。'});
+  if(!rateLimit('login:'+(req.socket.remoteAddress||''),300000,10))return out(res,429,{error:'ログイン試行が多すぎます。'});
+  const b=await json(req);const input=Buffer.from(String(b.code||''));const correct=Buffer.from(SECRET);
+  if(input.length!==correct.length||!crypto.timingSafeEqual(input,correct))return out(res,401,{error:'合言葉が違います。'});
+  const token=crypto.randomBytes(32).toString('hex');
+  sessions.set(token,{expires:Date.now()+12*60*60*1000});
+  return out(res,200,{ok:true},{'Set-Cookie': 'rrt_session='+token+'; Path=/; Max-Age=43200; HttpOnly; Secure; SameSite=Lax'});
+ }
+ const id=bearer(req);
+ if(req.method==='GET' && p==='/login')return id?redirect(res,'/members/'):page(res,loginPage);
+ if(!id){if(req.method==='GET'&&!p.startsWith('/api/'))return redirect(res,'/login');return out(res,401,{error:'ログインが必要です。'})}
+ if(req.method==='POST' && p==='/api/logout'){if(!checkOrigin(req))return out(res,403,{error:'不正なリクエストです。'});sessions.delete(id);return out(res,200,{ok:true},{'Set-Cookie':'rrt_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax'});}
+ if(req.method==='GET'&&['/','/members','/members/','/index.html'].includes(p))return page(res,html);
+ if(req.method==='GET'&&p==='/api/status')return out(res,200,{configured:API_KEY.length>=12,model:MODEL,gated:true,shared:true,demo:true});
+ if(req.method==='POST'&&p==='/api/chat'){if(!checkOrigin(req))return out(res,403,{error:'不正なリクエストです。'});return chat(req,res,id)}
+ return out(res,404,{error:'見つかりません。'});
+ })().catch(e=>out(res,e.http||500,{error:e.http?e.message:'サーバーエラーが発生しました。'}))});
+server.listen(PORT,HOST,()=>console.log('RRT trial listening on '+HOST+':'+PORT));
