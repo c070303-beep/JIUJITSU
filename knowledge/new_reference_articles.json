@@ -1,0 +1,204 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-11-17",
+  "scope": "Selected publicly accessible article pages and navigation only; not a full archive",
+  "rights_policy": "Metadata, hyperlinks, and brief independently written categorization only. Do not copy authors' text or presume permission for AI ingestion; paid posts are not ingested.",
+  "entries": [
+    {
+      "id": "andy-spider-basics",
+      "source_id": "andy-bjj-philosophy-note",
+      "title": "指導記録16 スパイダーガード（全文無料）",
+      "url": "https://note.com/andy_s_rocky/n/n2fdb4884616b",
+      "category": "guard",
+      "focus": "スパイダーガードでの姿勢・相手の立ち方に応じた攻防の区別",
+      "tags": [
+        "スパイダー",
+        "spider",
+        "袖",
+        "スイープ",
+        "三角",
+        "キックスイープ",
+        "ガード"
+      ],
+      "source_review": "article_read",
+      "paywall": "free",
+      "ai_source_text_enabled": false
+    },
+    {
+      "id": "andy-spider-pass",
+      "source_id": "andy-bjj-philosophy-note",
+      "title": "指導記録50 スパイダーガードのパスと解除（全文無料）",
+      "url": "https://note.com/andy_s_rocky/n/nb240df06b854",
+      "category": "passing",
+      "focus": "スパイダー解除とパスの考え方・相手のグリップ対応",
+      "tags": [
+        "スパイダー",
+        "spider",
+        "パスガード",
+        "パス",
+        "解除",
+        "レッグドラッグ"
+      ],
+      "source_review": "public_article_found",
+      "paywall": "free",
+      "ai_source_text_enabled": false
+    },
+    {
+      "id": "andy-guard-unlock",
+      "source_id": "andy-bjj-philosophy-note",
+      "title": "指導記録26 ガード解除各種（全文無料）",
+      "url": "https://note.com/andy_s_rocky/n/n4fc4cd3b751f",
+      "category": "passing",
+      "focus": "デラヒーバ・スパイダーに対するガード解除",
+      "tags": [
+        "デラヒーバ",
+        "de la riva",
+        "スパイダー",
+        "パス",
+        "グリップ",
+        "ガード解除"
+      ],
+      "source_review": "public_article_found",
+      "paywall": "free",
+      "ai_source_text_enabled": false
+    },
+    {
+      "id": "andy-passing-grips",
+      "source_id": "andy-bjj-philosophy-note",
+      "title": "指導記録28 パスの組手の基本（全文無料）",
+      "url": "https://note.com/andy_s_rocky/n/n6fad7199d852",
+      "category": "passing",
+      "focus": "パスガードにおける組手の基礎用語と考え方",
+      "tags": [
+        "パス",
+        "トレアナ",
+        "グリップ",
+        "フレーム",
+        "アンダーフック",
+        "クロスフェイス",
+        "パスガード"
+      ],
+      "source_review": "public_article_found",
+      "paywall": "free",
+      "ai_source_text_enabled": false
+    },
+    {
+      "id": "andy-coaching-magazine",
+      "source_id": "andy-bjj-philosophy-note",
+      "title": "柔術哲学の指導記録（マガジン）",
+      "url": "https://note.com/andy_s_rocky/m/m3b931ac5ea3f",
+      "category": "coaching",
+      "focus": "継続的な技術クラスの記録一覧",
+      "tags": [
+        "指導",
+        "クラス",
+        "初心者",
+        "技術",
+        "練習",
+        "スイープ",
+        "ガード"
+      ],
+      "source_review": "magazine_index_checked",
+      "paywall": "mixed_verify_article",
+      "ai_source_text_enabled": false
+    },
+    {
+      "id": "letsbjj-beginner-basics",
+      "source_id": "letsbjj-editorial-site",
+      "title": "柔術白帯に必要な２つの前提知識",
+      "url": "https://letsbjj.site/post/2025-10-18-0711",
+      "category": "beginner",
+      "focus": "初心者が優先して覚えるポジションとルールの入口",
+      "tags": [
+        "白帯",
+        "初心者",
+        "基本",
+        "ポジション",
+        "ルール",
+        "はじめて"
+      ],
+      "source_review": "article_read",
+      "paywall": "free",
+      "ai_source_text_enabled": false
+    },
+    {
+      "id": "letsbjj-learning-cycles",
+      "source_id": "letsbjj-editorial-site",
+      "title": "最速で強くなるにはこの２つのサイクルを回せ！！",
+      "url": "https://letsbjj.site/post/2025-01-31-0700",
+      "category": "training",
+      "focus": "課題を見つけ、反復・検証する練習設計の紹介",
+      "tags": [
+        "練習法",
+        "トレーニング",
+        "上達",
+        "課題",
+        "反復",
+        "試合",
+        "初心者"
+      ],
+      "source_review": "article_read",
+      "paywall": "free",
+      "ai_source_text_enabled": false
+    },
+    {
+      "id": "yamawaki-closed-guard",
+      "source_id": "yamawaki-bjj-note",
+      "title": "クローズドガードの学び方・ポイントまとめ",
+      "url": "https://note.com/08230000/n/n4f6788ee88a2",
+      "category": "guard",
+      "focus": "クローズドガードの技術動画を技術ジャンル別に案内する公開記事",
+      "tags": [
+        "クローズドガード",
+        "closed guard",
+        "三角絞め",
+        "腕十字",
+        "ヒップスロー",
+        "フラワースイープ",
+        "ガード",
+        "スイープ"
+      ],
+      "source_review": "article_read",
+      "paywall": "free",
+      "ai_source_text_enabled": false
+    },
+    {
+      "id": "yamawaki-free-collection",
+      "source_id": "yamawaki-bjj-note",
+      "title": "柔術家におすすめの過去記事【無料】",
+      "url": "https://note.com/08230000/m/md39188781358/hashtag/56424",
+      "category": "training",
+      "focus": "練習・上達・試合に関する無料記事の一覧",
+      "tags": [
+        "白帯",
+        "初心者",
+        "上達",
+        "練習",
+        "試合",
+        "学び方"
+      ],
+      "source_review": "magazine_index_checked",
+      "paywall": "free_collection",
+      "ai_source_text_enabled": false
+    },
+    {
+      "id": "yamawaki-video-channel",
+      "source_id": "yamawaki-bjj-note",
+      "title": "YAMAWAKI_BJJ 技術動画チャンネル",
+      "url": "https://www.youtube.com/channel/UCx2hTVHQyx5SozCSczprS0g",
+      "category": "video_index",
+      "focus": "投稿者の技術動画一覧。個別動画の内容・再生可能性は別途確認が必要",
+      "tags": [
+        "YouTube",
+        "動画",
+        "クローズドガード",
+        "腕十字",
+        "スイープ",
+        "初心者"
+      ],
+      "source_review": "linked_from_author_profile",
+      "paywall": "public_channel",
+      "ai_source_text_enabled": false
+    }
+  ]
+}
