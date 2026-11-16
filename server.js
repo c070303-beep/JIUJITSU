@@ -108,6 +108,7 @@ const VIDEO_TOPICS=[
  ['arm-triangle',/肩固め|アームトライアングル|arm triangle/i],
  ['armbar',/腕十字|腕ひしぎ|アームバー|armbar/i],
  ['guard-retention',/ガードリテンション|リテンション|ガードを戻す|脚を戻す|足を戻す|フレームで守|パスを防ぐ/i],
+ ['leg-stepped',/足をまたがれ|脚をまたがれ|足を跨がれ|脚を跨がれ/i],
  ['inside-pass-defense',/(インサイドパス|ニーカット|ニースライス).{0,25}(防ぐ|守る|対策|リテンション|止める)|(?:防ぐ|守る|対策|リテンション).{0,25}(インサイドパス|ニーカット)/i],
  ['outside-pass-defense',/(アウトサイドパス|トレアドール|レッグドラッグ).{0,25}(対策|防ぐ|守る|リテンション)|(?:対策|防ぐ|守る).{0,25}(アウトサイドパス|レッグドラッグ)/i],
  ['spider-pass',/(スパイダー|spider).{0,20}(パス|解除|抜く)|(?:パス|解除).{0,15}(スパイダー|spider)/i],
@@ -117,7 +118,7 @@ const VIDEO_TOPICS=[
  ['hip-bump',/ヒップバンプ|ヒップスロー|hip bump|hip sweep/i],
  ['kimura',/キムラ|kimura/i],
  ['flower-sweep',/フラワースイープ|フラワー・スイープ|flower sweep/i],
- ['closed-hook-sweep',/フックスイープ|クローズド.{0,12}フック/i],
+ ['closed-hook-sweep',/クローズド.{0,18}フック|クローズドガード.{0,16}スイープ/i],
  ['closed-side-sweep',/サイドスイープ|クローズド.{0,12}サイド/i],
  ['collar-sleeve',/片襟片袖|カラースリーブ|collar and sleeve/i],
  ['training-balance',/仕事.{0,15}柔術|柔術.{0,15}仕事|練習.{0,15}両立|モチベーション|練習頻度/i]
