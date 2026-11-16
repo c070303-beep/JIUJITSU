@@ -47,6 +47,25 @@ async function json(req) {
  try{return JSON.parse(Buffer.concat(data).toString('utf8'))}catch{throw Object.assign(new Error('JSON形式が不正です'),{http:400})}
 }
 const privateLinkIntro = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>RRT｜個人試用版</title><style>*{box-sizing:border-box}body{background:#10151c;color:#f5f6fa;font-family:system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;padding:20px}.panel{background:#1c242e;border:1px solid #404c57;border-radius:20px;padding:24px;max-width:440px;line-height:1.8}h1{font-size:22px}p{color:#b9c5d4;font-size:14px}b{color:#f75a64}</style></head><body><main class="panel"><h1>RRT らんじぇる先生AI</h1><p>この個人試用版には、<b>パスワード入力はありません。</b></p><p>ご自身の専用リンクからアクセスしてください。リンクを開くとAIの画面に直接移動します。</p></main></body></html>`;
+const trialOpenPage = privateLinkIntro.replace(/<main[\s\S]*<\/body>/, 
+  '<main class="panel"><h1>RRT らんじぇる先生AI</h1><p id="trial-open-status" role="status">専用リンクを確認しています。</p></main>' +
+  '<script>(async()=>{' +
+  'const status=document.getElementById("trial-open-status");' +
+  'const token=location.hash.slice(1);' +
+  'if(!/^[0-9a-f]{64}$/.test(token)){status.textContent="専用リンクをもう一度開いてください。";return;}' +
+  'try{const response=await fetch("/api/trial-link",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({token})});' +
+  'if(response.ok){location.replace("/members/");return;}' +
+  'status.textContent=response.status===404?"この専用リンクは使用できません。":"接続できませんでした。ページを再読み込みしてください。";' +
+  '}catch{status.textContent="接続できませんでした。ページを再読み込みしてください。";}' +
+  '})()</script></body>'
+);
+
+function issueTrialCookie() {
+ const session = crypto.randomBytes(32).toString('hex');
+ sessions.set(session,{expires:Date.now()+12*60*60*1000});
+ return 'rrt_session='+session+'; Path=/; Max-Age=43200; HttpOnly; Secure; SameSite=Lax';
+}
+
 function reserveQuestion(id, res) {
   const today = new Date().toISOString().slice(0, 10);
   if (today !== dayKey) {
@@ -116,16 +135,28 @@ const server=http.createServer((req,res)=>{(async()=>{
  const u=new URL(req.url,'https://localhost');const p=u.pathname;
  if(req.method==='GET' && p==='/healthz')return out(res,200,{ok:true, knowledge:'2.0'});
  if(req.method==='GET'&&p==='/robots.txt'){res.writeHead(200,{'Content-Type':'text/plain','Cache-Control':'no-store'});return res.end('User-agent: *\nDisallow: /\n')}
- // Personal trial one-tap entrance: long random token held only in Render Environment.
- // The public app/API remain session-gated; a private link creates a short-lived session.
+ if (req.method === 'GET' && p === '/open') {
+  return bearer(req) ? redirect(res, '/members/') : page(res, trialOpenPage);
+ }
+ if (req.method === 'POST' && p === '/api/trial-link') {
+  if (!checkOrigin(req)) return out(res, 403, {error:'不正なリクエストです。'});
+  const {token} = (await json(req)) || {};
+  const digest = process.env.PERSONAL_TRIAL_OPEN_TOKEN_SHA256 || '';
+  if (typeof token !== 'string' || !/^[0-9a-f]{64}$/.test(token) || !/^[0-9a-f]{64}$/.test(digest)) {
+   return out(res, 404, {error:'このURLは使用できません。'});
+  }
+  const submitted = crypto.createHash('sha256').update(token).digest();
+  if (!crypto.timingSafeEqual(submitted, Buffer.from(digest, 'hex'))) {
+   return out(res, 404, {error:'このURLは使用できません。'});
+  }
+  return out(res, 200, {ok:true}, {'Set-Cookie':issueTrialCookie()});
+ }
  if(req.method==='GET' && p.startsWith('/personal/')){
   const secret=process.env.PERSONAL_TRIAL_LINK_TOKEN||'';
   const supplied=p.slice('/personal/'.length);
   const aa=Buffer.from(secret),bb=Buffer.from(supplied);
   if(secret.length<32 || bb.length!==aa.length || !crypto.timingSafeEqual(aa,bb))return out(res,404,{error:'このURLは使用できません。'});
-  const session=crypto.randomBytes(32).toString('hex');
-  sessions.set(session,{expires:Date.now()+12*60*60*1000});
-  res.writeHead(303,{'Location':'/members/','Cache-Control':'no-store','Referrer-Policy':'no-referrer','Set-Cookie':'rrt_session='+session+'; Path=/; Max-Age=43200; HttpOnly; Secure; SameSite=Lax'});
+  res.writeHead(303,{'Location':'/members/','Cache-Control':'no-store','Referrer-Policy':'no-referrer','Set-Cookie':issueTrialCookie()});
   return res.end();
  }
  if(req.method==='POST' && p==='/api/login') return out(res,410,{error:'個人試用版はパスワード認証を使用しません。'});

@@ -3,7 +3,7 @@
 const assert = require('node:assert/strict');
 const {test} = require('node:test');
 const {readFileSync} = require('node:fs');
-const {randomBytes} = require('node:crypto');
+const {createHash,randomBytes} = require('node:crypto');
 const {once} = require('node:events');
 const path = require('node:path');
 const coach = require('../lib/coach.cjs');
@@ -76,9 +76,11 @@ test('Selection can change the next step only within the allowed record', () => 
 test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves videos independently', async t => {
   const nativeFetch = global.fetch;
   const secret = randomBytes(32).toString('hex');
+  const newSecret = randomBytes(32).toString('hex');
   const origin = 'https://rrt.test.invalid';
   const env = {
-    PERSONAL_TRIAL_LINK_TOKEN:secret, GEMINI_API_KEY:'mocked-api-key-for-tests',
+    PERSONAL_TRIAL_LINK_TOKEN:secret,
+    PERSONAL_TRIAL_OPEN_TOKEN_SHA256:createHash('sha256').update(newSecret).digest('hex'), GEMINI_API_KEY:'mocked-api-key-for-tests',
     PUBLIC_ORIGIN:origin, GEMINI_MODEL:'gemini-2.5-flash-lite',
     DEMO_DAILY_LIMIT:'100', DEMO_USER_DAILY_LIMIT:'20',
   };
@@ -125,7 +127,22 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
   assert.equal(health.knowledge,'2.0');
   assert.equal((await get('/members/')).headers.get('location'),'/login');
   assert.equal((await get('/api/status')).status,401);
-  const cookie = await login();
+  const page = await get('/open');
+  assert.equal(page.status,200);
+  const opener = await page.text();
+  assert(opener.includes('location.hash.slice(1)'));
+  assert(opener.includes('location.replace("/members/")'));
+  assert(!opener.includes(newSecret));
+
+  const rejected = await post('/api/trial-link','',{token:randomBytes(32).toString('hex')});
+  assert.equal(rejected.status,404);
+  assert.equal(rejected.headers.get('set-cookie'),null);
+  assert.equal((await post('/api/trial-link','',{token:newSecret},'https://foreign.invalid')).status,403);
+  const accepted = await post('/api/trial-link','',{token:newSecret});
+  assert.equal(accepted.status,200);
+  const cookieHeader = accepted.headers.get('set-cookie');
+  assert(/HttpOnly; Secure; SameSite=Lax/.test(cookieHeader || ''));
+  const cookie = cookieHeader.split(';')[0];
   assert.equal((await get('/members/',{headers:{cookie}})).status,200);
   assert.equal((await post('/api/chat',cookie,{question:'ドッグファイト'},'https://foreign.invalid')).status,403);
   const question = 'ドッグファイトの基本を教えて';
