@@ -2563,6 +2563,1248 @@
           "自分の頭で相手の上腕が戻る隙間を塞ぎ、腕力を強める前に姿勢を安定させます。圧は少しずつ加え、タップで即座に放します。"
         ]
       }
+    },
+    {
+      "id": "open-guard",
+      "name_ja": "オープンガードの距離",
+      "name_en": "Open guard distance management",
+      "top_or_bottom": "bottom",
+      "family": "open",
+      "start_position": "脚を組まないガードのボトム",
+      "aliases": [
+        "オープンガード",
+        "シッティングガード",
+        "open guard",
+        "ガードの距離"
+      ],
+      "body_positions": {
+        "self": "腰を動かせるボトム",
+        "opponent": "立つか膝立ちで近づくトップ"
+      },
+      "grips_and_frames": [
+        "相手との間のすね・足裏",
+        "近い距離で使う前腕"
+      ],
+      "mechanics": {
+        "weight": "横尻で前後を調整",
+        "support": "手足と床",
+        "pressure": "遠くは脚、近くは腕も使う",
+        "angle": "相手を膝の前に見る"
+      },
+      "goal": "膝・足が戻る距離を残す。",
+      "steps_ja": [
+        "相手の高さを見る。",
+        "足裏やすねに接点を作る。",
+        "胸が近づけば前腕も間に置く。"
+      ],
+      "success_conditions": [
+        "足と肘を戻せる",
+        "腰を固定されていない"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "standing",
+          "cue": "片脚を前に出して立つ",
+          "answer": "前脚が近く外からフックを掛けられるならデラヒーバが候補です。脚が遠ければ、まず手足の接点を作り直します。",
+          "next_id": "de-la-riva",
+          "match": [
+            "立",
+            "片脚"
+          ]
+        },
+        {
+          "id": "kneeling",
+          "cue": "膝をついて接近する",
+          "answer": "相手が膝をつき内腿へ足の甲が届くなら、シッティングで姿勢を作ればバタフライに移れます。",
+          "next_id": "butterfly-sweep",
+          "match": [
+            "膝をつ",
+            "膝立",
+            "バタフライ"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "相手が遠いのに足を伸ばして追う",
+          "fix": "骨盤が動く距離に戻り足の場所を選び直す"
+        }
+      ],
+      "beginner_instruction": "立つ相手・膝立ちの相手で距離を見分ける。",
+      "safety_notes": "首から倒れ込まない。",
+      "source_refs": [
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "open-guard",
+          "scope": "独自メモ"
+        },
+        {
+          "source_id": "ga-elbow",
+          "location": "本文",
+          "scope": "肘と膝の空間"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "open-guard"
+      ],
+      "related_ids": [
+        "de-la-riva",
+        "butterfly-sweep"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "オープンガードのボトムは、相手の立ち方と、どの接点で膝を間に残せるかを先に見ます。",
+        "tips": [
+          "相手が遠ければ足を使い、胸が近づけば前腕も使います。肘と膝を離し過ぎず、骨盤の角度を変えられる距離を残します。"
+        ]
+      }
+    },
+    {
+      "id": "sweep-principle",
+      "name_ja": "スイープの支点と重心",
+      "name_en": "Sweep mechanics and posts",
+      "top_or_bottom": "bottom",
+      "family": "sweep",
+      "start_position": "ガードから相手を崩すボトム",
+      "aliases": [
+        "スイープの基本",
+        "スイープ",
+        "重心",
+        "支点",
+        "支持基底面"
+      ],
+      "body_positions": {
+        "self": "相手の支えを観察するボトム",
+        "opponent": "倒れそうな方向に足・手・膝を出すトップ"
+      },
+      "grips_and_frames": [
+        "相手の上腕、膝、足のいずれか",
+        "フック等の接点"
+      ],
+      "mechanics": {
+        "weight": "重心を相手の支えの外へ",
+        "support": "相手の手・足・膝",
+        "pressure": "押す方向と支点を外す動きを合わせる",
+        "angle": "踏み直しづらい斜め方向"
+      },
+      "goal": "相手が支え直せない角度に重心を動かす。",
+      "steps_ja": [
+        "床の接点を見る。",
+        "倒す側の支えを制御する。",
+        "重心がずれた方へ自分も動く。"
+      ],
+      "success_conditions": [
+        "相手に使える手足が減っている"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "posted",
+          "cue": "手をつく",
+          "answer": "手をつかれたら、その方向に力を追加する前に姿勢を戻します。その手を止められる距離か別の方向を選びます。",
+          "next_id": null,
+          "match": [
+            "手をつ",
+            "ポスト",
+            "支え"
+          ]
+        },
+        {
+          "id": "step",
+          "cue": "足を踏み直す",
+          "answer": "足を踏み直されたら、支えが変わった位置を見ます。足が離床する瞬間には、体重を誘導できる方向も変わります。",
+          "next_id": null,
+          "match": [
+            "足",
+            "踏"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "高く持ち上げることだけを考える",
+          "fix": "相手の床の接点を言ってから方向を選ぶ"
+        }
+      ],
+      "beginner_instruction": "相手に手または足で支えてもらい、変わる方向を観察する。",
+      "safety_notes": "支えた膝や腕を横から急に折り込まない。",
+      "source_refs": [
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "sweep-principle",
+          "scope": "独自メモ"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 pp.5–6・18・27",
+          "scope": "支持への考え方"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "sweep-principle",
+        "yawara-balance-reflex"
+      ],
+      "related_ids": [],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "スイープでは、高く持ち上げる前に、倒したい方向を支えている相手の手・足・膝を確認します。",
+        "tips": [
+          "踏み替えや手つきを減らす動きと、相手の重心をそちらへ動かす動きを合わせます。相手が支えを置き直したら角度も見直します。"
+        ]
+      }
+    },
+    {
+      "id": "passing-grips",
+      "name_ja": "ガードパスの組み手",
+      "name_en": "Guard passing grip fighting",
+      "top_or_bottom": "top",
+      "family": "passing",
+      "start_position": "トップでオープンガードに入る前",
+      "aliases": [
+        "パスの基本",
+        "パスガード",
+        "組み手",
+        "組手",
+        "guard passing"
+      ],
+      "body_positions": {
+        "self": "足の位置を変えられるトップ",
+        "opponent": "足と手で進入を止めるボトム"
+      },
+      "grips_and_frames": [
+        "膝・足首の向きが分かる接点",
+        "取られた袖・腕を解除",
+        "空いている足"
+      ],
+      "mechanics": {
+        "weight": "フックに乗り切らない",
+        "support": "片足を移せる足幅",
+        "pressure": "接点を外してから肩・腰に進む",
+        "angle": "内か外の入口を見極める"
+      },
+      "goal": "相手に持たれた部分を整理して安定した進路を作る。",
+      "steps_ja": [
+        "相手が何を制御しているか見る。",
+        "踏み替えられる足を作る。",
+        "脚の接点を処理してパス角度を選ぶ。"
+      ],
+      "success_conditions": [
+        "自分の支えを移せる",
+        "相手の遠い膝を見られる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "outside",
+          "cue": "外へ回る幅がある",
+          "answer": "両脚が低く外側へ動けるなら、相手の腰と遠い膝の向きを見て外側のキャンピングや別の外パスに入れます。",
+          "next_id": "outside-camping",
+          "match": [
+            "外"
+          ]
+        },
+        {
+          "id": "inside",
+          "cue": "脚の間が開く",
+          "answer": "脚の間が開いたら、相手のフックが自分の腿を持ち上げない足の置き方を作って内側から入ります。",
+          "next_id": "inside-pass",
+          "match": [
+            "内"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "袖や足を取られたまま肩から進む",
+          "fix": "体を引かれる点を特定し、足の支持を作り直す"
+        }
+      ],
+      "beginner_instruction": "相手に袖か脚の片方だけを取ってもらい、何を解くか選ぶ。",
+      "safety_notes": "道着のグリップを急にねじらない。",
+      "source_refs": [
+        {
+          "source_id": "andy-grip",
+          "location": "公開本文",
+          "scope": "遠近のガードと組み手"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 pp.16–20",
+          "scope": "パスのベースとの比較"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "outside-camping",
+        "inside-pass"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "トップのパスは、相手の足やすねが手前にある間、まず何をつかまれているかと自分の足のベースを確かめます。",
+        "tips": [
+          "袖や片脚を引かれたまま胸で進むと崩されます。踏み替えられる足を残し、相手の脚の接点を処理してから膝と肩を進めます。"
+        ]
+      }
+    },
+    {
+      "id": "leg-drag",
+      "name_ja": "レッグドラッグ",
+      "name_en": "Leg drag pass",
+      "top_or_bottom": "top",
+      "family": "leg-drag",
+      "start_position": "オープンガードで片脚を対角へ誘導できるトップ",
+      "aliases": [
+        "レッグドラッグ",
+        "leg drag",
+        "脚を対角に流"
+      ],
+      "body_positions": {
+        "self": "相手の腰の横へ動くトップ",
+        "opponent": "脚が対角に流れ、遠い膝を戻すボトム"
+      },
+      "grips_and_frames": [
+        "相手の腿・膝",
+        "前進を支える自由な脚"
+      ],
+      "mechanics": {
+        "weight": "足で横についていく",
+        "support": "自由な足と手",
+        "pressure": "相手の腿を対角に送る",
+        "angle": "膝を反対に向けた腰の横"
+      },
+      "goal": "相手の骨盤を横へ向け、膝を戻せる方向を狭める。",
+      "steps_ja": [
+        "自分の足幅を作る。",
+        "相手の腿を対角へ流す。",
+        "腰の横で遠い膝と肩を見ながら進む。"
+      ],
+      "success_conditions": [
+        "相手の両膝が見える",
+        "足首を固定したまま膝をねじらない"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "recovers",
+          "cue": "相手の遠い膝が戻る",
+          "answer": "遠い膝が戻ったら脚を引き続けず、両膝が見える足幅に戻り、外側をもう一度取れるか確認します。",
+          "next_id": "outside-camping",
+          "match": [
+            "戻",
+            "遠い",
+            "インバ"
+          ]
+        },
+        {
+          "id": "side",
+          "cue": "膝が戻らず腰が止まる",
+          "answer": "膝が胸の前に戻らないなら、上半身の向きを制御して胸を近づけ、サイドでの支えを確かめます。",
+          "next_id": "side-to-mount",
+          "match": [
+            "サイド",
+            "止",
+            "肩"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "足首だけを引く",
+          "fix": "腿の向きと自分の足の移動を合わせる"
+        }
+      ],
+      "beginner_instruction": "足を流した所と胸を合わせた所の二箇所で一度止まる。",
+      "safety_notes": "膝に急なねじれを作らない。",
+      "source_refs": [
+        {
+          "source_id": "andy-camping",
+          "location": "レッグドラッグ",
+          "scope": "公開クラスでの選択条件"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 p.50",
+          "scope": "別のドリルと比較"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "outside-camping",
+        "side-to-mount"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "トップのレッグドラッグは、相手の片脚を対角へ流して腰を向け、自分は相手の腰の横へ動きます。",
+        "tips": [
+          "脚を持つだけだと遠い膝を戻されます。自分も足で横についていき、相手の膝が胸の前に戻る線を確認します。"
+        ]
+      }
+    },
+    {
+      "id": "practice",
+      "name_ja": "柔術の技術を定着させる練習",
+      "name_en": "Positional training and feedback",
+      "top_or_bottom": "either",
+      "family": "practice",
+      "start_position": "道場での技術練習や限定スパー",
+      "aliases": [
+        "練習方法",
+        "教え方",
+        "打ち込み",
+        "練習メニュー",
+        "初心者に教える",
+        "覚え方"
+      ],
+      "body_positions": {
+        "self": "開始位置と見る条件を決める側",
+        "opponent": "決めた反応を低い強度で出す側"
+      },
+      "grips_and_frames": [
+        "目標の技で使う接点",
+        "開始位置を相手と共有"
+      ],
+      "mechanics": {
+        "weight": "毎回再現できる負荷",
+        "support": "床に置く手足を確認",
+        "pressure": "最初の抵抗は軽く",
+        "angle": "見せる方向をそろえる"
+      },
+      "goal": "同じ場面で判断を繰り返し、失敗した条件を記録する。",
+      "steps_ja": [
+        "技の入口と反応を選ぶ。",
+        "低い抵抗で繰り返す。",
+        "短い限定スパーの後に失敗理由を一つ記録する。"
+      ],
+      "success_conditions": [
+        "開始位置と強度を共有",
+        "見るポイントが一つに絞れている"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "confuse",
+          "cue": "工程が多く再現しにくい",
+          "answer": "工程が混ざるなら一度止まり、手の置き方や腰の向きの一つに絞ります。直った動きをその場で言葉にします。",
+          "next_id": null,
+          "match": [
+            "難",
+            "初心者",
+            "教",
+            "多"
+          ]
+        },
+        {
+          "id": "rare",
+          "cue": "スパーでその場面が出ない",
+          "answer": "同じ姿勢から始める反復に切り替えます。出してもらう反応を一つずつ置き換え、どの選択が合ったかを確認します。",
+          "next_id": null,
+          "match": [
+            "スパー",
+            "反応",
+            "実戦"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "毎回違う技を使って理由を記録しない",
+          "fix": "同じ入口で相手の一反応を試し、成功と失敗の差を書く"
+        }
+      ],
+      "beginner_instruction": "具体的な部位と方向を言い、修正できたらどこが変わったか伝える。",
+      "safety_notes": "抵抗とタップの合図を共有する。",
+      "source_refs": [
+        {
+          "source_id": "lets-beginner",
+          "location": "公開本文",
+          "scope": "初心者の練習の文脈"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 pp.8–10",
+          "scope": "指導の言葉・修正"
+        },
+        {
+          "source_id": "rrt-v13-editorial",
+          "location": "letsbjj-practice-selection・yawara-instruction-loop",
+          "scope": "独自メモ"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "letsbjj-practice-selection",
+        "yawara-instruction-loop"
+      ],
+      "related_ids": [],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "技を覚える日は、開始位置と相手の反応を一つ決め、同じ状況から短く繰り返すと判断しやすくなります。",
+        "tips": [
+          "相手には低い抵抗から反応を出してもらい、自分が見る関節や接点を一つ声に出します。失敗したら姿勢・支点・方向から一つだけ直します。"
+        ]
+      }
+    },
+    {
+      "id": "closed-guard",
+      "name_ja": "クローズドガードの姿勢崩し",
+      "name_en": "Closed guard posture break",
+      "top_or_bottom": "bottom",
+      "family": "closed",
+      "start_position": "相手の腰に両脚を組んだボトム",
+      "aliases": [
+        "クローズドガード",
+        "クローズド",
+        "closed guard",
+        "姿勢を崩す"
+      ],
+      "body_positions": {
+        "self": "脚で腰を持ち手で腕に届くボトム",
+        "opponent": "腰を前後に動かして姿勢を保つトップ"
+      },
+      "grips_and_frames": [
+        "袖か上腕、襟か肩の接点",
+        "腰の後ろの両脚"
+      ],
+      "mechanics": {
+        "weight": "相手の重さを片側へ寄せる",
+        "support": "相手がつく手と自分の脚",
+        "pressure": "膝の引きと腕の制御を合わせる",
+        "angle": "相手から少し斜め"
+      },
+      "goal": "相手の姿勢と手の位置から次を選ぶ。",
+      "steps_ja": [
+        "頭と手の位置を見て組み手を取る。",
+        "膝と腕で片側へ誘導する。",
+        "手がつくか腰を引くかで選ぶ。"
+      ],
+      "success_conditions": [
+        "相手の使える支持を見られる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "post",
+          "cue": "片手を床につく",
+          "answer": "手をつかれたら、ついた側の腕と反対の支えを見ます。肘を体へ寄せて制御できれば、角度を使った腕十字に移る入口があります。",
+          "next_id": "armbar",
+          "match": [
+            "手をつ",
+            "腕"
+          ]
+        },
+        {
+          "id": "sit",
+          "cue": "相手が腰を引いて起きる",
+          "answer": "相手が上体を起こし腰を後ろへ置いて、倒す側の腕が浮くなら、座り起きるヒップバンプを使う条件になります。",
+          "next_id": "hip-bump",
+          "match": [
+            "後ろ",
+            "起き"
+          ]
+        },
+        {
+          "id": "one",
+          "cue": "腕が一本だけ脚の間に残る",
+          "answer": "片腕だけ内側に残り、腰が動かせるときは三角の角度を作れるか見ます。相手が両腕を戻したらガードを取り直します。",
+          "next_id": "triangle",
+          "match": [
+            "三角",
+            "片腕",
+            "一本"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "足を閉じたまま手だけで引く",
+          "fix": "脚と上体を合わせて相手が支える位置を変える"
+        }
+      ],
+      "beginner_instruction": "相手の手つきと腰を引く二つの反応を別々に試す。",
+      "safety_notes": "頸を急に引かない。極めはタップで解除。",
+      "source_refs": [
+        {
+          "source_id": "yamawaki-closed",
+          "location": "公開本文の技分類",
+          "scope": "クローズドからの連係"
+        },
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "closed-guard",
+          "scope": "独自メモ"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "closed-guard",
+        "yamawaki-closed-chain"
+      ],
+      "related_ids": [
+        "armbar",
+        "hip-bump",
+        "triangle"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ボトムのクローズドでは、膝と腕を一緒に使い、相手の上体が前へ支えるか腰を引くかを見て技を選びます。",
+        "tips": [
+          "脚は腰を引き付け、手は袖や上腕を扱います。相手のどちらの腕が床を支え、自分の体をどちらへ向けられるかを確認します。"
+        ]
+      }
+    },
+    {
+      "id": "scissor-sweep",
+      "name_ja": "シザースイープ",
+      "name_en": "Scissor sweep",
+      "top_or_bottom": "bottom",
+      "family": "scissor",
+      "start_position": "上体をつかみ、片方のすねを間に入れられるボトム",
+      "aliases": [
+        "シザースイープ",
+        "scissor sweep",
+        "ハサミスイープ"
+      ],
+      "body_positions": {
+        "self": "半身で上のすねを使うボトム",
+        "opponent": "両膝で支えるトップ"
+      },
+      "grips_and_frames": [
+        "袖・襟か上腕",
+        "上のすねと下側の脚"
+      ],
+      "mechanics": {
+        "weight": "腰を踵から浮かす",
+        "support": "倒す側の手と膝",
+        "pressure": "引き付けと左右の脚を合わせる",
+        "angle": "横へ半身"
+      },
+      "goal": "倒す側の支持を外して上になる。",
+      "steps_ja": [
+        "半身で上のすねを入れる。",
+        "上体を手前へ寄せる。",
+        "倒す方向の支えが外れた所で脚を合わせて返す。"
+      ],
+      "success_conditions": [
+        "相手の姿勢が前に寄る",
+        "倒す側の手を抑えられる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "base",
+          "cue": "腰を引いて抵抗",
+          "answer": "腰を引かれて膝に体重が残るなら脚だけで払わず、袖や上腕の接点を保って引き込む方向を作り直します。",
+          "next_id": "closed-guard",
+          "match": [
+            "腰",
+            "重",
+            "引"
+          ]
+        },
+        {
+          "id": "post",
+          "cue": "相手が手をつく",
+          "answer": "倒す方向に手をつかれたら、その腕を扱える距離に戻します。足で蹴り続けず、別の方向の支持も見直します。",
+          "next_id": "sweep-principle",
+          "match": [
+            "手",
+            "ポスト"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "腕で誘導せず両脚だけを動かす",
+          "fix": "相手の上体が移るのを見てから両脚を使う"
+        }
+      ],
+      "beginner_instruction": "手をつく場合とつかない場合で、相手の重心の場所を比べる。",
+      "safety_notes": "支持している膝を横から強く払わない。",
+      "source_refs": [
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "scissor-sweep",
+          "scope": "独自メモ"
+        },
+        {
+          "source_id": "andy-spider",
+          "location": "シザーの例",
+          "scope": "開始位置の異なるスパイダー例"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "scissor-sweep"
+      ],
+      "related_ids": [
+        "closed-guard",
+        "sweep-principle"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "シザースイープは、横向きですねを間に入れ、相手の上体を手前へ誘導してから両脚を合わせます。",
+        "tips": [
+          "襟や袖などで相手の上体と倒す側の腕を扱います。相手の重さが踵に残っていれば、脚だけを動かしても支持は外れにくくなります。"
+        ]
+      }
+    },
+    {
+      "id": "flower-sweep",
+      "name_ja": "フラワースイープ",
+      "name_en": "Flower sweep",
+      "top_or_bottom": "bottom",
+      "family": "flower",
+      "start_position": "ボトムでクローズドガードを組む",
+      "aliases": [
+        "フラワースイープ",
+        "flower sweep",
+        "ペンデュラム"
+      ],
+      "body_positions": {
+        "self": "相手の腕を止め、腰を横にずらせるボトム",
+        "opponent": "膝立ちで手をつけるトップ"
+      },
+      "grips_and_frames": [
+        "倒す側の袖か上腕",
+        "届く腿の下",
+        "振る脚"
+      ],
+      "mechanics": {
+        "weight": "重心を相手の支えが薄い側へ",
+        "support": "止めた腕と腿",
+        "pressure": "脚の振りと上体の引き付け",
+        "angle": "腰を相手の正面から外す"
+      },
+      "goal": "相手の腕の支えと片脚の荷重を減らして上になる。",
+      "steps_ja": [
+        "倒す側の手を止める。",
+        "自分の腰を横へずらし、手が届く腿の接点を取る。",
+        "上体と脚の動きを合わせて返す。"
+      ],
+      "success_conditions": [
+        "相手の腕を床につかせにくい",
+        "腿に届く"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "post",
+          "cue": "相手が手をつく",
+          "answer": "手をつかれたら前進を止め、その腕を制御し直します。肘を自分の中心に持てるなら腕十字の入口も確認できます。",
+          "next_id": "armbar",
+          "match": [
+            "手",
+            "ポスト",
+            "腕"
+          ]
+        },
+        {
+          "id": "far",
+          "cue": "相手が脚を引く",
+          "answer": "腿が遠ければ手足を伸ばして追わず、クローズドへ戻して上半身を崩せる距離を取り直します。",
+          "next_id": "closed-guard",
+          "match": [
+            "脚",
+            "足",
+            "遠"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "相手の正面で脚だけ振る",
+          "fix": "腰を横へずらし腕の支えを止める"
+        }
+      ],
+      "beginner_instruction": "腕を保持した形から低速で上までついていく。",
+      "safety_notes": "首や手を着いた状態で相手を強く倒さない。",
+      "source_refs": [
+        {
+          "source_id": "yamawaki-closed",
+          "location": "公開フラワー動画案内",
+          "scope": "技と腕十字からの開始を確認"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "armbar",
+        "closed-guard"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "クローズドのフラワースイープは、倒す側の腕を止め、自分の腰を横へずらして相手の腿に届く角度を取ります。",
+        "tips": [
+          "相手の正面で大きく脚を振り続けず、振る脚と上体を引く方向を合わせます。相手の腕の支えが残るかが判断の目安です。"
+        ]
+      }
+    },
+    {
+      "id": "hip-bump",
+      "name_ja": "ヒップバンプスイープ",
+      "name_en": "Hip bump / Sit-up sweep",
+      "top_or_bottom": "bottom",
+      "family": "hip-bump",
+      "start_position": "クローズドでトップが腰を引いて上体を起こす",
+      "aliases": [
+        "ヒップバンプ",
+        "ヒップスロー",
+        "シットアップスイープ",
+        "hip bump"
+      ],
+      "body_positions": {
+        "self": "片手で床を押して座り起きるボトム",
+        "opponent": "腰が後ろにあり、手で床をつこうとするトップ"
+      },
+      "grips_and_frames": [
+        "片手と足で床を支持",
+        "倒す側の上腕に接点"
+      ],
+      "mechanics": {
+        "weight": "自分の骨盤を相手の腰の横へ",
+        "support": "床の手と足",
+        "pressure": "骨盤で斜めへ重心を移す",
+        "angle": "端へ少し角度を取る"
+      },
+      "goal": "相手が後ろへ重さを置き、手が出ない側へ倒す。",
+      "steps_ja": [
+        "相手の上体が起きる瞬間に足を着く。",
+        "上腕を管理し座り起きる。",
+        "骨盤を相手の腰の外へ運ぶ。"
+      ],
+      "success_conditions": [
+        "相手が前に乗り切っていない",
+        "自分の支えを残せる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "post",
+          "cue": "倒す側へ手をつく",
+          "answer": "手をつかれたらその腕が支えています。姿勢を戻し、手首と肘に届く場面ではキムラの形を作れるか確認します。",
+          "next_id": "kimura",
+          "match": [
+            "手をつ",
+            "ポスト",
+            "キムラ"
+          ]
+        },
+        {
+          "id": "forward",
+          "cue": "相手が前へ戻る",
+          "answer": "相手の重心が前へ戻ったら起き続けず、クローズドの接点を取り直して次の腕の位置を見ます。",
+          "next_id": "closed-guard",
+          "match": [
+            "前",
+            "乗"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "起きるだけで骨盤が床に残る",
+          "fix": "片手と足で床を使い斜めへ骨盤を運ぶ"
+        }
+      ],
+      "beginner_instruction": "手を出す場合と腰を引く場合を交互に出してもらう。",
+      "safety_notes": "相手の手が床に着いたまま肩へ急に圧を掛けない。",
+      "source_refs": [
+        {
+          "source_id": "yamawaki-closed",
+          "location": "ヒップスローからキムラの動画説明",
+          "scope": "公開の連係"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "kimura",
+        "closed-guard"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "クローズドのヒップバンプは、相手が腰を後ろへ置いて上体を起こす瞬間に、自分も座り起きて斜めへ崩します。",
+        "tips": [
+          "床に置く手と足を支えにして骨盤を相手の腰の横へ進めます。倒す側の手を相手が床に出せるか、先に見ます。"
+        ]
+      }
+    },
+    {
+      "id": "kimura",
+      "name_ja": "クローズドからのキムラ",
+      "name_en": "Kimura lock / Double wrist lock",
+      "top_or_bottom": "bottom",
+      "family": "kimura",
+      "start_position": "クローズドのボトムで相手の手が胴から離れる",
+      "aliases": [
+        "キムラ",
+        "kimura",
+        "ダブルリストロック"
+      ],
+      "body_positions": {
+        "self": "手首に届き座り起きられるボトム",
+        "opponent": "片腕を体へ戻したいトップ"
+      },
+      "grips_and_frames": [
+        "相手の手首",
+        "上腕の外から自分の手首を取る",
+        "相手の上体を扱う脚"
+      ],
+      "mechanics": {
+        "weight": "相手の体の回転を追える位置",
+        "support": "両腕と脚",
+        "pressure": "肩の内旋へ緩徐に制御",
+        "angle": "手首が背中側へ動く方向"
+      },
+      "goal": "手首と上腕を固定し、相手が胴を回して逃げる余地を扱う。",
+      "steps_ja": [
+        "手首を持つ。",
+        "上腕を越して自分の手首をつかむ。",
+        "相手の胴の向きを確認し、負荷はゆっくり加える。"
+      ],
+      "success_conditions": [
+        "相手の腕が胴から離れている",
+        "肩の回る向きが確認できる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "hide",
+          "cue": "手を帯や腰に隠す",
+          "answer": "手を隠されたら手首を無理に引き出さず、脚と上体の接点を戻します。相手が上体を起こすか見て別の攻撃を選びます。",
+          "next_id": "closed-guard",
+          "match": [
+            "隠",
+            "帯",
+            "腰"
+          ]
+        },
+        {
+          "id": "up",
+          "cue": "トップが上体を起こす",
+          "answer": "相手が上体を起こし倒す側の支えが薄くなったら、肩への負荷を抜いてヒップバンプへ切り替えられます。",
+          "next_id": "hip-bump",
+          "match": [
+            "起",
+            "スイープ"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "手首だけを勢いよく背中へ引く",
+          "fix": "上腕と胴の位置を整え、肩に少しずつ圧を加える"
+        }
+      ],
+      "beginner_instruction": "手首を握った段階で止まり、相手がタップでやめられる速度で練習する。",
+      "safety_notes": "両者の合図を合わせ、タップで即座に解除する。",
+      "source_refs": [
+        {
+          "source_id": "yamawaki-closed",
+          "location": "ヒップスローからキムラの公開動画案内",
+          "scope": "開始位置"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 pp.26–29・47",
+          "scope": "別の角度の制御比較"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "closed-guard",
+        "hip-bump"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "クローズドのキムラは、ボトムが相手の手首に届き、片腕が胴から離れた場面で形を作ります。",
+        "tips": [
+          "手首を持ち、相手の上腕を越して自分の手首を握ります。相手の肩の向きを見ながら少しずつ動かし、タップですぐ放します。"
+        ]
+      }
+    },
+    {
+      "id": "triangle",
+      "name_ja": "ガードの三角絞め",
+      "name_en": "Triangle choke from guard",
+      "top_or_bottom": "bottom",
+      "family": "triangle",
+      "start_position": "ボトムから相手の腕が一本内・一本外に分かれる",
+      "aliases": [
+        "三角絞め",
+        "三角",
+        "triangle choke"
+      ],
+      "body_positions": {
+        "self": "腰を斜めに動かせるボトム",
+        "opponent": "頭と内側の腕を引き抜きたいトップ"
+      },
+      "grips_and_frames": [
+        "上腕を扱う手",
+        "相手の首の横へ足を回す",
+        "反対脚で固定"
+      ],
+      "mechanics": {
+        "weight": "腰を相手の正面から斜めへ",
+        "support": "肩と背中、脚の接点",
+        "pressure": "頭と片腕の周囲の間を小さくする",
+        "angle": "肩線に対して少し横へ"
+      },
+      "goal": "頭と片腕を脚でまとめ、上体を起こされにくい角度を作る。",
+      "steps_ja": [
+        "腕が一本だけ内か確かめる。",
+        "腰をずらし頭と片腕を一緒に囲う。",
+        "タップに合わせて圧を調整する。"
+      ],
+      "success_conditions": [
+        "相手の片腕だけが内側",
+        "ボトムの首に過荷重がない"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "posture",
+          "cue": "頭を引いて上体を起こす",
+          "answer": "相手の頭が上がって隙間を埋められないなら、絞めを緩めます。肘を制御できるかを見て腕十字への移行を選びます。",
+          "next_id": "armbar",
+          "match": [
+            "頭",
+            "起こ",
+            "腕十字"
+          ]
+        },
+        {
+          "id": "stack",
+          "cue": "担ぎや前方への圧",
+          "answer": "前へ強く乗られて首に重さが掛かるならロックを緩め、前腕とすねを使って距離を取り直します。",
+          "next_id": "guard-retention",
+          "match": [
+            "前",
+            "担",
+            "圧"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "相手の首だけを引く",
+          "fix": "片腕の位置と骨盤の角度を先に整える"
+        }
+      ],
+      "beginner_instruction": "片腕が入った位置で止まり、受け手とタップの合図を合わせる。",
+      "safety_notes": "首をねじらず、タップや異変で即座に解除する。",
+      "source_refs": [
+        {
+          "source_id": "andy-spider",
+          "location": "上体が低い場合",
+          "scope": "一つの開始姿勢"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 pp.32–33・46",
+          "scope": "腕十字との分岐を比較"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "armbar",
+        "guard-retention"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ボトムの三角絞めは、相手の腕が一本だけ脚の間に残り、自分の腰の角度を変えられる場面で狙います。",
+        "tips": [
+          "頭と片腕を脚でまとめて、自分の腰を斜めへずらして正面から外れます。圧は徐々に掛け、相手がタップしたらすぐに放します。"
+        ]
+      }
+    },
+    {
+      "id": "armbar",
+      "name_ja": "クローズドガードの腕十字",
+      "name_en": "Armbar from closed guard",
+      "top_or_bottom": "bottom",
+      "family": "armbar",
+      "start_position": "ボトムのクローズドから相手の肘を制御できる",
+      "aliases": [
+        "腕十字",
+        "アームバー",
+        "armbar",
+        "腕ひしぎ",
+        "ストレートアームロック"
+      ],
+      "body_positions": {
+        "self": "腰を横へ切って相手の腕を体の近くに保持",
+        "opponent": "腕を引くか前へ圧を掛けるトップ"
+      },
+      "grips_and_frames": [
+        "相手の手首と肘",
+        "肩・頭への脚の制御"
+      ],
+      "mechanics": {
+        "weight": "肘の下へ骨盤を寄せる",
+        "support": "脚で肩と上腕を保つ",
+        "pressure": "肘の位置を確かめて少しずつ伸展",
+        "angle": "相手の肩線に斜めに入る"
+      },
+      "goal": "肘と上体がばらばらに逃げない状態を作る。",
+      "steps_ja": [
+        "相手の肘を自分の中心へ寄せる。",
+        "骨盤を斜めに動かして脚で肩と頭を扱う。",
+        "肘が逃げないか確認してタップで解除する。"
+      ],
+      "success_conditions": [
+        "相手の肘が骨盤の近く",
+        "肩が自由に動かない"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "pull",
+          "cue": "相手が肘を引き抜く",
+          "answer": "肘が外れたら手首を引き続けず、膝とガードの接点を取り直します。片腕だけ脚の内側に残った時は三角の条件があります。",
+          "next_id": "triangle",
+          "match": [
+            "抜",
+            "引",
+            "三角"
+          ]
+        },
+        {
+          "id": "stack",
+          "cue": "相手が前から担ぐ",
+          "answer": "相手の体重が自分の首に掛かるなら極めの圧を抜き、前腕とすねでガードを戻せる距離を作ります。",
+          "next_id": "guard-retention",
+          "match": [
+            "前",
+            "担",
+            "圧"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "手首を引けば肘が止まると思う",
+          "fix": "脚で肩線を扱い、肘が骨盤から離れないか確認する"
+        }
+      ],
+      "beginner_instruction": "肘が腰のそばに残る所で止まり、極めはゆっくり行う。",
+      "safety_notes": "タップで直ちに解除し、関節を勢いで反らさない。",
+      "source_refs": [
+        {
+          "source_id": "yamawaki-closed",
+          "location": "腕十字の公開分類",
+          "scope": "クローズドの例"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 pp.31–33・45",
+          "scope": "異なる開始位置との比較"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "triangle",
+        "guard-retention"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ガードのボトムから腕十字を狙うなら、相手の肘を自分の中心近くに残し、脚で肩と上体の向きを扱います。",
+        "tips": [
+          "腰を斜めにずらし、相手の肘を自分の腰に近く置きます。相手が肘を抜ける状態なら組み直し、負荷を掛けた後はタップですぐに放します。"
+        ]
+      }
     }
   ]
 }
