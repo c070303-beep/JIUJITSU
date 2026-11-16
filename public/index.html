@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>RRT｜らんじぇる先生AI 試用版</title>
+<style>
+:root{--dark:#15241c;--green:#146643;--lime:#d9ed57;--ink:#19261d;--bg:#f6f4e9;--line:#d8dbce}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;background:var(--bg);color:var(--ink)}button,input,textarea{font:inherit}button{cursor:pointer}a{color:inherit}
+header{background:var(--dark);color:#fff;padding:14px max(18px,calc((100vw - 1100px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px}.logo{background:var(--lime);color:var(--dark);font-size:18px;font-weight:1000;border-radius:9px;padding:10px 12px}.brand strong{font-size:16px}.brand small{display:block;font-size:10px;letter-spacing:1px;color:#c4d2c6}
+header button{background:transparent;border:1px solid #8d9f94;color:#fff;padding:9px 14px;border-radius:8px}
+main{max-width:1120px;margin:20px auto;padding:0 16px 32px}
+.top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:15px}.top h1{font-size:clamp(19px,3vw,28px);margin:0}.top p{color:#56645b;font-size:12px;margin:5px 0}
+nav{display:flex;gap:7px;flex-wrap:wrap}nav button{border:1px solid var(--line);background:#fffefa;padding:11px 17px;border-radius:10px;font-weight:750;color:#415349}nav button.active{background:var(--green);color:white}
+.view{display:none}.view.active{display:block}
+.chat{display:grid;grid-template-rows:1fr auto;min-height:610px;background:#fffefa;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 12px 30px #17221c0a}
+.timeline{height:57vh;min-height:360px;max-height:720px;overflow-y:auto; padding:22px;scroll-behavior:smooth}
+.message{display:flex;align-items:flex-start;gap:12px;max-width:860px;margin:0 0 20px}.message.user{margin-left:auto;flex-direction:row-reverse}
+.avatar{flex:0 0 47px;width:47px;height:47px;border-radius:15px;background:var(--lime);display:grid;place-items:center;font-size:26px;border:1px solid #c5d743}
+.bubble{background:#eef2e8;border-radius:4px 16px 16px 16px;padding:14px 18px;line-height:1.85;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere;max-width:min(750px,calc(100% - 65px))}
+.user .bubble{background:var(--green);color:white;border-radius:16px 4px 16px 16px}
+.composer{padding:17px;border-top:1px solid var(--line);background:#f8faf4}
+.quick{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}.quick button{font-size:11px;padding:8px 10px;border:1px solid #cbd7c9;background:white;border-radius:99px;color:#37543a}
+.write{display:flex;gap:9px;align-items:end}.write textarea{min-height:55px;max-height:140px;resize:vertical;flex:1;border:1px solid #bbcbbd;border-radius:12px;padding:12px;background:#fff}
+.primary{background:var(--lime);border:0;color:var(--dark);border-radius:11px;padding:14px 20px;font-weight:850}
+.primary:disabled{opacity:.6;cursor:default}
+.hint{font-size:11px;color:#637263;margin:10px 0 0;line-height:1.6}
+.panel{background:#fffefa;border:1px solid var(--line);border-radius:18px;padding:24px;max-width:850px;margin:auto}
+.panel h2{font-size:22px;margin:0 0 7px}.panel p{font-size:13px;line-height:1.8;color:#56645b}.field{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.field input,.panel textarea,.panel select{border:1px solid #c5d0c6;border-radius:10px;padding:12px;background:white;max-width:100%}.panel textarea{width:100%;min-height:100px}
+.tag{display:inline-block;color:var(--green);font-size:11px;font-weight:850;letter-spacing:1px;margin-bottom:10px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0}.stat{background:#eef3e7;padding:16px;border-radius:10px}.stat strong{display:block;font-size:25px;color:var(--green)}.stat span{font-size:12px}
+.list{list-style:none;padding:0}.list li{padding:11px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}
+footer{max-width:1100px;margin:0 auto 20px;padding:0 16px;font-size:11px;color:#697466}
+@media(max-width:640px){header{padding:12px 15px}.brand strong{font-size:13px}.brand small{font-size:9px}header button{font-size:11px}.top{display:block}nav{margin-top:13px}.chat{min-height:65vh}.timeline{height:51vh;min-height:330px;padding:16px}.bubble{font-size:13px}.avatar{flex-basis:38px;width:38px;height:38px;font-size:22px}.composer{padding:12px}.stats{grid-template-columns:1fr 1fr 1fr}.stat{padding:10px}.stat strong{font-size:20px}.primary{padding:12px 14px}}
+</style></head>
+<body>
+<header><div class="brand"><span class="logo">RRT</span><div><strong>らんじぇる先生 AIコーチ</strong><small>INSTRUCTOR TRIAL / STAFF ONLY</small></div></div><button id="logout" type="button">ログアウト</button></header>
+<main><div class="top"><div><h1>インストラクター試用版</h1><p>質問への回答は生成AIによるもので、ランジェル先生本人の回答・監修ではありません。</p></div><nav aria-label="アプリ内メニュー"><button class="active" data-tab="coach">AIコーチ</button><button data-tab="attendance">出席デモ</button><button data-tab="ranking">ランキング</button><button data-tab="feedback">評価・感想</button></nav></div>
+<section id="coach" class="view active"><div class="chat"><div class="timeline" id="timeline" role="log" aria-live="polite"></div><div class="composer"><div class="quick">
+<button type="button" data-question="ハーフガードで脇を差されてはいけない理由は？">ハーフガードの脇差し</button>
+<button type="button" data-question="初心者がサイドコントロールからマウントへ移行するコツは？">サイド→マウント</button>
+<button type="button" data-question="ガードリテンションの初心者向けの練習方法は？">ガードリテンション</button>
+</div><form class="write" id="chatForm"><textarea id="question" maxlength="1500" aria-label="質問" placeholder="柔術の質問を入力してください（1500字以内）" required></textarea><button class="primary" id="send" type="submit">質問する</button></form><p class="hint" id="state">AIと会話できます。個人情報や有料教則の本文は入力しないでください。</p></div></div></section>
+<section id="attendance" class="view"><div class="panel"><span class="tag">ATTENDANCE / LOCAL DEMO</span><h2>出席記録（デモ）</h2><p>ブラウザ内だけに保存する試用機能です。道場全体の出席情報とは同期されません。</p><div class="field"><input id="member" maxlength="40" placeholder="名前を入力"><button id="checkin" class="primary">今日の出席を登録</button></div><p id="attendMsg" role="status"></p><ul class="list" id="attendList"></ul></div></section>
+<section id="ranking" class="view"><div class="panel"><span class="tag">RANKING / LOCAL DEMO</span><h2>出席ランキング（デモ）</h2><p>この端末で記録された出席日数だけを表示します。</p><div class="stats"><div class="stat"><strong id="sMembers">0</strong><span>登録メンバー</span></div><div class="stat"><strong id="sDays">0</strong><span>総出席日数</span></div><div class="stat"><strong id="sToday">0</strong><span>本日の出席</span></div></div><ul class="list" id="rankingList"></ul></div></section>
+<section id="feedback" class="view"><div class="panel"><span class="tag">INSTRUCTOR REVIEW</span><h2>AIコーチの評価</h2><p>この試用版では、評価は運営へ自動送信されません。「コピー」でLINEなどに貼り付けて送ってください。</p><div class="field"><input id="reviewer" maxlength="40" placeholder="名前（任意）"><select id="rating"><option value="良かった">良かった</option><option value="改善してほしい">改善してほしい</option><option value="保留">保留</option></select></div><textarea id="review" maxlength="3000" placeholder="実際に試した質問、良かった点、改善してほしい点など"></textarea><div class="field"><button id="copyFeedback" class="primary">感想をコピー</button></div><p id="feedbackMsg" role="status"></p></div></section>
+</main><footer>RRT Brazilian Jiu-Jitsu Academy ／ インストラクター評価用・試用版。回答は事前の安全確認・技術確認の代わりにはなりません。</footer>
+<script>
+"use strict";
+const $=id=>document.getElementById(id),hist=[],today=()=>new Date().toLocaleDateString("sv-SE");
+let busy=false;
+function bubble(text,user){const row=document.createElement("div");row.className="message"+(user?" user":"");if(!user){const avatar=document.createElement("div");avatar.className="avatar";avatar.textContent="🥋";row.append(avatar)}const b=document.createElement("div");b.className="bubble";b.textContent=text;row.append(b);$("timeline").append(row);$("timeline").scrollTop=$("timeline").scrollHeight;return b}
+bubble("こんにちは！RRTの試用版「らんじぇる先生AI」です。\n柔術の疑問を聞いてください。練習のポイントを、初心者にも分かりやすく整理します。",false);
+document.querySelectorAll("nav button").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("active",x===btn));document.querySelectorAll(".view").forEach(x=>x.classList.toggle("active",x.id===btn.dataset.tab));if(btn.dataset.tab==="ranking")ranking();}));
+document.querySelectorAll("[data-question]").forEach(b=>b.addEventListener("click",()=>{$("question").value=b.dataset.question;$("question").focus()}));
+$("chatForm").addEventListener("submit",async e=>{e.preventDefault();if(busy)return;const q=$("question").value.trim();if(!q)return;busy=true;$("send").disabled=true;$("question").value="";bubble(q,true);const loading=bubble("考えています…",false);$("state").textContent="Geminiと通信中…";try{const r=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question:q,history:hist.slice(-8)})});const j=await r.json();if(r.status===401){location.href="/login";return}if(!r.ok)throw Error(j.error||"通信できませんでした");loading.textContent=j.answer;hist.push({role:"user",content:q},{role:"assistant",content:j.answer});$("state").textContent="質問を続けられます。";}catch(ex){loading.textContent="エラー: "+ex.message;$("state").textContent="設定や通信状態を確認してください。";}finally{busy=false;$("send").disabled=false}});
+$("logout").addEventListener("click",async()=>{await fetch("/api/logout",{method:"POST",headers:{"Content-Type":"application/json"},body:"{}"}).catch(()=>{});location.replace("/login")});
+function getLog(){try{const x=JSON.parse(localStorage.getItem("rrt_preview_attend")||"[]");return Array.isArray(x)?x:[]}catch{return []}}
+function saveLog(a){localStorage.setItem("rrt_preview_attend",JSON.stringify(a))}
+$("checkin").addEventListener("click",()=>{const name=$("member").value.trim();if(!name){$("attendMsg").textContent="名前を入力してください。";return}let a=getLog(),d=today();if(a.some(x=>x.name===name&&x.day===d)){$("attendMsg").textContent="この名前は本日すでに登録済みです。";return}a.push({name,day:d});saveLog(a);$("attendMsg").textContent=name+" さんの出席を登録しました（この端末のみ）。";attendance()});
+function attendance(){const a=getLog().slice().reverse(),u=$("attendList");u.replaceChildren();a.slice(0,30).forEach(x=>{const li=document.createElement("li");const n=document.createElement("span");n.textContent=x.name;const d=document.createElement("span");d.textContent=x.day;li.append(n,d);u.append(li)})}
+function ranking(){const a=getLog(),m={};a.forEach(x=>{if(x.name)m[x.name]=(m[x.name]||0)+1});$("sMembers").textContent=Object.keys(m).length;$("sDays").textContent=a.length;$("sToday").textContent=a.filter(x=>x.day===today()).length;const u=$("rankingList");u.replaceChildren();Object.entries(m).sort((a,b)=>b[1]-a[1]).forEach(([n,c],i)=>{const li=document.createElement("li");const name=document.createElement("span");name.textContent=(i+1)+"位 "+n;const count=document.createElement("strong");count.textContent=c+"日";li.append(name,count);u.append(li)})}
+attendance();ranking();
+$("copyFeedback").addEventListener("click",async()=>{const s="RRT AIコーチ試用評価\n名前: "+($("reviewer").value||"匿名")+"\n評価: "+$("rating").value+"\nコメント:\n"+$("review").value;try{await navigator.clipboard.writeText(s);$("feedbackMsg").textContent="コピーしました。LINEなどに貼り付けて送信できます。";}catch{$("feedbackMsg").textContent="コピーできませんでした。ブラウザの権限をご確認ください。"}});
+fetch("/api/status").then(r=>r.json()).then(s=>{if(!s.configured)$("state").textContent="Gemini APIキー未設定です。管理者がRenderで設定するとAIを利用できます。"}).catch(()=>{});
+</script></body></html>
