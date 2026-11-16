@@ -60,7 +60,7 @@ const SYSTEM = [
  '技術の説明に役立つ無料公開YouTube動画は紹介可能です。ただし架空のURLや未確認の動画を創作しないでください。画面下部にアプリが検証済みの関連動画を自動表示します。',
  '通常の返答は日本語で120〜220字ほど。最初に結論を一文、その後に実行のコツを2〜3点。毎回長い前置き・「理由」「安全上の注意」などの定型見出しは不要です。',
  'ユーザーが「詳しく」「手順を全部」「初心者用に段階的に」等と求めたときは、詳しく説明して構いません。',
- '動画への案内は必要なら最後に一文だけ。リンクや動画タイトルの捏造はせず、検証済みのカードかYouTube検索リンクに任せてください。',
+ '動画案内は柔術日記・木部亮／スプラッシュ・加古拓渡の実演・橋本知之・DEEP HALF CLUB・シュラプネル柔術テクニック・PASSGUARD FITNESSの無料公開動画を優先。リンクは回答文に捏造せず画面下の動画カードに任せる。',
  '個人情報、会員個人を特定できる記録、著作物の本文入力は避けるよう案内してください。'
 ].join('\n');
 // Only independently written, rights-cleared, page-verified instructor notes may reach Gemini.
@@ -93,31 +93,49 @@ function getApprovedKnowledge(question) {
   return '';
  }
 }
-// Public YouTube references are metadata only; no copyrighted video data is stored.
-const publicVideos = (() => {
- try { return JSON.parse(fs.readFileSync(path.join(__dirname,'data','public_videos.json'),'utf8')).videos || []; }
- catch (e) { console.warn('[Videos] catalog not found'); return []; }
+// Verified public YouTube video IDs and official channel links only; never fabricated URLs.
+const videoCatalog = (()=>{
+ try {return JSON.parse(fs.readFileSync(path.join(__dirname,'data','public_videos.json'),'utf8'));}
+ catch(e){console.warn('[Videos] catalog unavailable');return {videos:[],priority_channels:[]};}
 })();
-function videosForQuestion(question, history) {
- let query=String(question||'').trim().slice(0,150);
- const generic=/^(関連|参考|おすすめ|良い|わかりやすい)?(動画|ユーチューブ|YouTube|youtube).{0,25}$|^参考にできる動画はありますか[？?]?$/i;
- if(generic.test(query) || (query.includes('動画')&&query.length<35)){
-  const last=[...(Array.isArray(history)?history:[])].reverse().find(x=>x && x.role==='user' && typeof x.content==='string' && !generic.test(x.content) && !x.content.includes('動画'));
-  query=last ? last.content.slice(0,150) : 'ブラジリアン柔術 基本';
+const publicVideos=videoCatalog.videos||[];
+const preferredChannels=videoCatalog.priority_channels||[];
+function videosForQuestion(question,history) {
+ let topic=String(question||'').trim().slice(0,160);
+ const meta=/^(関連|参考|おすすめ|良い|わかりやすい)?(動画|ユーチューブ|YouTube|youtube).{0,35}$|^参考にできる動画はありますか[？?]?$/i;
+ if(meta.test(topic)||(topic.includes('動画')&&topic.length<32)){
+  const last=(Array.isArray(history)?history:[]).slice().reverse().find(x=>x?.role==='user'&&typeof x.content==='string'&&!meta.test(x.content)&&!/動画/.test(x.content));
+  topic=last?last.content.slice(0,160):'ブラジリアン柔術 基礎';
  }
- const normalized=query.toLowerCase();
- const matched=publicVideos.map(v => ({
-   video:v, score:(v.tags||[]).reduce((total,tag)=> total+(normalized.includes(tag.toLowerCase())?(tag.length>=5?4:2):0),0)
- })).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,2);
- const videos=matched.map(x=>({
-  id:x.video.id,title:x.video.title,channel:x.video.channel,description:x.video.description,
-  url:x.video.watch_url,thumbnail:x.video.thumbnail_url,language:x.video.language
- }));
- const genericSearch=normalized==='ブラジリアン柔術 基本';
- const searchText=genericSearch?'ブラジリアン柔術 基礎 技術':query.slice(0,65).replace(/(動画|youtube|ユーチューブ|ありますか|教えて|おすすめ|リンク)/gi,' ').replace(/[？?。]/g,'').trim()+' 柔術';
- return { videos, search_url:'https://www.youtube.com/results?search_query='+encodeURIComponent(searchText), search_label:searchText.trim() };
+ const q=topic.toLowerCase();
+ const scoreTag=(tag)=> {
+  const t=String(tag||'').toLowerCase();
+  if(!t||!q.includes(t))return 0;
+  if(['柔術','ガード','パス','スイープ','bjj','half'].includes(t))return 1;
+  return 3+Math.min(12,t.length);
+ };
+ const ranked=preferredChannels.map(c=>{
+  const best=Math.max(0,...(c.tags||[]).map(scoreTag));
+  const total=(c.tags||[]).reduce((sum,t)=>sum+scoreTag(t),0);
+  return {channel:c,score:best*2+total};
+ }).sort((a,b)=>b.score-a.score || a.channel.priority-b.channel.priority);
+ const prefer=ranked.some(x=>x.score>0)?ranked.filter(x=>x.score>0):ranked;
+ const channels=prefer.slice(0,2).map(({channel:c})=>{
+  const prompt=topic.replace(/(?:関連|参考)?動画|ユーチューブ|YouTube|ありますか|教えて|おすすめ|リンク/gi,' ').replace(/[？?。]/g,' ').trim().slice(0,70);
+  const label=(c.name_query+' '+(prompt==='ブラジリアン柔術 基礎'?'技術':prompt)).trim();
+  const url='https://www.youtube.com/results?search_query='+encodeURIComponent(label);
+  return {title:c.title,url,channel_url:c.channel_url||null,search_label:label};
+ });
+ const preferredIds=new Set(prefer.slice(0,4).map(x=>x.channel.id));
+ const videos=publicVideos.map(v=>{
+  const score=(v.tags||[]).reduce((sum,t)=>sum+scoreTag(t),0);
+  return {video:v,score:score+(preferredIds.has(v.channel_id)?2:0)};
+ }).filter(x=>x.score>2).sort((a,b)=>b.score-a.score).slice(0,2).map(x=>{
+  const v=x.video;
+  return {id:v.id,title:v.title,channel:v.channel,description:v.description,url:v.watch_url,thumbnail:v.thumbnail_url,language:v.language,preview_only:!!v.preview_only};
+ });
+ return {videos,channels};
 }
-
 
 /*
  * Original BJJ coaching notes: independent short coaching ideas written for this trial.
@@ -150,27 +168,6 @@ function matchCoachingNotes(question, history) {
    '連係:'+n.next+'\n'+
    '注意:'+n.safety).join('\n')+
   '\nこのメモは元資料の転載でも道場の正式教則でもありません。質問に関係する箇所だけ使い、状況が不明な場合は断言しないでください。';
-}
-
-// Metadata-only references to public article pages, never their original full text.
-const publicArticleRefs=(()=>{
- try { const j=JSON.parse(fs.readFileSync(path.join(__dirname,'knowledge','new_reference_articles.json'),'utf8'));return Array.isArray(j.entries)?j.entries:[]; }
- catch(e){console.warn('[References] article catalog unavailable');return [];}
-})();
-function referencesForQuestion(question,history) {
- let q=String(question||'').trim().toLowerCase();
- const generic=/(動画|参考|おすすめ|記事|サイト|リンク)/;
- if(q.length<30 && generic.test(q)){
-  const last=(Array.isArray(history)?history:[]).slice().reverse().find(m=>m?.role==='user' && typeof m.content==='string' && !generic.test(m.content));
-  if(last)q+=' '+String(last.content).toLowerCase();
- }
- return publicArticleRefs.map(item=>{
-  const matched=(item.tags||[]).filter(tag=>q.includes(String(tag).toLowerCase()));
-  const score=matched.reduce((v,t)=>v+Math.min(12,String(t).length),0);
-  return {item,score};
- }).filter(x=>x.score>=3).sort((a,b)=>b.score-a.score).slice(0,2).map(({item})=>({
-  title:item.title,url:item.url,source:item.source_id,focus:item.focus,status:"記事の参照先（全文はAIに取り込んでいません）"
- }));
 }
 
 async function chat(req,res,id){
@@ -207,7 +204,7 @@ async function chat(req,res,id){
   const result=await response.json();
   const answer=(result.candidates?.[0]?.content?.parts||[]).map(x=>x.text||'').join('\n').trim();
   if(!answer)return out(res,502,{error:'AIの回答を取得できませんでした。'});
-  return out(res,200,{answer,model:MODEL,...videosForQuestion(data.question,data.history),references:referencesForQuestion(data.question,data.history)});
+  return out(res,200,{answer,model:MODEL,...videosForQuestion(data.question,data.history)});
  }catch(e){
   console.warn('[Gemini] request failure: '+(e.name==='AbortError'?'timeout':'network'));
   return out(res,502,{error:e.name==='AbortError'?'AIの応答がタイムアウトしました。':'Gemini APIへ接続できませんでした。'});
