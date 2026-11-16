@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "source_id": "iwasaki-jujutsu-story-note",
+  "profile_url": "https://note.com/masahiroiwasaki",
+  "reviewed_at": "2026-11-16",
+  "scope": "selected_7_public_articles_only",
+  "rights": "AI再利用・全文複製の許諾未確認。記事本文/図版/有料内容を保存しない。",
+  "items": [
+    {
+      "id": "iwasaki-episode-07",
+      "title": "7話-初試合とハニカミ王子",
+      "published_at": "2021-06-29",
+      "url": "https://note.com/masahiroiwasaki/n/n1657eb209d5c",
+      "topic": "half_guard",
+      "editorial_theme": "試合でハーフから立ち上がる展開",
+      "source_type": "autobiographical_narrative",
+      "technical_steps_verified": false,
+      "ai_enabled": false,
+      "rights_status": "not_authorized_or_verified"
+    },
+    {
+      "id": "iwasaki-episode-08",
+      "title": "8話-片脚にしがみつく日々",
+      "published_at": "2021-06-30",
+      "url": "https://note.com/masahiroiwasaki/n/n314b044f8c54",
+      "topic": "half_guard",
+      "editorial_theme": "ハーフを保持し脇を守りながら自身の技術を試した経緯",
+      "source_type": "autobiographical_narrative",
+      "technical_steps_verified": false,
+      "ai_enabled": false,
+      "rights_status": "not_authorized_or_verified"
+    },
+    {
+      "id": "iwasaki-episode-09",
+      "title": "9話-試し斬りの日々",
+      "published_at": "2021-07-01",
+      "url": "https://note.com/masahiroiwasaki/n/n867f4897c8b9",
+      "topic": "half_guard",
+      "editorial_theme": "リバースハーフやラペラを使う発想と検証過程",
+      "source_type": "autobiographical_narrative",
+      "technical_steps_verified": false,
+      "ai_enabled": false,
+      "rights_status": "not_authorized_or_verified"
+    },
+    {
+      "id": "iwasaki-episode-11",
+      "title": "11話-リベンジ",
+      "published_at": "2021-07-02",
+      "url": "https://note.com/masahiroiwasaki/n/n8b2ff4d74c34",
+      "topic": "training",
+      "editorial_theme": "課題を絞った反復練習と試合での修正",
+      "source_type": "autobiographical_narrative",
+      "technical_steps_verified": false,
+      "ai_enabled": false,
+      "rights_status": "not_authorized_or_verified"
+    },
+    {
+      "id": "iwasaki-episode-22",
+      "title": "22話-バルボーザ先生",
+      "published_at": "2021-07-14",
+      "url": "https://note.com/masahiroiwasaki/n/n8f1787bb732b",
+      "topic": "half_guard",
+      "editorial_theme": "相手のパス圧力とスイープのタイミングについての実戦回想",
+      "source_type": "autobiographical_narrative",
+      "technical_steps_verified": false,
+      "ai_enabled": false,
+      "rights_status": "not_authorized_or_verified"
+    },
+    {
+      "id": "iwasaki-episode-46",
+      "title": "46話-激闘再び",
+      "published_at": "2021-11-06",
+      "url": "https://note.com/masahiroiwasaki/n/n1c1c5ccd4951",
+      "topic": "half_guard",
+      "editorial_theme": "相手が攻めた瞬間にスイープを合わせた試合記録",
+      "source_type": "autobiographical_narrative",
+      "technical_steps_verified": false,
+      "ai_enabled": false,
+      "rights_status": "not_authorized_or_verified"
+    },
+    {
+      "id": "iwasaki-episode-62",
+      "title": "62話- NY修行",
+      "published_at": "2025-03-20",
+      "url": "https://note.com/masahiroiwasaki/n/nf8304c06b7df",
+      "topic": "learning",
+      "editorial_theme": "熟練者から学ぶための遠征と技術研究",
+      "source_type": "autobiographical_narrative",
+      "technical_steps_verified": false,
+      "ai_enabled": false,
+      "rights_status": "not_authorized_or_verified"
+    }
+  ]
+}
