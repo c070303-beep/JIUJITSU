@@ -48,7 +48,9 @@ async function json(req) {
 const privateLinkIntro = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>RRT｜個人試用版</title><style>*{box-sizing:border-box}body{background:#10151c;color:#f5f6fa;font-family:system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;padding:20px}.panel{background:#1c242e;border:1px solid #404c57;border-radius:20px;padding:24px;max-width:440px;line-height:1.8}h1{font-size:22px}p{color:#b9c5d4;font-size:14px}b{color:#f75a64}</style></head><body><main class="panel"><h1>RRT らんじぇる先生AI</h1><p>この個人試用版には、<b>パスワード入力はありません。</b></p><p>ご自身の専用リンクからアクセスしてください。リンクを開くとAIの画面に直接移動します。</p></main></body></html>`;
 const SYSTEM = [
  'あなたはRRT BJJの個人試用版「らんじぇる先生 AIコーチ」です。',
- '質問には初心者にも分かる簡潔な日本語で直接答え、理由と安全上の注意を示します。',
+ '柔術の質問は最初にトップかボトムか、開始ポジション、相手の圧力・グリップを整理。条件不足なら前提を短く明示し、一般論と特定場面を混同しないでください。',
+ '初心者にも分かる簡潔な日本語で答えます。「結論→具体的な動き2〜3点→相手の反応に応じた次の一手」を優先し、質問に関係しない定型の安全説教や無用な挨拶を付けません。',
+ '技が成立する理由は、重心・支点・フレーム・角度・グリップ・タイミングで説明。似た技や左右を混同せず、不明な手順は自信がないと明示します。',
  'ランジェル先生本人が回答または監修しているとは絶対に言わないでください。本人の独特の話し方を創作しないでください。',
  'これは試用版です。RRTの公式指導方針や特定の教則を学習済みと主張しないでください。',
  'シュラプネル・オンラインとKajabiの有料教則の動画・字幕・内容は学習していません。見たかのように装わないでください。',
@@ -116,6 +118,40 @@ function videosForQuestion(question, history) {
  return { videos, search_url:'https://www.youtube.com/results?search_query='+encodeURIComponent(searchText), search_label:searchText.trim() };
 }
 
+
+/*
+ * Original BJJ coaching notes: independent short coaching ideas written for this trial.
+ * They are separate from third-party PDFs, notes and paid video materials.
+ * Human instructor review is still desirable before using as authoritative instruction.
+ */
+const originalCoachingNotes=(()=>{
+ try { const d=JSON.parse(fs.readFileSync(path.join(__dirname,'knowledge','original_bjj_coaching.json'),'utf8'));return Array.isArray(d.entries)?d.entries:[]; }
+ catch(e){console.warn('[Coaching] original knowledge unavailable');return [];}
+})();
+function matchCoachingNotes(question, history) {
+ const text0=String(question||'').toLowerCase();
+ const history0=(Array.isArray(history)?history:[]).slice(-4).filter(x=>x?.role==='user').map(x=>String(x.content||'')).join(' ').toLowerCase();
+ const query=text0.length<20?text0+' '+history0:text0;
+ const hit=originalCoachingNotes.map(n=>{
+  const scores=(Array.isArray(n.tags)?n.tags:[]).map(tag=>{
+   const t=String(tag).toLowerCase();
+   return query.includes(t)?(3+Math.min(t.length,16)):0;
+  });
+  return {note:n,score:scores.length?Math.max(...scores):0};
+ }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,3);
+ if(!hit.length)return '';
+ return '\n\n【個人試用用の独自作成技術メモ（暫定・特定選手監修ではない）】\n'+
+  hit.map(({note:n})=>
+   '◆'+n.name+'（'+n.position+'）\n'+
+   '狙い:'+n.goal+'\n'+
+   '動き:'+n.principle+'\n'+
+   '相手の反応:'+n.reaction+'\n'+
+   'よくあるミス:'+n.mistake+'\n'+
+   '連係:'+n.next+'\n'+
+   '注意:'+n.safety).join('\n')+
+  '\nこのメモは元資料の転載でも道場の正式教則でもありません。質問に関係する箇所だけ使い、状況が不明な場合は断言しないでください。';
+}
+
 async function chat(req,res,id){
  if(!API_KEY || API_KEY.length<12)return out(res,503,{error:'Gemini APIキーがまだ設定されていません。管理者に連絡してください。'});
  const day=new Date().toISOString().slice(0,10);if(day!==dayKey){dayKey=day;totalToday=0;sessionUsage.clear()}
@@ -127,7 +163,7 @@ async function chat(req,res,id){
  const history=(Array.isArray(data.history)?data.history:[]).slice(-8).filter(x=>x && ['user','assistant'].includes(x.role)&&typeof x.content==='string').map(x=>({role:x.role==='user'?'user':'model',parts:[{text:x.content.slice(0,1200)}]}));
  totalToday++;sessionUsage.set(id,n+1);
  const detailed=/(詳しく|詳細|すべて|全部|段階的に|フローチャート|長めに|徹底的|具体例を多く)/.test(data.question);
- const payload={systemInstruction:{parts:[{text:SYSTEM+getApprovedKnowledge(data.question)}]},contents:[...history,{role:'user',parts:[{text:data.question.trim()}]}],generationConfig:{temperature:0.35,maxOutputTokens:detailed?1400:650}};
+ const payload={systemInstruction:{parts:[{text:SYSTEM+getApprovedKnowledge(data.question)+matchCoachingNotes(data.question,data.history)}]},contents:[...history,{role:'user',parts:[{text:data.question.trim()}]}],generationConfig:{temperature:0.35,maxOutputTokens:detailed?1400:650}};
  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),45000);
  try{
   const url='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(MODEL)+':generateContent';
