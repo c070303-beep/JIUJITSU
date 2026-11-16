@@ -51,6 +51,7 @@ const SYSTEM = [
  '柔術の質問は最初にトップかボトムか、開始ポジション、相手の圧力・グリップを整理。条件不足なら前提を短く明示し、一般論と特定場面を混同しないでください。',
  '初心者にも分かる簡潔な日本語で答えます。「結論→具体的な動き2〜3点→相手の反応に応じた次の一手」を優先し、質問に関係しない定型の安全説教や無用な挨拶を付けません。',
  '技が成立する理由は、重心・支点・フレーム・角度・グリップ・タイミングで説明。似た技や左右を混同せず、不明な手順は自信がないと明示します。',
+ '原理の学習に使った参考記事URLや記事一覧は回答欄に出さず、要点だけ自然な日本語で説明してください。ユーザーが直接原典を求めた時だけ、特定できる参照先を提示します。',
  'ランジェル先生本人が回答または監修しているとは絶対に言わないでください。本人の独特の話し方を創作しないでください。',
  'これは試用版です。RRTの公式指導方針や特定の教則を学習済みと主張しないでください。',
  'シュラプネル・オンラインとKajabiの有料教則の動画・字幕・内容は学習していません。見たかのように装わないでください。',
@@ -170,6 +171,27 @@ function matchCoachingNotes(question, history) {
   '\nこのメモは元資料の転載でも道場の正式教則でもありません。質問に関係する箇所だけ使い、状況が不明な場合は断言しないでください。';
 }
 
+// Independent analytical insights derived from publicly reviewed article bodies and the user-uploaded PDF.
+// Their source prose is NOT reproduced or sent to Gemini.
+const editorialInsights=(()=>{
+ try {const d=JSON.parse(fs.readFileSync(path.join(__dirname,'knowledge','editorial_reading_notes.json'),'utf8'));return Array.isArray(d.entries)?d.entries:[];}
+ catch(e){console.warn('[ReadingNotes] unavailable');return [];}
+})();
+function readingContext(question,history) {
+ const q=String(question||'').toLowerCase();
+ const prior=q.length<22?(Array.isArray(history)?history:[]).slice(-3).filter(x=>x?.role==='user').map(x=>String(x.content||'')).join(' ').toLowerCase():'';
+ const text=q+' '+prior;
+ const matches=editorialInsights.map(n=>{
+  const tags=(n.tags||[]).filter(t=>text.includes(String(t).toLowerCase()));
+  const top=Math.max(0,...tags.map(t=>t.length));
+  return {n,score:top+tags.length*2};
+ }).filter(x=>x.score>=4).sort((a,b)=>b.score-a.score).slice(0,2);
+ if(!matches.length)return '';
+ return '\n\n【公開本文・ユーザー提供資料を確認して独自に整理した参考概念】\n'+
+  matches.map(({n})=>'・'+n.insight_ja).join('\n')+
+  '\n記事の著作権表現の再現ではなく独立した分析メモです。ソース本文を全件読んだ・動画を視聴したと主張せず、関係する原理のみ回答に利用してください。';
+}
+
 async function chat(req,res,id){
  if(!API_KEY || API_KEY.length<12)return out(res,503,{error:'Gemini APIキーがまだ設定されていません。管理者に連絡してください。'});
  const day=new Date().toISOString().slice(0,10);if(day!==dayKey){dayKey=day;totalToday=0;sessionUsage.clear()}
@@ -181,7 +203,7 @@ async function chat(req,res,id){
  const history=(Array.isArray(data.history)?data.history:[]).slice(-8).filter(x=>x && ['user','assistant'].includes(x.role)&&typeof x.content==='string').map(x=>({role:x.role==='user'?'user':'model',parts:[{text:x.content.slice(0,1200)}]}));
  totalToday++;sessionUsage.set(id,n+1);
  const detailed=/(詳しく|詳細|すべて|全部|段階的に|フローチャート|長めに|徹底的|具体例を多く)/.test(data.question);
- const payload={systemInstruction:{parts:[{text:SYSTEM+getApprovedKnowledge(data.question)+matchCoachingNotes(data.question,data.history)}]},contents:[...history,{role:'user',parts:[{text:data.question.trim()}]}],generationConfig:{temperature:0.35,maxOutputTokens:detailed?1400:650}};
+ const payload={systemInstruction:{parts:[{text:SYSTEM+getApprovedKnowledge(data.question)+matchCoachingNotes(data.question,data.history)+readingContext(data.question,data.history)}]},contents:[...history,{role:'user',parts:[{text:data.question.trim()}]}],generationConfig:{temperature:0.35,maxOutputTokens:detailed?1400:650}};
  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),45000);
  try{
   const url='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(MODEL)+':generateContent';
