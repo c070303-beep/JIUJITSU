@@ -1,7 +1,7 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "3.0",
   "review_date": "2026-11-17",
-  "policy": "Prefer only named creators' verified official channels. Individual video cards require verified public YouTube URL and topic. Else show creator-targeted YouTube search, never fabricated video IDs. No video/audio/transcript copied.",
+  "policy": "Display only verified, directly linked public videos with strong topic and position match; never show YouTube search UI. YouTube video and audio are not stored.",
   "priority_channels": [
     {
       "id": "jutsu-nikki",
@@ -149,7 +149,11 @@
       ],
       "verified_public_url": true,
       "watch_url": "https://www.youtube.com/watch?v=z5dKtMkxX_Q",
-      "thumbnail_url": "https://i.ytimg.com/vi/z5dKtMkxX_Q/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/z5dKtMkxX_Q/hqdefault.jpg",
+      "topics": [
+        "inside-camping"
+      ],
+      "position": "top"
     },
     {
       "id": "BWQg1d6xA1w",
@@ -169,7 +173,12 @@
       "verified_public_url": true,
       "preview_only": true,
       "watch_url": "https://www.youtube.com/watch?v=BWQg1d6xA1w",
-      "thumbnail_url": "https://i.ytimg.com/vi/BWQg1d6xA1w/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/BWQg1d6xA1w/hqdefault.jpg",
+      "topics": [
+        "outside-pass-defense",
+        "guard-retention"
+      ],
+      "position": "bottom"
     },
     {
       "id": "iH2UG2e1jw4",
@@ -187,7 +196,12 @@
       "verified_public_url": true,
       "short": true,
       "watch_url": "https://www.youtube.com/watch?v=iH2UG2e1jw4",
-      "thumbnail_url": "https://i.ytimg.com/vi/iH2UG2e1jw4/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/iH2UG2e1jw4/hqdefault.jpg",
+      "topics": [
+        "inside-pass-defense",
+        "guard-retention"
+      ],
+      "position": "bottom"
     },
     {
       "id": "BnumeQQfMvQ",
@@ -206,7 +220,11 @@
       "verified_public_url": true,
       "preview_only": true,
       "watch_url": "https://www.youtube.com/watch?v=BnumeQQfMvQ",
-      "thumbnail_url": "https://i.ytimg.com/vi/BnumeQQfMvQ/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/BnumeQQfMvQ/hqdefault.jpg",
+      "topics": [
+        "spider-pass"
+      ],
+      "position": "top"
     },
     {
       "id": "dKIHSG-3EEA",
@@ -226,7 +244,11 @@
       ],
       "verified_public_url": true,
       "watch_url": "https://www.youtube.com/watch?v=dKIHSG-3EEA",
-      "thumbnail_url": "https://i.ytimg.com/vi/dKIHSG-3EEA/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/dKIHSG-3EEA/hqdefault.jpg",
+      "topics": [
+        "training-balance"
+      ],
+      "position": "neutral"
     },
     {
       "id": "IHu38JiYTHU",
@@ -245,7 +267,11 @@
       "verified_public_url": true,
       "verification": "creator_note_links",
       "watch_url": "https://www.youtube.com/watch?v=IHu38JiYTHU",
-      "thumbnail_url": "https://i.ytimg.com/vi/IHu38JiYTHU/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/IHu38JiYTHU/hqdefault.jpg",
+      "topics": [
+        "closed-hook-sweep"
+      ],
+      "position": "bottom"
     },
     {
       "id": "Z6sxXQHsvD8",
@@ -264,7 +290,11 @@
       "verified_public_url": true,
       "verification": "creator_note_links",
       "watch_url": "https://www.youtube.com/watch?v=Z6sxXQHsvD8",
-      "thumbnail_url": "https://i.ytimg.com/vi/Z6sxXQHsvD8/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/Z6sxXQHsvD8/hqdefault.jpg",
+      "topics": [
+        "flower-sweep"
+      ],
+      "position": "bottom"
     },
     {
       "id": "Coh6o4poTlM",
@@ -283,7 +313,12 @@
       "verified_public_url": true,
       "verification": "creator_note_links",
       "watch_url": "https://www.youtube.com/watch?v=Coh6o4poTlM",
-      "thumbnail_url": "https://i.ytimg.com/vi/Coh6o4poTlM/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/Coh6o4poTlM/hqdefault.jpg",
+      "topics": [
+        "hip-bump",
+        "kimura"
+      ],
+      "position": "bottom"
     },
     {
       "id": "tLpgh18xL3w",
@@ -302,7 +337,186 @@
       "verified_public_url": true,
       "verification": "creator_note_links",
       "watch_url": "https://www.youtube.com/watch?v=tLpgh18xL3w",
-      "thumbnail_url": "https://i.ytimg.com/vi/tLpgh18xL3w/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/tLpgh18xL3w/hqdefault.jpg",
+      "topics": [
+        "closed-side-sweep"
+      ],
+      "position": "bottom"
+    },
+    {
+      "id": "v4-BcBb6LH4",
+      "title": "岩崎正寛が影響を受けたハーフガードからのジェフモンソンスイープを解説した",
+      "channel": "DEEP HALF CLUB",
+      "channel_id": "dhc",
+      "description": "ハーフガードからのジェフモンソンスイープ",
+      "tags": [
+        "ジェフモンソン",
+        "モンソン",
+        "ハーフガード",
+        "ハーフスイープ",
+        "スイープ"
+      ],
+      "topics": [
+        "half-sweep"
+      ],
+      "position": "bottom",
+      "language": "ja",
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=v4-BcBb6LH4",
+      "thumbnail_url": "https://i.ytimg.com/vi/v4-BcBb6LH4/hqdefault.jpg"
+    },
+    {
+      "id": "wg_xd85YcjY",
+      "title": "肩固めを数段上手くするコツを解説した",
+      "channel": "DEEP HALF CLUB",
+      "channel_id": "dhc",
+      "description": "肩固めのコツ",
+      "tags": [
+        "肩固め",
+        "アームトライアングル",
+        "arm triangle"
+      ],
+      "topics": [
+        "arm-triangle"
+      ],
+      "position": "top",
+      "language": "ja",
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=wg_xd85YcjY",
+      "thumbnail_url": "https://i.ytimg.com/vi/wg_xd85YcjY/hqdefault.jpg"
+    },
+    {
+      "id": "xRSSL3mroJk",
+      "title": "足をまたがれた時に最初にやるべきこと【柔術】",
+      "channel": "橋本知之の柔術大学",
+      "channel_id": "hashimoto",
+      "description": "ガードリテンション／脚をまたがれた時のフレーム",
+      "tags": [
+        "脚をまたがれ",
+        "足をまたがれ",
+        "ガードリテンション",
+        "フレーム",
+        "片襟片袖",
+        "リテンション"
+      ],
+      "topics": [
+        "guard-retention",
+        "collar-sleeve"
+      ],
+      "position": "bottom",
+      "short": true,
+      "language": "ja",
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=xRSSL3mroJk",
+      "thumbnail_url": "https://i.ytimg.com/vi/xRSSL3mroJk/hqdefault.jpg"
+    },
+    {
+      "id": "p1Ajxf3XqWk",
+      "title": "なぜインサイドパスはガードリテンションが難しいのか？",
+      "channel": "橋本知之の柔術大学",
+      "channel_id": "hashimoto",
+      "description": "インサイドパスに対するガード保持の解説",
+      "tags": [
+        "インサイドパス",
+        "ニーカット",
+        "ニースライス",
+        "ガードリテンション"
+      ],
+      "topics": [
+        "guard-retention",
+        "knee-cut-defense"
+      ],
+      "position": "bottom",
+      "short": true,
+      "language": "ja",
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=p1Ajxf3XqWk",
+      "thumbnail_url": "https://i.ytimg.com/vi/p1Ajxf3XqWk/hqdefault.jpg"
+    },
+    {
+      "id": "uEo-BQWk6Fg",
+      "title": "【加古拓渡】これを見れば絶対にわかる！バタフライガード",
+      "channel": "シュラプネル柔術テクニック",
+      "channel_id": "kako-takuto",
+      "description": "加古拓渡のバタフライガード（教則紹介・一部サンプル）",
+      "tags": [
+        "バタフライガード",
+        "バタフライ",
+        "フックスイープ",
+        "ピボティングポイント",
+        "加古拓渡"
+      ],
+      "topics": [
+        "butterfly"
+      ],
+      "position": "bottom",
+      "preview_only": true,
+      "language": "ja",
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=uEo-BQWk6Fg",
+      "thumbnail_url": "https://i.ytimg.com/vi/uEo-BQWk6Fg/hqdefault.jpg"
+    },
+    {
+      "id": "QqAA3rbxetY",
+      "title": "基本的な腕十字",
+      "channel": "スプラッシュ3分柔術テクニック｜木部亮",
+      "channel_id": "splash-kibe",
+      "description": "初心者向け腕十字の基本",
+      "tags": [
+        "腕十字",
+        "アームバー",
+        "腕ひしぎ",
+        "armbar"
+      ],
+      "topics": [
+        "armbar"
+      ],
+      "position": "either",
+      "language": "ja",
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=QqAA3rbxetY",
+      "thumbnail_url": "https://i.ytimg.com/vi/QqAA3rbxetY/hqdefault.jpg"
+    },
+    {
+      "id": "xXXOSb1oJ2k",
+      "title": "サンパウロパス",
+      "channel": "スプラッシュ3分柔術テクニック｜木部亮",
+      "channel_id": "splash-kibe",
+      "description": "クローズドガードに対するサンパウロパス",
+      "tags": [
+        "サンパウロパス",
+        "クローズドガードのパス",
+        "クローズドガード解除",
+        "パスガード"
+      ],
+      "topics": [
+        "sao-paulo-pass"
+      ],
+      "position": "top",
+      "language": "ja",
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=xXXOSb1oJ2k",
+      "thumbnail_url": "https://i.ytimg.com/vi/xXXOSb1oJ2k/hqdefault.jpg"
+    },
+    {
+      "id": "EYeD5XXmAQs",
+      "title": "ベリンボロ10個紹介します！",
+      "channel": "橋本知之の柔術大学",
+      "channel_id": "hashimoto",
+      "description": "ベリンボロのバリエーション紹介",
+      "tags": [
+        "ベリンボロ",
+        "berimbolo",
+        "バックテイク"
+      ],
+      "topics": [
+        "berimbolo"
+      ],
+      "position": "bottom",
+      "language": "ja",
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=EYeD5XXmAQs",
+      "thumbnail_url": "https://i.ytimg.com/vi/EYeD5XXmAQs/hqdefault.jpg"
     }
   ]
 }
