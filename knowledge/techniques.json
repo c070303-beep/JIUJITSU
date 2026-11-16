@@ -1,4 +1,1039 @@
 {
-  "schema_version": "1.0",
-  "techniques": []
+  "schema_version": "2.0",
+  "techniques": [
+    {
+      "id": "guard-retention",
+      "name_ja": "ガードリテンションとフレーム",
+      "name_en": "Guard retention and framing",
+      "top_or_bottom": "bottom",
+      "family": "retention",
+      "start_position": "ボトムのオープンガードで、脚を越えられかける",
+      "aliases": [
+        "ガードリテンション",
+        "guard retention",
+        "エビ",
+        "フレーム",
+        "ガードを戻す",
+        "膝と肘"
+      ],
+      "body_positions": {
+        "self": "肘と膝を体の前に残し、横尻で向きを変えられるボトム",
+        "opponent": "脚を横へ越えて肩を近づけるトップ"
+      },
+      "grips_and_frames": [
+        "前腕を相手の肩か腰に置く",
+        "膝・すねを間に戻せる位置を残す"
+      ],
+      "mechanics": {
+        "weight": "横尻・背中",
+        "support": "肘と体幹、床を踏む足",
+        "pressure": "相手の侵入線を前腕で受ける",
+        "angle": "骨盤をずらし相手へ膝を向け直す"
+      },
+      "goal": "肩と腰が固定される前に、自分の脚で距離を調整できる形へ戻す。",
+      "steps_ja": [
+        "相手が来る線に前腕を置く。",
+        "前腕で残した空間を使って骨盤を横へ移す。",
+        "相手の胸の前へ膝かすねを戻す。"
+      ],
+      "success_conditions": [
+        "肘が体の近くにある",
+        "骨盤が動く空間がある"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "feet-passed",
+          "cue": "脚を越えられた直後",
+          "answer": "脚を越えられた直後は、肩と腰が重なる前に前腕を当て、腰を小さくずらして近い膝を内側へ戻します。",
+          "next_id": null,
+          "match": [
+            "越え",
+            "またが",
+            "跨が",
+            "脚を外",
+            "足を外"
+          ]
+        },
+        {
+          "id": "pinned",
+          "cue": "胸も重なりサイドを取られる",
+          "answer": "すでに胸と肩まで押さえられたら、サイドの回復へ切り替え、まず肘を体の内側に戻すところから始めます。",
+          "next_id": "side-bottom",
+          "match": [
+            "胸を合",
+            "固定",
+            "サイド"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "エビだけで下がり続ける",
+          "fix": "前腕で間を取り、骨盤をずらした後に相手へ膝を向け直す"
+        }
+      ],
+      "beginner_instruction": "相手に小さく回ってもらい、前腕、骨盤、膝の順に接点を戻す。",
+      "safety_notes": "首を支点に回らない。",
+      "source_refs": [
+        {
+          "source_id": "ga-elbow",
+          "location": "本文",
+          "scope": "肘と膝の間を守る"
+        },
+        {
+          "source_id": "ga-shrimp",
+          "location": "各ヒップエスケープ",
+          "scope": "骨盤移動"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 pp.11–14",
+          "scope": "フレームとの比較"
+        },
+        {
+          "source_id": "yamawaki-retention",
+          "location": "Knees to Chest",
+          "scope": "膝の位置"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "guard-retention",
+        "yawara-frame-first"
+      ],
+      "related_ids": [
+        "side-bottom"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ガードのボトムでは、フレームで相手が入る場所に空間を残し、エビで骨盤を動かして膝を差し戻します。",
+        "tips": [
+          "肘を胴の近くに置いて相手の肩や腰を受けます。相手を押し返し続けると脚が戻らないので、前腕が距離を保てるうちに横へずらします。",
+          "エビで骨盤を離したあとは、相手の移動に合わせて膝とすねを向け直します。肘と膝の間へ相手を入れないことが目安です。"
+        ]
+      }
+    },
+    {
+      "id": "half-underhook",
+      "name_ja": "ボトムハーフの脇差し",
+      "name_en": "Underhook half guard",
+      "top_or_bottom": "bottom",
+      "family": "half",
+      "start_position": "ボトムでトップの片脚を挟んでいる",
+      "aliases": [
+        "ハーフガード",
+        "half guard",
+        "脇差し",
+        "アンダーフック",
+        "underhook",
+        "脇を差す"
+      ],
+      "body_positions": {
+        "self": "横向きで上の肩が床から離れている",
+        "opponent": "マクラや脇差しで胸を重ねたいトップ"
+      },
+      "grips_and_frames": [
+        "肩の手前への前腕",
+        "脇の下を通す上側の腕",
+        "下の肘か手"
+      ],
+      "mechanics": {
+        "weight": "下側の腰",
+        "support": "挟んだ相手の脚と床につく手",
+        "pressure": "差した腕で胸を重ねられるのを防ぐ",
+        "angle": "頭を相手の脇腹側へ寄せる"
+      },
+      "goal": "胸を合わせられず起きて、相手の背中側かスイープに進む。",
+      "steps_ja": [
+        "前腕で肩の進入を止める。",
+        "横向きで上側の腕を相手の脇下へ入れる。",
+        "脚を挟んだまま、下の肘で床を使って起きる。"
+      ],
+      "success_conditions": [
+        "背中が床にそろっていない",
+        "頭と肘を相手へ寄せられる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "whizzer",
+          "cue": "腕を上から巻かれる",
+          "answer": "ウィザーを受けたら、頭と肘の支えを作り、相手が前へ体重をかけるか横を支えるかを見てドッグファイトから分岐します。",
+          "next_id": "dogfight",
+          "match": [
+            "ウィザー",
+            "whizzer",
+            "オーバーフック"
+          ]
+        },
+        {
+          "id": "free-back",
+          "cue": "相手が腕を巻かず脇が開く",
+          "answer": "相手が巻いてこなければ挟んだ脚を支えに起き、胸を相手の背中側へ運んでから脚のフックを考えます。",
+          "next_id": "back-take",
+          "match": [
+            "バック",
+            "背中",
+            "脇が開"
+          ]
+        },
+        {
+          "id": "flat",
+          "cue": "トップに胸を重ねられる",
+          "answer": "肩を床に押しつけられたら、前腕と膝を差し戻して半身を作り直す方が、腕の差し返しへつながります。",
+          "next_id": "half-crossface",
+          "match": [
+            "潰",
+            "クロスフェイス",
+            "マクラ"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "腕だけを伸ばして差す",
+          "fix": "半身と頭の近さを先に作る"
+        }
+      ],
+      "beginner_instruction": "半身と脇差しができてから、下の肘で床を押して起きる。",
+      "safety_notes": "首だけでトップの重さを受けない。",
+      "source_refs": [
+        {
+          "source_id": "andy-half-class",
+          "location": "ハーフの基本・脇差し",
+          "scope": "半身と姿勢"
+        },
+        {
+          "source_id": "lets-underhook",
+          "location": "公開本文",
+          "scope": "ボトムの脇の攻防"
+        },
+        {
+          "source_id": "iwasaki-08",
+          "location": "ハーフ習得の回想",
+          "scope": "脇を守る理由"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 pp.23–24",
+          "scope": "上下の違い"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "half-underhook"
+      ],
+      "related_ids": [
+        "dogfight",
+        "back-take",
+        "half-crossface"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ボトムのハーフは、上の肩が床から離れる半身を作って、相手の脇の下に腕を通します。",
+        "tips": [
+          "脚を挟んだまま頭を相手の脇腹側へ寄せ、下側の肘か手で床を使います。差した腕だけで体を起こすと頭が離れて潰されやすくなります。"
+        ]
+      }
+    },
+    {
+      "id": "half-crossface",
+      "name_ja": "ハーフで脇を差されたボトムの回復",
+      "name_en": "Half guard bottom recovery",
+      "top_or_bottom": "bottom",
+      "family": "half",
+      "start_position": "ボトムで脇差しやクロスフェイスを受けたハーフ",
+      "aliases": [
+        "クロスフェイス",
+        "クロスフェース",
+        "マクラ",
+        "潰された",
+        "脇を差された"
+      ],
+      "body_positions": {
+        "self": "背中が床につき、半身を回復したい",
+        "opponent": "片脚を挟まれた状態でボトムの肩・首の向きを止めるトップ"
+      },
+      "grips_and_frames": [
+        "肘を胴の内側に入れる",
+        "肩や上腕の手前に前腕を置く",
+        "自由な膝を間に戻す"
+      ],
+      "mechanics": {
+        "weight": "足で床を踏んで圧を外す瞬間を作る",
+        "support": "足裏と体幹",
+        "pressure": "近い肩が入る線を前腕で受ける",
+        "angle": "肩と腰を横へ向け直す"
+      },
+      "goal": "差し返す前に肩と骨盤の自由を少しずつ戻す。",
+      "steps_ja": [
+        "肘を胴へ戻す。",
+        "上腕の手前に前腕を入れ、足で床を踏んで圧を分散する。",
+        "骨盤をずらして膝を戻し、半身に戻る。"
+      ],
+      "success_conditions": [
+        "首に体重が掛かったまま回らない",
+        "膝を戻せる隙間がある"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "reset-shield",
+          "cue": "圧が緩んだ",
+          "answer": "圧が緩んだ時に上のすねを戻してニーシールドを作ります。肩を動かせる余裕が戻ってから脇を取り返します。",
+          "next_id": "knee-shield",
+          "match": [
+            "ニーシールド",
+            "戻",
+            "隙"
+          ]
+        },
+        {
+          "id": "early",
+          "cue": "マクラが入る直前",
+          "answer": "マクラがまだ浅いなら、相手の上腕を先に止めて半身を保ち、膝と腕で胸が重なる線を塞ぎます。",
+          "next_id": "knee-shield",
+          "match": [
+            "入る前",
+            "マクラ"
+          ]
+        },
+        {
+          "id": "side",
+          "cue": "相手の脚が抜けた",
+          "answer": "脚が抜けてサイドを取られたら、肘を体へ戻して肩と腰に前腕を入れ直し、近い膝を差し込む空間を作ります。",
+          "next_id": "side-bottom",
+          "match": [
+            "パスされた",
+            "サイド",
+            "脚が抜け"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "首の力で顔を戻そうとする",
+          "fix": "肩への前腕と床を踏む足で圧が緩む方向を作る"
+        }
+      ],
+      "beginner_instruction": "マクラが入る前と入った後を分け、低い圧で練習する。",
+      "safety_notes": "首に無理な圧が掛かればタップして止める。",
+      "source_refs": [
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "half-crossface",
+          "scope": "独自メモ"
+        },
+        {
+          "source_id": "andy-half-class",
+          "location": "半身・ディフェンス",
+          "scope": "肩への侵入を防ぐ"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "half-crossface"
+      ],
+      "related_ids": [
+        "knee-shield",
+        "side-bottom"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ボトムのハーフで脇やマクラを取られたら、腕を差し返す前に、胸を重ねられた形から半身に戻る余白を作ります。",
+        "tips": [
+          "肘を体に寄せ、空いた方の上腕や肩に前腕を入れます。足で床を踏んで圧が緩む瞬間に骨盤を横へずらし、上の膝を戻します。"
+        ]
+      }
+    },
+    {
+      "id": "knee-shield",
+      "name_ja": "ニーシールドハーフ",
+      "name_en": "Knee shield half guard",
+      "top_or_bottom": "bottom",
+      "family": "half",
+      "start_position": "トップの片脚を挟んだボトムハーフ",
+      "aliases": [
+        "ニーシールド",
+        "knee shield",
+        "Zガード",
+        "膝のフレーム"
+      ],
+      "body_positions": {
+        "self": "半身のまま上側のすねを動かせる",
+        "opponent": "片脚を挟まれて胸を寄せるトップ"
+      },
+      "grips_and_frames": [
+        "上のすねを胸や肩との間へ",
+        "前腕で残る肩の線を受ける",
+        "道着なら袖や襟を補助に使う"
+      ],
+      "mechanics": {
+        "weight": "下側の腰",
+        "support": "下の脚が相手の片脚を支える",
+        "pressure": "すねと前腕の二点で距離を作る",
+        "angle": "横向きを維持"
+      },
+      "goal": "胸を密着させずに組み手やガードの切替へ移れる距離を作る。",
+      "steps_ja": [
+        "半身を作る。",
+        "上のすねを間に置き、空いた肩の線に前腕を置く。",
+        "トップの腕の位置を見て、次に脇を差せるか判断する。"
+      ],
+      "success_conditions": [
+        "肩と腰が同時に固定される前",
+        "膝に余裕がある"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "enter",
+          "cue": "相手の脇が開く",
+          "answer": "相手の脇が開いたら上の膝で距離を残し、脇を差して頭と肘を相手の脇腹へ寄せられます。",
+          "next_id": "half-underhook",
+          "match": [
+            "脇",
+            "開"
+          ]
+        },
+        {
+          "id": "crush",
+          "cue": "すねを潰された",
+          "answer": "すねを押し潰されたら、前腕で肩への進路を止め、骨盤を横にずらして膝が戻る幅を取り直します。",
+          "next_id": "guard-retention",
+          "match": [
+            "潰",
+            "押",
+            "つぶ"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "膝だけでトップの胸を止めようとする",
+          "fix": "もう一方の肩が近づく線を前腕で受ける"
+        }
+      ],
+      "beginner_instruction": "トップが少しずつ近づき、ボトムは前腕とすねの二つの接点を調整する。",
+      "safety_notes": "膝を横から押された状態で無理に伸ばさない。",
+      "source_refs": [
+        {
+          "source_id": "andy-half-class",
+          "location": "ディフェンスと構え",
+          "scope": "高めのシールドの例"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "half-underhook",
+        "guard-retention"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ボトムのニーシールドは、半身で上のすねを間に置き、前腕と組み合わせて相手の胸が重なる距離を管理します。",
+        "tips": [
+          "下の脚でトップの片脚を保持して、最初は骨盤が動く位置を確かめます。すねで片側、前腕で空いた肩や上腕の側を受けます。"
+        ]
+      }
+    },
+    {
+      "id": "half-top-vs-underhook",
+      "name_ja": "脇を差されたトップハーフ",
+      "name_en": "Top half guard against an underhook",
+      "top_or_bottom": "top",
+      "family": "half",
+      "start_position": "トップハーフでボトムに脇を差された状態",
+      "aliases": [
+        "相手のアンダーフック",
+        "脇を差された",
+        "ウィザーをかける"
+      ],
+      "body_positions": {
+        "self": "片脚を捕まれ、自由な脚と手で支えを作る",
+        "opponent": "半身から脇差しで起きて背中を狙うボトム"
+      },
+      "grips_and_frames": [
+        "差してきた腕を上から巻くウィザー",
+        "空いた手か足を土台にする"
+      ],
+      "mechanics": {
+        "weight": "前へ落ち過ぎない",
+        "support": "フリーの脚と手",
+        "pressure": "ボトムが背中側へ回る線を抑える",
+        "angle": "相手の胸を目線に入れ続ける"
+      },
+      "goal": "相手に起きて回り込まれるのを抑え、上で組み直す。",
+      "steps_ja": [
+        "片脚を引き抜く前に自由な足を安定させる。",
+        "ウィザーで相手の肩が背中側へ抜けるのを抑える。",
+        "相手が床側に戻れば自分の組み手を取り直す。"
+      ],
+      "success_conditions": [
+        "頭から先に落ちない",
+        "相手が潜る方向に支点が残る"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "rising",
+          "cue": "相手が起きてドッグファイトになる",
+          "answer": "そのまま起きられたら、自由な足と手でベースを追加し、下へ潜られる線を見ながら背中側への回り込みを抑えます。",
+          "next_id": null,
+          "match": [
+            "起き",
+            "ドッグファイト",
+            "立"
+          ]
+        },
+        {
+          "id": "flat",
+          "cue": "相手の肩が床側へ戻る",
+          "answer": "相手の肩が床側へ戻ったら、上半身を取り直し、胸を安定させてから捕まった膝、足首の順に抜きます。",
+          "next_id": "half-pass",
+          "match": [
+            "戻",
+            "倒"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "巻く腕だけで相手を横へ引く",
+          "fix": "支えを置き直して腰が浮く向きを確認する"
+        }
+      ],
+      "beginner_instruction": "ボトムが肘で起きる前と後で、トップの足の土台がどこに必要か確認する。",
+      "safety_notes": "差された腕・相手の肩を勢いでねじらない。",
+      "source_refs": [
+        {
+          "source_id": "andy-half-pass",
+          "location": "ハーフのコンセプト",
+          "scope": "トップの目標"
+        },
+        {
+          "source_id": "jjb-whizzer",
+          "location": "公開説明",
+          "scope": "バックを止めるウィザー"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 pp.23–24",
+          "scope": "トップ例との比較"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "half-pass"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "トップのハーフで脇を差されたら、フリーの脚を置いてベースを作り、相手が胸を背中側へ回す動きを止めます。",
+        "tips": [
+          "ウィザーをかけるときも腕だけで引き倒さず、相手が肘から起きる方向へ自分の手か足の支えを残します。"
+        ]
+      }
+    },
+    {
+      "id": "dogfight",
+      "name_ja": "ドッグファイトとウィザーへの対応",
+      "name_en": "Dogfight and whizzer responses",
+      "top_or_bottom": "bottom",
+      "family": "half",
+      "start_position": "ハーフで脇を差し、手・膝で起きられるボトム",
+      "aliases": [
+        "ドッグファイト",
+        "dogfight",
+        "ウィザー",
+        "whizzer",
+        "コヨーテ"
+      ],
+      "body_positions": {
+        "self": "差した腕が巻かれ、頭と腰の高さを保つ",
+        "opponent": "ウィザーで背中への回り込みを防ぐトップ"
+      },
+      "grips_and_frames": [
+        "脇差しを保つ",
+        "空いた手で床を支える",
+        "届く場合だけ遠い膝に触れる"
+      ],
+      "mechanics": {
+        "weight": "前に乗るか横に支えるか読む",
+        "support": "下の膝と自由な手",
+        "pressure": "支えが薄い方向へ相手の体重を動かす",
+        "angle": "頭を脇腹側に保つ"
+      },
+      "goal": "相手が使う支えに応じ、ロールアンダー、ニータップ、バックや回復を選ぶ。",
+      "steps_ja": [
+        "自由な手と膝の位置を作る。",
+        "前への圧と遠い膝の支えを確かめる。",
+        "肩や頭をつぶされた場合は前腕と膝を作り直す。"
+      ],
+      "success_conditions": [
+        "頭・腕を自由に動かせる",
+        "相手の支えが薄い方向を選べる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "forward",
+          "cue": "相手が前へ荷重する",
+          "answer": "相手が腕を巻いて前へ乗り、頭を自由に動かせるなら、相手の下へ体を寄せて返すロールアンダーが候補です。",
+          "next_id": null,
+          "match": [
+            "前に",
+            "前へ",
+            "乗っ",
+            "乗せ",
+            "ロールアンダー"
+          ]
+        },
+        {
+          "id": "far-knee",
+          "cue": "遠い膝の支えが弱い",
+          "answer": "遠い膝に手が届き、横への支えが弱いなら、膝を受けながら上体を横へ進めるニータップが候補です。",
+          "next_id": null,
+          "match": [
+            "遠い膝",
+            "ニータップ",
+            "タックル"
+          ]
+        },
+        {
+          "id": "no-wrap",
+          "cue": "巻きが緩む",
+          "answer": "ウィザーが緩んだら脚を挟んだまま胸を相手の背中側へ運びます。胸と腰の接点ができてから脚を入れます。",
+          "next_id": "back-take",
+          "match": [
+            "緩",
+            "ほど",
+            "バック"
+          ]
+        },
+        {
+          "id": "flattened",
+          "cue": "頭と肩を下げられた",
+          "answer": "頭と肩を押し下げられたら、巻く腕を引かず、前腕と膝で距離を取り直してニーシールドへ戻ります。",
+          "next_id": "knee-shield",
+          "match": [
+            "潰",
+            "下が",
+            "押し",
+            "首"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "前へ乗る相手と横に支える相手を区別せず同じ方向へ返す",
+          "fix": "相手の遠い膝と手がどちらを支えているか見る"
+        }
+      ],
+      "beginner_instruction": "相手に前へ乗る、横を支える、腕を緩める反応を順に出してもらう。",
+      "safety_notes": "首を床につけて回らない。パートナーの膝を強く横へねじらない。",
+      "source_refs": [
+        {
+          "source_id": "jjb-whizzer",
+          "location": "付随本文・時刻未確認",
+          "scope": "バックを塞ぐウィザーとロールアンダー"
+        },
+        {
+          "source_id": "andy-half-class",
+          "location": "遠い膝と遠側への対処",
+          "scope": "膝・逆方向の候補"
+        },
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "dogfight",
+          "scope": "独自メモ"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "dogfight"
+      ],
+      "related_ids": [
+        "back-take",
+        "knee-shield"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ボトムで脇を差してウィザーを受けたら、まず頭を脇腹側で高く保ち、自由な手と膝で体を支えます。",
+        "tips": [
+          "腕を巻かれたまま力で引くと肩が落ちます。相手が前に体重をかけるか、遠い膝で横を支えるかで返す方向を決めます。"
+        ]
+      }
+    },
+    {
+      "id": "half-pass",
+      "name_ja": "トップハーフの足抜き",
+      "name_en": "Half guard pass and knee-line clearance",
+      "top_or_bottom": "top",
+      "family": "half",
+      "start_position": "相手にトップの片脚を挟まれたハーフ",
+      "aliases": [
+        "ハーフパス",
+        "ハーフガードパス",
+        "足抜き"
+      ],
+      "body_positions": {
+        "self": "胸を合わせたいトップ",
+        "opponent": "膝のシールドや脇差しで起きるボトム"
+      },
+      "grips_and_frames": [
+        "近い膝やすねの接点",
+        "肩線を制御する体または腕",
+        "自由な脚"
+      ],
+      "mechanics": {
+        "weight": "足首だけに体重を預けない",
+        "support": "フリーの脚と肩側の接点",
+        "pressure": "すねを除いてから胸を合わせる",
+        "angle": "相手の背中が床側を向く方向"
+      },
+      "goal": "足首を引く前に、相手を起き上がらせず捕まった膝を越える。",
+      "steps_ja": [
+        "膝のシールドを外す。",
+        "肩や脇への接点からボトムの向きを抑える。",
+        "捕まった膝を越え、足首の順で外す。"
+      ],
+      "success_conditions": [
+        "下の膝や前腕で胸を止められていない",
+        "足首に過度のねじれがない"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "shield",
+          "cue": "ニーシールドが戻る",
+          "answer": "膝が胸の前へ戻ったら押し込まず、荷重を足と手へ分散して、すねの接点を処理してから通り直します。",
+          "next_id": "knee-cut",
+          "match": [
+            "膝",
+            "シールド"
+          ]
+        },
+        {
+          "id": "up",
+          "cue": "相手に脇を差される",
+          "answer": "相手が脇を差して起きたら足を引き続けず、ウィザーとフリーの足で自分のベースを作り直します。",
+          "next_id": "half-top-vs-underhook",
+          "match": [
+            "脇",
+            "起き"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "膝を挟まれたまま足首を引く",
+          "fix": "相手の上半身を安定させて自分の膝を先に抜く"
+        }
+      ],
+      "beginner_instruction": "シールド、上半身、膝、足首の順で、相手が止める段階を変えて練習する。",
+      "safety_notes": "足首が固定された状態で腰をねじらない。",
+      "source_refs": [
+        {
+          "source_id": "andy-half-pass",
+          "location": "フレーム解除と上半身",
+          "scope": "足抜き前の制御"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 pp.23–24",
+          "scope": "異なる組み手の例"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "knee-cut",
+        "half-top-vs-underhook"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "トップのハーフは、まず膝や前腕のフレームを外し、相手が横を向いて起きられない位置を作ってから足を抜きます。",
+        "tips": [
+          "相手の肩の向きを保ち、挟まれた膝を抜きます。足首を力で引かず、膝が自由になってから、上半身を保ったまま最後に外します。"
+        ]
+      }
+    },
+    {
+      "id": "half-butterfly",
+      "name_ja": "ハーフバタフライ",
+      "name_en": "Half butterfly guard",
+      "top_or_bottom": "bottom",
+      "family": "half-butterfly",
+      "start_position": "トップの片脚を挟み、上の足の甲を差せるボトム",
+      "aliases": [
+        "ハーフバタフライ",
+        "half butterfly",
+        "バタフライハーフ"
+      ],
+      "body_positions": {
+        "self": "下の脚で相手を保持し、上の足の甲で相手の内腿を扱う",
+        "opponent": "自由な手・脚で前方や横を支えるトップ"
+      },
+      "grips_and_frames": [
+        "上の足の甲を内腿へ",
+        "上腕か肩に近い接点"
+      ],
+      "mechanics": {
+        "weight": "トップを横へ寄せて持ち上げる",
+        "support": "下の脚と横尻",
+        "pressure": "フックと上体を同じ方向へ動かす",
+        "angle": "倒す側の肩へ斜めに寝る"
+      },
+      "goal": "相手の片脚を絡めながらフックと上半身の接点で崩す。",
+      "steps_ja": [
+        "足の甲を内腿へ入れる。",
+        "相手を引き付けて倒す方向の手・膝を確かめる。",
+        "横へ動きながらフックで腿を浮かせる。"
+      ],
+      "success_conditions": [
+        "胸を合わせられていない",
+        "倒す側の手か膝の支えが外れる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "posting",
+          "cue": "倒す側に手をつく",
+          "answer": "倒す側の手が支えたらフックで蹴り続けず、座り直して手の支えを取れる角度か、別の方向へ崩せるかを確認します。",
+          "next_id": "butterfly-sweep",
+          "match": [
+            "手をつ",
+            "ポスト",
+            "支え"
+          ]
+        },
+        {
+          "id": "flatten",
+          "cue": "胸を重ねられてフックが浅くなる",
+          "answer": "胸が重なりフックが浅くなったら前腕と膝で距離を取ってから、足の甲を入れ直せる場所を探します。",
+          "next_id": "knee-shield",
+          "match": [
+            "潰",
+            "胸",
+            "浅"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "足の甲だけで真上へ蹴る",
+          "fix": "手と膝の支えを確認して横の崩しと合わせる"
+        }
+      ],
+      "beginner_instruction": "相手に倒す側の手を出してもらい、続けるか戻るか決める。",
+      "safety_notes": "フックで膝を回さず、肩を使って横へ動く。",
+      "source_refs": [
+        {
+          "source_id": "ga-half-butterfly",
+          "location": "公開本文",
+          "scope": "ハーフから足の甲を使う例"
+        },
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "half-butterfly",
+          "scope": "独自メモ"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "half-butterfly"
+      ],
+      "related_ids": [
+        "butterfly-sweep",
+        "knee-shield"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ハーフバタフライは、ボトムで片脚を挟みながら、上の足の甲を相手の内腿に入れ、相手を横へ崩します。",
+        "tips": [
+          "持ち上げる前に相手を自分の側へ寄せ、倒す側に手やフリーの膝が残っていないか確認します。上体の引きと足の甲の動きを合わせます。"
+        ]
+      }
+    },
+    {
+      "id": "butterfly-sweep",
+      "name_ja": "バタフライガードのフックスイープ",
+      "name_en": "Butterfly hook sweep",
+      "top_or_bottom": "bottom",
+      "family": "butterfly",
+      "start_position": "ボトムでシッティングバタフライを組む",
+      "aliases": [
+        "バタフライ",
+        "butterfly guard",
+        "フックスイープ"
+      ],
+      "body_positions": {
+        "self": "座って相手を引き付けられるボトム",
+        "opponent": "膝立ちで、手をつくか腰を引くトップ"
+      },
+      "grips_and_frames": [
+        "上腕か肩の制御",
+        "足の甲で内腿を持ち上げる",
+        "倒す側の手を制御"
+      ],
+      "mechanics": {
+        "weight": "相手を斜め手前へ寄せる",
+        "support": "肩と床を使う足",
+        "pressure": "上体の引きとフックを合わせる",
+        "angle": "自分の横の肩へ倒れる"
+      },
+      "goal": "相手が使う手足の支えを取り除き、フックから上を取る。",
+      "steps_ja": [
+        "倒す側の腕を制御する。",
+        "相手の重心を自分のフック側へ誘導する。",
+        "片側の肩へ倒れながら、足の甲で腿を浮かせて上を取る。"
+      ],
+      "success_conditions": [
+        "倒す側の手や膝の支持がほぼ外れている",
+        "相手の腰が後方に残っていない"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "post",
+          "cue": "相手が倒す側の手をつく",
+          "answer": "手をつかれたら蹴り足を戻し、床についた手を上腕の制御で外せるか見ます。支えが残る間は座り直して崩し直します。",
+          "next_id": null,
+          "match": [
+            "手をつ",
+            "ポスト",
+            "支え"
+          ]
+        },
+        {
+          "id": "backward",
+          "cue": "相手が腰を後ろに引く",
+          "answer": "腰を引かれたらフックが相手から離れています。伸ばして追わず、シッティングの距離を取り直して接点を作ります。",
+          "next_id": "open-guard",
+          "match": [
+            "後ろ",
+            "下が",
+            "腰を引",
+            "距離"
+          ]
+        },
+        {
+          "id": "close",
+          "cue": "相手の片脚を捕まえた",
+          "answer": "相手が近づいて片脚を捕まえたときは、上側の足の甲が内腿に入るならハーフバタフライへ移れます。",
+          "next_id": "half-butterfly",
+          "match": [
+            "ハーフ",
+            "片脚"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "自分の真後ろへ倒れて相手に乗られる",
+          "fix": "倒す側の手を確認し、肩が横に着く角度に変える"
+        }
+      ],
+      "beginner_instruction": "手を出す・腰を引く・膝で支える反応を一つずつ加える。",
+      "safety_notes": "相手を手首や頭から落とさない。",
+      "source_refs": [
+        {
+          "source_id": "ga-butterfly",
+          "location": "基本フックスイープ本文",
+          "scope": "横への崩し"
+        },
+        {
+          "source_id": "ga-butterfly-backward",
+          "location": "公開付随本文",
+          "scope": "腰を引く相手は入口が変わる"
+        },
+        {
+          "source_id": "rrt-v13-editorial",
+          "location": "kako-butterfly-support",
+          "scope": "旧メモの支持の考え方"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "butterfly-sweep",
+        "kako-butterfly-support"
+      ],
+      "related_ids": [
+        "open-guard",
+        "half-butterfly"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ボトムのバタフライは、相手を足の甲だけで蹴り上げず、倒す方向の床の支えを外してからフックを使います。",
+        "tips": [
+          "相手を自分の近くへ引き、片側の肩へ斜めに倒れながら腿を浮かせます。相手の手や膝で床を支えている方向には返りにくくなります。"
+        ]
+      }
+    }
+  ]
 }
