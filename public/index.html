@@ -37,6 +37,19 @@
 .coach-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:13px;flex-wrap:wrap}
 @media(max-width:760px){.chat-messages{max-height:60vh;min-height:330px;padding:12px}.chat-bubble{max-width:95%;font-size:14px}.chat-form button{width:100%}.rangel-hero{padding:12px}.rangel-hero img{width:78px;height:78px}.chat-avatar,.chat-self{width:34px;height:34px;border-radius:12px}}
 
+/* Verified public video recommendations (external links; no video hosted). */
+.video-suggestions{margin:2px 0 12px 50px;padding:12px;border:1px solid #445164;background:#1a2633;border-radius:14px;max-width:min(100% - 50px,610px)}
+.video-suggestions h3{font-size:13px;color:#e6ecf5;margin:0 0 11px;font-weight:800}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.video-item{display:block;background:#222e3c;border:1px solid #475a70;border-radius:11px;overflow:hidden;text-decoration:none;color:#fff}
+.video-item:hover{border-color:#ed5a65}
+.video-item img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#263549}
+.video-meta{padding:10px}
+.video-title{font-size:12px;font-weight:800;line-height:1.45;margin:0 0 5px;overflow-wrap:anywhere}
+.video-sub{font-size:11px;color:#b2c5d5;line-height:1.5;overflow-wrap:anywhere;margin:0}
+.video-search{font-size:12px;display:inline-block;margin-top:10px;color:#9dd5ff;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+@media(max-width:760px){.video-suggestions{margin-left:0;max-width:100%}.video-grid{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}}
+
 /* Rangel teacher inspired AI identity. No real-person portrait used. */
 .rangel-coach-head{display:flex;align-items:center;gap:13px;margin:4px 0 14px;flex-wrap:wrap}
 .rangel-hero{display:flex;align-items:center;gap:14px;background:linear-gradient(145deg,#251d27,#1c232c);border:1px solid #434c58;border-radius:18px;padding:14px 16px;margin:10px 0 14px}
@@ -111,7 +124,7 @@ body.shared-review .role-switch,body.shared-review .admin-only{display:none!impo
         </div>
         <span id="ai-connection" class="pill">接続確認中</span>
       </div>
-      <p class="hint">柔術の悩みを文章で聞いてください。初心者にもわかりやすく、今日の練習で試せるポイントを答えます。動画・リンクは表示しません。</p>
+      <p class="hint">柔術の悩みを文章で聞いてください。初心者にもわかりやすく、今日の練習で試せるポイントを答えます。関連する無料YouTube動画も確認できます。</p>
       <div class="rangel-hero"><img data-rrt-mascot src="" alt="らんじぇる先生のイラスト"><div class="rangel-hero-text"><strong>らんじぇる先生とチャット</strong><p>気になることをそのまま文章で聞いてください。やさしく整理して、次に意識するとよいポイントを文字で返します。</p></div></div>
       <div class="notice-box" id="ai-system-note">生成AIはGemini APIを通じて応答します。有料教則は目次データのみ登録済みです。本編の動画・字幕は未解析です。競技ルールは団体・開催日などによって異なります。</div>
       <div class="quick-prompts" id="quick-prompts">
@@ -312,6 +325,33 @@ function appendBubble(role,content){
   }
   chatBox.appendChild(row);chatBox.scrollTop=chatBox.scrollHeight;
 }
+function appendVideoReferences(videos,searchUrl,searchLabel){
+  const items=Array.isArray(videos)?videos.slice(0,2):[];
+  const searchAllowed=typeof searchUrl==='string'&&searchUrl.startsWith('https://www.youtube.com/results?search_query=');
+  if(!items.length&&!searchAllowed)return;
+  const section=document.createElement('section');section.className='video-suggestions';
+  const heading=document.createElement('h3');heading.textContent=items.length?'関連する無料YouTube動画':'YouTubeで動画を探す';section.appendChild(heading);
+  if(items.length){
+    const grid=document.createElement('div');grid.className='video-grid';
+    items.forEach(video=>{
+      if(!video || !/^[a-zA-Z0-9_-]{11}$/.test(video.id||''))return;
+      if(video.url!=='https://www.youtube.com/watch?v='+video.id)return;
+      const link=document.createElement('a');link.className='video-item';link.href=video.url;link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label','YouTubeで見る: '+video.title);
+      const img=document.createElement('img');img.src='https://i.ytimg.com/vi/'+video.id+'/hqdefault.jpg';img.alt='動画のサムネイル';img.loading='lazy';img.referrerPolicy='no-referrer';img.onerror=()=>{img.style.display='none';};
+      const meta=document.createElement('div');meta.className='video-meta';
+      const title=document.createElement('p');title.className='video-title';title.textContent=video.title;
+      const sub=document.createElement('p');sub.className='video-sub';sub.textContent=(video.channel||'YouTube')+(video.description?'｜'+video.description:'');
+      meta.append(title,sub);link.append(img,meta);grid.appendChild(link);
+    });
+    section.appendChild(grid);
+  }
+  if(searchAllowed){
+    const a=document.createElement('a');a.className='video-search';a.href=searchUrl;a.target='_blank';a.rel='noopener noreferrer';
+    a.textContent='YouTubeで「'+String(searchLabel||'柔術').slice(0,75)+'」を検索する';
+    section.appendChild(a);
+  }
+  chatBox.appendChild(section);chatBox.scrollTop=chatBox.scrollHeight;
+}
 function setChatError(value){const node=$('ai-error');node.hidden=!value;node.textContent=value||'';}
 function updateChatBusy(flag){
   chatBusy=flag;$('ai-submit').disabled=flag;
@@ -331,6 +371,7 @@ async function askCoach(question){
     if(!resp.ok)throw Error(body.error||'AIに接続できませんでした。');
     if(typeof body.answer!=='string'||!body.answer.trim())throw Error('AIから回答がありませんでした。');
     appendBubble('assistant',body.answer);
+    appendVideoReferences(body.videos,body.search_url,body.search_label);
     chatHistory.push({role:'assistant',content:body.answer});
     if(chatHistory.length>30)chatHistory.splice(0,chatHistory.length-30);
     setConnected('yes','AI接続中');
