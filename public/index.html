@@ -56,6 +56,12 @@
  .chat-input{min-height:90px;font-size:16px}
 }
 
+/* Curated article links: article text not stored or reproduced. */
+.article-references{margin:0 0 12px 50px;max-width:min(100% - 50px,610px);padding:11px 13px;border:1px solid #455264;background:#1a2531;border-radius:12px;font-size:13px}
+.article-references .ref-title{font-weight:800;color:#e8edf7;margin:0 0 8px}
+.article-references a{display:block;color:#a8d8ff;text-decoration:underline;text-underline-offset:3px;margin-top:8px;overflow-wrap:anywhere}
+.article-references small{display:block;color:#b3c1cf;line-height:1.5;font-size:11px}
+@media(max-width:760px){.article-references{max-width:100%;margin-left:0}}
 /* Verified public video recommendations (external links; no video hosted). */
 .video-suggestions{margin:2px 0 12px 50px;padding:12px;border:1px solid #445164;background:#1a2633;border-radius:14px;max-width:min(100% - 50px,610px)}
 .video-suggestions h3{font-size:13px;color:#e6ecf5;margin:0 0 11px;font-weight:800}
@@ -344,6 +350,22 @@ function appendBubble(role,content){
   }
   chatBox.appendChild(row);chatBox.scrollTop=chatBox.scrollHeight;
 }
+function appendArticleReferences(references){
+  const list=Array.isArray(references)?references.slice(0,2):[];
+  if(!list.length)return;
+  const allowed=['https://note.com/','https://letsbjj.site/','https://www.youtube.com/channel/'];
+  const safe=list.filter(v=>typeof v?.url==='string'&&allowed.some(prefix=>v.url.startsWith(prefix))&&typeof v.title==='string');
+  if(!safe.length)return;
+  const section=document.createElement('div');section.className='article-references';
+  const label=document.createElement('div');label.className='ref-title';label.textContent='参考記事（外部サイト）';
+  section.appendChild(label);
+  for(const ref of safe){
+   const a=document.createElement('a');a.href=ref.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=ref.title;
+   const desc=document.createElement('small');desc.textContent=String(ref.focus||'').slice(0,120);
+   section.append(a,desc);
+  }
+  chatBox.appendChild(section);chatBox.scrollTop=chatBox.scrollHeight;
+}
 function appendVideoReferences(videos,searchUrl,searchLabel){
   const items=Array.isArray(videos)?videos.slice(0,2):[];
   const searchAllowed=typeof searchUrl==='string'&&searchUrl.startsWith('https://www.youtube.com/results?search_query=');
@@ -391,6 +413,7 @@ async function askCoach(question){
     if(typeof body.answer!=='string'||!body.answer.trim())throw Error('AIから回答がありませんでした。');
     appendBubble('assistant',body.answer);
     appendVideoReferences(body.videos,body.search_url,body.search_label);
+    appendArticleReferences(body.references);
     chatHistory.push({role:'assistant',content:body.answer});
     if(chatHistory.length>30)chatHistory.splice(0,chatHistory.length-30);
     setConnected('yes','AI接続中');
