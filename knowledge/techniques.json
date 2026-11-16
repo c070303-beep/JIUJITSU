@@ -3805,6 +3805,508 @@
           "腰を斜めにずらし、相手の肘を自分の腰に近く置きます。相手が肘を抜ける状態なら組み直し、負荷を掛けた後はタップですぐに放します。"
         ]
       }
+    },
+    {
+      "id": "de-la-riva",
+      "name_ja": "デラヒーバガード",
+      "name_en": "De La Riva guard",
+      "top_or_bottom": "bottom",
+      "family": "dlr",
+      "start_position": "トップが片脚を前に置くオープンガード",
+      "aliases": [
+        "デラヒーバ",
+        "de la riva",
+        "DLR"
+      ],
+      "body_positions": {
+        "self": "相手の前脚に外からフックを掛けるボトム",
+        "opponent": "膝の向きを変えフックを外そうとするトップ"
+      },
+      "grips_and_frames": [
+        "足首または裾",
+        "内腿に掛ける足の甲",
+        "反対脚で距離"
+      ],
+      "mechanics": {
+        "weight": "横尻で相手の荷重方向を見る",
+        "support": "フックと反対の足",
+        "pressure": "脚と上体を別々に制御する",
+        "angle": "前脚の外から内腿へ回す"
+      },
+      "goal": "相手の前脚と上体に接点を持ち、踏み直しに合わせて崩す。",
+      "steps_ja": [
+        "足首を扱える距離に入る。",
+        "前脚の外から回した足の甲を内腿へ掛ける。",
+        "反対の足と手で距離を調整する。"
+      ],
+      "success_conditions": [
+        "膝に無理なくフックを作れる",
+        "反対側の足を動かせる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "free",
+          "cue": "相手が膝を回してフックを外す",
+          "answer": "フックが外れたら足首だけで粘らず、膝を体に戻し、新しい足やすねの接点でオープンガードを作り直します。",
+          "next_id": "open-guard",
+          "match": [
+            "外",
+            "膝を回"
+          ]
+        },
+        {
+          "id": "seated",
+          "cue": "尻が落ち背中側が開く",
+          "answer": "相手の尻が床側へ落ち、腰への接点が残るなら背中側に移れるか確認します。回転は肩と背中で支えられる場合に限ります。",
+          "next_id": "berimbolo",
+          "match": [
+            "尻",
+            "背中",
+            "ベリンボロ"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "巻いた足を真っすぐ突っ張る",
+          "fix": "反対脚で距離を変えて膝に余裕を残す"
+        }
+      ],
+      "beginner_instruction": "相手が膝の向きを変えた時点で、フックを保つか戻すか選ぶ。",
+      "safety_notes": "相手の膝が横へねじれる方向に固定し続けない。",
+      "source_refs": [
+        {
+          "source_id": "ga-dlr",
+          "location": "本文・技の写真",
+          "scope": "外巻きのフックと基本のスイープ"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "open-guard",
+        "berimbolo"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "デラヒーバは、ボトムが相手の近い脚を外から巻き、足の甲を内腿に掛けるガードです。",
+        "tips": [
+          "足首か裾に接点を作り、反対の足と手で距離を取ります。相手の踏み直しを見て、自分の骨盤が動かせる状態を残します。"
+        ]
+      }
+    },
+    {
+      "id": "single-leg-x",
+      "name_ja": "シングルレッグXガード",
+      "name_en": "Single leg X guard",
+      "top_or_bottom": "bottom",
+      "family": "slx",
+      "start_position": "ボトムが相手の片脚の下へ入る",
+      "aliases": [
+        "シングルX",
+        "シングルレッグX",
+        "single leg x",
+        "SLX"
+      ],
+      "body_positions": {
+        "self": "相手の片脚を囲うボトム",
+        "opponent": "反対の脚で踏み直そうとするトップ"
+      },
+      "grips_and_frames": [
+        "捕まえた足首への接点",
+        "腰への足裏",
+        "腿の内側のフック"
+      ],
+      "mechanics": {
+        "weight": "片脚に荷重が掛かる瞬間を見る",
+        "support": "腰と腿への二つの足の接点",
+        "pressure": "脚と腰を別方向へ誘導",
+        "angle": "膝をねじらない位置"
+      },
+      "goal": "片脚を囲い、相手の支えを動かす。",
+      "steps_ja": [
+        "片脚の下に入って足首側を扱う。",
+        "足裏を腰に置き内腿をフックする。",
+        "反対脚が着く方向を見て崩す。"
+      ],
+      "success_conditions": [
+        "腰と腿の接点がある",
+        "膝をねじらない"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "far",
+          "cue": "相手が反対脚で大きく踏み直す",
+          "answer": "反対脚の接点も作れるなら通常のXガードに移れます。遠い脚を無理に引かず、届く位置まで骨盤を調整します。",
+          "next_id": "x-guard",
+          "match": [
+            "反対",
+            "Xガード",
+            "踏み"
+          ]
+        },
+        {
+          "id": "hip",
+          "cue": "相手が足裏を腰から外す",
+          "answer": "腰の足を外されたら、捕まえた脚だけにしがみつかず膝を引き、すねの接点でオープンガードを戻します。",
+          "next_id": "open-guard",
+          "match": [
+            "外",
+            "ほど"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "足首だけをつかんで腰の接点が消える",
+          "fix": "足裏と腿の内側の接点を取り直す"
+        }
+      ],
+      "beginner_instruction": "片脚を低い抵抗で囲って、膝に無理がない位置から動く。",
+      "safety_notes": "相手の膝を内へ強く押し込まない。",
+      "source_refs": [
+        {
+          "source_id": "ga-slx",
+          "location": "本文のエントリーとスイープ",
+          "scope": "片脚の接点"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "x-guard",
+        "open-guard"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "シングルレッグXは、ボトムが相手の片脚を囲い、腰と腿に足の接点を作って支えを崩すガードです。",
+        "tips": [
+          "捕まえた足首だけを引かず、腰への足裏と内腿へのフックを同時に残します。相手が自由な脚を置く場所を見て動きます。"
+        ]
+      }
+    },
+    {
+      "id": "x-guard",
+      "name_ja": "通常のXガード",
+      "name_en": "X guard",
+      "top_or_bottom": "bottom",
+      "family": "x-guard",
+      "start_position": "ボトムが相手の両脚に接点を持つ",
+      "aliases": [
+        "Xガード",
+        "X guard",
+        "通常X",
+        "フルX"
+      ],
+      "body_positions": {
+        "self": "近い脚を肩側で支え、遠い脚へ足を掛けるボトム",
+        "opponent": "両足で踏み直すトップ"
+      },
+      "grips_and_frames": [
+        "近い脚を肩側で保持",
+        "遠い脚の腿や膝の周りに上下のフック"
+      ],
+      "mechanics": {
+        "weight": "相手の支持の間に入る",
+        "support": "近い脚と遠い脚",
+        "pressure": "フックで足幅を変える",
+        "angle": "相手の上体が振られる方向を読む"
+      },
+      "goal": "相手の両脚への接点で支えを移す。",
+      "steps_ja": [
+        "近い脚を肩側に置く。",
+        "遠い脚へ二つの高さに足を掛ける。",
+        "上体の傾きに合わせて足の支えを動かす。"
+      ],
+      "success_conditions": [
+        "両脚に別々に接点を維持できる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "far",
+          "cue": "遠い脚が離れて片脚だけが残る",
+          "answer": "遠い脚が離れ片脚しか追えない場合は、腰と腿の接点が取れる角度へ戻してSLXを選べます。",
+          "next_id": "single-leg-x",
+          "match": [
+            "遠",
+            "片脚",
+            "SLX"
+          ]
+        },
+        {
+          "id": "back",
+          "cue": "相手が前に支え背中側が開く",
+          "answer": "相手が前に支えて腰が回り、近い脚を肩で保てるなら、背中側へ入り込める角度を確認します。",
+          "next_id": "back-take",
+          "match": [
+            "背中",
+            "前",
+            "バック"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "足を手で引くだけ",
+          "fix": "肩で近い脚を保ち遠い脚の支えも動かす"
+        }
+      ],
+      "beginner_instruction": "実際に両脚へ何点で触れているか説明してから動く。",
+      "safety_notes": "相手の膝や自分の首を無理に押さない。",
+      "source_refs": [
+        {
+          "source_id": "ga-x-back",
+          "location": "Xガードからのバック",
+          "scope": "両脚の接点と移行"
+        },
+        {
+          "source_id": "ga-slx",
+          "location": "SLXの位置",
+          "scope": "片脚との比較"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "single-leg-x",
+        "back-take"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "通常のXガードは、ボトムが近い脚を肩側に保ち、遠い脚にも足を掛けて相手の両脚を扱います。",
+        "tips": [
+          "片脚にまとまるシングルXと比べ、どちらの脚を踏み替えられるかを見ます。足幅が変わり、上体がふらつく方向で次を決めます。"
+        ]
+      }
+    },
+    {
+      "id": "berimbolo",
+      "name_ja": "ベリンボロの開始条件",
+      "name_en": "Berimbolo",
+      "top_or_bottom": "bottom",
+      "family": "berimbolo",
+      "start_position": "相手の腰が低く腰側への接点を持つボトム",
+      "aliases": [
+        "ベリンボロ",
+        "berimbolo",
+        "デラヒーバからバック"
+      ],
+      "body_positions": {
+        "self": "肩と背中で回れるボトム",
+        "opponent": "相手の尻が床に近く、膝を戻したいトップ"
+      },
+      "grips_and_frames": [
+        "デラヒーバ等のフックと足首",
+        "相手の腰を追える手足の接点"
+      ],
+      "mechanics": {
+        "weight": "首に体重を集中させない",
+        "support": "肩・背中と腰への接点",
+        "pressure": "離れず腰に沿って回る",
+        "angle": "相手の骨盤の外から背中側へ"
+      },
+      "goal": "腰への接点を残して相手の背中に回る。",
+      "steps_ja": [
+        "相手の腰が低いか確認する。",
+        "肩と背中で無理なく回れる角度に入る。",
+        "相手の腰のそばで回転を止め背中へ胸を運ぶ。"
+      ],
+      "success_conditions": [
+        "腰に触れる距離",
+        "首に荷重がない"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "loss",
+          "cue": "相手が立ち直って腰が遠くなる",
+          "answer": "腰が離れたら回り切らず、膝を戻してガードを立て直します。相手の腰に触れない状態では回り込む先を制御できません。",
+          "next_id": "de-la-riva",
+          "match": [
+            "離",
+            "立",
+            "戻"
+          ]
+        },
+        {
+          "id": "back",
+          "cue": "相手の腰に近く胸を背中側に運べる",
+          "answer": "背中へ胸を運べるなら腰の接点を保ち、脚だけを先に追わず上半身をつないでからフックを作ります。",
+          "next_id": "back-take",
+          "match": [
+            "背中",
+            "バック"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "首で回転を受ける",
+          "fix": "肩と背中で支えられる範囲に戻す"
+        }
+      ],
+      "beginner_instruction": "相手に静止してもらい、腰への接点と回転する肩を対面で確認する。",
+      "safety_notes": "首が詰まる形で回転を続けない。",
+      "source_refs": [
+        {
+          "source_id": "ga-berimbolo",
+          "location": "本文の3段階",
+          "scope": "回転と腰からバックへの連係"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 pp.52–53",
+          "scope": "ドリルの位置づけ"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "de-la-riva",
+        "back-take"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ベリンボロは、ボトムが相手の腰のそばで向きを変え、背中側につながる位置を取る技です。",
+        "tips": [
+          "相手の尻が低く腰に接点を保てるところから始めます。回転だけを追わず、頭で体重を受けない角度から相手の骨盤を追います。"
+        ]
+      }
+    },
+    {
+      "id": "back-take",
+      "name_ja": "バックテイクと上半身の制御",
+      "name_en": "Back take and back control",
+      "top_or_bottom": "either",
+      "family": "back",
+      "start_position": "相手の横や背中側に回り込める",
+      "aliases": [
+        "バックテイク",
+        "バックを取る",
+        "背中を取る",
+        "シートベルト",
+        "back take"
+      ],
+      "body_positions": {
+        "self": "相手の背中へ胸を向ける側",
+        "opponent": "正面へ向き直るか腰を逃がす側"
+      },
+      "grips_and_frames": [
+        "胸と背中の接点",
+        "肩と脇からのシートベルト",
+        "相手の腰を追う膝"
+      ],
+      "mechanics": {
+        "weight": "相手の向く方向へ胸を合わせる",
+        "support": "膝と床、相手の腰",
+        "pressure": "首を引かず肩と腰を保つ",
+        "angle": "胸と相手の背骨が向き合う側"
+      },
+      "goal": "脚のフックより先に肩と腰の回転を制御する。",
+      "steps_ja": [
+        "胸を相手の背中へつける。",
+        "肩・脇と腰を追える接点を作る。",
+        "腰が離れない所でフックを順に入れる。"
+      ],
+      "success_conditions": [
+        "相手が正面へ戻る前",
+        "両膝のベースを残す"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "turn",
+          "cue": "相手が正面へ向き直る",
+          "answer": "相手に向き直られたら首を引き続けず、胴と腰への接点を取り直します。胸と背中が離れたら取れている位置に降り直します。",
+          "next_id": null,
+          "match": [
+            "向",
+            "正面",
+            "逃"
+          ]
+        },
+        {
+          "id": "whizzer",
+          "cue": "ハーフでウィザーが緩む",
+          "answer": "ハーフで腕の巻きが緩んだら、挟んだ脚を急に放さず、相手の背中側に向けて胸を置けるか確かめます。",
+          "next_id": "half-underhook",
+          "match": [
+            "ハーフ",
+            "ウィザー",
+            "緩"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "フックだけ先に入れようとして胸が離れる",
+          "fix": "相手の肩と腰を保ってから膝を置く"
+        }
+      ],
+      "beginner_instruction": "相手に正面を向こうとしてもらい、胸とシートベルトを短く保持してからフックを練習する。",
+      "safety_notes": "背後から首を強く引かない。絞めはタップで解除。",
+      "source_refs": [
+        {
+          "source_id": "jjb-half",
+          "location": "公開本文",
+          "scope": "ハーフからバックへの例"
+        },
+        {
+          "source_id": "ga-x-back",
+          "location": "公開本文",
+          "scope": "Xガードからの別の例"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "half-underhook"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "バックは自分の胸を相手の背中につけ、相手が肩と腰を回して正面へ戻るのを防ぐところからです。",
+        "tips": [
+          "シートベルトなどで肩と脇を確保し、相手の腰を自分の膝で追います。片方のフックを追うために胸を離すと向き直られます。"
+        ]
+      }
     }
   ]
 }
