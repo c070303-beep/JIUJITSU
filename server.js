@@ -115,6 +115,18 @@ const server=http.createServer((req,res)=>{(async()=>{
  const u=new URL(req.url,'https://localhost');const p=u.pathname;
  if(req.method==='GET' && p==='/healthz')return out(res,200,{ok:true});
  if(req.method==='GET'&&p==='/robots.txt'){res.writeHead(200,{'Content-Type':'text/plain','Cache-Control':'no-store'});return res.end('User-agent: *\nDisallow: /\n')}
+ // Personal trial one-tap entrance: long random token held only in Render Environment.
+ // The public app/API remain session-gated; a private link creates a short-lived session.
+ if(req.method==='GET' && p.startsWith('/personal/')){
+  const secret=process.env.PERSONAL_TRIAL_LINK_TOKEN||'';
+  const supplied=p.slice('/personal/'.length);
+  const aa=Buffer.from(secret),bb=Buffer.from(supplied);
+  if(secret.length<32 || bb.length!==aa.length || !crypto.timingSafeEqual(aa,bb))return out(res,404,{error:'このURLは使用できません。'});
+  const session=crypto.randomBytes(32).toString('hex');
+  sessions.set(session,{expires:Date.now()+12*60*60*1000});
+  res.writeHead(303,{'Location':'/members/','Cache-Control':'no-store','Referrer-Policy':'no-referrer','Set-Cookie':'rrt_session='+session+'; Path=/; Max-Age=43200; HttpOnly; Secure; SameSite=Lax'});
+  return res.end();
+ }
  if(req.method==='POST' && p==='/api/login'){
   if(!checkOrigin(req))return out(res,403,{error:'不正なリクエストです。'});
   if(!rateLimit('login:'+(req.socket.remoteAddress||''),300000,10))return out(res,429,{error:'ログイン試行が多すぎます。'});
