@@ -2,9 +2,9 @@
   "schema_version": "1.0",
   "generated_on": "2026-11-16",
   "comparison_target": "yawara-sweep-textbook-ja",
-  "comparison_status": "source_unavailable_not_compared",
+  "comparison_status": "pdf_topics_reviewed_against_existing_catalog_titles_only",
   "existing_dataset": "RRT_柔術AI_教材データ_132本.json（シュラプネル索引タイトルと分類のみ）",
-  "interpretation": "以下は既存索引のスイープ関連タイトル候補であり、指定PDFと重複していることを意味しない。",
+  "interpretation": "PDF55ページの技術論点と既存132本の動画タイトルを照合。動画本編は未視聴のため技術手順の一致や新規性は未確認。",
   "title_candidates": [
     {
       "existing_id": "1441",
@@ -137,5 +137,65 @@
   ],
   "confirmed_overlap": [],
   "confirmed_differences": [],
-  "confirmed_new_knowledge": []
+  "confirmed_new_knowledge": [],
+  "related_subjects": [
+    {
+      "pdf_pages": [
+        6,
+        18
+      ],
+      "subject": "草刈りの支持とベース",
+      "existing_ids": [
+        "1427",
+        "1474"
+      ],
+      "relation": "same_named_sweep_family_not_detailed_steps"
+    },
+    {
+      "pdf_pages": [
+        51,
+        52
+      ],
+      "subject": "巴ドリル",
+      "existing_ids": [
+        "1434"
+      ],
+      "relation": "named_tomoe_topic_not_verified_same_sequence"
+    },
+    {
+      "pdf_pages": [
+        18,
+        48
+      ],
+      "subject": "ラッソー",
+      "existing_ids": [
+        "1417"
+      ],
+      "relation": "same_guard_family_only"
+    },
+    {
+      "pdf_pages": [
+        23,
+        24
+      ],
+      "subject": "ハーフガードの脇差し攻防",
+      "existing_ids": [
+        "1386",
+        "1368"
+      ],
+      "relation": "position_family_only"
+    },
+    {
+      "pdf_pages": [
+        48
+      ],
+      "subject": "スパイダー",
+      "existing_ids": [
+        "1407",
+        "1406"
+      ],
+      "relation": "same_guard_family_only"
+    }
+  ],
+  "public_note": "確認済み事項は資料の対象ページと関連分野のみ。既存動画の内容とは異なる独自知識と認定しない。"
 }
