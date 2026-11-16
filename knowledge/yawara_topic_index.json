@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0",
+  "source_id": "yawara-sweep-textbook-ja",
+  "source_url": "https://jiujitsu.co.jp/textbook/yawara-sweep-textbook-ja.pdf",
+  "title": "インストラクター養成講座 TEXTBOOK 旧版",
+  "pdf_page_count": 55,
+  "source_content_type": "independently_written_editorial_topic_index",
+  "created_at": "2026-11-16",
+  "rights_status": "copyright_notice_prohibits_reproduction; AI permission not confirmed",
+  "ai_enabled": false,
+  "topics": [
+    {
+      "id": "defense-first",
+      "name": "ガード保持と現在地認識",
+      "pdf_pages": [
+        5,
+        11,
+        12,
+        16,
+        22
+      ],
+      "starting_position": "ガード全般",
+      "grip": "適切な接点を維持",
+      "response": "相手がパスしてきたらフレームへ切替",
+      "principle": "守れる位置を維持してからスイープを狙う",
+      "kind": "principle",
+      "technical_steps_verified": true,
+      "verbatim_text_stored": false,
+      "ai_enabled": false
+    },
+    {
+      "id": "reflex",
+      "name": "反射的な支持と崩し方向",
+      "pdf_pages": [
+        5,
+        6,
+        18,
+        27
+      ],
+      "starting_position": "各種ガード",
+      "grip": "技により異なる",
+      "response": "踏み直し・支持脚の方向で守りが変化",
+      "principle": "崩しの方向を選び直す",
+      "kind": "principle",
+      "technical_steps_verified": true,
+      "verbatim_text_stored": false,
+      "ai_enabled": false
+    },
+    {
+      "id": "kosoto",
+      "name": "草刈りと相手ベース",
+      "pdf_pages": [
+        6,
+        18
+      ],
+      "starting_position": "立っている相手",
+      "grip": "本文に特定手順なし",
+      "response": "足の向きを変えて転倒を防ぐ",
+      "principle": "後方の支持を観察",
+      "kind": "sweep_reference",
+      "technical_steps_verified": true,
+      "verbatim_text_stored": false,
+      "ai_enabled": false
+    },
+    {
+      "id": "lasso",
+      "name": "ラッソーへのベース調整",
+      "pdf_pages": [
+        18,
+        48
+      ],
+      "starting_position": "ラッソーガード",
+      "grip": "袖の制御を含む",
+      "response": "相手が横へ崩す",
+      "principle": "逆側への支持を検討",
+      "kind": "defensive_reference",
+      "technical_steps_verified": true,
+      "verbatim_text_stored": false,
+      "ai_enabled": false
+    },
+    {
+      "id": "closed-guard",
+      "name": "クローズドガードでの姿勢崩し",
+      "pdf_pages": [
+        6,
+        19
+      ],
+      "starting_position": "クローズドガード",
+      "grip": "帯などの接点",
+      "response": "前に支える反応",
+      "principle": "相手の姿勢変化を見て攻撃を選択",
+      "kind": "prerequisite",
+      "technical_steps_verified": true,
+      "verbatim_text_stored": false,
+      "ai_enabled": false
+    },
+    {
+      "id": "half-underhook",
+      "name": "ハーフの脇差し争い",
+      "pdf_pages": [
+        23,
+        24
+      ],
+      "starting_position": "ハーフガード",
+      "grip": "脇差しの主導権",
+      "response": "トップが背中を床へ向ける",
+      "principle": "立ち上がり・スイープ・ガード維持",
+      "kind": "transition",
+      "technical_steps_verified": true,
+      "verbatim_text_stored": false,
+      "ai_enabled": false
+    },
+    {
+      "id": "arch",
+      "name": "テンション・アーチ・重心",
+      "pdf_pages": [
+        26,
+        27
+      ],
+      "starting_position": "ガード全般",
+      "grip": "複数の接点",
+      "response": "支持基底面を移す",
+      "principle": "骨格の支持と動きの連動",
+      "kind": "principle",
+      "technical_steps_verified": true,
+      "verbatim_text_stored": false,
+      "ai_enabled": false
+    },
+    {
+      "id": "tomoe",
+      "name": "巴の基礎ドリル",
+      "pdf_pages": [
+        51,
+        52
+      ],
+      "starting_position": "デラヒーバ/片襟片袖",
+      "grip": "片襟片袖",
+      "response": "支持を組み直す",
+      "principle": "相手の重心下での操作練習",
+      "kind": "drill",
+      "technical_steps_verified": true,
+      "verbatim_text_stored": false,
+      "ai_enabled": false
+    },
+    {
+      "id": "spider",
+      "name": "スパイダーの骨盤操作",
+      "pdf_pages": [
+        48
+      ],
+      "starting_position": "スパイダーガード",
+      "grip": "袖と足の接点",
+      "response": "担ぎ上げの圧力",
+      "principle": "骨盤を切り替えガードを維持",
+      "kind": "drill",
+      "technical_steps_verified": true,
+      "verbatim_text_stored": false,
+      "ai_enabled": false
+    },
+    {
+      "id": "rotation",
+      "name": "くるくる回転ドリル",
+      "pdf_pages": [
+        53
+      ],
+      "starting_position": "仰向けの回転ドリル",
+      "grip": "特定なし",
+      "response": "相手の足の位置が変化",
+      "principle": "手足の協調による回転",
+      "kind": "drill",
+      "technical_steps_verified": true,
+      "verbatim_text_stored": false,
+      "ai_enabled": false
+    }
+  ]
+}
