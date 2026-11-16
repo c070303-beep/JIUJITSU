@@ -115,7 +115,7 @@ async function chat(req, res, id) {
     return out(res, 400, {error:'質問は1〜1500字で入力してください。'});
   }
   if (!reserveQuestion(id, res)) return;
-  const route = coach.resolve(data.question, data.history);
+  const route = coach.resolve(data.question, data.history, data.selection);
   const videos = coach.videoCards(route);
   const payload = API_KEY.length >= 12 ? coach.selectPayload(route, data.question) : null;
   const choice = payload ? await selectWithGemini(payload, route) : null;
@@ -125,11 +125,11 @@ async function chat(req, res, id) {
   return out(res, 200, {answer, model:MODEL, mode, videos, choices:resolved.choices || []});
 }
 
-function videosForQuestion(question, context) {
+function videosForQuestion(question, context, selection) {
   if (typeof question !== 'string' || question.length > 1500) return {videos:[]};
   const history = typeof context === 'string' && context.length
     ? [{role:'user', content:context.slice(0, 240)}] : [];
-  return {videos:coach.videoCards(coach.resolve(question, history))};
+  return {videos:coach.videoCards(coach.resolve(question, history, selection))};
 }
 
 const server=http.createServer((req,res)=>{(async()=>{
@@ -170,7 +170,7 @@ const server=http.createServer((req,res)=>{(async()=>{
  if (p === '/api/videos' && req.method === 'POST') {
    if (!checkOrigin(req)) return out(res, 403, {error:'不正なリクエストです。'});
    const data = await json(req);
-   return out(res, 200, videosForQuestion(data?.question, data?.context));
+   return out(res, 200, videosForQuestion(data?.question, data?.context, data?.selection));
  }
  if (p === '/api/videos' && req.method === 'GET') {
    return out(res, 200, videosForQuestion(u.searchParams.get('q'), u.searchParams.get('context')));

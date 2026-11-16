@@ -55,6 +55,33 @@ test('Unclear questions offer choices and a selected side resolves the original 
   assert.equal(coach.resolve(position.choices[0].question).records[0].id,'passing-grips');
 });
 
+test('A vague opponent reaction offers context-specific choices and each choice stays in the same technique', () => {
+  const question = 'アウトサイドキャンピング中に相手がインバーテッドしたら？';
+  const route = coach.resolve(question);
+  assert.equal(route.choices.length,2);
+  assert.equal(coach.selectPayload(route,question),null);
+  assert.match(coach.renderAnswer(route),/相手の反応はどれに近い/);
+  assert.doesNotMatch(coach.renderAnswer(route),/別の角度から入り直します/);
+  const history = [{role:'user',content:question}];
+  const outputs = route.choices.map(item => {
+    const next = coach.resolve(item.question,history,item.selection);
+    assert.equal(next.records[0].id,'outside-inversion');
+    assert.equal(coach.selectPayload(next,item.question),null);
+    return coach.renderAnswer(next);
+  });
+  assert.match(outputs[0],/別の角度から入り直します/);
+  assert.match(outputs[1],/近いすね/);
+  assert(!outputs[1].includes('別の角度から入り直します'));
+  const clicked = route.choices[1];
+  const next = coach.resolve('詳しく教えて',history.concat({role:'user',content:clicked.question,selection:clicked.selection}));
+  assert.match(coach.renderAnswer(next),/近いすね/);
+  const invalid = coach.resolve('コヨーテについて',history,{record:'outside-inversion',reaction:'bogus'});
+  assert.equal(invalid.records[0].id,'coyote-half');
+  const alreadyFlat = coach.resolve('ハーフで上からマクラを取られ、肩が床に押しつけられたら？');
+  assert(alreadyFlat.choices.length);
+  assert(!coach.renderAnswer(alreadyFlat).includes('マクラがまだ浅いなら'));
+});
+
 test('Gemini interprets an unknown phrasing using registered IDs and falls back to choices', () => {
   const question = '押し込まれたら、ひじを先に置く意味って？';
   const route = coach.resolve(question);
@@ -213,6 +240,14 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
   simulate = 'ok';
   const ask = await (await post('/api/chat',secondCookie,{question:'どうしたら良くなる？'})).json();
   assert.equal(ask.choices.length,3);
+  const beforeReaction = calls;
+  const q = 'アウトサイドキャンピング中に相手がインバーテッドしたら？';
+  const prompt = await (await post('/api/chat',secondCookie,{question:q})).json();
+  assert.equal(prompt.choices.length,2);
+  const reply = prompt.choices[1];
+  const resolved = await (await post('/api/chat',secondCookie,{question:reply.question,selection:reply.selection,history:[{role:'user',content:q}]})).json();
+  assert.match(resolved.answer,/近いすね/);
+  assert.equal(calls,beforeReaction);
   const limitedCookie = await login();
   const before = calls;
   const batch = await Promise.all(Array.from({length:12},()=>post('/api/chat',limitedCookie,{question:'Jポイントの米倉式は？'})));

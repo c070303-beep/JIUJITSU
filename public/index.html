@@ -432,29 +432,29 @@ function appendCoachChoices(choices,turn){
     if(typeof choice?.label!=='string'||typeof choice?.question!=='string')continue;
     const button=document.createElement('button');button.type='button';
     button.textContent=choice.label;
-    button.addEventListener('click',()=>askCoach(choice.question));
+    button.addEventListener('click',()=>askCoach(choice.question,choice.selection));
     group.appendChild(button);
   }
   if(group.childElementCount)turn.appendChild(group);
 }
-async function askCoach(question){
+async function askCoach(question,selection){
   if(chatBusy)return;
   const q=String(question||'').trim();if(!q)return;
   setChatError('');
   const previous=chatHistory.slice(-10);
   chatBox.querySelectorAll('.coach-choices button').forEach(button=>{button.disabled=true;});
-  const turn=appendBubble('user',q);chatHistory.push({role:'user',content:q});
+  const turn=appendBubble('user',q);chatHistory.push({role:'user',content:q,...(selection?{selection}:{})});
   $('ai-question').value='';updateChatBusy(true);
   // Independent free public-video lookup; cards appear even when Gemini returns an error.
   const lastUser=previous.slice().reverse().find(m=>m?.role==='user'&&typeof m.content==='string');
-  fetch('/api/videos',{method:'POST',headers:{'Content-Type':'application/json'},cache:'no-store',body:JSON.stringify({question:q,context:lastUser?.content||''})})
+  fetch('/api/videos',{method:'POST',headers:{'Content-Type':'application/json'},cache:'no-store',body:JSON.stringify({question:q,context:lastUser?.content||'',selection})})
     .then(r=>{if(!r.ok)throw Error('video lookup');return r.json()})
     .then(v=>appendVideoReferences(v.videos,turn))
     .catch(()=>{});
 
   if(window.matchMedia('(max-width:760px)').matches)$('ai-question').blur();
   try{
-    const resp=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,history:previous})});
+    const resp=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,history:previous,selection})});
     let body={};try{body=await resp.json()}catch(_){throw Error('サーバーからの応答を読み取れませんでした。')}
     if(!resp.ok)throw Error(body.error||'AIに接続できませんでした。');
     if(typeof body.answer!=='string'||!body.answer.trim())throw Error('AIから回答がありませんでした。');
