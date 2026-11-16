@@ -1,123 +1,232 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "review_date": "2026-11-17",
-  "policy": "Only direct video links verified as public YouTube watch pages. Video/audio/transcript not copied. If no matching item, present a clearly marked YouTube search link.",
-  "videos": [
+  "policy": "Prefer only named creators' verified official channels. Individual video cards require verified public YouTube URL and topic. Else show creator-targeted YouTube search, never fabricated video IDs. No video/audio/transcript copied.",
+  "priority_channels": [
     {
-      "id": "PVXpWtRjUS4",
-      "title": "The Complete Underhook Half Guard System - Sweeps & Back Takes",
-      "channel": "Jiu Jitsu Brotherhood",
-      "description": "ハーフの脇差し→スイープ・バックテイク",
-      "language": "en",
+      "id": "jutsu-nikki",
+      "title": "新・柔術日記Channel",
+      "channel_url": "https://www.youtube.com/channel/UCx2hTVHQyx5SozCSczprS0g",
+      "name_query": "新・柔術日記Channel",
+      "priority": 1,
       "tags": [
-        "ハーフガード",
-        "ハーフ",
-        "half guard",
-        "underhook",
-        "脇差し",
-        "脇を差",
-        "脇をさ",
-        "ドッグファイト",
-        "dogfight",
-        "コヨーテ"
-      ],
-      "watch_url": "https://www.youtube.com/watch?v=PVXpWtRjUS4",
-      "thumbnail_url": "https://i.ytimg.com/vi/PVXpWtRjUS4/hqdefault.jpg",
-      "verified_public_url": true
+        "クローズド",
+        "ガード",
+        "スイープ",
+        "ヒップバンプ",
+        "シングルX",
+        "スパイダー",
+        "柔術",
+        "half"
+      ]
     },
     {
-      "id": "NLiwZ3lW3TA",
-      "title": "Adam Wardzinski's Overhand Butterfly Guard | Jiu-Jitsu Breakdown",
-      "channel": "玉木強 / YOSHI JIU-JITSU TECH",
-      "description": "バタフライからの崩しとスイープ",
-      "language": "en",
+      "id": "splash-kibe",
+      "title": "スプラッシュ3分柔術テクニック｜木部亮",
+      "channel_url": "https://www.youtube.com/channel/UCDDXC9fC57SjxoqwrDI5Eww",
+      "name_query": "スプラッシュ 木部亮",
+      "priority": 2,
+      "tags": [
+        "アウトサイドキャンピング",
+        "キャンピング",
+        "パス",
+        "ハーフ",
+        "ドッグファイト",
+        "レッグドラッグ",
+        "ニーシールド",
+        "スイープ",
+        "柔術",
+        "インサイド"
+      ]
+    },
+    {
+      "id": "kako-takuto",
+      "title": "加古拓渡（公開実演・ゲスト動画）",
+      "channel_url": null,
+      "name_query": "加古拓渡 柔術",
+      "priority": 3,
       "tags": [
         "バタフライ",
-        "butterfly",
         "フックスイープ",
-        "wardzinski",
-        "ワルジンスキ"
-      ],
-      "watch_url": "https://www.youtube.com/watch?v=NLiwZ3lW3TA",
-      "thumbnail_url": "https://i.ytimg.com/vi/NLiwZ3lW3TA/hqdefault.jpg",
-      "verified_public_url": true
+        "half butterfly",
+        "ハーフバタフライ",
+        "ピボット",
+        "スイープ",
+        "50/50",
+        "ガード",
+        "柔術"
+      ]
     },
     {
-      "id": "20hA15yXEjA",
-      "title": "HOW TO DO A SCISSORS SWEEP IN JIU JITSU",
-      "channel": "Muito Mais Ação Jiu Jitsu",
-      "description": "シザースイープの基本（ポルトガル語）",
-      "language": "pt",
+      "id": "hashimoto",
+      "title": "橋本知之の柔術大学",
+      "channel_url": "https://www.youtube.com/channel/UC9zIV5DQey7hl0OawtYec7Q",
+      "name_query": "橋本知之の柔術大学",
+      "priority": 4,
       "tags": [
-        "シザース",
-        "シザー",
-        "scissor",
-        "ハサミ",
-        "クローズドガード",
-        "closed guard"
-      ],
-      "watch_url": "https://www.youtube.com/watch?v=20hA15yXEjA",
-      "thumbnail_url": "https://i.ytimg.com/vi/20hA15yXEjA/hqdefault.jpg",
-      "verified_public_url": true
+        "ガードリテンション",
+        "リテンション",
+        "ガード",
+        "アウトサイドパス",
+        "インサイドパス",
+        "ベリンボロ",
+        "パス",
+        "柔術",
+        "クローズド"
+      ]
     },
     {
-      "id": "9JCeqF5MgnI",
-      "title": "Guard Retention: You Have to Know in Order to Retain Your Guard",
-      "channel": "玉木強 / YOSHI JIU-JITSU TECH",
-      "description": "ニーカット・トレアドール・レッグドラッグ対策",
+      "id": "dhc",
+      "title": "DEEP HALF CLUB",
+      "channel_url": "https://www.youtube.com/channel/UCIWVbjyuRbAVyOIkFcke0mg",
+      "name_query": "DEEP HALF CLUB 岩崎正寛",
+      "priority": 5,
+      "tags": [
+        "ハーフ",
+        "ディープハーフ",
+        "スイープ",
+        "アウトサイドキャンピング",
+        "キャンピング",
+        "インサイドキャンピング",
+        "パス",
+        "肩固め",
+        "柔術",
+        "ドッグファイト"
+      ]
+    },
+    {
+      "id": "shrapnel",
+      "title": "シュラプネル柔術テクニック",
+      "channel_url": "https://www.youtube.com/channel/UC3fGrCSo2xeLZRNYwBSpkNw",
+      "name_query": "シュラプネル柔術テクニック",
+      "priority": 6,
+      "tags": [
+        "スパイダー",
+        "ラッソー",
+        "デラヒーバ",
+        "パス",
+        "スイープ",
+        "ガード",
+        "金古",
+        "柔術"
+      ]
+    },
+    {
+      "id": "passguard",
+      "title": "PASSGUARD FITNESS｜白木アマゾン大輔",
+      "channel_url": "https://www.youtube.com/channel/UCKomZki1b9kLTpWo9MMr7bw",
+      "name_query": "PASSGUARD FITNESS 白木アマゾン",
+      "priority": 7,
+      "tags": [
+        "白帯",
+        "初心者",
+        "パスガード",
+        "パス",
+        "練習",
+        "マスター",
+        "柔術",
+        "スイープ",
+        "体力",
+        "フィットネス"
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "id": "z5dKtMkxX_Q",
+      "title": "インサイドキャンピングとスプリットスクワットの使い方",
+      "channel": "DEEP HALF CLUB",
+      "channel_id": "dhc",
+      "description": "インサイドキャンピングの考え方",
+      "language": "ja",
+      "tags": [
+        "キャンピング",
+        "インサイド",
+        "インサイドキャンピング",
+        "スプリットスクワット",
+        "パスガード",
+        "パス"
+      ],
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=z5dKtMkxX_Q",
+      "thumbnail_url": "https://i.ytimg.com/vi/z5dKtMkxX_Q/hqdefault.jpg"
+    },
+    {
+      "id": "BWQg1d6xA1w",
+      "title": "【PV】橋本知之のガードリテンション・アウトサイドパスディフェンス",
+      "channel": "橋本知之の柔術大学",
+      "channel_id": "hashimoto",
+      "description": "アウトサイドパス対策・有料教則の公開紹介映像",
+      "language": "ja",
+      "tags": [
+        "ガードリテンション",
+        "リテンション",
+        "アウトサイドパス",
+        "ガード",
+        "レッグドラッグ",
+        "トレアドール"
+      ],
+      "verified_public_url": true,
+      "preview_only": true,
+      "watch_url": "https://www.youtube.com/watch?v=BWQg1d6xA1w",
+      "thumbnail_url": "https://i.ytimg.com/vi/BWQg1d6xA1w/hqdefault.jpg"
+    },
+    {
+      "id": "iH2UG2e1jw4",
+      "title": "Why Is Guard Retention So Difficult Against Inside Passing?",
+      "channel": "橋本知之の柔術大学",
+      "channel_id": "hashimoto",
+      "description": "インサイドパスに対するガード保持（ショート）",
       "language": "en",
       "tags": [
         "ガードリテンション",
         "リテンション",
-        "retention",
-        "ニーカット",
-        "knee cut",
-        "レッグドラッグ",
-        "leg drag",
-        "トレアドール",
-        "トレアナ"
-      ],
-      "watch_url": "https://www.youtube.com/watch?v=9JCeqF5MgnI",
-      "thumbnail_url": "https://i.ytimg.com/vi/9JCeqF5MgnI/hqdefault.jpg",
-      "verified_public_url": true
-    },
-    {
-      "id": "zqQx9SsgdBw",
-      "title": "Smooth Side Control to Mount Transition | BJJ Fundamentals",
-      "channel": "Jiu Jitsu Brotherhood",
-      "description": "サイドからマウントへの移行とコントロール",
-      "language": "en",
-      "tags": [
-        "サイドコントロール",
-        "サイドからマウント",
-        "サイド→マウント",
-        "サイドから",
-        "マウント",
-        "side control",
-        "mount transition"
-      ],
-      "watch_url": "https://www.youtube.com/watch?v=zqQx9SsgdBw",
-      "thumbnail_url": "https://i.ytimg.com/vi/zqQx9SsgdBw/hqdefault.jpg",
-      "verified_public_url": true
-    },
-    {
-      "id": "I4GH7qX2k20",
-      "title": "Guard Retention is an Art (Levi Jones-Leary)",
-      "channel": "Xadrez Humano",
-      "description": "キャンピング、ニーカットなどのパスへの防御",
-      "language": "en",
-      "tags": [
-        "アウトサイドキャンピング",
-        "キャンピング",
-        "outside camping",
         "インサイドパス",
-        "ガードリテンション",
-        "ニーカット",
-        "ガードが戻"
+        "ガード"
       ],
-      "watch_url": "https://www.youtube.com/watch?v=I4GH7qX2k20",
-      "thumbnail_url": "https://i.ytimg.com/vi/I4GH7qX2k20/hqdefault.jpg",
-      "verified_public_url": true
+      "verified_public_url": true,
+      "short": true,
+      "watch_url": "https://www.youtube.com/watch?v=iH2UG2e1jw4",
+      "thumbnail_url": "https://i.ytimg.com/vi/iH2UG2e1jw4/hqdefault.jpg"
+    },
+    {
+      "id": "BnumeQQfMvQ",
+      "title": "カラーグリップスパイダーへのパスガード",
+      "channel": "シュラプネル柔術テクニック",
+      "channel_id": "shrapnel",
+      "description": "スパイダー／ラッソーに対する公開サンプル",
+      "language": "ja",
+      "tags": [
+        "スパイダー",
+        "カラーグリップ",
+        "ラッソー",
+        "パスガード",
+        "パス"
+      ],
+      "verified_public_url": true,
+      "preview_only": true,
+      "watch_url": "https://www.youtube.com/watch?v=BnumeQQfMvQ",
+      "thumbnail_url": "https://i.ytimg.com/vi/BnumeQQfMvQ/hqdefault.jpg"
+    },
+    {
+      "id": "dKIHSG-3EEA",
+      "title": "マスター世代のための仕事と柔術の取り組み方",
+      "channel": "PASSGUARD FITNESS",
+      "channel_id": "passguard",
+      "description": "仕事と柔術の両立についての公開トーク",
+      "language": "ja",
+      "tags": [
+        "マスター",
+        "仕事",
+        "練習",
+        "両立",
+        "疲労",
+        "モチベーション",
+        "習慣"
+      ],
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=dKIHSG-3EEA",
+      "thumbnail_url": "https://i.ytimg.com/vi/dKIHSG-3EEA/hqdefault.jpg"
     }
   ]
 }
