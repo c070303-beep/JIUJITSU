@@ -103,6 +103,10 @@ const publicVideos=videoCatalog.videos||[];
 // Every result must map to a curated video ID, not a YouTube search results page.
 // Match the *specific technique* and whether the question is asked from top or bottom.
 const VIDEO_TOPICS=[
+ ['half-underhook',/脇差し|脇を差|脇を刺|アンダーフック|underhook|ドッグファイト|dogfight|ウィザー|whizzer/i],
+ ['half-general',/ハーフガード|half guard|ハーフバタフライ|コヨーテ|ドッグファイト/i],
+ ['dogfight',/ドッグファイト|dogfight|ウィザー|whizzer/i],
+ ['passing-basics',/パスガード|パスの基本|パスしたい|パスをする|パスを教え/i],
  ['inside-camping',/インサイドキャンピング|インサイド・キャンピング|inside camping/i],
  ['half-sweep',/(ハーフ|half guard).{0,22}(スイープ|返す|返し|崩し)|ジェフモンソン|モンソンスイープ/i],
  ['arm-triangle',/肩固め|アームトライアングル|arm triangle/i],
@@ -133,6 +137,15 @@ function videosForQuestion(question,history){
  const q=query.toLowerCase();
  const concepts=VIDEO_TOPICS.filter(([,pattern])=>pattern.test(q)).map(([name])=>name);
  // Do not recommend a related-but-different technique just because it shares "guard" or "sweep".
+ if(!concepts.length && generic.test(query)){
+  // A video-only question with no specific technique offers two actual beginner demonstrations.
+  return {videos:publicVideos.filter(v=>['QqAA3rbxetY','IHu38JiYTHU'].includes(v.id)).map(v=>({
+    id:v.id,title:v.title,channel:v.channel,description:v.description,
+    url:'https://www.youtube.com/watch?v='+v.id,
+    thumbnail:'https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg',
+    language:v.language,preview_only:!!v.preview_only
+  }))};
+ }
  if(!concepts.length)return {videos:[]};
  const passIntent=/(パスガード|パスを|パスした|抜きたい|トップ|上から|相手のガードを)/.test(q);
  const bottomIntent=/(ボトム|下から|ガードで|ガードを戻|パスされ|潰され|スイープ|崩し|返し|引き込み)/.test(q);
@@ -278,6 +291,13 @@ const server=http.createServer((req,res)=>{(async()=>{
  if(req.method==='POST' && p==='/api/logout'){if(!checkOrigin(req))return out(res,403,{error:'不正なリクエストです。'});sessions.delete(id);return out(res,200,{ok:true},{'Set-Cookie':'rrt_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax'});}
  if(req.method==='GET'&&['/','/members','/members/','/index.html'].includes(p))return page(res,html);
  if(req.method==='GET'&&p==='/api/status')return out(res,200,{configured:API_KEY.length>=12,model:MODEL,gated:true,shared:true,demo:true});
+ if(req.method==='GET'&&p==='/api/videos'){
+  const question=String(u.searchParams.get('q')||'').slice(0,200);
+  const context=String(u.searchParams.get('context')||'').slice(0,200);
+  const hist=context?[{role:'user',content:context}]:[];
+  return out(res,200,videosForQuestion(question,hist));
+ }
+
  if(req.method==='POST'&&p==='/api/chat'){if(!checkOrigin(req))return out(res,403,{error:'不正なリクエストです。'});return chat(req,res,id)}
  return out(res,404,{error:'見つかりません。'});
  })().catch(e=>out(res,e.http||500,{error:e.http?e.message:'サーバーエラーが発生しました。'}))});
