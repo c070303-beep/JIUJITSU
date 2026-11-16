@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-11-17",
+  "use_policy": "Independently written analytical notes from publicly read articles and user-provided PDF. No complete copyrighted text, copyrighted images, videos, or paywalled passages stored. Entries are low-stakes reference context and not original works or instructor endorsement.",
+  "entries": [
+    {
+      "id": "andy-spider-decisions",
+      "source": "https://note.com/andy_s_rocky/n/n2fdb4884616b",
+      "source_type": "free_article_reviewed",
+      "tags": [
+        "スパイダー",
+        "スパイダーガード",
+        "ラッソー",
+        "三角",
+        "スイープ",
+        "キックスイープ",
+        "シザース"
+      ],
+      "insight_ja": "スパイダーは袖と足の接点で上半身の動きを管理するが、スイープには相手の脚など追加の支持点への働きかけが重要。相手が立って頭が高く脚を近づけるなら脚を狙う崩しを、脚を引き頭が低くなるなら上半身への攻撃を検討する。相手が膝をつく場合は近距離用の別の崩しを選択。"
+    },
+    {
+      "id": "kako-butterfly-support",
+      "source": "https://letsbjj.site/post/2023-12-24-0628",
+      "source_type": "free_article_reviewed_and_public_product_outline",
+      "tags": [
+        "加古",
+        "バタフライ",
+        "フックスイープ",
+        "ハーフバタフライ",
+        "バタフライスイープ",
+        "スイープ",
+        "ピボット",
+        "支点",
+        "重心"
+      ],
+      "insight_ja": "バタフライの成功は脚を高く蹴るだけではなく、相手の支えをどこに作らせるかという方向の設計に左右される。相手が膝を支えにする場面と手を床につく場面では崩しの軸が変わる。相手が後ろに耐えるなら起き上がり、前へ支えるなら別方向などの連係を考える。公開記事・商品目次に確認できた考え方であり、有料教則の全内容を視聴したものではない。"
+    },
+    {
+      "id": "letsbjj-practice-selection",
+      "source": "https://letsbjj.site/post/2021-04-17-0431",
+      "source_type": "free_article_reviewed",
+      "tags": [
+        "上達",
+        "練習法",
+        "スパーリング",
+        "初心者",
+        "指導",
+        "教則",
+        "技術を覚える",
+        "フローチャート"
+      ],
+      "insight_ja": "新しい技を次々に集める前に、自分の主力ポジションから次の動きがつながるかを考える。『相手がこの反応なら次は何をするか』を決めて検証し、失敗時は原因を記録する。初心者には基礎動作の習熟も必要なので、情報の収集と個別の反復練習の配分を変える。"
+    },
+    {
+      "id": "yamawaki-closed-chain",
+      "source": "https://note.com/08230000/n/n4f6788ee88a2",
+      "source_type": "free_article_reviewed",
+      "tags": [
+        "柔術日記",
+        "クローズドガード",
+        "クローズド",
+        "ヒップスロー",
+        "ヒップバンプ",
+        "三角絞め",
+        "腕十字",
+        "フラワースイープ",
+        "スイープ"
+      ],
+      "insight_ja": "クローズドガードは脚を閉じ続けるだけでなく、相手の姿勢と腕の位置に応じた攻撃群の切替が重要。相手が立つ・密着する・手を床につくなどの反応から、崩し、スイープ、腕や首への攻撃を組み合わせる。公開記事では基本、三角、腕十字、ヒップスロー、複数のスイープなどが体系化されているが、個別動画の中身は本文を読んだことにしない。"
+    },
+    {
+      "id": "yawara-frame-first",
+      "source": "https://jiujitsu.co.jp/textbook/yawara-sweep-textbook-ja.pdf#page=12",
+      "source_type": "user_provided_pdf_reviewed",
+      "source_pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "tags": [
+        "フレーム",
+        "ガードリテンション",
+        "パス",
+        "エビ",
+        "ハーフガード",
+        "クロスフェイス",
+        "脇差し"
+      ],
+      "insight_ja": "ガードが破られそうなときは握ったまま攻めを続けるのではなく、相手の侵入方向に合わせて骨格で支えるフレームを選ぶ。腕の筋力で押し返すより、体幹と接続した枠を保ち、骨盤の移動と膝の再挿入で距離を作るという整理が指導に使える。"
+    },
+    {
+      "id": "yawara-balance-reflex",
+      "source": "https://jiujitsu.co.jp/textbook/yawara-sweep-textbook-ja.pdf#page=18",
+      "source_type": "user_provided_pdf_reviewed",
+      "source_pages": [
+        6,
+        18,
+        27
+      ],
+      "tags": [
+        "スイープ",
+        "ベース",
+        "崩し",
+        "支持基底面",
+        "重心",
+        "草刈り",
+        "ラッソー"
+      ],
+      "insight_ja": "相手がどの方向に支持を作っているかを観察すると、崩しの方向が選びやすい。前方へ安定した相手は後方への崩しを受けやすいことがあり、相手が支える脚や手を変えたら反対方向への切替が有効になる場合がある。スイープの成功は体重差だけでなく、支持の位置と力の向きの組み合わせで考える。"
+    },
+    {
+      "id": "yawara-instruction-loop",
+      "source": "https://jiujitsu.co.jp/textbook/yawara-sweep-textbook-ja.pdf#page=8",
+      "source_type": "user_provided_pdf_reviewed",
+      "source_pages": [
+        8,
+        9
+      ],
+      "tags": [
+        "初心者",
+        "クラス",
+        "指導",
+        "教え方",
+        "声かけ",
+        "キューイング",
+        "ドリル",
+        "練習法"
+      ],
+      "insight_ja": "初心者への指示は具体的な身体部位と方向を短く伝え、動きを見せる際は角度と速度を合わせる。動けない人には工程を分けて見せ、修正後に改善点を具体的に伝える。技術説明は動作の目的と安全上の制約を分けて組み立てる。"
+    }
+  ]
+}
