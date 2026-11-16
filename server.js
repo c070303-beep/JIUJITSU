@@ -130,7 +130,7 @@ function videosForQuestion(question,history) {
  const preferredIds=new Set(prefer.slice(0,4).map(x=>x.channel.id));
  const directTagScore=(tag)=>{
   const t=String(tag||'').toLowerCase();
-  if(['柔術','ガード','パス','スイープ','bjj','half','ハーフ','クローズド'].includes(t))return 0;
+  if(['柔術','ガード','パス','パスガード','スイープ','bjj','half','ハーフ','クローズド'].includes(t))return 0;
   return scoreTag(t);
  };
  const videos=publicVideos.map(v=>{
