@@ -62,6 +62,12 @@
 .article-references a{display:block;color:#a8d8ff;text-decoration:underline;text-underline-offset:3px;margin-top:8px;overflow-wrap:anywhere}
 .article-references small{display:block;color:#b3c1cf;line-height:1.5;font-size:11px}
 @media(max-width:760px){.article-references{max-width:100%;margin-left:0}}
+.video-priority-label{margin-top:12px;font-size:12px;color:#aebfd3;font-weight:700}
+.video-channel-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.video-channel-link{display:inline-block;color:#ecf5ff;background:#304055;border:1px solid #64758a;border-radius:99px;padding:8px 12px;text-decoration:none;font-size:12px;font-weight:700}
+.video-channel-link:hover{background:#40546d;border-color:#ff6571}
+.video-channel-note{font-size:11px;color:#9eafc3;line-height:1.5;margin:11px 0 0}
+
 /* Verified public video recommendations (external links; no video hosted). */
 .video-suggestions{margin:2px 0 12px 50px;padding:12px;border:1px solid #445164;background:#1a2633;border-radius:14px;max-width:min(100% - 50px,610px)}
 .video-suggestions h3{font-size:13px;color:#e6ecf5;margin:0 0 11px;font-weight:800}
@@ -350,47 +356,40 @@ function appendBubble(role,content){
   }
   chatBox.appendChild(row);chatBox.scrollTop=chatBox.scrollHeight;
 }
-function appendArticleReferences(references){
-  const list=Array.isArray(references)?references.slice(0,2):[];
-  if(!list.length)return;
-  const allowed=['https://note.com/','https://letsbjj.site/','https://www.youtube.com/channel/'];
-  const safe=list.filter(v=>typeof v?.url==='string'&&allowed.some(prefix=>v.url.startsWith(prefix))&&typeof v.title==='string');
-  if(!safe.length)return;
-  const section=document.createElement('div');section.className='article-references';
-  const label=document.createElement('div');label.className='ref-title';label.textContent='参考記事（外部サイト）';
-  section.appendChild(label);
-  for(const ref of safe){
-   const a=document.createElement('a');a.href=ref.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=ref.title;
-   const desc=document.createElement('small');desc.textContent=String(ref.focus||'').slice(0,120);
-   section.append(a,desc);
-  }
-  chatBox.appendChild(section);chatBox.scrollTop=chatBox.scrollHeight;
-}
-function appendVideoReferences(videos,searchUrl,searchLabel){
+function appendVideoReferences(videos,channels){
   const items=Array.isArray(videos)?videos.slice(0,2):[];
-  const searchAllowed=typeof searchUrl==='string'&&searchUrl.startsWith('https://www.youtube.com/results?search_query=');
-  if(!items.length&&!searchAllowed)return;
+  const picks=Array.isArray(channels)?channels.slice(0,3):[];
+  if(!items.length&&!picks.length)return;
   const section=document.createElement('section');section.className='video-suggestions';
-  const heading=document.createElement('h3');heading.textContent=items.length?'関連する無料YouTube動画':'YouTubeで動画を探す';section.appendChild(heading);
+  const heading=document.createElement('h3');heading.textContent='関連する無料YouTube動画';section.appendChild(heading);
   if(items.length){
     const grid=document.createElement('div');grid.className='video-grid';
     items.forEach(video=>{
-      if(!video || !/^[a-zA-Z0-9_-]{11}$/.test(video.id||''))return;
+      if(!video||!/^[a-zA-Z0-9_-]{11}$/.test(video.id||''))return;
       if(video.url!=='https://www.youtube.com/watch?v='+video.id)return;
-      const link=document.createElement('a');link.className='video-item';link.href=video.url;link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label','YouTubeで見る: '+video.title);
-      const img=document.createElement('img');img.src='https://i.ytimg.com/vi/'+video.id+'/hqdefault.jpg';img.alt='動画のサムネイル';img.loading='lazy';img.referrerPolicy='no-referrer';img.onerror=()=>{img.style.display='none';};
+      const link=document.createElement('a');link.className='video-item';link.href=video.url;link.target='_blank';link.rel='noopener noreferrer';
+      const img=document.createElement('img');img.src='https://i.ytimg.com/vi/'+video.id+'/hqdefault.jpg';img.alt='YouTubeのサムネイル';img.loading='lazy';img.referrerPolicy='no-referrer';img.onerror=()=>{img.style.display='none';};
       const meta=document.createElement('div');meta.className='video-meta';
-      const title=document.createElement('p');title.className='video-title';title.textContent=video.title;
-      const sub=document.createElement('p');sub.className='video-sub';sub.textContent=(video.channel||'YouTube')+(video.description?'｜'+video.description:'');
+      const title=document.createElement('p');title.className='video-title';title.textContent=String(video.title||'YouTube動画');
+      const sub=document.createElement('p');sub.className='video-sub';sub.textContent=(video.channel||'YouTube')+(video.preview_only?'｜紹介・サンプル映像':'');
       meta.append(title,sub);link.append(img,meta);grid.appendChild(link);
     });
     section.appendChild(grid);
   }
-  if(searchAllowed){
-    const a=document.createElement('a');a.className='video-search';a.href=searchUrl;a.target='_blank';a.rel='noopener noreferrer';
-    a.textContent='YouTubeで「'+String(searchLabel||'柔術').slice(0,75)+'」を検索する';
-    section.appendChild(a);
+  if(picks.length){
+    const label=document.createElement('div');label.className='video-priority-label';label.textContent='指定チャンネルから探す';
+    section.appendChild(label);
+    const strip=document.createElement('div');strip.className='video-channel-strip';
+    picks.forEach(c=>{
+      if(!c||typeof c.url!=='string'||!c.url.startsWith('https://www.youtube.com/results?search_query='))return;
+      const a=document.createElement('a');a.className='video-channel-link';a.href=c.url;a.target='_blank';a.rel='noopener noreferrer';
+      a.textContent='▶ '+String(c.title||'YouTube').slice(0,80);
+      strip.appendChild(a);
+    });
+    section.appendChild(strip);
   }
+  const hint=document.createElement('p');hint.className='video-channel-note';hint.textContent='動画は無料公開ページへのリンクです。検索結果は内容や公開状況が変わることがあります。';
+  section.appendChild(hint);
   chatBox.appendChild(section);chatBox.scrollTop=chatBox.scrollHeight;
 }
 function setChatError(value){const node=$('ai-error');node.hidden=!value;node.textContent=value||'';}
@@ -412,8 +411,7 @@ async function askCoach(question){
     if(!resp.ok)throw Error(body.error||'AIに接続できませんでした。');
     if(typeof body.answer!=='string'||!body.answer.trim())throw Error('AIから回答がありませんでした。');
     appendBubble('assistant',body.answer);
-    appendVideoReferences(body.videos,body.search_url,body.search_label);
-    appendArticleReferences(body.references);
+    appendVideoReferences(body.videos,body.channels);
     chatHistory.push({role:'assistant',content:body.answer});
     if(chatHistory.length>30)chatHistory.splice(0,chatHistory.length-30);
     setConnected('yes','AI接続中');
