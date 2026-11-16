@@ -7,13 +7,11 @@ const { URL } = require('node:url');
 
 const HOST = process.env.HOST || '0.0.0.0';
 const PORT = Number(process.env.PORT || 10000);
-const SECRET = process.env.DEMO_ACCESS_CODE || '';
 const API_KEY = process.env.GEMINI_API_KEY || '';
 const MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash-lite';
 const ALLOWED_ORIGIN = (process.env.PUBLIC_ORIGIN || process.env.RENDER_EXTERNAL_URL || '').replace(/\/+$/, '');
 const MAX_DAILY = Math.max(1, Math.min(Number(process.env.DEMO_DAILY_LIMIT || 100), 1000));
 const MAX_PER_SESSION = Math.max(1, Math.min(Number(process.env.DEMO_USER_DAILY_LIMIT || 20), 100));
-if (SECRET.length < 12) { console.error('DEMO_ACCESS_CODE must be at least 12 characters. Set it in Render Environment.'); process.exit(1); }
 const html = fs.readFileSync(path.join(__dirname, 'public', 'index.html'));
 const sessions = new Map();
 const loginAttempts = new Map();
@@ -47,9 +45,9 @@ async function json(req) {
  for await (const chunk of req) {size+=chunk.length;if(size>20000)throw Object.assign(new Error('入力が長すぎます'),{http:413});data.push(chunk)}
  try{return JSON.parse(Buffer.concat(data).toString('utf8'))}catch{throw Object.assign(new Error('JSON形式が不正です'),{http:400})}
 }
-const loginPage = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>RRT BJJ｜試用版ログイン</title><style>:root{color-scheme:dark}*{box-sizing:border-box}body{font-family:system-ui,-apple-system,sans-serif;min-height:100vh;display:grid;place-items:center;margin:0;background:radial-gradient(circle at 12% 10%,#40202c,transparent 45%),#10151c;color:#f5f6fa;padding:18px}.box{max-width:430px;width:100%;border:1px solid #414b58;border-radius:24px;background:#1c242e;padding:28px;box-shadow:0 20px 75px #0004}.mark{background:#ed4756;color:#fff;font-size:20px;font-weight:900;width:56px;height:56px;border-radius:17px;display:grid;place-items:center}h1{font-size:26px;margin:18px 0 8px}p{line-height:1.75;color:#b9c5d4;font-size:14px}label{font-size:13px;font-weight:800;display:block;margin:24px 0 7px}input{width:100%;padding:16px;background:#111923;border:1px solid #576271;color:white;border-radius:11px;font:inherit}button{border:0;width:100%;background:#ec4854;border-radius:12px;padding:16px;color:white;font-weight:900;font-size:16px;margin-top:14px;cursor:pointer}small{color:#9daabd;display:block;line-height:1.7;margin-top:18px}.msg{color:#ffb9bd;min-height:24px;margin-top:11px;font-size:13px}</style></head><body><div class="box"><div class="mark">RRT</div><h1>らんじぇる先生 AIコーチ</h1><p>インストラクター向けの試用版です。共有された合言葉を入力してください。AIの回答は本人監修ではありません。</p><form id="f"><label for="code">試用用の合言葉</label><input id="code" type="password" autocomplete="off" required autofocus placeholder="合言葉を入力"><button type="submit">試用版を開く</button></form><div id="msg" class="msg" role="status"></div><small>質問文はGemini APIに送信されます。個人情報や有料教則の本文は入力しないでください。</small></div><script>document.getElementById('f').onsubmit=async e=>{e.preventDefault();const b=e.target.querySelector('button'),m=document.getElementById('msg');b.disabled=true;m.textContent='確認しています…';try{const r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:document.getElementById('code').value})});const j=await r.json();if(r.ok)location.replace('/members/');else m.textContent=j.error||'認証できませんでした';}catch{m.textContent='接続できませんでした';}finally{b.disabled=false}};</script></body></html>`;
+const privateLinkIntro = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>RRT｜個人試用版</title><style>*{box-sizing:border-box}body{background:#10151c;color:#f5f6fa;font-family:system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;padding:20px}.panel{background:#1c242e;border:1px solid #404c57;border-radius:20px;padding:24px;max-width:440px;line-height:1.8}h1{font-size:22px}p{color:#b9c5d4;font-size:14px}b{color:#f75a64}</style></head><body><main class="panel"><h1>RRT らんじぇる先生AI</h1><p>この個人試用版には、<b>パスワード入力はありません。</b></p><p>ご自身の専用リンクからアクセスしてください。リンクを開くとAIの画面に直接移動します。</p></main></body></html>`;
 const SYSTEM = [
- 'あなたはRRT BJJのインストラクター試用版「らんじぇる先生 AIコーチ」です。',
+ 'あなたはRRT BJJの個人試用版「らんじぇる先生 AIコーチ」です。',
  '質問には初心者にも分かる簡潔な日本語で直接答え、理由と安全上の注意を示します。',
  'ランジェル先生本人が回答または監修しているとは絶対に言わないでください。本人の独特の話し方を創作しないでください。',
  'これは試用版です。RRTの公式指導方針や特定の教則を学習済みと主張しないでください。',
@@ -127,17 +125,9 @@ const server=http.createServer((req,res)=>{(async()=>{
   res.writeHead(303,{'Location':'/members/','Cache-Control':'no-store','Referrer-Policy':'no-referrer','Set-Cookie':'rrt_session='+session+'; Path=/; Max-Age=43200; HttpOnly; Secure; SameSite=Lax'});
   return res.end();
  }
- if(req.method==='POST' && p==='/api/login'){
-  if(!checkOrigin(req))return out(res,403,{error:'不正なリクエストです。'});
-  if(!rateLimit('login:'+(req.socket.remoteAddress||''),300000,10))return out(res,429,{error:'ログイン試行が多すぎます。'});
-  const b=await json(req);const input=Buffer.from(String(b.code||''));const correct=Buffer.from(SECRET);
-  if(input.length!==correct.length||!crypto.timingSafeEqual(input,correct))return out(res,401,{error:'合言葉が違います。'});
-  const token=crypto.randomBytes(32).toString('hex');
-  sessions.set(token,{expires:Date.now()+12*60*60*1000});
-  return out(res,200,{ok:true},{'Set-Cookie': 'rrt_session='+token+'; Path=/; Max-Age=43200; HttpOnly; Secure; SameSite=Lax'});
- }
+ if(req.method==='POST' && p==='/api/login') return out(res,410,{error:'個人試用版はパスワード認証を使用しません。'});
  const id=bearer(req);
- if(req.method==='GET' && p==='/login')return id?redirect(res,'/members/'):page(res,loginPage);
+ if(req.method==='GET' && p==='/login')return id?redirect(res,'/members/'):page(res,privateLinkIntro);
  if(!id){if(req.method==='GET'&&!p.startsWith('/api/'))return redirect(res,'/login');return out(res,401,{error:'ログインが必要です。'})}
  if(req.method==='POST' && p==='/api/logout'){if(!checkOrigin(req))return out(res,403,{error:'不正なリクエストです。'});sessions.delete(id);return out(res,200,{ok:true},{'Set-Cookie':'rrt_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax'});}
  if(req.method==='GET'&&['/','/members','/members/','/index.html'].includes(p))return page(res,html);
