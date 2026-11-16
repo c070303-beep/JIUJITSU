@@ -1,7 +1,7 @@
 {
-  "schema_version": "3.1",
+  "schema_version": "4.0",
   "review_date": "2026-11-17",
-  "policy": "Curated YouTube watch-page IDs only. Show only topic-matched direct video thumbnails; do not show any search interface. Video suggestions are independent of AI response success.",
+  "policy": "Cards require technical scope confirmed by the publishing instructor or distributor for the exact public video, independent of Gemini. Existing URL records without content evidence remain in the catalog. Playback was not tested.",
   "priority_channels": [
     {
       "id": "jutsu-nikki",
@@ -129,6 +129,12 @@
         "体力",
         "フィットネス"
       ]
+    },
+    {
+      "id": "grapplearts",
+      "title": "Grapplearts",
+      "channel_url": "https://www.youtube.com/@StephanKesting",
+      "priority": 8
     }
   ],
   "videos": [
@@ -154,7 +160,10 @@
         "inside-camping",
         "passing-basics"
       ],
-      "position": "top"
+      "position": "top",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "BWQg1d6xA1w",
@@ -179,7 +188,10 @@
         "outside-pass-defense",
         "guard-retention"
       ],
-      "position": "bottom"
+      "position": "bottom",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "iH2UG2e1jw4",
@@ -202,7 +214,10 @@
         "inside-pass-defense",
         "guard-retention"
       ],
-      "position": "bottom"
+      "position": "bottom",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "BnumeQQfMvQ",
@@ -225,7 +240,10 @@
       "topics": [
         "spider-pass"
       ],
-      "position": "top"
+      "position": "top",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "dKIHSG-3EEA",
@@ -249,11 +267,14 @@
       "topics": [
         "training-balance"
       ],
-      "position": "neutral"
+      "position": "neutral",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "IHu38JiYTHU",
-      "title": "クローズドガード・フックスイープ",
+      "title": "クローズドガード～フックスイープ",
       "description": "クローズドからのスイープ解説",
       "channel": "新・柔術日記Channel",
       "channel_id": "jutsu-nikki",
@@ -272,11 +293,28 @@
       "topics": [
         "closed-hook-sweep"
       ],
-      "position": "bottom"
+      "position": "bottom",
+      "recommendation_status": "publisher_content_checked",
+      "playback_status": "not_checked",
+      "technique_ids": [
+        "closed-guard"
+      ],
+      "instructor": "山脇",
+      "reaction_ids": {},
+      "relevance": 100,
+      "requires_any": [
+        "フックスイープ"
+      ],
+      "evidence": {
+        "source_id": "yamawaki-closed",
+        "detail": "本人の公開解説のフックスイープ項目と公開YouTubeタイトルが一致",
+        "checked_at": "2026-11-17",
+        "playback_position": null
+      }
     },
     {
       "id": "Z6sxXQHsvD8",
-      "title": "フラワースイープ",
+      "title": "クローズドガード～アームロック～フラワースイープ",
       "description": "クローズドガードの基本スイープ",
       "channel": "新・柔術日記Channel",
       "channel_id": "jutsu-nikki",
@@ -295,11 +333,26 @@
       "topics": [
         "flower-sweep"
       ],
-      "position": "bottom"
+      "position": "bottom",
+      "recommendation_status": "publisher_content_checked",
+      "playback_status": "not_checked",
+      "technique_ids": [
+        "flower-sweep"
+      ],
+      "instructor": "山脇",
+      "reaction_ids": {},
+      "relevance": 100,
+      "requires_any": [],
+      "evidence": {
+        "source_id": "yamawaki-closed",
+        "detail": "本人のクローズドガード解説のリンク先で、腕十字からのフラワースイープと確認",
+        "checked_at": "2026-11-17",
+        "playback_position": null
+      }
     },
     {
       "id": "Coh6o4poTlM",
-      "title": "ヒップスローからキムラロックを極めるコツ",
+      "title": "ヒップスローからキムラロックを極めるコツみたいなやつ",
       "description": "ヒップスローからの連係",
       "channel": "新・柔術日記Channel",
       "channel_id": "jutsu-nikki",
@@ -319,7 +372,27 @@
         "hip-bump",
         "kimura"
       ],
-      "position": "bottom"
+      "position": "bottom",
+      "recommendation_status": "publisher_content_checked",
+      "playback_status": "not_checked",
+      "technique_ids": [
+        "hip-bump",
+        "kimura"
+      ],
+      "instructor": "山脇",
+      "reaction_ids": {
+        "hip-bump": [
+          "post"
+        ]
+      },
+      "relevance": 100,
+      "requires_any": [],
+      "evidence": {
+        "source_id": "yamawaki-closed",
+        "detail": "本人の公開解説でクローズドからのヒップスローの章にあり、公開ページの題がキムラへの連係と一致",
+        "checked_at": "2026-11-17",
+        "playback_position": null
+      }
     },
     {
       "id": "tLpgh18xL3w",
@@ -342,7 +415,24 @@
       "topics": [
         "closed-side-sweep"
       ],
-      "position": "bottom"
+      "position": "bottom",
+      "recommendation_status": "publisher_content_checked",
+      "playback_status": "not_checked",
+      "technique_ids": [
+        "closed-guard"
+      ],
+      "instructor": "山脇",
+      "reaction_ids": {},
+      "relevance": 100,
+      "requires_any": [
+        "サイドスイープ"
+      ],
+      "evidence": {
+        "source_id": "yamawaki-closed",
+        "detail": "本人のクローズドからの腕十字系列のサイドスイープ解説とリンク先の題が一致",
+        "checked_at": "2026-11-17",
+        "playback_position": null
+      }
     },
     {
       "id": "v4-BcBb6LH4",
@@ -365,7 +455,10 @@
       "language": "ja",
       "verified_public_url": true,
       "watch_url": "https://www.youtube.com/watch?v=v4-BcBb6LH4",
-      "thumbnail_url": "https://i.ytimg.com/vi/v4-BcBb6LH4/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/v4-BcBb6LH4/hqdefault.jpg",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "wg_xd85YcjY",
@@ -385,7 +478,10 @@
       "language": "ja",
       "verified_public_url": true,
       "watch_url": "https://www.youtube.com/watch?v=wg_xd85YcjY",
-      "thumbnail_url": "https://i.ytimg.com/vi/wg_xd85YcjY/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/wg_xd85YcjY/hqdefault.jpg",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "xRSSL3mroJk",
@@ -411,7 +507,10 @@
       "language": "ja",
       "verified_public_url": true,
       "watch_url": "https://www.youtube.com/watch?v=xRSSL3mroJk",
-      "thumbnail_url": "https://i.ytimg.com/vi/xRSSL3mroJk/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/xRSSL3mroJk/hqdefault.jpg",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "p1Ajxf3XqWk",
@@ -434,7 +533,10 @@
       "language": "ja",
       "verified_public_url": true,
       "watch_url": "https://www.youtube.com/watch?v=p1Ajxf3XqWk",
-      "thumbnail_url": "https://i.ytimg.com/vi/p1Ajxf3XqWk/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/p1Ajxf3XqWk/hqdefault.jpg",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "uEo-BQWk6Fg",
@@ -457,7 +559,10 @@
       "language": "ja",
       "verified_public_url": true,
       "watch_url": "https://www.youtube.com/watch?v=uEo-BQWk6Fg",
-      "thumbnail_url": "https://i.ytimg.com/vi/uEo-BQWk6Fg/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/uEo-BQWk6Fg/hqdefault.jpg",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "QqAA3rbxetY",
@@ -478,7 +583,10 @@
       "language": "ja",
       "verified_public_url": true,
       "watch_url": "https://www.youtube.com/watch?v=QqAA3rbxetY",
-      "thumbnail_url": "https://i.ytimg.com/vi/QqAA3rbxetY/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/QqAA3rbxetY/hqdefault.jpg",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "xXXOSb1oJ2k",
@@ -500,7 +608,10 @@
       "language": "ja",
       "verified_public_url": true,
       "watch_url": "https://www.youtube.com/watch?v=xXXOSb1oJ2k",
-      "thumbnail_url": "https://i.ytimg.com/vi/xXXOSb1oJ2k/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/xXXOSb1oJ2k/hqdefault.jpg",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "EYeD5XXmAQs",
@@ -520,7 +631,10 @@
       "language": "ja",
       "verified_public_url": true,
       "watch_url": "https://www.youtube.com/watch?v=EYeD5XXmAQs",
-      "thumbnail_url": "https://i.ytimg.com/vi/EYeD5XXmAQs/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/EYeD5XXmAQs/hqdefault.jpg",
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": []
     },
     {
       "id": "PVXpWtRjUS4",
@@ -546,7 +660,32 @@
       "verified_public_url": true,
       "verification": "public_youtube_watch_page",
       "watch_url": "https://www.youtube.com/watch?v=PVXpWtRjUS4",
-      "thumbnail_url": "https://i.ytimg.com/vi/PVXpWtRjUS4/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/PVXpWtRjUS4/hqdefault.jpg",
+      "recommendation_status": "publisher_content_checked",
+      "playback_status": "not_checked",
+      "technique_ids": [
+        "half-underhook",
+        "dogfight"
+      ],
+      "instructor": "Miad Najafi",
+      "reaction_ids": {
+        "half-underhook": [
+          "whizzer",
+          "free-back"
+        ],
+        "dogfight": [
+          "forward",
+          "no-wrap"
+        ]
+      },
+      "relevance": 80,
+      "requires_any": [],
+      "evidence": {
+        "source_id": "jjb-half",
+        "detail": "投稿元の本文が脇差し、バック、ロールアンダーを扱うと明示し、公開プレーヤーのサムネイルIDも一致",
+        "checked_at": "2026-11-17",
+        "playback_position": null
+      }
     },
     {
       "id": "sjp3M_UogZ8",
@@ -571,7 +710,111 @@
       "verified_public_url": true,
       "verification": "public_youtube_watch_page",
       "watch_url": "https://www.youtube.com/watch?v=sjp3M_UogZ8",
-      "thumbnail_url": "https://i.ytimg.com/vi/sjp3M_UogZ8/hqdefault.jpg"
+      "thumbnail_url": "https://i.ytimg.com/vi/sjp3M_UogZ8/hqdefault.jpg",
+      "recommendation_status": "publisher_content_checked",
+      "playback_status": "not_checked",
+      "technique_ids": [
+        "dogfight"
+      ],
+      "instructor": "Miad Najafi",
+      "reaction_ids": {
+        "dogfight": [
+          "forward"
+        ]
+      },
+      "relevance": 100,
+      "requires_any": [],
+      "evidence": {
+        "source_id": "jjb-whizzer",
+        "detail": "投稿元がボトムのハーフからバックを防ぐウィザーに対するロールアンダーと記し、公開プレーヤーのサムネイルIDも一致",
+        "checked_at": "2026-11-17",
+        "playback_position": null
+      }
+    },
+    {
+      "id": "z8pN9PafXTc",
+      "channel": "Grapplearts",
+      "channel_id": "grapplearts",
+      "language": "en",
+      "position": "bottom",
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=z8pN9PafXTc",
+      "thumbnail_url": "https://i.ytimg.com/vi/z8pN9PafXTc/hqdefault.jpg",
+      "topics": [],
+      "tags": [],
+      "title": "Elbow-Knee Connection Completely Changes the Guard Retention Game; Concept, Examples, and Drill",
+      "recommendation_status": "publisher_content_checked",
+      "instructor": "Rob Biernacki／Stephan Kesting",
+      "technique_ids": [
+        "guard-retention"
+      ],
+      "reaction_ids": {
+        "guard-retention": [
+          "feet-passed"
+        ]
+      },
+      "relevance": 100,
+      "requires_any": [],
+      "evidence": {
+        "source_id": "ga-elbow",
+        "detail": "投稿元が肘と膝の接続、パス阻止とドリルを本文で説明し、公開YouTubeの表題・概要と一致",
+        "checked_at": "2026-11-17",
+        "playback_position": null
+      }
+    },
+    {
+      "id": "QRJNaUYrEqo",
+      "channel": "Grapplearts",
+      "channel_id": "grapplearts",
+      "language": "en",
+      "position": "bottom",
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=QRJNaUYrEqo",
+      "thumbnail_url": "https://i.ytimg.com/vi/QRJNaUYrEqo/hqdefault.jpg",
+      "topics": [],
+      "tags": [],
+      "title": "How to Do the Half Butterfly Guard Hook Sweep with Rob Biernacki and Stephan Kesting",
+      "recommendation_status": "publisher_content_checked",
+      "instructor": "Rob Biernacki／Stephan Kesting",
+      "technique_ids": [
+        "half-butterfly"
+      ],
+      "reaction_ids": {
+        "half-butterfly": [
+          "posting"
+        ]
+      },
+      "relevance": 98,
+      "requires_any": [],
+      "evidence": {
+        "source_id": "ga-half-butterfly",
+        "detail": "投稿元のハーフバタフライからのフックスイープ解説と、公開YouTubeに掲載の講師・技術が一致",
+        "checked_at": "2026-11-17",
+        "playback_position": null
+      }
+    },
+    {
+      "id": "HlKSg_L9nD0",
+      "title": "【スパイダー名人が教える】リアル・スパイダースイープ２種",
+      "channel": "シュラプネル柔術テクニック",
+      "channel_id": "shrapnel",
+      "language": "ja",
+      "position": "bottom",
+      "verified_public_url": true,
+      "watch_url": "https://www.youtube.com/watch?v=HlKSg_L9nD0",
+      "thumbnail_url": "https://i.ytimg.com/vi/HlKSg_L9nD0/hqdefault.jpg",
+      "topics": [
+        "spider"
+      ],
+      "tags": [],
+      "recommendation_status": "metadata_only",
+      "playback_status": "not_checked",
+      "technique_ids": [],
+      "evidence": {
+        "detail": "公開検索でタイトルとチャンネルを確認。対象姿勢と手順の確認が残る。",
+        "checked_at": "2026-11-17",
+        "playback_position": null
+      }
     }
   ]
 }

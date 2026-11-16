@@ -352,7 +352,7 @@ async function checkApi(){
     if(!r.ok)throw Error('connection');
     const info=await r.json();
     setConnected(info.configured?'yes':'no',info.configured?'AI接続準備OK':'APIキー未設定');document.body.classList.toggle('shared-review',!!info.shared);
-    if(!info.configured){$('ai-system-note').textContent='Gemini APIキーが未設定です。Render管理画面の Environment に GEMINI_API_KEY を設定してください。出席・ランキングは引き続きデモ操作できます。';}
+    if(!info.configured){$('ai-system-note').textContent='Geminiは未設定です。登録済みの技術メモで回答し、該当する公開動画を表示します。';}
   }catch(e){
     setConnected('no','サーバー未接続');
     $('ai-system-note').textContent='このHTMLは画面プレビューです。生成AIの回答には、同梱のサーバーを起動して http://127.0.0.1:8787 から開く必要があります。';
@@ -366,13 +366,15 @@ function keepLatestVisible(){
     chatBox.scrollTop=chatBox.scrollHeight;
   });
 }
-function appendBubble(role,content){
+function appendBubble(role,content,turn=activeChatTurn){
   const empty=chatBox.querySelector('.chat-empty');if(empty)empty.remove();
-  if(role==='user'||!activeChatTurn){
-    activeChatTurn=document.createElement('div');
-    activeChatTurn.className='chat-turn';
-    chatBox.appendChild(activeChatTurn);
+  if(role==='user'){
+    turn=document.createElement('div');
+    turn.className='chat-turn';
+    chatBox.appendChild(turn);
+    activeChatTurn=turn;
   }
+  if(!turn?.isConnected)return null;
   const row=document.createElement('div');row.className='chat-row '+(role==='user'?'user':'coach');
   if(role!=='user'){
     const avatar=document.createElement('div');avatar.className='chat-avatar';
@@ -385,13 +387,15 @@ function appendBubble(role,content){
     const self=document.createElement('div');self.className='chat-self';self.textContent='YOU';
     row.appendChild(self);
   }
-  const firstVideo=activeChatTurn.querySelector('.video-suggestions');
-  if(role==='coach' && firstVideo)activeChatTurn.insertBefore(row,firstVideo);
-  else activeChatTurn.appendChild(row);
+  const firstVideo=turn.querySelector('.video-suggestions');
+  if(role!=='user' && firstVideo)turn.insertBefore(row,firstVideo);
+  else turn.appendChild(row);
   keepLatestVisible();
+  return turn;
 }
-function appendVideoReferences(videos){
-  const items=Array.isArray(videos)?videos.slice(0,2):[];
+function appendVideoReferences(videos,turn){
+  if(!turn?.isConnected)return;
+  const items=Array.isArray(videos)?videos.slice(0,3):[];
   if(!items.length)return;
   const section=document.createElement('section');section.className='video-suggestions';
   const heading=document.createElement('h3');heading.textContent='関連する無料YouTube動画';section.appendChild(heading);
@@ -409,7 +413,7 @@ function appendVideoReferences(videos){
   }
   if(!grid.children.length)return;
   section.appendChild(grid);
-  (activeChatTurn||chatBox).appendChild(section);
+  turn.appendChild(section);
   keepLatestVisible();
 }
 function setChatError(value){const node=$('ai-error');node.hidden=!value;node.textContent=value||'';}
@@ -423,14 +427,13 @@ async function askCoach(question){
   const q=String(question||'').trim();if(!q)return;
   setChatError('');
   const previous=chatHistory.slice(-10);
-  appendBubble('user',q);chatHistory.push({role:'user',content:q});
+  const turn=appendBubble('user',q);chatHistory.push({role:'user',content:q});
   $('ai-question').value='';updateChatBusy(true);
   // Independent free public-video lookup; cards appear even when Gemini returns an error.
   const lastUser=previous.slice().reverse().find(m=>m?.role==='user'&&typeof m.content==='string');
-  const videoParams=new URLSearchParams({q,context:lastUser?.content||''});
-  const mediaPromise=fetch('/api/videos?'+videoParams.toString(),{cache:'no-store'})
+  fetch('/api/videos',{method:'POST',headers:{'Content-Type':'application/json'},cache:'no-store',body:JSON.stringify({question:q,context:lastUser?.content||''})})
     .then(r=>{if(!r.ok)throw Error('video lookup');return r.json()})
-    .then(v=>appendVideoReferences(v.videos))
+    .then(v=>appendVideoReferences(v.videos,turn))
     .catch(()=>{});
 
   if(window.matchMedia('(max-width:760px)').matches)$('ai-question').blur();
@@ -439,12 +442,14 @@ async function askCoach(question){
     let body={};try{body=await resp.json()}catch(_){throw Error('サーバーからの応答を読み取れませんでした。')}
     if(!resp.ok)throw Error(body.error||'AIに接続できませんでした。');
     if(typeof body.answer!=='string'||!body.answer.trim())throw Error('AIから回答がありませんでした。');
-    appendBubble('assistant',body.answer);
-    // Videos load independently from /api/videos so a Gemini error cannot hide them.
+    if(!turn?.isConnected)return;
+    appendBubble('assistant',body.answer,turn);
+    // Videos load independently from /api/videos.
     chatHistory.push({role:'assistant',content:body.answer});
     if(chatHistory.length>30)chatHistory.splice(0,chatHistory.length-30);
-    setConnected('yes','AI接続中');
-  }catch(err){setChatError(err.message||'送信に失敗しました。');setConnected('no','接続エラー');}
+    if(body.mode==='gemini')setConnected('yes','AI接続中');
+    if(body.mode==='knowledge')setConnected('yes','技術メモで回答');
+  }catch(err){if(turn?.isConnected){setChatError(err.message||'送信に失敗しました。');setConnected('no','接続エラー');}}
   finally{updateChatBusy(false);keepLatestVisible();if(window.matchMedia('(min-width:761px)').matches)$('ai-question').focus({preventScroll:true});}
 }
 $('ai-form').addEventListener('submit',e=>{e.preventDefault();askCoach($('ai-question').value);});

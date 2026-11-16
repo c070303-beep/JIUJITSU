@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "2.0",
   "sources": [
     {
       "id": "yawara-sweep-textbook-ja",
@@ -168,6 +168,438 @@
         "reproduction": "not_authorized_or_verified"
       },
       "notes": "クローズドガードの無料公開索引、技術動画チャンネルへのリンクを確認。有料記事（300円など）もあり本文は未収録。動画60本以上の全編は未確認。"
+    },
+    {
+      "id": "rrt-v13-notes",
+      "display_title": "RRT試用版の独自技術メモ",
+      "source_url": "https://github.com/c070303-beep/JIUJITSU/blob/aa4cbf4bdbcbbda8600038ee6790de5cbfacf110/knowledge/original_bjj_coaching.json",
+      "scope": "original_notes",
+      "ai_enabled": true,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "independently_authored_only",
+        "reproduction": "project_original"
+      }
+    },
+    {
+      "id": "rrt-v13-editorial",
+      "display_title": "v13の独自解説メモ",
+      "source_url": "https://github.com/c070303-beep/JIUJITSU/blob/aa4cbf4bdbcbbda8600038ee6790de5cbfacf110/knowledge/editorial_reading_notes.json",
+      "scope": "original_notes",
+      "ai_enabled": true,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "independently_authored_only",
+        "reproduction": "project_original"
+      }
+    },
+    {
+      "id": "andy-half-class",
+      "display_title": "柔術哲学／ニーシールドハーフ",
+      "source_url": "https://note.com/andy_s_rocky/n/nf583b0df7fe5",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "andy-half-pass",
+      "display_title": "柔術哲学／ハーフガードパスの考え方",
+      "source_url": "https://note.com/andy_s_rocky/n/n87137d457ba9",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "andy-camping",
+      "display_title": "柔術哲学／アウトサイドキャンピング",
+      "source_url": "https://note.com/andy_s_rocky/n/nd991c35a7637",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "andy-spider",
+      "display_title": "柔術哲学／スパイダーガード",
+      "source_url": "https://note.com/andy_s_rocky/n/n2fdb4884616b",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "andy-spider-top",
+      "display_title": "柔術哲学／スパイダーの解除",
+      "source_url": "https://note.com/andy_s_rocky/n/nb240df06b854",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "andy-grip",
+      "display_title": "柔術哲学／パスの組み手の基本",
+      "source_url": "https://note.com/andy_s_rocky/n/n6fad7199d852",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "lets-underhook",
+      "display_title": "Let's BJJ／ハーフの脇差し ボトム",
+      "source_url": "https://letsbjj.site/post/2021-06-20-0462",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "lets-beginner",
+      "display_title": "Let's BJJ／白帯に必要な前提知識",
+      "source_url": "https://letsbjj.site/post/2025-10-18-0711",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "yamawaki-closed",
+      "display_title": "YAMAWAKI_BJJ／クローズドの学び方",
+      "source_url": "https://note.com/08230000/n/n4f6788ee88a2",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "yamawaki-retention",
+      "display_title": "YAMAWAKI_BJJ／ガード保持とKnees to Chest",
+      "source_url": "https://note.com/08230000/n/nac282e0eebe8",
+      "scope": "public_body_only",
+      "ai_enabled": false,
+      "source_access_status": "public_body_only",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "iwasaki-08",
+      "display_title": "岩崎正寛／柔術物語 第8話",
+      "source_url": "https://note.com/masahiroiwasaki/n/n314b044f8c54",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "jjb-half",
+      "display_title": "Miad Najafi／The Complete Underhook Half Guard System",
+      "source_url": "https://www.jiujitsubrotherhood.com/blogs/techniques/the-complete-underhook-half-guard-system-sweeps-back-takes",
+      "scope": "public_video_companion",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "jjb-whizzer",
+      "display_title": "Miad Najafi／Roll Under Sweep from Half Guard",
+      "source_url": "https://www.jiujitsubrotherhood.com/blogs/techniques/roll-under-sweep-from-half-guard",
+      "scope": "public_video_companion",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-elbow",
+      "display_title": "Grapplearts／Elbow-Knee Connection",
+      "source_url": "https://www.grapplearts.com/elbow-knee-connection-in-bjj-and-how-to-develop-it/",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-shrimp",
+      "display_title": "Grapplearts／Shrimpingの骨盤移動",
+      "source_url": "https://www.grapplearts.com/ultimate-guide-developing-bjj-hip-movement-shrimping/",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-half-butterfly",
+      "display_title": "Grapplearts／The Butterfly Sweep from Half Guard",
+      "source_url": "https://www.grapplearts.com/the-butterfly-sweep-from-half-guard/",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-butterfly",
+      "display_title": "Grapplearts／The Basic Butterfly Guard Sweep",
+      "source_url": "https://www.grapplearts.com/the-basic-butterfly-guard-sweep/",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-butterfly-backward",
+      "display_title": "Grapplearts／The Easiest Butterfly Guard Sweep",
+      "source_url": "https://www.grapplearts.com/the-easiest-butterfly-guard-sweep/",
+      "scope": "public_video_companion",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-knee",
+      "display_title": "Grapplearts／A Heavy Knee Cut Pass vs Butterfly Guard",
+      "source_url": "https://www.grapplearts.com/a-heavy-knee-cut-pass-vs-butterfly-guard/",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-knee-defense",
+      "display_title": "Grapplearts／5 Techniques for Knee Cut Guard Pass Defense and Prevention",
+      "source_url": "https://www.grapplearts.com/knee-cut-guard-pass-defenses/",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-side",
+      "display_title": "Grapplearts／Side Control",
+      "source_url": "https://www.grapplearts.com/what-is-side-control/",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-side-subs",
+      "display_title": "Grapplearts／Step-by-Step Side Control Submissions",
+      "source_url": "https://www.grapplearts.com/step-by-step-side-control-submissions/",
+      "scope": "public_catalog_only",
+      "ai_enabled": false,
+      "source_access_status": "public_catalog_only",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-arm-triangle",
+      "display_title": "Grapplearts／Head and Arm Choke",
+      "source_url": "https://www.grapplearts.com/how-to-set-up-and-apply-the-head-and-arm-choke/",
+      "scope": "public_video_companion",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-dlr",
+      "display_title": "Grapplearts／De La Riva Guard",
+      "source_url": "https://www.grapplearts.com/the-de-la-riva-guard/",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-slx",
+      "display_title": "Grapplearts／Single Leg X Guard Masterclass",
+      "source_url": "https://www.grapplearts.com/single-leg-x-guard-masterclass/",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-x-back",
+      "display_title": "Grapplearts／How to Take the Back from X Guard",
+      "source_url": "https://www.grapplearts.com/how-to-take-the-back-from-x-guard/",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-berimbolo",
+      "display_title": "Grapplearts／The 3 Steps of Berimbolo",
+      "source_url": "https://www.grapplearts.com/the-3-steps-of-berimbolo/",
+      "scope": "public_full_body",
+      "ai_enabled": false,
+      "source_access_status": "verified",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "yonekura-kajabi",
+      "display_title": "オンラインパーソナル フルクラス",
+      "source_url": "https://ijrb3hwd.mykajabi.com/products/2",
+      "scope": "membership_catalog_record",
+      "ai_enabled": false,
+      "source_access_status": "membership_catalog_record",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "shrapnel-online",
+      "display_title": "シュラプネル・オンライン",
+      "source_url": "https://shrapnel-online.com/",
+      "scope": "membership_catalog_record",
+      "ai_enabled": false,
+      "source_access_status": "membership_catalog_record",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "yonekura-outside-catalog",
+      "display_title": "米倉大貴／アウトサイドパス完全攻略",
+      "source_url": "https://jiuji.thebase.in/items/158298583",
+      "scope": "public_catalog_only",
+      "ai_enabled": false,
+      "source_access_status": "public_catalog_only",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "yonekura-inside-preview",
+      "display_title": "米倉大貴／インサイドキャンプ大全",
+      "source_url": "https://note.com/daikibjj/n/nf9f850f014a5",
+      "scope": "public_snippet_only",
+      "ai_enabled": false,
+      "source_access_status": "public_snippet_only",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "yonekura-knee-catalog",
+      "display_title": "米倉大貴／柔術インサイドパス完全攻略 ニーカット編",
+      "source_url": "https://jiuji.thebase.in/items/163094945",
+      "scope": "public_catalog_only",
+      "ai_enabled": false,
+      "source_access_status": "public_catalog_only",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "chen-jpoint",
+      "display_title": "Jozef Chen／J-Point Camping",
+      "source_url": "https://bjjfanatics.com/products/jpoint-camping-by-jozef-chen",
+      "scope": "public_catalog_only",
+      "ai_enabled": false,
+      "source_access_status": "public_catalog_only",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "kako-butterfly-catalog",
+      "display_title": "加古拓渡／バタフライガード 紹介",
+      "source_url": "https://letsbjj.site/post/2023-12-24-0628",
+      "scope": "public_catalog_only",
+      "ai_enabled": false,
+      "source_access_status": "public_catalog_only",
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
     }
   ]
 }

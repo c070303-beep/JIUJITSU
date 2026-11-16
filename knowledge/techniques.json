@@ -62,7 +62,7 @@
           "match": [
             "胸を合",
             "固定",
-            "サイド"
+            "サイドを取"
           ]
         }
       ],
@@ -112,7 +112,9 @@
       "related_ids": [
         "side-bottom"
       ],
-      "public_youtube_ids": [],
+      "public_youtube_ids": [
+        "z8pN9PafXTc"
+      ],
       "answer": {
         "summary": "ガードのボトムでは、フレームで相手が入る場所に空間を残し、エビで骨盤を動かして膝を差し戻します。",
         "tips": [
@@ -243,7 +245,9 @@
         "back-take",
         "half-crossface"
       ],
-      "public_youtube_ids": [],
+      "public_youtube_ids": [
+        "PVXpWtRjUS4"
+      ],
       "answer": {
         "summary": "ボトムのハーフは、上の肩が床から離れる半身を作って、相手の脇の下に腕を通します。",
         "tips": [
@@ -319,7 +323,7 @@
           "next_id": "side-bottom",
           "match": [
             "パスされた",
-            "サイド",
+            "サイドを取",
             "脚が抜け"
           ]
         }
@@ -700,7 +704,10 @@
         "back-take",
         "knee-shield"
       ],
-      "public_youtube_ids": [],
+      "public_youtube_ids": [
+        "PVXpWtRjUS4",
+        "sjp3M_UogZ8"
+      ],
       "answer": {
         "summary": "ボトムで脇を差してウィザーを受けたら、まず頭を脇腹側で高く保ち、自由な手と膝で体を支えます。",
         "tips": [
@@ -905,7 +912,9 @@
         "butterfly-sweep",
         "knee-shield"
       ],
-      "public_youtube_ids": [],
+      "public_youtube_ids": [
+        "QRJNaUYrEqo"
+      ],
       "answer": {
         "summary": "ハーフバタフライは、ボトムで片脚を挟みながら、上の足の甲を相手の内腿に入れ、相手を横へ崩します。",
         "tips": [
@@ -1329,7 +1338,7 @@
           "next_id": "side-bottom",
           "match": [
             "胸",
-            "サイド",
+            "サイドを取",
             "固定"
           ]
         }
@@ -1766,7 +1775,7 @@
           "answer": "膝と肩を越えられたら、肘を体へ戻し、肩と腰に前腕が入る隙間を作る動きに切り替えます。",
           "next_id": "side-bottom",
           "match": [
-            "サイド",
+            "サイドを取",
             "肩も",
             "抜けた",
             "越えられ"
@@ -2925,7 +2934,7 @@
           "answer": "膝が胸の前に戻らないなら、上半身の向きを制御して胸を近づけ、サイドでの支えを確かめます。",
           "next_id": "side-to-mount",
           "match": [
-            "サイド",
+            "サイドを取",
             "止",
             "肩"
           ]
@@ -3191,7 +3200,10 @@
         "hip-bump",
         "triangle"
       ],
-      "public_youtube_ids": [],
+      "public_youtube_ids": [
+        "IHu38JiYTHU",
+        "tLpgh18xL3w"
+      ],
       "answer": {
         "summary": "ボトムのクローズドでは、膝と腕を一緒に使い、相手の上体が前へ支えるか腰を引くかを見て技を選びます。",
         "tips": [
@@ -3392,7 +3404,9 @@
         "armbar",
         "closed-guard"
       ],
-      "public_youtube_ids": [],
+      "public_youtube_ids": [
+        "Z6sxXQHsvD8"
+      ],
       "answer": {
         "summary": "クローズドのフラワースイープは、倒す側の腕を止め、自分の腰を横へずらして相手の腿に届く角度を取ります。",
         "tips": [
@@ -3489,7 +3503,9 @@
         "kimura",
         "closed-guard"
       ],
-      "public_youtube_ids": [],
+      "public_youtube_ids": [
+        "Coh6o4poTlM"
+      ],
       "answer": {
         "summary": "クローズドのヒップバンプは、相手が腰を後ろへ置いて上体を起こす瞬間に、自分も座り起きて斜めへ崩します。",
         "tips": [
@@ -3591,7 +3607,9 @@
         "closed-guard",
         "hip-bump"
       ],
-      "public_youtube_ids": [],
+      "public_youtube_ids": [
+        "Coh6o4poTlM"
+      ],
       "answer": {
         "summary": "クローズドのキムラは、ボトムが相手の手首に届き、片腕が胴から離れた場面で形を作ります。",
         "tips": [

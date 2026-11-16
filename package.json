@@ -7,6 +7,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test test/coach.test.cjs",
+    "validate:knowledge": "node scripts/validate_knowledge.cjs",
+    "postinstall": "npm run validate:knowledge && npm test"
   }
 }

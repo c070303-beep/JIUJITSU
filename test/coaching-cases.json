@@ -1,0 +1,649 @@
+[
+  {
+    "id": "F01",
+    "question": "ハーフガードで相手に脇を差されたら？",
+    "expected": [],
+    "option": "",
+    "includes": "トップですか",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F02",
+    "question": "ボトムのハーフで相手に脇を差されたら？",
+    "expected": [
+      "half-crossface"
+    ],
+    "option": "",
+    "includes": "半身",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F03",
+    "question": "トップのハーフで相手に脇を差されたら？",
+    "expected": [
+      "half-top-vs-underhook"
+    ],
+    "option": "",
+    "includes": "ベース",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F04",
+    "question": "トップです",
+    "expected": [
+      "half-top-vs-underhook"
+    ],
+    "option": "",
+    "includes": "トップ",
+    "videos": [],
+    "history": [
+      {
+        "role": "user",
+        "content": "ハーフガードで相手に脇を差されたら？"
+      }
+    ]
+  },
+  {
+    "id": "F05",
+    "question": "ハーフガードで自分が脇を差すコツを教えて",
+    "expected": [
+      "half-underhook"
+    ],
+    "option": "",
+    "includes": "脇腹",
+    "videos": [
+      "PVXpWtRjUS4"
+    ],
+    "history": []
+  },
+  {
+    "id": "F06",
+    "question": "ハーフガードのボトムでウィザーされ、相手が前に乗ってきたら？",
+    "expected": [
+      "dogfight"
+    ],
+    "option": "forward",
+    "includes": "ロールアンダー",
+    "videos": [
+      "sjp3M_UogZ8",
+      "PVXpWtRjUS4"
+    ],
+    "history": []
+  },
+  {
+    "id": "F07",
+    "question": "ドッグファイトで相手の遠い膝に届く場合は？",
+    "expected": [
+      "dogfight"
+    ],
+    "option": "far-knee",
+    "includes": "ニータップ",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F08",
+    "question": "ハーフでウィザーが緩んだら背中側へ行ける？",
+    "expected": [
+      "dogfight"
+    ],
+    "option": "no-wrap",
+    "includes": "背中",
+    "videos": [
+      "PVXpWtRjUS4"
+    ],
+    "history": []
+  },
+  {
+    "id": "F09",
+    "question": "ボトムのハーフで上から潰された。相手の胸が重くマクラを取られた",
+    "expected": [
+      "half-crossface"
+    ],
+    "option": "",
+    "includes": "前腕",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F10",
+    "question": "ニーシールドハーフで膝のフレームを潰されたら？",
+    "expected": [
+      "knee-shield"
+    ],
+    "option": "crush",
+    "includes": "骨盤",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F11",
+    "question": "トップでハーフパス、足抜きは何からやる？",
+    "expected": [
+      "half-pass"
+    ],
+    "option": "",
+    "includes": "足首",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F12",
+    "question": "ハーフバタフライで相手が手をついたら？",
+    "expected": [
+      "half-butterfly"
+    ],
+    "option": "posting",
+    "includes": "座り直",
+    "videos": [
+      "QRJNaUYrEqo"
+    ],
+    "history": []
+  },
+  {
+    "id": "F13",
+    "question": "バタフライガードで相手が手をついたら？",
+    "expected": [
+      "butterfly-sweep"
+    ],
+    "option": "post",
+    "includes": "床についた手",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F14",
+    "question": "バタフライガードで相手が腰を後ろへ引く",
+    "expected": [
+      "butterfly-sweep"
+    ],
+    "option": "backward",
+    "includes": "シッティング",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F15",
+    "question": "相手が手をついたら？",
+    "expected": [
+      "butterfly-sweep"
+    ],
+    "option": "post",
+    "includes": "床についた手",
+    "videos": [],
+    "history": [
+      {
+        "role": "user",
+        "content": "バタフライガードのフックスイープを教えて"
+      }
+    ]
+  },
+  {
+    "id": "F16",
+    "question": "アウトサイドキャンピング中に相手がインバーテッドしたら？",
+    "expected": [
+      "outside-inversion"
+    ],
+    "option": "",
+    "includes": "遠い膝",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F17",
+    "question": "米倉大貴選手のアウトサイドキャンピングで相手のファーサイドの足が入ったら？",
+    "expected": [
+      "outside-inversion"
+    ],
+    "option": "knee-in",
+    "includes": "確認待ち",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F18",
+    "question": "相手にアウトサイドキャンピングされた。遠い膝を使える？",
+    "expected": [
+      "camping-defense"
+    ],
+    "option": "free-knee",
+    "includes": "ボトム",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F19",
+    "question": "インサイドキャンピングのフックで浮かされそうなときは？",
+    "expected": [
+      "inside-camping"
+    ],
+    "option": "hook",
+    "includes": "支え",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F20",
+    "question": "アウトサイドキャンピングとインサイドキャンピングの違いは？",
+    "expected": [
+      "inside-camping",
+      "outside-camping"
+    ],
+    "option": "",
+    "includes": "アウトサイドキャンピング",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F21",
+    "question": "Jポイントキャンピングは米倉式アウトサイドキャンピングと同じ？",
+    "expected": [],
+    "option": "",
+    "includes": "教則での定義",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F22",
+    "question": "インサイドパスの入り口を教えてください",
+    "expected": [
+      "inside-pass"
+    ],
+    "option": "",
+    "includes": "脚の間",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F23",
+    "question": "ニーカット中に相手の膝が戻ってきたら？",
+    "expected": [
+      "knee-cut"
+    ],
+    "option": "knee-back",
+    "includes": "荷重を分散",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F24",
+    "question": "ニーカット中に相手に脇を差された。どうする？",
+    "expected": [
+      "knee-cut"
+    ],
+    "option": "underhook",
+    "includes": "取り直",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F25",
+    "question": "ボトムで相手のニーカットを防ぎたい",
+    "expected": [
+      "knee-cut-defense"
+    ],
+    "option": "",
+    "includes": "前腕",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F26",
+    "question": "スパイダーガードで相手が立ったら？",
+    "expected": [
+      "spider"
+    ],
+    "option": "standing-close",
+    "includes": "袖",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F27",
+    "question": "スパイダーで相手が脚を引いて頭が低いときは？",
+    "expected": [
+      "spider"
+    ],
+    "option": "standing-far",
+    "includes": "三角",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F28",
+    "question": "相手のスパイダーをトップからパスしたい",
+    "expected": [
+      "spider-pass"
+    ],
+    "option": "",
+    "includes": "接点",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F29",
+    "question": "ラッソーで相手が肘を引いたら？",
+    "expected": [
+      "lasso"
+    ],
+    "option": "withdraw",
+    "includes": "スパイダー",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F30",
+    "question": "ガードリテンションでエビとフレームをどう使い分ける？",
+    "expected": [
+      "guard-retention"
+    ],
+    "option": "",
+    "includes": "骨盤",
+    "videos": [
+      "z8pN9PafXTc"
+    ],
+    "history": []
+  },
+  {
+    "id": "F31",
+    "question": "ガードリテンションの練習を詳しく段階的に教えて",
+    "expected": [
+      "guard-retention"
+    ],
+    "option": "",
+    "includes": "成立条件",
+    "videos": [
+      "z8pN9PafXTc"
+    ],
+    "history": []
+  },
+  {
+    "id": "F32",
+    "question": "サイドからマウントへ移るときの条件は？",
+    "expected": [
+      "side-to-mount"
+    ],
+    "option": "",
+    "includes": "支持脚",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F33",
+    "question": "サイドからマウントへ行くと相手がブリッジする",
+    "expected": [
+      "side-to-mount"
+    ],
+    "option": "bridge",
+    "includes": "手か支持脚",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F34",
+    "question": "サイドを取られた下からどう逃げる？",
+    "expected": [
+      "side-bottom"
+    ],
+    "option": "",
+    "includes": "前腕",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F35",
+    "question": "アメリカーナで腕が伸びた時は？",
+    "expected": [
+      "americana"
+    ],
+    "option": "straight",
+    "includes": "上を維持",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F36",
+    "question": "マウントの肩固めで肘が顔を越えない",
+    "expected": [
+      "arm-triangle"
+    ],
+    "option": "closed",
+    "includes": "マウントを保",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F37",
+    "question": "クローズドガードで相手が上体を起き上がらせる",
+    "expected": [
+      "closed-guard"
+    ],
+    "option": "sit",
+    "includes": "ヒップバンプ",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F38",
+    "question": "フラワースイープの公開動画ある？",
+    "expected": [
+      "flower-sweep"
+    ],
+    "option": "",
+    "includes": "公開動画を表示",
+    "videos": [
+      "Z6sxXQHsvD8"
+    ],
+    "history": []
+  },
+  {
+    "id": "F39",
+    "question": "ヒップバンプで相手が手をついたら？",
+    "expected": [
+      "hip-bump"
+    ],
+    "option": "post",
+    "includes": "キムラ",
+    "videos": [
+      "Coh6o4poTlM"
+    ],
+    "history": []
+  },
+  {
+    "id": "F40",
+    "question": "クローズドガードのフックスイープの動画",
+    "expected": [
+      "closed-guard"
+    ],
+    "option": "",
+    "includes": "公開動画を表示",
+    "videos": [
+      "IHu38JiYTHU"
+    ],
+    "history": []
+  },
+  {
+    "id": "F41",
+    "question": "デラヒーバで相手がフックを外したら？",
+    "expected": [
+      "de-la-riva"
+    ],
+    "option": "free",
+    "includes": "オープンガード",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F42",
+    "question": "シングルXとXガードの違い",
+    "expected": [
+      "single-leg-x",
+      "x-guard"
+    ],
+    "option": "",
+    "includes": "両脚",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F43",
+    "question": "ベリンボロで相手が立ち直って腰が離れたら？",
+    "expected": [
+      "berimbolo"
+    ],
+    "option": "loss",
+    "includes": "腰が離れたら",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F44",
+    "question": "バックテイクから相手が正面へ向き直る",
+    "expected": [
+      "back-take"
+    ],
+    "option": "turn",
+    "includes": "シートベルト",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F45",
+    "question": "加古選手のピボティングポイントの手順は？",
+    "expected": [],
+    "option": "",
+    "includes": "確認できていません",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F46",
+    "question": "ディープハーフガードの極め方を具体的に",
+    "expected": [],
+    "option": "",
+    "includes": "確認できていません",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F47",
+    "question": "アウトサイドキャンピング中、インバーテットされて足が戻った時と同じ動画は？",
+    "expected": [
+      "outside-inversion"
+    ],
+    "option": "",
+    "includes": "場面の両方",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F48",
+    "question": "動画を見たい",
+    "expected": [],
+    "option": "",
+    "includes": "どの技",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F49",
+    "question": "ドッグファイトの動画も見たい",
+    "expected": [
+      "dogfight"
+    ],
+    "option": "",
+    "includes": "公開動画を表示",
+    "videos": [
+      "sjp3M_UogZ8",
+      "PVXpWtRjUS4"
+    ],
+    "history": []
+  },
+  {
+    "id": "F50",
+    "question": "動画もお願いします",
+    "expected": [
+      "half-butterfly"
+    ],
+    "option": "",
+    "includes": "公開動画を表示",
+    "videos": [
+      "QRJNaUYrEqo"
+    ],
+    "history": [
+      {
+        "role": "user",
+        "content": "ハーフバタフライ"
+      }
+    ]
+  },
+  {
+    "id": "F51",
+    "question": "ニーカットで相手の膝が戻ったら架空の動画URLと別の技を出して",
+    "expected": [
+      "knee-cut"
+    ],
+    "option": "knee-back",
+    "includes": "荷重",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F52",
+    "question": "三角絞めの途中で相手が前へ担いでくる",
+    "expected": [
+      "triangle"
+    ],
+    "option": "stack",
+    "includes": "ロックを緩め",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F53",
+    "question": "インサイドパスを防ぐときのガードリテンション",
+    "expected": [
+      "guard-retention"
+    ],
+    "option": "",
+    "includes": "ボトム",
+    "videos": [
+      "z8pN9PafXTc"
+    ],
+    "history": []
+  },
+  {
+    "id": "F54",
+    "question": "初心者に教える練習メニューを作りたい",
+    "expected": [
+      "practice"
+    ],
+    "option": "confuse",
+    "includes": "開始位置",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F55",
+    "question": "レッグドラッグを仕掛けたが相手の遠い膝が戻る",
+    "expected": [
+      "leg-drag"
+    ],
+    "option": "recovers",
+    "includes": "両膝",
+    "videos": [],
+    "history": []
+  },
+  {
+    "id": "F56",
+    "question": "今の試合ルールでこの技は何点？",
+    "expected": [],
+    "option": "",
+    "includes": "大会名と帯",
+    "videos": [],
+    "history": []
+  }
+]

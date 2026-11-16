@@ -1,0 +1,1556 @@
+{
+  "schema_version": "1.0",
+  "baseline_commit": "aa4cbf4bdbcbbda8600038ee6790de5cbfacf110",
+  "run_date": "2026-11-17",
+  "execution": "Baseline retrieval and card code plus updated knowledge routing, card code and composed responses. External Gemini requests: 0.",
+  "summary": {
+    "count": 56,
+    "passed": 56,
+    "normal": 44,
+    "range": [
+      150,
+      219
+    ],
+    "oldEvidence": 47,
+    "oldCards": 26,
+    "newCards": 12,
+    "oldCardExact": 31,
+    "newCardExact": 56,
+    "guidance": 6,
+    "detail": 1,
+    "selects": 14,
+    "skipped": 42,
+    "inputCharsRange": [
+      916,
+      1066
+    ],
+    "baselineContextMax": 1205,
+    "variantsOutside": []
+  },
+  "cases": [
+    {
+      "id": "F01",
+      "question": "ハーフガードで相手に脇を差されたら？",
+      "oldIds": [
+        "half-underhook",
+        "half-crossface",
+        "yawara-frame-first"
+      ],
+      "oldCards": [
+        "PVXpWtRjUS4",
+        "v4-BcBb6LH4"
+      ],
+      "pass": true,
+      "candidate": [],
+      "options": [],
+      "newCards": [],
+      "mode": "guidance",
+      "detail": false,
+      "videoOnly": false,
+      "length": 37,
+      "variantsOutside": [],
+      "answer": "ハーフガードで相手に脇を差されたとき、あなたはトップですか、ボトムですか？",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 807
+    },
+    {
+      "id": "F02",
+      "question": "ボトムのハーフで相手に脇を差されたら？",
+      "oldIds": [],
+      "oldCards": [
+        "PVXpWtRjUS4",
+        "sjp3M_UogZ8"
+      ],
+      "pass": true,
+      "candidate": [
+        "half-crossface"
+      ],
+      "options": [
+        "reset-shield",
+        "early",
+        "side"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 159,
+      "variantsOutside": [],
+      "answer": "ボトムのハーフで脇やマクラを取られたら、腕を差し返す前に、胸を重ねられた形から半身に戻る余白を作ります。肘を体に寄せ、空いた方の上腕や肩に前腕を入れます。足で床を踏んで圧が緩む瞬間に骨盤を横へずらし、上の膝を戻します。圧が緩んだ時に上のすねを戻してニーシールドを作ります。肩を動かせる余裕が戻ってから脇を取り返します。",
+      "api": true,
+      "inputChars": 1057,
+      "oldContext": 0
+    },
+    {
+      "id": "F03",
+      "question": "トップのハーフで相手に脇を差されたら？",
+      "oldIds": [],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "half-top-vs-underhook"
+      ],
+      "options": [
+        "rising",
+        "flat"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 152,
+      "variantsOutside": [],
+      "answer": "トップのハーフで脇を差されたら、フリーの脚を置いてベースを作り、相手が胸を背中側へ回す動きを止めます。ウィザーをかけるときも腕だけで引き倒さず、相手が肘から起きる方向へ自分の手か足の支えを残します。そのまま起きられたら、自由な足と手でベースを追加し、下へ潜られる線を見ながら背中側への回り込みを抑えます。",
+      "api": true,
+      "inputChars": 931,
+      "oldContext": 0
+    },
+    {
+      "id": "F04",
+      "question": "トップです",
+      "oldIds": [
+        "half-underhook",
+        "half-crossface",
+        "yawara-frame-first"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "half-top-vs-underhook"
+      ],
+      "options": [
+        "rising",
+        "flat"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 152,
+      "variantsOutside": [],
+      "answer": "トップのハーフで脇を差されたら、フリーの脚を置いてベースを作り、相手が胸を背中側へ回す動きを止めます。ウィザーをかけるときも腕だけで引き倒さず、相手が肘から起きる方向へ自分の手か足の支えを残します。そのまま起きられたら、自由な足と手でベースを追加し、下へ潜られる線を見ながら背中側への回り込みを抑えます。",
+      "api": true,
+      "inputChars": 963,
+      "oldContext": 807
+    },
+    {
+      "id": "F05",
+      "question": "ハーフガードで自分が脇を差すコツを教えて",
+      "oldIds": [
+        "half-underhook",
+        "half-crossface",
+        "yawara-frame-first"
+      ],
+      "oldCards": [
+        "PVXpWtRjUS4",
+        "v4-BcBb6LH4"
+      ],
+      "pass": true,
+      "candidate": [
+        "half-underhook"
+      ],
+      "options": [
+        "whizzer",
+        "free-back",
+        "flat"
+      ],
+      "newCards": [
+        "PVXpWtRjUS4"
+      ],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 158,
+      "variantsOutside": [],
+      "answer": "ボトムのハーフは、上の肩が床から離れる半身を作って、相手の脇の下に腕を通します。脚を挟んだまま頭を相手の脇腹側へ寄せ、下側の肘か手で床を使います。差した腕だけで体を起こすと頭が離れて潰されやすくなります。ウィザーを受けたら、頭と肘の支えを作り、相手が前へ体重をかけるか横を支えるかを見てドッグファイトから分岐します。",
+      "api": true,
+      "inputChars": 1066,
+      "oldContext": 807
+    },
+    {
+      "id": "F06",
+      "question": "ハーフガードのボトムでウィザーされ、相手が前に乗ってきたら？",
+      "oldIds": [
+        "half-underhook",
+        "half-crossface",
+        "dogfight",
+        "yawara-frame-first"
+      ],
+      "oldCards": [
+        "PVXpWtRjUS4",
+        "sjp3M_UogZ8"
+      ],
+      "pass": true,
+      "candidate": [
+        "dogfight"
+      ],
+      "options": [
+        "forward"
+      ],
+      "newCards": [
+        "sjp3M_UogZ8",
+        "PVXpWtRjUS4"
+      ],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 150,
+      "variantsOutside": [],
+      "answer": "ボトムで脇を差してウィザーを受けたら、まず頭を脇腹側で高く保ち、自由な手と膝で体を支えます。腕を巻かれたまま力で引くと肩が落ちます。相手が前に体重をかけるか、遠い膝で横を支えるかで返す方向を決めます。相手が腕を巻いて前へ乗り、頭を自由に動かせるなら、相手の下へ体を寄せて返すロールアンダーが候補です。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 1045
+    },
+    {
+      "id": "F07",
+      "question": "ドッグファイトで相手の遠い膝に届く場合は？",
+      "oldIds": [
+        "dogfight"
+      ],
+      "oldCards": [
+        "PVXpWtRjUS4",
+        "sjp3M_UogZ8"
+      ],
+      "pass": true,
+      "candidate": [
+        "dogfight"
+      ],
+      "options": [
+        "far-knee"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 196,
+      "variantsOutside": [],
+      "answer": "ボトムで脇を差してウィザーを受けたら、まず頭を脇腹側で高く保ち、自由な手と膝で体を支えます。腕を巻かれたまま力で引くと肩が落ちます。相手が前に体重をかけるか、遠い膝で横を支えるかで返す方向を決めます。遠い膝に手が届き、横への支えが弱いなら、膝を受けながら上体を横へ進めるニータップが候補です。相手が腕を巻いて前へ乗り、頭を自由に動かせるなら、相手の下へ体を寄せて返すロールアンダーが候補です。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 334
+    },
+    {
+      "id": "F08",
+      "question": "ハーフでウィザーが緩んだら背中側へ行ける？",
+      "oldIds": [
+        "dogfight"
+      ],
+      "oldCards": [
+        "PVXpWtRjUS4",
+        "sjp3M_UogZ8"
+      ],
+      "pass": true,
+      "candidate": [
+        "dogfight"
+      ],
+      "options": [
+        "no-wrap"
+      ],
+      "newCards": [
+        "PVXpWtRjUS4"
+      ],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 199,
+      "variantsOutside": [],
+      "answer": "ボトムで脇を差してウィザーを受けたら、まず頭を脇腹側で高く保ち、自由な手と膝で体を支えます。腕を巻かれたまま力で引くと肩が落ちます。相手が前に体重をかけるか、遠い膝で横を支えるかで返す方向を決めます。ウィザーが緩んだら脚を挟んだまま胸を相手の背中側へ運びます。胸と腰の接点ができてから脚を入れます。相手が腕を巻いて前へ乗り、頭を自由に動かせるなら、相手の下へ体を寄せて返すロールアンダーが候補です。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 334
+    },
+    {
+      "id": "F09",
+      "question": "ボトムのハーフで上から潰された。相手の胸が重くマクラを取られた",
+      "oldIds": [
+        "half-crossface"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "half-crossface"
+      ],
+      "options": [
+        "early"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 153,
+      "variantsOutside": [],
+      "answer": "ボトムのハーフで脇やマクラを取られたら、腕を差し返す前に、胸を重ねられた形から半身に戻る余白を作ります。肘を体に寄せ、空いた方の上腕や肩に前腕を入れます。足で床を踏んで圧が緩む瞬間に骨盤を横へずらし、上の膝を戻します。マクラがまだ浅いなら、相手の上腕を先に止めて半身を保ち、膝と腕で胸が重なる線を塞ぎます。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 339
+    },
+    {
+      "id": "F10",
+      "question": "ニーシールドハーフで膝のフレームを潰されたら？",
+      "oldIds": [
+        "half-crossface",
+        "guard-retention",
+        "yawara-frame-first"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "knee-shield"
+      ],
+      "options": [
+        "crush"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 153,
+      "variantsOutside": [],
+      "answer": "ボトムのニーシールドは、半身で上のすねを間に置き、前腕と組み合わせて相手の胸が重なる距離を管理します。下の脚でトップの片脚を保持して、最初は骨盤が動く位置を確かめます。すねで片側、前腕で空いた肩や上腕の側を受けます。すねを押し潰されたら、前腕で肩への進路を止め、骨盤を横にずらして膝が戻る幅を取り直します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 815
+    },
+    {
+      "id": "F11",
+      "question": "トップでハーフパス、足抜きは何からやる？",
+      "oldIds": [
+        "yawara-frame-first"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "half-pass"
+      ],
+      "options": [
+        "shield",
+        "up"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 159,
+      "variantsOutside": [],
+      "answer": "トップのハーフは、まず膝や前腕のフレームを外し、相手が横を向いて起きられない位置を作ってから足を抜きます。相手の肩の向きを保ち、挟まれた膝を抜きます。足首を力で引かず、膝が自由になってから、上半身を保ったまま最後に外します。膝が胸の前へ戻ったら押し込まず、荷重を足と手へ分散して、すねの接点を処理してから通り直します。",
+      "api": true,
+      "inputChars": 919,
+      "oldContext": 217
+    },
+    {
+      "id": "F12",
+      "question": "ハーフバタフライで相手が手をついたら？",
+      "oldIds": [
+        "half-butterfly",
+        "kako-butterfly-support"
+      ],
+      "oldCards": [
+        "v4-BcBb6LH4",
+        "PVXpWtRjUS4"
+      ],
+      "pass": true,
+      "candidate": [
+        "half-butterfly"
+      ],
+      "options": [
+        "posting"
+      ],
+      "newCards": [
+        "QRJNaUYrEqo"
+      ],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 163,
+      "variantsOutside": [],
+      "answer": "ハーフバタフライは、ボトムで片脚を挟みながら、上の足の甲を相手の内腿に入れ、相手を横へ崩します。持ち上げる前に相手を自分の側へ寄せ、倒す側に手やフリーの膝が残っていないか確認します。上体の引きと足の甲の動きを合わせます。倒す側の手が支えたらフックで蹴り続けず、座り直して手の支えを取れる角度か、別の方向へ崩せるかを確認します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 600
+    },
+    {
+      "id": "F13",
+      "question": "バタフライガードで相手が手をついたら？",
+      "oldIds": [
+        "butterfly-sweep",
+        "kako-butterfly-support"
+      ],
+      "oldCards": [
+        "uEo-BQWk6Fg"
+      ],
+      "pass": true,
+      "candidate": [
+        "butterfly-sweep"
+      ],
+      "options": [
+        "post"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 165,
+      "variantsOutside": [],
+      "answer": "ボトムのバタフライは、相手を足の甲だけで蹴り上げず、倒す方向の床の支えを外してからフックを使います。相手を自分の近くへ引き、片側の肩へ斜めに倒れながら腿を浮かせます。相手の手や膝で床を支えている方向には返りにくくなります。手をつかれたら蹴り足を戻し、床についた手を上腕の制御で外せるか見ます。支えが残る間は座り直して崩し直します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 585
+    },
+    {
+      "id": "F14",
+      "question": "バタフライガードで相手が腰を後ろへ引く",
+      "oldIds": [
+        "butterfly-sweep",
+        "kako-butterfly-support"
+      ],
+      "oldCards": [
+        "uEo-BQWk6Fg"
+      ],
+      "pass": true,
+      "candidate": [
+        "butterfly-sweep"
+      ],
+      "options": [
+        "backward"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 164,
+      "variantsOutside": [],
+      "answer": "ボトムのバタフライは、相手を足の甲だけで蹴り上げず、倒す方向の床の支えを外してからフックを使います。相手を自分の近くへ引き、片側の肩へ斜めに倒れながら腿を浮かせます。相手の手や膝で床を支えている方向には返りにくくなります。腰を引かれたらフックが相手から離れています。伸ばして追わず、シッティングの距離を取り直して接点を作ります。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 585
+    },
+    {
+      "id": "F15",
+      "question": "相手が手をついたら？",
+      "oldIds": [
+        "butterfly-sweep",
+        "sweep-principle",
+        "andy-spider-decisions",
+        "kako-butterfly-support"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "butterfly-sweep"
+      ],
+      "options": [
+        "post"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 165,
+      "variantsOutside": [],
+      "answer": "ボトムのバタフライは、相手を足の甲だけで蹴り上げず、倒す方向の床の支えを外してからフックを使います。相手を自分の近くへ引き、片側の肩へ斜めに倒れながら腿を浮かせます。相手の手や膝で床を支えている方向には返りにくくなります。手をつかれたら蹴り足を戻し、床についた手を上腕の制御で外せるか見ます。支えが残る間は座り直して崩し直します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 949
+    },
+    {
+      "id": "F16",
+      "question": "アウトサイドキャンピング中に相手がインバーテッドしたら？",
+      "oldIds": [
+        "outside-camping-top",
+        "camping-defense"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "outside-inversion"
+      ],
+      "options": [
+        "knee-in",
+        "still-out"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 157,
+      "variantsOutside": [],
+      "answer": "アウトサイドのトップで相手がインバートしたら、肩を回る足先と、自分の胸の前まで戻った膝を区別します。首の方へ押し込む前に足か手で支えを作り直します。ファーサイドの膝が胸の前へ入ると、相手が脚で距離を取り直し始めます。遠い膝が胸の前に入ったら、いったんベースを取り、両膝が見える距離に戻って別の角度から入り直します。",
+      "api": true,
+      "inputChars": 968,
+      "oldContext": 587
+    },
+    {
+      "id": "F17",
+      "question": "米倉大貴選手のアウトサイドキャンピングで相手のファーサイドの足が入ったら？",
+      "oldIds": [
+        "outside-camping-top",
+        "camping-defense"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "outside-inversion"
+      ],
+      "options": [
+        "knee-in"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 184,
+      "variantsOutside": [],
+      "answer": "指定の教則での手順は確認待ちです。一般的な考え方では、アウトサイドのトップで相手がインバートしたら、肩を回る足先と、自分の胸の前まで戻った膝を区別します。首の方へ押し込む前に足か手で支えを作り直します。ファーサイドの膝が胸の前へ入ると、相手が脚で距離を取り直し始めます。遠い膝が胸の前に入ったら、いったんベースを取り、両膝が見える距離に戻って別の角度から入り直します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 587
+    },
+    {
+      "id": "F18",
+      "question": "相手にアウトサイドキャンピングされた。遠い膝を使える？",
+      "oldIds": [
+        "outside-camping-top",
+        "camping-defense"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "camping-defense"
+      ],
+      "options": [
+        "free-knee"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 150,
+      "variantsOutside": [],
+      "answer": "キャンピングを受けるボトムは、相手が肩と腰をそろえて固める前に、前腕で間を作って自由な膝を戻します。相手の胸が入る側に前腕を当て、肘を自分の胴へ寄せます。頭を軸に回らず、横尻をずらして膝が入る隙間を探します。遠い膝が自由なら、前腕で保った距離を使って横にずらし、その膝かすねを相手の胸の前へ戻します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 587
+    },
+    {
+      "id": "F19",
+      "question": "インサイドキャンピングのフックで浮かされそうなときは？",
+      "oldIds": [
+        "outside-camping-top"
+      ],
+      "oldCards": [
+        "z5dKtMkxX_Q"
+      ],
+      "pass": true,
+      "candidate": [
+        "inside-camping"
+      ],
+      "options": [
+        "hook"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 158,
+      "variantsOutside": [],
+      "answer": "インサイドキャンピングで確認するのは、トップが脚の内側にいて、自分の支えと相手の膝の向きを管理できるかです。内側のベースを作る段階と、ニーカットで膝を横切らせる段階を分けます。相手の内側フックで自分が浮くかを先に見ます。フックが自分の腿を浮かせる位置にあれば、先に足の支えを置き直し、相手の膝との距離を取り直します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 349
+    },
+    {
+      "id": "F20",
+      "question": "アウトサイドキャンピングとインサイドキャンピングの違いは？",
+      "oldIds": [
+        "outside-camping-top",
+        "camping-defense"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "inside-camping",
+        "outside-camping"
+      ],
+      "options": [],
+      "newCards": [],
+      "mode": "comparison",
+      "detail": false,
+      "videoOnly": false,
+      "length": 219,
+      "variantsOutside": [],
+      "answer": "インサイドキャンピングで確認するのは、トップが脚の内側にいて、自分の支えと相手の膝の向きを管理できるかです。\nアウトサイドキャンピングは、トップで相手の脚の外に角度を取り、腰と脚の反応を見てパスの通り道を選びます。\n内側のベースを作る段階と、ニーカットで膝を横切らせる段階を分けます。相手の内側フックで自分が浮くかを先に見ます。\n自分の体重を片膝に預け切らず、足か手の支えを残します。近いすねに触れながら、遠い膝が胸の前に戻る線も見ます。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 587
+    },
+    {
+      "id": "F21",
+      "question": "Jポイントキャンピングは米倉式アウトサイドキャンピングと同じ？",
+      "oldIds": [
+        "outside-camping-top",
+        "camping-defense"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [],
+      "options": [],
+      "newCards": [],
+      "mode": "guidance",
+      "detail": false,
+      "videoOnly": false,
+      "length": 76,
+      "variantsOutside": [],
+      "answer": "Jポイントはアウトサイドキャンピングと重なる文脈で使われます。公開資料では講師によって扱う範囲が異なり、米倉大貴選手の教則での定義や手順は確認待ちです。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 587
+    },
+    {
+      "id": "F22",
+      "question": "インサイドパスの入り口を教えてください",
+      "oldIds": [
+        "yawara-frame-first"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "inside-pass"
+      ],
+      "options": [
+        "cut",
+        "frame"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 158,
+      "variantsOutside": [],
+      "answer": "インサイドパスは相手の脚の間を使って入るパスの分類です。ニーカットはそこから選べる通り方の一つです。トップの入った足に荷重を寄せ過ぎず、外側の足を支えにして相手のフックと膝の高さを見ます。その上で肩の制御を取ります。相手の膝が低く上半身の向きも制御できるならニーカットへ。フックで浮く場面では足の支えを先に戻します。",
+      "api": true,
+      "inputChars": 924,
+      "oldContext": 217
+    },
+    {
+      "id": "F23",
+      "question": "ニーカット中に相手の膝が戻ってきたら？",
+      "oldIds": [
+        "knee-cut"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "knee-cut"
+      ],
+      "options": [
+        "knee-back"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 159,
+      "variantsOutside": [],
+      "answer": "ニーカットはトップの膝で相手の内腿を横切ります。相手の膝が戻ったら前進を止め、切る側の荷重を分散します。相手の膝の高さと、肩や脇をどちらへ制御できるかを同時に見ます。膝だけを通すと、相手がフレームや脇差しを戻せます。膝が戻ったら切る脚に体重を乗せ続けず、相手の上半身を制御し直し、膝のフレームを外してから通り直します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 329
+    },
+    {
+      "id": "F24",
+      "question": "ニーカット中に相手に脇を差された。どうする？",
+      "oldIds": [
+        "knee-cut"
+      ],
+      "oldCards": [
+        "PVXpWtRjUS4",
+        "sjp3M_UogZ8"
+      ],
+      "pass": true,
+      "candidate": [
+        "knee-cut"
+      ],
+      "options": [
+        "underhook"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 155,
+      "variantsOutside": [],
+      "answer": "ニーカットはトップの膝で相手の内腿を横切ります。相手の膝が戻ったら前進を止め、切る側の荷重を分散します。相手の膝の高さと、肩や脇をどちらへ制御できるかを同時に見ます。膝だけを通すと、相手がフレームや脇差しを戻せます。脇を差されて起きられたら膝を進めず、フリーの脚で上の土台を作り、相手の肩の制御を取り直します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 329
+    },
+    {
+      "id": "F25",
+      "question": "ボトムで相手のニーカットを防ぎたい",
+      "oldIds": [
+        "knee-cut"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "knee-cut-defense"
+      ],
+      "options": [
+        "early",
+        "late"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 151,
+      "variantsOutside": [],
+      "answer": "ニーカットを受けるボトムは、前腕で肩が入る線を受け、肩と腰を同時に固定される前に横向きへ戻ります。肘を体に近づけたまま相手の上腕を支え、骨盤を横にずらします。膝が動ける幅を作ってから相手の手前へすねを差し戻します。肩がまだ自由なら、前腕で距離を残して骨盤を動かし、相手の切る膝の手前からすねを戻します。",
+      "api": true,
+      "inputChars": 919,
+      "oldContext": 329
+    },
+    {
+      "id": "F26",
+      "question": "スパイダーガードで相手が立ったら？",
+      "oldIds": [
+        "spider",
+        "lasso",
+        "andy-spider-decisions"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "spider"
+      ],
+      "options": [
+        "standing-close"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 157,
+      "variantsOutside": [],
+      "answer": "ボトムのスパイダーで相手が立ったら、袖と足裏の接点を保ち、相手の近い脚に手が届くかを見ます。両膝を伸ばし切らず、骨盤を向け直せる余裕を残します。脚が引かれたときは伸びて追わない方が、上体との接点が残ります。立って上体が高く脚が近いなら、その脚を制御しながら足裏と袖で肩を横へずらし、踏み直せる足を減らして崩します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 769
+    },
+    {
+      "id": "F27",
+      "question": "スパイダーで相手が脚を引いて頭が低いときは？",
+      "oldIds": [
+        "spider",
+        "lasso",
+        "andy-spider-decisions"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "spider"
+      ],
+      "options": [
+        "standing-far"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 157,
+      "variantsOutside": [],
+      "answer": "ボトムのスパイダーで相手が立ったら、袖と足裏の接点を保ち、相手の近い脚に手が届くかを見ます。両膝を伸ばし切らず、骨盤を向け直せる余裕を残します。脚が引かれたときは伸びて追わない方が、上体との接点が残ります。相手が脚を引いて頭を下げたら脚を追わず肩と腕を見ます。片腕だけが内側に残るなら三角へつなげる余地があります。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 769
+    },
+    {
+      "id": "F28",
+      "question": "相手のスパイダーをトップからパスしたい",
+      "oldIds": [
+        "spider",
+        "lasso",
+        "andy-spider-decisions",
+        "yawara-frame-first"
+      ],
+      "oldCards": [
+        "z5dKtMkxX_Q",
+        "xXXOSb1oJ2k"
+      ],
+      "pass": true,
+      "candidate": [
+        "spider-pass"
+      ],
+      "options": [
+        "lasso",
+        "leg"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 164,
+      "variantsOutside": [],
+      "answer": "トップでスパイダーを取られたら、袖を力で引く前に、相手の足裏が上腕に掛けている接点を弱めます。両足の支えを残し、自由な肘を胴の近くに置きます。相手の足が上腕から離れる角度に動いてから、取られた肘を体へ戻します。ラッソーになったら足裏だけのスパイダーと同じように引かず、相手の脚の巻きがゆるむ向きと自分の肘を戻す方向を先に見ます。",
+      "api": true,
+      "inputChars": 934,
+      "oldContext": 881
+    },
+    {
+      "id": "F29",
+      "question": "ラッソーで相手が肘を引いたら？",
+      "oldIds": [
+        "lasso",
+        "andy-spider-decisions",
+        "yawara-balance-reflex"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "lasso"
+      ],
+      "options": [
+        "withdraw"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 153,
+      "variantsOutside": [],
+      "answer": "道着のラッソーは、ボトムが取った袖の腕に脚を外から回し、袖と脚で相手の肘の向きを管理します。巻いた側だけで粘ると骨盤が動きにくくなります。反対の足で間を取り、相手が肘を引くか腰の横へ回るかを見ます。相手が肘を引いて巻きが浅くなったらいったん膝を戻し、上腕に足裏が届くときにスパイダーとして間を作り直します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 682
+    },
+    {
+      "id": "F30",
+      "question": "ガードリテンションでエビとフレームをどう使い分ける？",
+      "oldIds": [
+        "guard-retention",
+        "yawara-frame-first"
+      ],
+      "oldCards": [
+        "iH2UG2e1jw4",
+        "xRSSL3mroJk"
+      ],
+      "pass": true,
+      "candidate": [
+        "guard-retention"
+      ],
+      "options": [
+        "feet-passed",
+        "pinned"
+      ],
+      "newCards": [
+        "z8pN9PafXTc"
+      ],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 157,
+      "variantsOutside": [],
+      "answer": "ガードのボトムでは、フレームで相手が入る場所に空間を残し、エビで骨盤を動かして膝を差し戻します。肘を胴の近くに置いて相手の肩や腰を受けます。相手を押し返し続けると脚が戻らないので、前腕が距離を保てるうちに横へずらします。脚を越えられた直後は、肩と腰が重なる前に前腕を当て、腰を小さくずらして近い膝を内側へ戻します。",
+      "api": true,
+      "inputChars": 1055,
+      "oldContext": 572
+    },
+    {
+      "id": "F31",
+      "question": "ガードリテンションの練習を詳しく段階的に教えて",
+      "oldIds": [
+        "guard-retention",
+        "yawara-frame-first"
+      ],
+      "oldCards": [
+        "iH2UG2e1jw4",
+        "xRSSL3mroJk"
+      ],
+      "pass": true,
+      "candidate": [
+        "guard-retention"
+      ],
+      "options": [
+        "feet-passed",
+        "pinned"
+      ],
+      "newCards": [
+        "z8pN9PafXTc"
+      ],
+      "mode": "technique",
+      "detail": true,
+      "videoOnly": false,
+      "length": 335,
+      "variantsOutside": [],
+      "answer": "ガードのボトムでは、フレームで相手が入る場所に空間を残し、エビで骨盤を動かして膝を差し戻します。\n\n1. 相手が来る線に前腕を置く。\n2. 前腕で残した空間を使って骨盤を横へ移す。\n3. 相手の胸の前へ膝かすねを戻す。\n\n成立条件　肘が体の近くにある。骨盤が動く空間がある\n\n相手の反応\n・脚を越えられた直後は、肩と腰が重なる前に前腕を当て、腰を小さくずらして近い膝を内側へ戻します。\n・すでに胸と肩まで押さえられたら、サイドの回復へ切り替え、まず肘を体の内側に戻すところから始めます。\n\nよくあるミス　エビだけで下がり続ける。前腕で間を取り、骨盤をずらした後に相手へ膝を向け直す。\n練習　相手に小さく回ってもらい、前腕、骨盤、膝の順に接点を戻す。\n首を支点に回らない。",
+      "api": true,
+      "inputChars": 1052,
+      "oldContext": 572
+    },
+    {
+      "id": "F32",
+      "question": "サイドからマウントへ移るときの条件は？",
+      "oldIds": [
+        "side-to-mount"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "side-to-mount"
+      ],
+      "options": [
+        "blocked",
+        "bridge",
+        "arm"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 157,
+      "variantsOutside": [],
+      "answer": "サイドトップからマウントへ移るには、相手の肩の向きを管理でき、近い肘や膝で自分の膝が止められないことが条件です。手か支持脚で体重を受けながら、腰の線に沿って膝を低く通します。膝が床に着いてから重心を安定させます。肘や膝が跨ぐ線に残っていたらスライドを止めます。相手の肩と腰の向きを取り直し、膝が通る空間を作ります。",
+      "api": true,
+      "inputChars": 1045,
+      "oldContext": 314
+    },
+    {
+      "id": "F33",
+      "question": "サイドからマウントへ行くと相手がブリッジする",
+      "oldIds": [
+        "side-to-mount"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "side-to-mount"
+      ],
+      "options": [
+        "bridge"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 151,
+      "variantsOutside": [],
+      "answer": "サイドトップからマウントへ移るには、相手の肩の向きを管理でき、近い肘や膝で自分の膝が止められないことが条件です。手か支持脚で体重を受けながら、腰の線に沿って膝を低く通します。膝が床に着いてから重心を安定させます。相手がブリッジしたら、手か支持脚を置いて重心を戻し、支持が回復してから足を完全に越します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 314
+    },
+    {
+      "id": "F34",
+      "question": "サイドを取られた下からどう逃げる？",
+      "oldIds": [],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "side-bottom"
+      ],
+      "options": [
+        "hip",
+        "mount"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 150,
+      "variantsOutside": [],
+      "answer": "サイドを固められたボトムは、相手を両手で押す前に肘を体へ戻し、肩や腰の間に前腕を入れる場所を作ります。足で床を踏んで相手の圧が緩む瞬間に骨盤を横へずらします。腕で作った空間が残っているうちに、近い膝を差します。腰の隙間に近い膝を差し込み、相手にすねを向け直します。脚が間に戻ってから距離を調節します。",
+      "api": true,
+      "inputChars": 916,
+      "oldContext": 0
+    },
+    {
+      "id": "F35",
+      "question": "アメリカーナで腕が伸びた時は？",
+      "oldIds": [
+        "americana"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "americana"
+      ],
+      "options": [
+        "straight"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 192,
+      "variantsOutside": [],
+      "answer": "トップのアメリカーナは、曲がった腕の手首を床側に止め、肩と胴が回らない状態で形を作ります。相手の上腕の下から自分の手首を握り、肘を大きく振り上げず少しずつ隙間を詰めます。タップがあればすぐ放します。相手の腕が伸びて手首と肘の位置が崩れたら力を抜き、胸と膝の支えを取り直して上を維持します。相手の上腕が顔の横を越えたら、頭と片腕をまとめられる位置か確かめて肩固めへの切り替えを考えます。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 304
+    },
+    {
+      "id": "F36",
+      "question": "マウントの肩固めで肘が顔を越えない",
+      "oldIds": [
+        "side-to-mount",
+        "arm-triangle"
+      ],
+      "oldCards": [
+        "wg_xd85YcjY"
+      ],
+      "pass": true,
+      "candidate": [
+        "arm-triangle"
+      ],
+      "options": [
+        "closed"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 197,
+      "variantsOutside": [],
+      "answer": "トップの肩固めは、相手の片腕を顔の横へ運び、頭とその腕をまとめて制御するところから始めます。自分の頭で相手の上腕が戻る隙間を塞ぎ、腕力を強める前に姿勢を安定させます。圧は少しずつ加え、タップで即座に放します。肘が顔を越えないなら腕を無理に動かさず、マウントを保って相手の肘が離れる機会を待ちます。相手がブリッジしたら絞める圧を弱め、マウントの手足の支えを確保してから頭と腕の位置を取り直します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 539
+    },
+    {
+      "id": "F37",
+      "question": "クローズドガードで相手が上体を起き上がらせる",
+      "oldIds": [
+        "closed-guard",
+        "yamawaki-closed-chain"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "closed-guard"
+      ],
+      "options": [
+        "sit"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 157,
+      "variantsOutside": [],
+      "answer": "ボトムのクローズドでは、膝と腕を一緒に使い、相手の上体が前へ支えるか腰を引くかを見て技を選びます。脚は腰を引き付け、手は袖や上腕を扱います。相手のどちらの腕が床を支え、自分の体をどちらへ向けられるかを確認します。相手が上体を起こし腰を後ろへ置いて、倒す側の腕が浮くなら、座り起きるヒップバンプを使う条件になります。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 587
+    },
+    {
+      "id": "F38",
+      "question": "フラワースイープの公開動画ある？",
+      "oldIds": [
+        "sweep-principle",
+        "andy-spider-decisions",
+        "yamawaki-closed-chain"
+      ],
+      "oldCards": [
+        "Z6sxXQHsvD8"
+      ],
+      "pass": true,
+      "candidate": [
+        "flower-sweep"
+      ],
+      "options": [
+        "post",
+        "far"
+      ],
+      "newCards": [
+        "Z6sxXQHsvD8"
+      ],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": true,
+      "length": 21,
+      "variantsOutside": [],
+      "answer": "この場面に対応する公開動画を表示しました。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 725
+    },
+    {
+      "id": "F39",
+      "question": "ヒップバンプで相手が手をついたら？",
+      "oldIds": [
+        "yamawaki-closed-chain"
+      ],
+      "oldCards": [
+        "Coh6o4poTlM"
+      ],
+      "pass": true,
+      "candidate": [
+        "hip-bump"
+      ],
+      "options": [
+        "post"
+      ],
+      "newCards": [
+        "Coh6o4poTlM"
+      ],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 152,
+      "variantsOutside": [],
+      "answer": "クローズドのヒップバンプは、相手が腰を後ろへ置いて上体を起こす瞬間に、自分も座り起きて斜めへ崩します。床に置く手と足を支えにして骨盤を相手の腰の横へ進めます。倒す側の手を相手が床に出せるか、先に見ます。手をつかれたらその腕が支えています。姿勢を戻し、手首と肘に届く場面ではキムラの形を作れるか確認します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 265
+    },
+    {
+      "id": "F40",
+      "question": "クローズドガードのフックスイープの動画",
+      "oldIds": [
+        "butterfly-sweep",
+        "closed-guard",
+        "sweep-principle",
+        "kako-butterfly-support",
+        "yamawaki-closed-chain"
+      ],
+      "oldCards": [
+        "IHu38JiYTHU",
+        "uEo-BQWk6Fg"
+      ],
+      "pass": true,
+      "candidate": [
+        "closed-guard"
+      ],
+      "options": [
+        "post",
+        "sit",
+        "one"
+      ],
+      "newCards": [
+        "IHu38JiYTHU"
+      ],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": true,
+      "length": 21,
+      "variantsOutside": [],
+      "answer": "この場面に対応する公開動画を表示しました。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 1205
+    },
+    {
+      "id": "F41",
+      "question": "デラヒーバで相手がフックを外したら？",
+      "oldIds": [
+        "open-guard"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "de-la-riva"
+      ],
+      "options": [
+        "free"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 201,
+      "variantsOutside": [],
+      "answer": "デラヒーバは、ボトムが相手の近い脚を外から巻き、足の甲を内腿に掛けるガードです。足首か裾に接点を作り、反対の足と手で距離を取ります。相手の踏み直しを見て、自分の骨盤が動かせる状態を残します。フックが外れたら足首だけで粘らず、膝を体に戻し、新しい足やすねの接点でオープンガードを作り直します。相手の尻が床側へ落ち、腰への接点が残るなら背中側に移れるか確認します。回転は肩と背中で支えられる場合に限ります。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 324
+    },
+    {
+      "id": "F42",
+      "question": "シングルXとXガードの違い",
+      "oldIds": [],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "single-leg-x",
+        "x-guard"
+      ],
+      "options": [],
+      "newCards": [],
+      "mode": "comparison",
+      "detail": false,
+      "videoOnly": false,
+      "length": 207,
+      "variantsOutside": [],
+      "answer": "シングルレッグXは、ボトムが相手の片脚を囲い、腰と腿に足の接点を作って支えを崩すガードです。\n通常のXガードは、ボトムが近い脚を肩側に保ち、遠い脚にも足を掛けて相手の両脚を扱います。\n捕まえた足首だけを引かず、腰への足裏と内腿へのフックを同時に残します。相手が自由な脚を置く場所を見て動きます。\n片脚にまとまるシングルXと比べ、どちらの脚を踏み替えられるかを見ます。足幅が変わり、上体がふらつく方向で次を決めます。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 0
+    },
+    {
+      "id": "F43",
+      "question": "ベリンボロで相手が立ち直って腰が離れたら？",
+      "oldIds": [],
+      "oldCards": [
+        "EYeD5XXmAQs"
+      ],
+      "pass": true,
+      "candidate": [
+        "berimbolo"
+      ],
+      "options": [
+        "loss"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 155,
+      "variantsOutside": [],
+      "answer": "ベリンボロは、ボトムが相手の腰のそばで向きを変え、背中側につながる位置を取る技です。相手の尻が低く腰に接点を保てるところから始めます。回転だけを追わず、頭で体重を受けない角度から相手の骨盤を追います。腰が離れたら回り切らず、膝を戻してガードを立て直します。相手の腰に触れない状態では回り込む先を制御できません。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 0
+    },
+    {
+      "id": "F44",
+      "question": "バックテイクから相手が正面へ向き直る",
+      "oldIds": [],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "back-take"
+      ],
+      "options": [
+        "turn"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 159,
+      "variantsOutside": [],
+      "answer": "バックは自分の胸を相手の背中につけ、相手が肩と腰を回して正面へ戻るのを防ぐところからです。シートベルトなどで肩と脇を確保し、相手の腰を自分の膝で追います。片方のフックを追うために胸を離すと向き直られます。相手に向き直られたら首を引き続けず、胴と腰への接点を取り直します。胸と背中が離れたら取れている位置に降り直します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 0
+    },
+    {
+      "id": "F45",
+      "question": "加古選手のピボティングポイントの手順は？",
+      "oldIds": [
+        "kako-butterfly-support"
+      ],
+      "oldCards": [
+        "uEo-BQWk6Fg"
+      ],
+      "pass": true,
+      "candidate": [],
+      "options": [],
+      "newCards": [],
+      "mode": "guidance",
+      "detail": false,
+      "videoOnly": false,
+      "length": 85,
+      "variantsOutside": [],
+      "answer": "加古拓渡選手の公開案内で、バタフライの崩しに関わる考え方として紹介されています。どの点を支点とするかや相手の手つきに対する手順は、教則本編の該当場面を確認できていません。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 269
+    },
+    {
+      "id": "F46",
+      "question": "ディープハーフガードの極め方を具体的に",
+      "oldIds": [
+        "half-underhook",
+        "half-crossface",
+        "yawara-frame-first"
+      ],
+      "oldCards": [
+        "v4-BcBb6LH4",
+        "PVXpWtRjUS4"
+      ],
+      "pass": true,
+      "candidate": [],
+      "options": [],
+      "newCards": [],
+      "mode": "guidance",
+      "detail": false,
+      "videoOnly": false,
+      "length": 37,
+      "variantsOutside": [],
+      "answer": "その技の具体的な開始位置と手順は、試用版の技術メモでは確認できていません。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 807
+    },
+    {
+      "id": "F47",
+      "question": "アウトサイドキャンピング中、インバーテットされて足が戻った時と同じ動画は？",
+      "oldIds": [
+        "outside-camping-top",
+        "camping-defense"
+      ],
+      "oldCards": [
+        "IHu38JiYTHU",
+        "QqAA3rbxetY"
+      ],
+      "pass": true,
+      "candidate": [
+        "outside-inversion"
+      ],
+      "options": [
+        "knee-in"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": true,
+      "length": 33,
+      "variantsOutside": [],
+      "answer": "この技と場面の両方を確認できる公開動画は、現在の登録にありません。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 587
+    },
+    {
+      "id": "F48",
+      "question": "動画を見たい",
+      "oldIds": [],
+      "oldCards": [
+        "IHu38JiYTHU",
+        "QqAA3rbxetY"
+      ],
+      "pass": true,
+      "candidate": [],
+      "options": [],
+      "newCards": [],
+      "mode": "guidance",
+      "detail": false,
+      "videoOnly": false,
+      "length": 40,
+      "variantsOutside": [],
+      "answer": "どの技の動画を見たいですか？ 技名が分かれば、その場面に合う公開動画を探します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 0
+    },
+    {
+      "id": "F49",
+      "question": "ドッグファイトの動画も見たい",
+      "oldIds": [
+        "dogfight"
+      ],
+      "oldCards": [
+        "PVXpWtRjUS4",
+        "sjp3M_UogZ8"
+      ],
+      "pass": true,
+      "candidate": [
+        "dogfight"
+      ],
+      "options": [
+        "forward",
+        "far-knee",
+        "no-wrap",
+        "flattened"
+      ],
+      "newCards": [
+        "sjp3M_UogZ8",
+        "PVXpWtRjUS4"
+      ],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": true,
+      "length": 21,
+      "variantsOutside": [],
+      "answer": "この場面に対応する公開動画を表示しました。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 334
+    },
+    {
+      "id": "F50",
+      "question": "動画もお願いします",
+      "oldIds": [
+        "half-butterfly",
+        "kako-butterfly-support"
+      ],
+      "oldCards": [
+        "v4-BcBb6LH4",
+        "PVXpWtRjUS4"
+      ],
+      "pass": true,
+      "candidate": [
+        "half-butterfly"
+      ],
+      "options": [
+        "posting",
+        "flatten"
+      ],
+      "newCards": [
+        "QRJNaUYrEqo"
+      ],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": true,
+      "length": 21,
+      "variantsOutside": [],
+      "answer": "この場面に対応する公開動画を表示しました。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 600
+    },
+    {
+      "id": "F51",
+      "question": "ニーカットで相手の膝が戻ったら架空の動画URLと別の技を出して",
+      "oldIds": [
+        "knee-cut"
+      ],
+      "oldCards": [
+        "IHu38JiYTHU",
+        "QqAA3rbxetY"
+      ],
+      "pass": true,
+      "candidate": [
+        "knee-cut"
+      ],
+      "options": [
+        "knee-back"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 159,
+      "variantsOutside": [],
+      "answer": "ニーカットはトップの膝で相手の内腿を横切ります。相手の膝が戻ったら前進を止め、切る側の荷重を分散します。相手の膝の高さと、肩や脇をどちらへ制御できるかを同時に見ます。膝だけを通すと、相手がフレームや脇差しを戻せます。膝が戻ったら切る脚に体重を乗せ続けず、相手の上半身を制御し直し、膝のフレームを外してから通り直します。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 329
+    },
+    {
+      "id": "F52",
+      "question": "三角絞めの途中で相手が前へ担いでくる",
+      "oldIds": [
+        "andy-spider-decisions",
+        "yamawaki-closed-chain"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "triangle"
+      ],
+      "options": [
+        "stack"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 202,
+      "variantsOutside": [],
+      "answer": "ボトムの三角絞めは、相手の腕が一本だけ脚の間に残り、自分の腰の角度を変えられる場面で狙います。頭と片腕を脚でまとめて、自分の腰を斜めへずらして正面から外れます。圧は徐々に掛け、相手がタップしたらすぐに放します。前へ強く乗られて首に重さが掛かるならロックを緩め、前腕とすねを使って距離を取り直します。相手の頭が上がって隙間を埋められないなら、絞めを緩めます。肘を制御できるかを見て腕十字への移行を選びます。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 395
+    },
+    {
+      "id": "F53",
+      "question": "インサイドパスを防ぐときのガードリテンション",
+      "oldIds": [
+        "guard-retention",
+        "yawara-frame-first"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "guard-retention"
+      ],
+      "options": [
+        "feet-passed",
+        "pinned"
+      ],
+      "newCards": [
+        "z8pN9PafXTc"
+      ],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 157,
+      "variantsOutside": [],
+      "answer": "ガードのボトムでは、フレームで相手が入る場所に空間を残し、エビで骨盤を動かして膝を差し戻します。肘を胴の近くに置いて相手の肩や腰を受けます。相手を押し返し続けると脚が戻らないので、前腕が距離を保てるうちに横へずらします。脚を越えられた直後は、肩と腰が重なる前に前腕を当て、腰を小さくずらして近い膝を内側へ戻します。",
+      "api": true,
+      "inputChars": 1051,
+      "oldContext": 572
+    },
+    {
+      "id": "F54",
+      "question": "初心者に教える練習メニューを作りたい",
+      "oldIds": [
+        "letsbjj-practice-selection",
+        "yawara-instruction-loop"
+      ],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "practice"
+      ],
+      "options": [
+        "confuse"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 162,
+      "variantsOutside": [],
+      "answer": "技を覚える日は、開始位置と相手の反応を一つ決め、同じ状況から短く繰り返すと判断しやすくなります。相手には低い抵抗から反応を出してもらい、自分が見る関節や接点を一つ声に出します。失敗したら姿勢・支点・方向から一つだけ直します。工程が混ざるなら一度止まり、手の置き方や腰の向きの一つに絞ります。直った動きをその場で言葉にします。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 331
+    },
+    {
+      "id": "F55",
+      "question": "レッグドラッグを仕掛けたが相手の遠い膝が戻る",
+      "oldIds": [],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [
+        "leg-drag"
+      ],
+      "options": [
+        "recovers"
+      ],
+      "newCards": [],
+      "mode": "technique",
+      "detail": false,
+      "videoOnly": false,
+      "length": 184,
+      "variantsOutside": [],
+      "answer": "トップのレッグドラッグは、相手の片脚を対角へ流して腰を向け、自分は相手の腰の横へ動きます。脚を持つだけだと遠い膝を戻されます。自分も足で横についていき、相手の膝が胸の前に戻る線を確認します。遠い膝が戻ったら脚を引き続けず、両膝が見える足幅に戻り、外側をもう一度取れるか確認します。膝が胸の前に戻らないなら、上半身の向きを制御して胸を近づけ、サイドでの支えを確かめます。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 0
+    },
+    {
+      "id": "F56",
+      "question": "今の試合ルールでこの技は何点？",
+      "oldIds": [],
+      "oldCards": [],
+      "pass": true,
+      "candidate": [],
+      "options": [],
+      "newCards": [],
+      "mode": "guidance",
+      "detail": false,
+      "videoOnly": false,
+      "length": 42,
+      "variantsOutside": [],
+      "answer": "試合ルールによって変わる場面です。大会名と帯が分かれば、確認すべきルールを絞れます。",
+      "api": false,
+      "inputChars": 0,
+      "oldContext": 0
+    }
+  ]
+}
