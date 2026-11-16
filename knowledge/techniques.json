@@ -1034,6 +1034,1535 @@
           "相手を自分の近くへ引き、片側の肩へ斜めに倒れながら腿を浮かせます。相手の手や膝で床を支えている方向には返りにくくなります。"
         ]
       }
+    },
+    {
+      "id": "outside-camping",
+      "name_ja": "アウトサイドキャンピング",
+      "name_en": "Outside camping",
+      "top_or_bottom": "top",
+      "family": "outside-camping",
+      "start_position": "トップで相手の脚の外へ角度を取る",
+      "aliases": [
+        "アウトサイドキャンピング",
+        "アウトサイドキャンプ",
+        "outside camping",
+        "キャンピング"
+      ],
+      "body_positions": {
+        "self": "腰の横へ回り、手や足の支えを残す",
+        "opponent": "すねで進入を防ぎ、遠い膝を戻そうとする"
+      },
+      "grips_and_frames": [
+        "近い膝・すねの接点",
+        "腰の向きを追える接点",
+        "自由な足か手"
+      ],
+      "mechanics": {
+        "weight": "片膝に預け切らない",
+        "support": "自由な足と手",
+        "pressure": "腿・腰の向きを管理",
+        "angle": "正面から少し横へ"
+      },
+      "goal": "相手の反応を見て具体的なパスの入口を作る。",
+      "steps_ja": [
+        "脚の外へ動いて両膝の高さを確認する。",
+        "すねの接点と自分のベースを保つ。",
+        "両膝が止まる方向に合わせ、通る線を選ぶ。"
+      ],
+      "success_conditions": [
+        "自分の支えが残る",
+        "相手の遠い膝の戻る線を見られる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "cross-knee",
+          "cue": "近い膝が低く内腿を横切れる",
+          "answer": "相手の近い膝が低く内腿を横切れるなら、上半身の制御を取れるか確かめてニーカットを選びます。",
+          "next_id": "knee-cut",
+          "match": [
+            "膝が低",
+            "ニーカット",
+            "内腿",
+            "内もも"
+          ]
+        },
+        {
+          "id": "far-leg",
+          "cue": "腰を上げ遠い脚を戻す",
+          "answer": "相手が腰を上げて遠い脚を戻すなら、一度前進を止め、自分の手足で支えを作って両膝が見える距離に戻ります。",
+          "next_id": "outside-inversion",
+          "match": [
+            "インバ",
+            "遠い",
+            "ファーサイド",
+            "腰を上",
+            "足が戻"
+          ]
+        },
+        {
+          "id": "drag",
+          "cue": "すねで腰の横を止める",
+          "answer": "すねが自分の腰に掛かるなら膝だけで押し切らず、フックを外して横へ動けるときにレッグドラッグを選びます。",
+          "next_id": "leg-drag",
+          "match": [
+            "レッグドラッグ",
+            "脇腹",
+            "すねのフック"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "近い膝だけを見て遠い脚を見失う",
+          "fix": "腰の向きと両膝の線を見てから前進する"
+        }
+      ],
+      "beginner_instruction": "横にずれて止まる練習から、膝の高さとフックの位置を読み分ける。",
+      "safety_notes": "相手が腰を浮かせたら頭や首へ体重を預けない。",
+      "source_refs": [
+        {
+          "source_id": "andy-camping",
+          "location": "公開本文の3分岐",
+          "scope": "近いすねの反応"
+        },
+        {
+          "source_id": "yonekura-outside-catalog",
+          "location": "目次 15:07・26:03・55:33",
+          "scope": "章開始時刻のみ"
+        },
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "outside-camping-top",
+          "scope": "独自メモ"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "outside-camping-top"
+      ],
+      "related_ids": [
+        "knee-cut",
+        "outside-inversion",
+        "leg-drag"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "アウトサイドキャンピングは、トップで相手の脚の外に角度を取り、腰と脚の反応を見てパスの通り道を選びます。",
+        "tips": [
+          "自分の体重を片膝に預け切らず、足か手の支えを残します。近いすねに触れながら、遠い膝が胸の前に戻る線も見ます。"
+        ]
+      }
+    },
+    {
+      "id": "outside-inversion",
+      "name_ja": "アウトサイドで相手がインバートする場面",
+      "name_en": "Outside camping when the opponent inverts",
+      "top_or_bottom": "top",
+      "family": "outside-camping",
+      "start_position": "脚の外にいるトップ。ボトムが腰を浮かせる",
+      "aliases": [
+        "インバーテッド",
+        "インバーテット",
+        "インバート",
+        "ファーサイドの足",
+        "遠い脚",
+        "肩越し",
+        "頭の上"
+      ],
+      "body_positions": {
+        "self": "自分の肩の前を遠い脚が横切りかけるトップ",
+        "opponent": "腰を浮かせて遠い膝をトップの胸の前へ戻そうとするボトム"
+      },
+      "grips_and_frames": [
+        "空いた手か足で支持",
+        "近い脚と腰の位置を追える接点"
+      ],
+      "mechanics": {
+        "weight": "自由な足へ戻す",
+        "support": "フリーの足と手",
+        "pressure": "相手の首へ荷重を移さない",
+        "angle": "遠い膝が胸の前か腰の外かを区別"
+      },
+      "goal": "遠い膝がガードを戻したか判定し、トップで組み直す。",
+      "steps_ja": [
+        "相手の足の先と膝がどこに来たかを見る。",
+        "胸の前に膝が来たら前進を止める。",
+        "両膝を見られる足幅へ戻り、パスの入口を取り直す。"
+      ],
+      "success_conditions": [
+        "相手の首へ落ち込まない支え",
+        "遠い膝の線が分かる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "knee-in",
+          "cue": "膝が胸の前まで戻った",
+          "answer": "遠い膝が胸の前に入ったら、いったんベースを取り、両膝が見える距離に戻って別の角度から入り直します。",
+          "next_id": "outside-camping",
+          "match": [
+            "入った",
+            "戻った",
+            "足が入",
+            "膝が入",
+            "越え"
+          ]
+        },
+        {
+          "id": "still-out",
+          "cue": "膝がまだ自分の外で腰が下りる",
+          "answer": "膝がまだ外にあり相手の腰が下りるなら、支えを残したまま再度、近いすねと相手の遠い膝の向きを確認します。",
+          "next_id": "outside-camping",
+          "match": [
+            "まだ",
+            "腰が下",
+            "腰が戻"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "足が胸を横切ったあとも押し進む",
+          "fix": "膝が戻った時点でガードの作り直しを認めて角度を取る"
+        }
+      ],
+      "beginner_instruction": "上下で止まり、遠い足先が通る位置と、膝が胸の前に戻る位置を見分ける。",
+      "safety_notes": "相手の首を支点に回転を止めない。",
+      "source_refs": [
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "outside-camping-top・camping-defense",
+          "scope": "一般的な位置判断"
+        },
+        {
+          "source_id": "andy-camping",
+          "location": "公開本文",
+          "scope": "外側のベース"
+        },
+        {
+          "source_id": "yonekura-kajabi",
+          "location": "目次のみ",
+          "scope": "米倉式の対処手順は未確認"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "outside-camping"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "アウトサイドのトップで相手がインバートしたら、肩を回る足先と、自分の胸の前まで戻った膝を区別します。",
+        "tips": [
+          "首の方へ押し込む前に足か手で支えを作り直します。ファーサイドの膝が胸の前へ入ると、相手が脚で距離を取り直し始めます。"
+        ]
+      }
+    },
+    {
+      "id": "camping-defense",
+      "name_ja": "アウトサイドキャンピングを受けたガード保持",
+      "name_en": "Bottom retention against outside camping",
+      "top_or_bottom": "bottom",
+      "family": "outside-camping",
+      "start_position": "トップが脚の外側に入りかけたボトム",
+      "aliases": [
+        "キャンピング対策",
+        "キャンピングされた",
+        "腰をピンされた",
+        "キャンピングを防ぐ"
+      ],
+      "body_positions": {
+        "self": "肩と腰が同時に固定される前",
+        "opponent": "片側の脚と腰を越えようとするトップ"
+      },
+      "grips_and_frames": [
+        "肩または腰へ前腕",
+        "自由な膝とすね"
+      ],
+      "mechanics": {
+        "weight": "横尻へ体重を移す",
+        "support": "前腕と床を使う足",
+        "pressure": "肩・胸が入る線を遮る",
+        "angle": "骨盤をずらして膝を向け直す"
+      },
+      "goal": "胸と腰を同時に固定される前に脚の接点へ戻る。",
+      "steps_ja": [
+        "入ってくる側に前腕を置く。",
+        "骨盤を横へ動かし膝を胸と相手の間へ戻す。",
+        "肩と腰が固定されたらサイドの回復を選ぶ。"
+      ],
+      "success_conditions": [
+        "頭を床の軸にしない",
+        "自分が動かせる膝を見分ける"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "free-knee",
+          "cue": "遠い膝が自由",
+          "answer": "遠い膝が自由なら、前腕で保った距離を使って横にずらし、その膝かすねを相手の胸の前へ戻します。",
+          "next_id": "guard-retention",
+          "match": [
+            "遠い",
+            "ファー",
+            "自由"
+          ]
+        },
+        {
+          "id": "pinned",
+          "cue": "肩も腰も押さえられる",
+          "answer": "胸まで重ねられたら回り続けず、まず肘を胴へ戻して肩や腰への前腕を作り、サイドの回復に切り替えます。",
+          "next_id": "side-bottom",
+          "match": [
+            "胸",
+            "サイド",
+            "固定"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "首を軸に回って脚を戻そうとする",
+          "fix": "前腕で距離を残し、横尻が動く側から膝を差す"
+        }
+      ],
+      "beginner_instruction": "相手に低い圧で横へ回ってもらい、膝を入れ直す位置を探す。",
+      "safety_notes": "頭頂へ相手の荷重を受けない。",
+      "source_refs": [
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "camping-defense",
+          "scope": "独自メモ"
+        },
+        {
+          "source_id": "ga-elbow",
+          "location": "本文",
+          "scope": "肘と膝の距離"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "camping-defense"
+      ],
+      "related_ids": [
+        "guard-retention",
+        "side-bottom"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "キャンピングを受けるボトムは、相手が肩と腰をそろえて固める前に、前腕で間を作って自由な膝を戻します。",
+        "tips": [
+          "相手の胸が入る側に前腕を当て、肘を自分の胴へ寄せます。頭を軸に回らず、横尻をずらして膝が入る隙間を探します。"
+        ]
+      }
+    },
+    {
+      "id": "inside-camping",
+      "name_ja": "インサイドキャンピングの確認点",
+      "name_en": "Inside camping position",
+      "top_or_bottom": "top",
+      "family": "inside-camping",
+      "start_position": "トップの足が相手の脚の間に入り、越える前",
+      "aliases": [
+        "インサイドキャンピング",
+        "インサイドキャンプ",
+        "inside camping",
+        "スプリットスクワット"
+      ],
+      "body_positions": {
+        "self": "脚の内側に足を置くトップ",
+        "opponent": "膝やフックを内に戻そうとするボトム"
+      },
+      "grips_and_frames": [
+        "膝の向きが分かる接点",
+        "踏み替えられる自由な足"
+      ],
+      "mechanics": {
+        "weight": "フックに乗り切らない",
+        "support": "左右の足",
+        "pressure": "自分の土台を保つ範囲で相手の脚を制御",
+        "angle": "内側に入った足と両膝の位置を確認"
+      },
+      "goal": "内側に留まる段階とパスに移る段階を区別する。",
+      "steps_ja": [
+        "相手の足の甲と自分の腿の位置を見る。",
+        "足の支えと相手の膝の向きを整える。",
+        "膝と上半身の制御が取れた場面でパスへ入る。"
+      ],
+      "success_conditions": [
+        "フックで浮かされる状態で前進しない",
+        "個別教則の運足は資料確認待ち"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "hook",
+          "cue": "相手の足の甲が腿を下から押す",
+          "answer": "フックが自分の腿を浮かせる位置にあれば、先に足の支えを置き直し、相手の膝との距離を取り直します。",
+          "next_id": "inside-pass",
+          "match": [
+            "フック",
+            "浮",
+            "持ち上"
+          ]
+        },
+        {
+          "id": "knee",
+          "cue": "膝と肩の制御が取れた",
+          "answer": "膝が通る線と相手の肩を制御できる場面で、内側から抜く一つの選択肢としてニーカットが候補になります。",
+          "next_id": "knee-cut",
+          "match": [
+            "ニーカット",
+            "肩",
+            "膝"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "内の位置を取った直後に膝を走らせる",
+          "fix": "フック・膝・肩の順に条件を確かめる"
+        }
+      ],
+      "beginner_instruction": "一度止まり、相手の足の甲の位置と自分の支持脚を両者で確認する。",
+      "safety_notes": "固定された足を軸に膝をねじらない。",
+      "source_refs": [
+        {
+          "source_id": "yonekura-inside-preview",
+          "location": "公開検索の概要",
+          "scope": "内側で制御してからパス。詳細未確認"
+        },
+        {
+          "source_id": "ga-knee",
+          "location": "公開本文",
+          "scope": "ニーカットとの区別用"
+        }
+      ],
+      "confirmation": {
+        "status": "scope_limited",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "inside-pass",
+        "knee-cut"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "インサイドキャンピングで確認するのは、トップが脚の内側にいて、自分の支えと相手の膝の向きを管理できるかです。",
+        "tips": [
+          "内側のベースを作る段階と、ニーカットで膝を横切らせる段階を分けます。相手の内側フックで自分が浮くかを先に見ます。"
+        ]
+      }
+    },
+    {
+      "id": "inside-pass",
+      "name_ja": "インサイドパスの入り口",
+      "name_en": "Inside guard passing entry",
+      "top_or_bottom": "top",
+      "family": "inside-pass",
+      "start_position": "トップの片足がガードの内側に入る",
+      "aliases": [
+        "インサイドパス",
+        "inside pass",
+        "コンバットベース"
+      ],
+      "body_positions": {
+        "self": "片足が内、自由な脚が外にあるトップ",
+        "opponent": "足の甲やすねを入れて浮かせるボトム"
+      },
+      "grips_and_frames": [
+        "膝への接点",
+        "上半身へ手が届く",
+        "外側の自由な足"
+      ],
+      "mechanics": {
+        "weight": "フックに全体重を預けない",
+        "support": "外足と必要な手",
+        "pressure": "膝が戻る向きを確認して進む",
+        "angle": "通りたい側へ角度を取る"
+      },
+      "goal": "脚の内側に入る段階で相手に崩されにくい起点を作る。",
+      "steps_ja": [
+        "内と外の足の置き方を確認する。",
+        "相手のフックと膝の高さを見る。",
+        "肩と膝の通る線が取れて具体的なパスへ。"
+      ],
+      "success_conditions": [
+        "フックと膝の向きが見える",
+        "足を踏み替えられる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "cut",
+          "cue": "膝で腿を横切れる",
+          "answer": "相手の膝が低く上半身の向きも制御できるならニーカットへ。フックで浮く場面では足の支えを先に戻します。",
+          "next_id": "knee-cut",
+          "match": [
+            "ニーカット",
+            "横切",
+            "開"
+          ]
+        },
+        {
+          "id": "frame",
+          "cue": "すねが正面で進行を止める",
+          "answer": "すねで止められたら前へ体重を掛け続けず、膝との接点と外側の足を取り直して入れる方向を変えます。",
+          "next_id": "passing-grips",
+          "match": [
+            "止",
+            "シールド",
+            "フック"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "内側へ足を置いただけで肩から突っ込む",
+          "fix": "フックを踏み直せる位置と上半身の組み手を確認する"
+        }
+      ],
+      "beginner_instruction": "相手に内腿を軽く浮かせてもらい、外の足で荷重を戻せるか練習する。",
+      "safety_notes": "相手・自分の膝を強くねじらない。",
+      "source_refs": [
+        {
+          "source_id": "ga-knee",
+          "location": "本文と写真",
+          "scope": "内側エントリーの例"
+        },
+        {
+          "source_id": "andy-grip",
+          "location": "パスの組み手",
+          "scope": "フレーム処理"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "knee-cut",
+        "passing-grips"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "インサイドパスは相手の脚の間を使って入るパスの分類です。ニーカットはそこから選べる通り方の一つです。",
+        "tips": [
+          "トップの入った足に荷重を寄せ過ぎず、外側の足を支えにして相手のフックと膝の高さを見ます。その上で肩の制御を取ります。"
+        ]
+      }
+    },
+    {
+      "id": "knee-cut",
+      "name_ja": "トップのニーカット",
+      "name_en": "Knee cut / Knee slice pass",
+      "top_or_bottom": "top",
+      "family": "knee-cut",
+      "start_position": "トップの膝で相手の内腿を横切る場面",
+      "aliases": [
+        "ニーカット",
+        "ニースライス",
+        "クロスニー",
+        "knee cut",
+        "knee slice"
+      ],
+      "body_positions": {
+        "self": "切る膝を進めるトップ",
+        "opponent": "ニーシールドや脇差しを戻したいボトム"
+      },
+      "grips_and_frames": [
+        "近い腿・すねの接点",
+        "脇差しや肩を管理できる組み手",
+        "自由な足・手"
+      ],
+      "mechanics": {
+        "weight": "切る膝だけに全荷重を残さない",
+        "support": "自由な足と手",
+        "pressure": "膝の通過線へ進む",
+        "angle": "相手の肩と腰の向きを確認"
+      },
+      "goal": "膝が通る線と肩への制御を同時に保つ。",
+      "steps_ja": [
+        "足と手に支えを作る。",
+        "相手の膝だけでなく肩・脇の位置を制御する。",
+        "膝が越えたら足首が自由か見て抜く。"
+      ],
+      "success_conditions": [
+        "相手の膝が胸の前へ強く入っていない",
+        "足首が固定されたままねじらない"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "knee-back",
+          "cue": "相手の膝が胸の前まで戻る",
+          "answer": "膝が戻ったら切る脚に体重を乗せ続けず、相手の上半身を制御し直し、膝のフレームを外してから通り直します。",
+          "next_id": "inside-pass",
+          "match": [
+            "膝が戻",
+            "膝を戻",
+            "ニーシールド",
+            "戻って",
+            "フレームが入"
+          ]
+        },
+        {
+          "id": "underhook",
+          "cue": "相手が下から脇を差して起きる",
+          "answer": "脇を差されて起きられたら膝を進めず、フリーの脚で上の土台を作り、相手の肩の制御を取り直します。",
+          "next_id": "half-top-vs-underhook",
+          "match": [
+            "脇",
+            "起き"
+          ]
+        },
+        {
+          "id": "ankle",
+          "cue": "膝が抜けて足首だけ捕まる",
+          "answer": "相手の肩と腰を制御できるなら、捕まった足首へ体重を残さず、自分の上半身を保ったまま最後に外します。",
+          "next_id": "half-pass",
+          "match": [
+            "足首",
+            "足抜き",
+            "膝が抜"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "上半身の組み手を省いて膝だけ押す",
+          "fix": "肩・脇の制御と膝の通り道を同時に作る"
+        }
+      ],
+      "beginner_instruction": "低い抵抗から、相手が膝を戻した時点でいったん止める練習をする。",
+      "safety_notes": "捕まった足首を軸に腰や膝をねじらない。",
+      "source_refs": [
+        {
+          "source_id": "ga-knee",
+          "location": "本文と写真",
+          "scope": "バタフライ相手のトップ例"
+        },
+        {
+          "source_id": "andy-camping",
+          "location": "ニーカット",
+          "scope": "キャンピングからの例"
+        },
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "knee-cut",
+          "scope": "独自メモ"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "knee-cut"
+      ],
+      "related_ids": [
+        "inside-pass",
+        "half-top-vs-underhook",
+        "half-pass"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ニーカットはトップの膝で相手の内腿を横切ります。相手の膝が戻ったら前進を止め、切る側の荷重を分散します。",
+        "tips": [
+          "相手の膝の高さと、肩や脇をどちらへ制御できるかを同時に見ます。膝だけを通すと、相手がフレームや脇差しを戻せます。"
+        ]
+      }
+    },
+    {
+      "id": "knee-cut-defense",
+      "name_ja": "ボトムのニーカット対策",
+      "name_en": "Knee cut pass defense",
+      "top_or_bottom": "bottom",
+      "family": "knee-cut",
+      "start_position": "相手がニーカットに入ったボトム",
+      "aliases": [
+        "ニーカット対策",
+        "ニーカットされ",
+        "ニースライス対策",
+        "インサイドパス対策",
+        "knee cut defense"
+      ],
+      "body_positions": {
+        "self": "前腕と膝を戻したいボトム",
+        "opponent": "膝で腿を越え、肩を止めるトップ"
+      },
+      "grips_and_frames": [
+        "近づく肩・上腕に前腕",
+        "腰をずらせる足",
+        "差し戻すすね"
+      ],
+      "mechanics": {
+        "weight": "横尻に体重を移す",
+        "support": "前腕と自由な足",
+        "pressure": "胸が重なる向きを受ける",
+        "angle": "骨盤を相手側へ向け直す"
+      },
+      "goal": "トップに肩と腰を止められる前に脚の接点を作る。",
+      "steps_ja": [
+        "肩や上腕に前腕を置く。",
+        "骨盤を横へ動かし膝と肘を近づける。",
+        "すねの接点を回復するか、完全に越えられたらサイドへ対応する。"
+      ],
+      "success_conditions": [
+        "骨盤を少し動かせる",
+        "肩の固定が浅い"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "early",
+          "cue": "肩が固定されていない",
+          "answer": "肩がまだ自由なら、前腕で距離を残して骨盤を動かし、相手の切る膝の手前からすねを戻します。",
+          "next_id": "guard-retention",
+          "match": [
+            "まだ",
+            "先",
+            "前"
+          ]
+        },
+        {
+          "id": "late",
+          "cue": "膝を越えられ、肩も固定される",
+          "answer": "膝と肩を越えられたら、肘を体へ戻し、肩と腰に前腕が入る隙間を作る動きに切り替えます。",
+          "next_id": "side-bottom",
+          "match": [
+            "サイド",
+            "肩も",
+            "抜けた",
+            "越えられ"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "膝だけを差そうとして肩を固定される",
+          "fix": "前腕で肩への進入を受けてから骨盤を動かす"
+        }
+      ],
+      "beginner_instruction": "トップに少しずつ膝を通してもらい、肩が押さえられる前に前腕を置く。",
+      "safety_notes": "膝を抑えられたまま足をねじらない。",
+      "source_refs": [
+        {
+          "source_id": "ga-knee-defense",
+          "location": "公開本文",
+          "scope": "ボトム側の防止・脱出"
+        },
+        {
+          "source_id": "ga-elbow",
+          "location": "本文",
+          "scope": "肘と膝の距離"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "guard-retention",
+        "side-bottom"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ニーカットを受けるボトムは、前腕で肩が入る線を受け、肩と腰を同時に固定される前に横向きへ戻ります。",
+        "tips": [
+          "肘を体に近づけたまま相手の上腕を支え、骨盤を横にずらします。膝が動ける幅を作ってから相手の手前へすねを差し戻します。"
+        ]
+      }
+    },
+    {
+      "id": "spider",
+      "name_ja": "立つ相手へのスパイダーガード",
+      "name_en": "Spider guard against standing passes",
+      "top_or_bottom": "bottom",
+      "family": "spider",
+      "start_position": "道着のボトムで袖と足裏の接点を持つ",
+      "aliases": [
+        "スパイダーガード",
+        "スパイダー",
+        "spider guard",
+        "キックスイープ"
+      ],
+      "body_positions": {
+        "self": "片方以上の足裏を相手の上腕に当てるボトム",
+        "opponent": "立って脚を引くか、膝を床につくトップ"
+      },
+      "grips_and_frames": [
+        "袖のグリップ",
+        "上腕への足裏",
+        "骨盤が動ける反対側の脚"
+      ],
+      "mechanics": {
+        "weight": "横尻で距離を変える",
+        "support": "袖と足の張り",
+        "pressure": "片側で張り、他方の膝は戻せる",
+        "angle": "正対しすぎないよう横へ"
+      },
+      "goal": "立つ相手の足と上体の距離で枝を選ぶ。",
+      "steps_ja": [
+        "袖と足裏の接点を作る。",
+        "相手の足が近いかと頭の高さを見る。",
+        "近い足を制御できる場面に限り脚を取る。"
+      ],
+      "success_conditions": [
+        "道着の袖を安全に持てる",
+        "ボトムが骨盤を動かせる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "standing-close",
+          "cue": "相手が立って脚が近い",
+          "answer": "立って上体が高く脚が近いなら、その脚を制御しながら足裏と袖で肩を横へずらし、踏み直せる足を減らして崩します。",
+          "next_id": null,
+          "match": [
+            "立",
+            "脚が近",
+            "足が近",
+            "キック"
+          ]
+        },
+        {
+          "id": "standing-far",
+          "cue": "脚を引いて上体が下がる",
+          "answer": "相手が脚を引いて頭を下げたら脚を追わず肩と腕を見ます。片腕だけが内側に残るなら三角へつなげる余地があります。",
+          "next_id": "triangle",
+          "match": [
+            "脚を引",
+            "足を引",
+            "頭が低",
+            "上体が低",
+            "三角"
+          ]
+        },
+        {
+          "id": "kneeling",
+          "cue": "膝をつく",
+          "answer": "相手が膝をついたら立ち姿勢用の脚取りをやめて、袖とすねの接点から相手の体重を浮かす近い距離の崩しを使います。",
+          "next_id": "scissor-sweep",
+          "match": [
+            "膝をつ",
+            "正座"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "届かない脚を追って足と袖の接点が切れる",
+          "fix": "脚が遠ければ上体との距離を保つ"
+        }
+      ],
+      "beginner_instruction": "立つ、足を引く、膝をつくを順に受け、動き出す前に条件を口にする。",
+      "safety_notes": "袖口へ指を深く入れず、ねじりが掛かれば放す。",
+      "source_refs": [
+        {
+          "source_id": "andy-spider",
+          "location": "立位が高い・低い・正座",
+          "scope": "反応ごとの分岐"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 p.48",
+          "scope": "骨盤ドリルとの比較"
+        },
+        {
+          "source_id": "rrt-v13-editorial",
+          "location": "andy-spider-decisions",
+          "scope": "独自メモ"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "spider",
+        "andy-spider-decisions"
+      ],
+      "related_ids": [
+        "triangle",
+        "scissor-sweep"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ボトムのスパイダーで相手が立ったら、袖と足裏の接点を保ち、相手の近い脚に手が届くかを見ます。",
+        "tips": [
+          "両膝を伸ばし切らず、骨盤を向け直せる余裕を残します。脚が引かれたときは伸びて追わない方が、上体との接点が残ります。"
+        ]
+      }
+    },
+    {
+      "id": "spider-pass",
+      "name_ja": "トップのスパイダーガード解除",
+      "name_en": "Passing spider guard",
+      "top_or_bottom": "top",
+      "family": "spider",
+      "start_position": "袖を握られ上腕に足裏を当てられたトップ",
+      "aliases": [
+        "スパイダーをパス",
+        "スパイダーのパス",
+        "スパイダー解除",
+        "spider pass"
+      ],
+      "body_positions": {
+        "self": "肘を戻したいトップ",
+        "opponent": "袖と足裏で距離を保つボトム"
+      },
+      "grips_and_frames": [
+        "足を受ける自分の肘",
+        "相手の足裏を外す膝・手の接点"
+      ],
+      "mechanics": {
+        "weight": "足幅を保つ",
+        "support": "両足と体幹",
+        "pressure": "袖を引く前に足裏の接点を弱める",
+        "angle": "取られた肘を戻せる側面"
+      },
+      "goal": "足と袖のコントロールをほどいて、姿勢を作り直す。",
+      "steps_ja": [
+        "肘を伸ばし過ぎない。",
+        "相手の足裏が腕へ圧を掛けにくい側へ動く。",
+        "袖が緩む側へ肘を戻しパスへ入る。"
+      ],
+      "success_conditions": [
+        "フリーの肘を胴から離しすぎない",
+        "足幅が残る"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "lasso",
+          "cue": "相手がラッソーへ巻く",
+          "answer": "ラッソーになったら足裏だけのスパイダーと同じように引かず、相手の脚の巻きがゆるむ向きと自分の肘を戻す方向を先に見ます。",
+          "next_id": null,
+          "match": [
+            "ラッソ",
+            "巻"
+          ]
+        },
+        {
+          "id": "leg",
+          "cue": "脚をすくわれる",
+          "answer": "足をすくわれる間合いでは前進を止め、足幅と腰の位置を取り直してから袖と足の解除を行います。",
+          "next_id": "passing-grips",
+          "match": [
+            "すく",
+            "脚を取",
+            "足を取"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "袖を引くだけで肘と体幹が離れる",
+          "fix": "足裏の接点を弱めてから肘を戻す"
+        }
+      ],
+      "beginner_instruction": "片方にだけ足裏を当ててもらい、肘と膝を近づける所まで練習する。",
+      "safety_notes": "袖を持つ相手の指に急なひねりを加えない。",
+      "source_refs": [
+        {
+          "source_id": "andy-spider-top",
+          "location": "解除の各例",
+          "scope": "足と腕の接触を外す原理"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "passing-grips"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "トップでスパイダーを取られたら、袖を力で引く前に、相手の足裏が上腕に掛けている接点を弱めます。",
+        "tips": [
+          "両足の支えを残し、自由な肘を胴の近くに置きます。相手の足が上腕から離れる角度に動いてから、取られた肘を体へ戻します。"
+        ]
+      }
+    },
+    {
+      "id": "lasso",
+      "name_ja": "ラッソーガード",
+      "name_en": "Lasso guard",
+      "top_or_bottom": "bottom",
+      "family": "lasso",
+      "start_position": "道着のボトムで相手の袖を確保",
+      "aliases": [
+        "ラッソー",
+        "lasso guard",
+        "袖に脚を巻"
+      ],
+      "body_positions": {
+        "self": "袖を握った腕に外から脚を回すボトム",
+        "opponent": "自分の肘を引いて巻きを外したいトップ"
+      },
+      "grips_and_frames": [
+        "巻く側の袖",
+        "腕の外を通る脚",
+        "反対側の足の接点"
+      ],
+      "mechanics": {
+        "weight": "横尻を動かせる位置",
+        "support": "袖とすね",
+        "pressure": "巻いた脚と袖で肘の進行を抑える",
+        "angle": "正面から骨盤をずらせる"
+      },
+      "goal": "相手の片腕を巻いた接点で管理し、反対の足で距離を調整する。",
+      "steps_ja": [
+        "袖を持ち膝を引く。",
+        "腕の外から同側の脚を回す。",
+        "反対の足で相手の腰との距離を変える。"
+      ],
+      "success_conditions": [
+        "関節をねじらず巻ける",
+        "反対の膝が自由"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "withdraw",
+          "cue": "相手が肘を引く",
+          "answer": "相手が肘を引いて巻きが浅くなったらいったん膝を戻し、上腕に足裏が届くときにスパイダーとして間を作り直します。",
+          "next_id": "spider",
+          "match": [
+            "肘",
+            "スパイダー",
+            "浅"
+          ]
+        },
+        {
+          "id": "walk",
+          "cue": "相手が腰の横へ回る",
+          "answer": "横に回られたら巻いた側だけで耐えず、空いた足の接点と骨盤の向きを変えて相手の胸の前に膝を戻します。",
+          "next_id": "guard-retention",
+          "match": [
+            "回",
+            "横"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "片脚を深く巻くだけで動けなくなる",
+          "fix": "反対の膝が動く距離と袖の張りを保つ"
+        }
+      ],
+      "beginner_instruction": "巻いた形から相手に肘を引いてもらい、足裏を置き直すところまで練習する。",
+      "safety_notes": "膝や指にねじれが掛かる場合は早めに外す。",
+      "source_refs": [
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "lasso",
+          "scope": "独自メモ"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 p.18・p.48",
+          "scope": "別の局面との比較"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "lasso"
+      ],
+      "related_ids": [
+        "spider",
+        "guard-retention"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "道着のラッソーは、ボトムが取った袖の腕に脚を外から回し、袖と脚で相手の肘の向きを管理します。",
+        "tips": [
+          "巻いた側だけで粘ると骨盤が動きにくくなります。反対の足で間を取り、相手が肘を引くか腰の横へ回るかを見ます。"
+        ]
+      }
+    },
+    {
+      "id": "side-to-mount",
+      "name_ja": "サイドコントロールからマウント",
+      "name_en": "Side control to mount",
+      "top_or_bottom": "top",
+      "family": "side-mount",
+      "start_position": "トップでサイドコントロールを確保",
+      "aliases": [
+        "サイドからマウント",
+        "サイドポジションからマウント",
+        "side control to mount"
+      ],
+      "body_positions": {
+        "self": "肩を胸や腕で制御し腰側に接点を残すトップ",
+        "opponent": "肘と膝で移行を止めようとするボトム"
+      },
+      "grips_and_frames": [
+        "肩を管理する胸と腕",
+        "腰の線を通す膝",
+        "自由な足または手"
+      ],
+      "mechanics": {
+        "weight": "移る膝に預け切らない",
+        "support": "支持脚と手",
+        "pressure": "腰側に相手の膝が入る余地を閉じる",
+        "angle": "腰の線を膝で低く通る"
+      },
+      "goal": "相手の上体を保ったまま安定したマウントに移る。",
+      "steps_ja": [
+        "相手の肩と近い肘を確認する。",
+        "腰側の膝が戻らない空間を作る。",
+        "支持脚や手を残して跨ぎ、両膝を安定させる。"
+      ],
+      "success_conditions": [
+        "近い肘と膝に進行線を塞がれない",
+        "相手のブリッジで支えを戻せる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "blocked",
+          "cue": "近い肘や膝が移動を止める",
+          "answer": "肘や膝が跨ぐ線に残っていたらスライドを止めます。相手の肩と腰の向きを取り直し、膝が通る空間を作ります。",
+          "next_id": null,
+          "match": [
+            "肘",
+            "塞",
+            "フレーム"
+          ]
+        },
+        {
+          "id": "bridge",
+          "cue": "相手がブリッジする",
+          "answer": "相手がブリッジしたら、手か支持脚を置いて重心を戻し、支持が回復してから足を完全に越します。",
+          "next_id": null,
+          "match": [
+            "ブリッジ",
+            "返"
+          ]
+        },
+        {
+          "id": "arm",
+          "cue": "マウントで腕が顔の横へ上がる",
+          "answer": "マウントが安定して相手の腕を顔の横へ動かせるなら、頭と片腕をまとめて肩固めへ入る条件がそろいます。",
+          "next_id": "arm-triangle",
+          "match": [
+            "腕が上",
+            "肩固め"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "膝を大きく上げて飛び越す",
+          "fix": "手と足に支えを残して膝を低く通す"
+        }
+      ],
+      "beginner_instruction": "相手の肘と膝を見てから跨ぎ、マウントになった所で両者の位置を止めて確認する。",
+      "safety_notes": "跨ぐ膝を相手の腹や肘に落とさない。",
+      "source_refs": [
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "side-to-mount",
+          "scope": "独自メモ"
+        },
+        {
+          "source_id": "ga-side",
+          "location": "本文",
+          "scope": "サイドの制御と移行"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "side-to-mount"
+      ],
+      "related_ids": [
+        "arm-triangle"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "サイドトップからマウントへ移るには、相手の肩の向きを管理でき、近い肘や膝で自分の膝が止められないことが条件です。",
+        "tips": [
+          "手か支持脚で体重を受けながら、腰の線に沿って膝を低く通します。膝が床に着いてから重心を安定させます。"
+        ]
+      }
+    },
+    {
+      "id": "side-bottom",
+      "name_ja": "サイドを取られたボトムの回復",
+      "name_en": "Bottom side control recovery",
+      "top_or_bottom": "bottom",
+      "family": "side-bottom",
+      "start_position": "相手の脚が外にあり、胸を重ねられたボトム",
+      "aliases": [
+        "サイドを取られ",
+        "サイドから逃げる",
+        "サイドから脱出",
+        "押さえ込まれ",
+        "side control escape"
+      ],
+      "body_positions": {
+        "self": "肩と骨盤が床側にあるボトム",
+        "opponent": "肩と腰を制御するトップ"
+      },
+      "grips_and_frames": [
+        "肩や上腕に前腕",
+        "腰へのフレーム",
+        "床を踏む足"
+      ],
+      "mechanics": {
+        "weight": "足で荷重を変える",
+        "support": "胴に近い肘と足",
+        "pressure": "距離を保持する前腕",
+        "angle": "骨盤を横へずらす"
+      },
+      "goal": "肘と膝を間に戻してガードに復帰する隙間を作る。",
+      "steps_ja": [
+        "肘を胴の内側へ戻す。",
+        "届く場所に前腕を入れ足で圧の向きを変える。",
+        "腰をずらして近い膝を入れる。"
+      ],
+      "success_conditions": [
+        "前腕を胴の近くに置ける",
+        "腰が少し動く"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "hip",
+          "cue": "腰が動く空間ができる",
+          "answer": "腰の隙間に近い膝を差し込み、相手にすねを向け直します。脚が間に戻ってから距離を調節します。",
+          "next_id": "guard-retention",
+          "match": [
+            "膝",
+            "隙間",
+            "スペース"
+          ]
+        },
+        {
+          "id": "mount",
+          "cue": "相手が膝を跨がせる",
+          "answer": "跨いでくるなら、手で押し上げる前に近い肘と膝を寄せ、トップの膝が入る線を塞ぎます。",
+          "next_id": null,
+          "match": [
+            "マウント",
+            "跨"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "腕を伸ばし切って胸を押す",
+          "fix": "肘を胴に近づけて前腕と体幹で支える"
+        }
+      ],
+      "beginner_instruction": "相手に低い圧で胸を合わせてもらい、前腕を作ったところから反復する。",
+      "safety_notes": "頭や首を床の支点にして回らない。",
+      "source_refs": [
+        {
+          "source_id": "ga-elbow",
+          "location": "本文",
+          "scope": "肘と膝の空間"
+        },
+        {
+          "source_id": "yawara-sweep-textbook-ja",
+          "location": "PDF内 p.44",
+          "scope": "サイドの胴から肘を離さない考え方"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "guard-retention"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "サイドを固められたボトムは、相手を両手で押す前に肘を体へ戻し、肩や腰の間に前腕を入れる場所を作ります。",
+        "tips": [
+          "足で床を踏んで相手の圧が緩む瞬間に骨盤を横へずらします。腕で作った空間が残っているうちに、近い膝を差します。"
+        ]
+      }
+    },
+    {
+      "id": "americana",
+      "name_ja": "アメリカーナ",
+      "name_en": "Americana / Keylock",
+      "top_or_bottom": "top",
+      "family": "americana",
+      "start_position": "サイドかマウントのトップで相手の腕が曲がる",
+      "aliases": [
+        "アメリカーナ",
+        "americana",
+        "keylock",
+        "V1",
+        "ポイントロック"
+      ],
+      "body_positions": {
+        "self": "胸と足で上を保つトップ",
+        "opponent": "曲がった肘が床側にあり上腕を制御されるボトム"
+      },
+      "grips_and_frames": [
+        "相手の手首を床側へ止める",
+        "相手の上腕の下から自分の手首を取る"
+      ],
+      "mechanics": {
+        "weight": "相手の体が起きない位置",
+        "support": "胸と支持脚",
+        "pressure": "肩の外旋へゆっくり圧を加える",
+        "angle": "相手の肩線と肘の位置を維持"
+      },
+      "goal": "手首と肘の制御を上半身の固定と組み合わせる。",
+      "steps_ja": [
+        "肩と胴が回りにくい位置を取る。",
+        "手首を押さえ、上腕の下から自分の手首を握る。",
+        "動きの余白を詰め、タップで放す。"
+      ],
+      "success_conditions": [
+        "曲がった腕を維持できる",
+        "相手の肩を低い負荷で制御できる"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "straight",
+          "cue": "腕が伸びて逃げそうになる",
+          "answer": "相手の腕が伸びて手首と肘の位置が崩れたら力を抜き、胸と膝の支えを取り直して上を維持します。",
+          "next_id": null,
+          "match": [
+            "伸",
+            "抜"
+          ]
+        },
+        {
+          "id": "across",
+          "cue": "腕が顔の前を越える",
+          "answer": "相手の上腕が顔の横を越えたら、頭と片腕をまとめられる位置か確かめて肩固めへの切り替えを考えます。",
+          "next_id": "arm-triangle",
+          "match": [
+            "顔",
+            "肩固め",
+            "流"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "肘を勢いよく引き上げる",
+          "fix": "手首と上体を落ち着けて少しずつ負荷を加える"
+        }
+      ],
+      "beginner_instruction": "組み手と肘の角度で一度止め、締め切らずにタップを合わせる練習をする。",
+      "safety_notes": "肩の負荷は徐々に加え、タップで即座に放す。",
+      "source_refs": [
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "americana",
+          "scope": "独自メモ"
+        },
+        {
+          "source_id": "ga-side-subs",
+          "location": "ポジションと極めの構成",
+          "scope": "公開商品説明と照合"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "americana"
+      ],
+      "related_ids": [
+        "arm-triangle"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "トップのアメリカーナは、曲がった腕の手首を床側に止め、肩と胴が回らない状態で形を作ります。",
+        "tips": [
+          "相手の上腕の下から自分の手首を握り、肘を大きく振り上げず少しずつ隙間を詰めます。タップがあればすぐ放します。"
+        ]
+      }
+    },
+    {
+      "id": "arm-triangle",
+      "name_ja": "マウントから肩固め",
+      "name_en": "Arm triangle / Head-and-arm choke",
+      "top_or_bottom": "top",
+      "family": "arm-triangle",
+      "start_position": "トップのマウント等で相手の腕が顔の横に上がる",
+      "aliases": [
+        "肩固め",
+        "arm triangle",
+        "アームトライアングル",
+        "kata gatame"
+      ],
+      "body_positions": {
+        "self": "相手の頭と片腕に近づけるトップ",
+        "opponent": "上腕が顔の横に寄るボトム"
+      },
+      "grips_and_frames": [
+        "頭の下に回す腕",
+        "相手の上腕を戻さない自分の頭・肩",
+        "ベースを作る膝"
+      ],
+      "mechanics": {
+        "weight": "体が浮かないよう足へ荷重を分散",
+        "support": "胸・膝と肩",
+        "pressure": "首をねじらず隙間を少しずつ減らす",
+        "angle": "腕を顔の横へ越せる位置"
+      },
+      "goal": "相手の頭と片腕が逃げにくい形を作る。",
+      "steps_ja": [
+        "片腕が顔の横へ届くか確認する。",
+        "頭と腕を包んで上腕が戻る線を自分の頭で止める。",
+        "圧の角度を調整しタップで緩める。"
+      ],
+      "success_conditions": [
+        "相手の上腕が戻らない",
+        "肩と首の向きがねじれていない"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "closed",
+          "cue": "相手の肘が閉じて顔を越えない",
+          "answer": "肘が顔を越えないなら腕を無理に動かさず、マウントを保って相手の肘が離れる機会を待ちます。",
+          "next_id": null,
+          "match": [
+            "越えない",
+            "閉",
+            "下げ"
+          ]
+        },
+        {
+          "id": "bridge",
+          "cue": "ブリッジで体が浮く",
+          "answer": "相手がブリッジしたら絞める圧を弱め、マウントの手足の支えを確保してから頭と腕の位置を取り直します。",
+          "next_id": "side-to-mount",
+          "match": [
+            "ブリッジ",
+            "返"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "腕の力だけで絞る",
+          "fix": "相手の上腕と頭の間の隙間を小さくできる位置か確認する"
+        }
+      ],
+      "beginner_instruction": "腕が顔の横を越えたところで止め、両者の頭と肩の位置を見る。",
+      "safety_notes": "タップや異変で即座に圧を抜く。",
+      "source_refs": [
+        {
+          "source_id": "ga-arm-triangle",
+          "location": "Emily Kwokの公開抜粋の本文",
+          "scope": "マウントからのセットアップ"
+        },
+        {
+          "source_id": "rrt-v13-notes",
+          "location": "arm-triangle",
+          "scope": "独自メモ"
+        }
+      ],
+      "confirmation": {
+        "status": "editorial_synthesis",
+        "confidence": "provisional",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [
+        "arm-triangle"
+      ],
+      "related_ids": [
+        "side-to-mount"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "トップの肩固めは、相手の片腕を顔の横へ運び、頭とその腕をまとめて制御するところから始めます。",
+        "tips": [
+          "自分の頭で相手の上腕が戻る隙間を塞ぎ、腕力を強める前に姿勢を安定させます。圧は少しずつ加え、タップで即座に放します。"
+        ]
+      }
     }
   ]
 }
