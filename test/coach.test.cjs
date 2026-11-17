@@ -253,10 +253,12 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
   const nativeFetch = global.fetch;
   const secret = randomBytes(32).toString('hex');
   const newSecret = randomBytes(32).toString('hex');
+  const additionalSecret = randomBytes(32).toString('hex');
   const origin = 'https://rrt.test.invalid';
   const env = {
     PERSONAL_TRIAL_LINK_TOKEN:secret,
     PERSONAL_TRIAL_OPEN_TOKEN_SHA256:createHash('sha256').update(newSecret).digest('hex'), GEMINI_API_KEY:'mocked-api-key-for-tests',
+    PERSONAL_TRIAL_ADDITIONAL_TOKEN_SHA256:createHash('sha256').update(additionalSecret).digest('hex'),
     PUBLIC_ORIGIN:origin, GEMINI_MODEL:'gemini-2.5-flash-lite',
     DEMO_DAILY_LIMIT:'100', DEMO_USER_DAILY_LIMIT:'20',
   };
@@ -320,6 +322,7 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
   assert(opener.includes('location.hash.slice(1)'));
   assert(opener.includes('location.replace("/members/")'));
   assert(!opener.includes(newSecret));
+  assert(!opener.includes(additionalSecret));
 
   const rejected = await post('/api/trial-link','',{token:randomBytes(32).toString('hex')});
   assert.equal(rejected.status,404);
@@ -327,6 +330,10 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
   assert.equal((await post('/api/trial-link','',{token:newSecret},'https://foreign.invalid')).status,403);
   const accepted = await post('/api/trial-link','',{token:newSecret});
   assert.equal(accepted.status,200);
+  const additional = await post('/api/trial-link','',{token:additionalSecret});
+  assert.equal(additional.status,200);
+  const additionalCookie = additional.headers.get('set-cookie').split(';')[0];
+  assert.equal((await get('/members/',{headers:{cookie:additionalCookie}})).status,200);
   const cookieHeader = accepted.headers.get('set-cookie');
   assert(/HttpOnly; Secure; SameSite=Lax/.test(cookieHeader || ''));
   const cookie = cookieHeader.split(';')[0];

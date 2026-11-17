@@ -142,12 +142,14 @@ const server=http.createServer((req,res)=>{(async()=>{
  if (req.method === 'POST' && p === '/api/trial-link') {
   if (!checkOrigin(req)) return out(res, 403, {error:'不正なリクエストです。'});
   const {token} = (await json(req)) || {};
-  const digest = process.env.PERSONAL_TRIAL_OPEN_TOKEN_SHA256 || '';
-  if (typeof token !== 'string' || !/^[0-9a-f]{64}$/.test(token) || !/^[0-9a-f]{64}$/.test(digest)) {
+  if (typeof token !== 'string' || !/^[0-9a-f]{64}$/.test(token)) {
    return out(res, 404, {error:'このURLは使用できません。'});
   }
   const submitted = crypto.createHash('sha256').update(token).digest();
-  if (!crypto.timingSafeEqual(submitted, Buffer.from(digest, 'hex'))) {
+  const accepted = [process.env.PERSONAL_TRIAL_OPEN_TOKEN_SHA256, process.env.PERSONAL_TRIAL_ADDITIONAL_TOKEN_SHA256]
+    .some(digest => /^[0-9a-f]{64}$/.test(digest || '') &&
+      crypto.timingSafeEqual(submitted, Buffer.from(digest, 'hex')));
+  if (!accepted) {
    return out(res, 404, {error:'このURLは使用できません。'});
   }
   return out(res, 200, {ok:true}, {'Set-Cookie':issueTrialCookie()});
