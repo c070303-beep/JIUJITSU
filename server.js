@@ -133,7 +133,7 @@ function videosForQuestion(question, context, selection) {
 
 const server=http.createServer((req,res)=>{(async()=>{
  const u=new URL(req.url,'https://localhost');const p=u.pathname;
- if(req.method==='GET' && p==='/healthz')return out(res,200,{ok:true, knowledge:'3.0'});
+ if(req.method==='GET' && p==='/healthz')return out(res,200,{ok:true, knowledge:'3.1'});
  if(req.method==='GET'&&p==='/robots.txt'){res.writeHead(200,{'Content-Type':'text/plain','Cache-Control':'no-store'});return res.end('User-agent: *\nDisallow: /\n')}
  if (req.method === 'GET' && p === '/open') {
   return bearer(req) ? redirect(res, '/members/') : page(res, trialOpenPage);

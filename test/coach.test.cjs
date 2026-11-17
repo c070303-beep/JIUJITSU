@@ -383,7 +383,7 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
     method:'POST', headers:{cookie,origin:requestOrigin,'content-type':'application/json'}, body:JSON.stringify(data),
   });
   const health = await (await get('/healthz')).json();
-  assert.equal(health.knowledge,'3.0');
+  assert.equal(health.knowledge,'3.1');
   assert.equal((await get('/members/')).headers.get('location'),'/login');
   assert.equal((await get('/api/status')).status,401);
   const page = await get('/open');
@@ -611,4 +611,52 @@ test('Compound requests can refine a local guess and abstain on unregistered mat
   assert.equal(coach.interpretRoute(route,coach.readSelection(response('keep'),route)),route);
   assert.match(coach.renderAnswer(coach.interpretRoute(route,coach.readSelection(response('uncovered'),route))),/確認済みの説明はありません/);
   assert.equal(coach.readSelection(response('uncovered','topic','fabricated'),route),null);
+});
+
+test('Short BJJ follow-ups retain their position and answer the new condition locally', () => {
+  for (const [original, question, entry, branch, phrase] of [
+    ['コヨーテについて','で、起き上がれなかったら？','coyote-half','stalled','自由な肘'],
+    ['ドッグファイトとは？','遠い膝に届くときは？','dogfight','far-knee','ニータップ'],
+    ['ドッグファイトとは？','相手が前に体重を乗せてきたら？','dogfight','forward','ロールアンダー'],
+    ['アウトサイドキャンピングとは？','相手が腰を浮かせたらどうする？','outside-camping','far-leg','支え'],
+    ['ハーフバタフライとは？','じゃあ脇を差せないときは？','half-butterfly','two-on-one','手首'],
+  ]) {
+    const route = coach.resolveRequest(question,continueFrom(original,coach.resolveRequest(original)));
+    assert.deepEqual(coach.topicForRoute(route),{entry,branch},question);
+    assert(coach.renderAnswer(route).includes(phrase),question);
+    assert.equal(coach.selectPayload(route,question),null);
+  }
+});
+
+test('Ask for practice or the next technique after a specific dogfight reaction', () => {
+  const original = 'ドッグファイトとは？';
+  const history = continueFrom(original,coach.resolveRequest(original));
+  const situation = '遠い膝に届くときは？';
+  const selected = coach.resolveRequest(situation,history);
+  const continued = history.concat(continueFrom(situation,selected));
+  const next = coach.resolveRequest('次につながる技は？',continued);
+  assert.match(coach.renderAnswer(next),/次に見る技.*ニータップ/);
+  assert.equal(coach.selectPayload(next,'次につながる技は？'),null);
+  const practice = coach.resolveRequest('この技はどう練習すればいい？',continued);
+  assert.match(coach.renderAnswer(practice),/反応を順/);
+  assert.equal(coach.selectPayload(practice,'この技はどう練習すればいい？'),null);
+  for (const [q,entry,pattern] of [
+    ['ドッグファイトのニータップとは？','dogfight-knee-tap',/遠い膝/],
+    ['ハーフバタフライのツーオンワンとは？','half-butterfly-two-on-one',/両手で相手の手首/],
+  ]) {
+    const route = coach.resolveRequest(q,continued);
+    assert.equal(coach.topicForRoute(route).entry,entry);
+    assert.match(coach.renderAnswer(route),pattern);
+  }
+});
+
+test('Unclear follow-ups keep the position and reject unrelated model choices', () => {
+  const original = 'コヨーテについて';
+  const question = '相手が頭を下げてきたら？';
+  const route = coach.resolveRequest(question,continueFrom(original,coach.resolveRequest(original)));
+  assert.equal(coach.topicForRoute(route).entry,'coyote-half');
+  assert.match(coach.renderAnswer(route),/コヨーテハーフの続き/);
+  assert.equal(route.choices.length,3);
+  const result = {candidates:[{content:{parts:[{text:JSON.stringify({entry:'americana',intent:'how',branch:''})}]}}]};
+  assert.equal(coach.readSelection(result,route),null);
 });

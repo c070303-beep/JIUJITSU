@@ -1,5 +1,5 @@
 {
-  "schema_version": "3.0",
+  "schema_version": "3.1",
   "techniques": [
     {
       "id": "guard-retention",
@@ -818,7 +818,7 @@
           "id": "far-knee",
           "cue": "相手の遠い膝に手が届く・横への支えが弱い",
           "answer": "遠い膝に手が届き、横への支えが弱いなら、膝を受けながら上体を横へ進めるニータップが候補です。",
-          "next_id": null,
+          "next_id": "dogfight-knee-tap",
           "match": [
             "遠い膝",
             "ニータップ",
@@ -888,7 +888,8 @@
       ],
       "related_ids": [
         "back-take",
-        "knee-shield"
+        "knee-shield",
+        "dogfight-knee-tap"
       ],
       "public_youtube_ids": [
         "PVXpWtRjUS4",
@@ -1069,6 +1070,20 @@
             "胸",
             "浅"
           ]
+        },
+        {
+          "id": "two-on-one",
+          "cue": "脇を差せず、相手が手で支える",
+          "answer": "下から相手の手首を両手で取れるなら、倒したい側の手を床から離すタイミングに合わせて足の甲で腿を浮かせます。胸まで潰されたら、先に前腕と膝で空間を取り直します。",
+          "next_id": "half-butterfly-two-on-one",
+          "match": [
+            "両手で手首",
+            "両手で相手の手首",
+            "脇を差せな",
+            "脇差しをさせ",
+            "ツーオンワン",
+            "2オン1"
+          ]
         }
       ],
       "common_errors": [
@@ -1105,7 +1120,8 @@
       ],
       "related_ids": [
         "butterfly-sweep",
-        "knee-shield"
+        "knee-shield",
+        "half-butterfly-two-on-one"
       ],
       "public_youtube_ids": [
         "QRJNaUYrEqo"
@@ -1410,7 +1426,11 @@
             "遠い",
             "ファーサイド",
             "腰を上",
-            "足が戻"
+            "足が戻",
+            "腰を浮",
+            "腰が浮",
+            "お尻を浮",
+            "お尻を上"
           ]
         },
         {
@@ -5628,7 +5648,23 @@
           "match": [
             "潰",
             "胸を合",
-            "マクラ"
+            "マクラ",
+            "肩を床",
+            "肩が床",
+            "頭と肩"
+          ]
+        },
+        {
+          "id": "stalled",
+          "cue": "肩は浮くが膝まで起きられない",
+          "answer": "脚を挟んだまま横向きになれているかを確認します。肩が浮くなら、脇差しを保って自由な肘を床に置き、そこから膝を立てます。肩まで押さえられているなら、前腕と膝で空間を作ってからやり直します。",
+          "next_id": "half-underhook",
+          "match": [
+            "起き上がれな",
+            "起きられな",
+            "起きれな",
+            "膝まで起",
+            "膝を立てられな"
           ]
         }
       ],
@@ -5660,7 +5696,8 @@
       "related_ids": [
         "dogfight",
         "back-take",
-        "half-crossface"
+        "half-crossface",
+        "half-underhook"
       ],
       "public_youtube_ids": [],
       "answer": {
@@ -11846,6 +11883,202 @@
         "person": "David Avellan／Stephan Kesting",
         "basis": "公開資料による位置制御の使い方。特定教則の全手順ではない。",
         "kind": "published_control_system"
+      }
+    },
+    {
+      "id": "dogfight-knee-tap",
+      "name_ja": "ドッグファイトのニータップ",
+      "name_en": "Dogfight knee-tap sweep",
+      "top_or_bottom": "bottom",
+      "family": "dogfight-knee-tap",
+      "start_position": "ボトムハーフから脇を差して膝まで起き、相手と横並びの位置",
+      "aliases": [
+        "ドッグファイトのニータップ",
+        "ハーフガードのニータップ",
+        "knee tap sweep",
+        "膝を止めるスイープ"
+      ],
+      "body_positions": {
+        "self": "脇差し側で起き、頭を下げずに自由な手が使える",
+        "opponent": "横並びで遠い膝を床について支えている"
+      },
+      "grips_and_frames": [
+        "脇差し",
+        "自由な手で遠い膝の位置を止める",
+        "頭と胸を起こす"
+      ],
+      "mechanics": {
+        "weight": "体重を自分の手や膝で支えてから横へ移す",
+        "support": "自分の膝、相手の遠い膝と自由な手",
+        "pressure": "相手の体幹を斜め横へ進める",
+        "angle": "相手と横並びになってから遠い膝へ手を届かせる"
+      },
+      "goal": "相手の遠い膝の支えを使わせず、横へ崩して上を取る。",
+      "steps_ja": [
+        "脇を差して相手と横並びになり、自分の頭と肩の高さを保つ。",
+        "自由な手で相手の遠い膝を確認し、手が届くなら膝を踏み直せないように受ける。",
+        "自分の胸ごと斜め横へ進み、相手が倒れたら上で姿勢を整える。"
+      ],
+      "success_conditions": [
+        "相手の遠い膝に無理なく手が届く",
+        "倒す側に相手の強い手の支えがない"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "far-away",
+          "cue": "遠い膝が離れる",
+          "answer": "膝が遠いときは、頭を下げて手だけを伸ばさず姿勢を保ちます。相手が前へ荷重しているならドッグファイトの前方荷重への対処を選びます。",
+          "next_id": "dogfight",
+          "match": [
+            "膝が遠",
+            "届か",
+            "前へ荷重"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "手だけ伸ばして頭が下がる",
+          "fix": "頭と胸の位置を保ってから膝に触れる。"
+        }
+      ],
+      "beginner_instruction": "相手は遠い膝を置いたまま、下の人は膝に手を添えて斜め横へ移動するところまで反復します。",
+      "safety_notes": "相手の膝をひねらず、二人とも上半身を支えられる速さで練習します。",
+      "source_refs": [
+        {
+          "source_id": "andy-half-class",
+          "location": "遠い膝と遠側への対処",
+          "scope": "既存の公開本文の遠い膝の制御"
+        },
+        {
+          "source_id": "openbjj-dogfight",
+          "location": "What is the Dogfight? / How to Exit",
+          "scope": "横並びからニータップに移る位置関係"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "dogfight"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ニータップは、ドッグファイトで横並びになったあと、相手の遠い膝を手で止めて斜め横に崩し、上を取るスイープです。",
+        "tips": [
+          "膝に手が届くか、倒す側に相手の手が残るかを先に見ます。手だけを遠くに伸ばすと頭が落ちるので、横へ進むのは胸と腰を一緒に運べるときです。"
+        ],
+        "why": "遠い膝を踏み直せないと、相手は横にずれた重心を膝で受け直しにくくなります。"
+      },
+      "recognition": {
+        "names": [
+          "ドッグファイトのニータップ",
+          "ハーフガードのニータップ",
+          "knee tap sweep"
+        ],
+        "role": "apply"
+      }
+    },
+    {
+      "id": "half-butterfly-two-on-one",
+      "name_ja": "ハーフバタフライのツーオンワン・スイープ",
+      "name_en": "Two-on-one half butterfly sweep",
+      "top_or_bottom": "bottom",
+      "family": "half-butterfly-two-on-one",
+      "start_position": "ボトムハーフバタフライで片足の甲が相手の太腿の内側に入る位置",
+      "aliases": [
+        "ハーフバタフライのツーオンワン",
+        "ハーフバタフライ2オン1",
+        "ハーフバタフライの両手取り"
+      ],
+      "body_positions": {
+        "self": "片脚を絡め、上の足の甲を相手の腿の下に差す",
+        "opponent": "脇差しを許さず、空いている手を床の支えに使える位置"
+      },
+      "grips_and_frames": [
+        "相手の倒す側の手首を両手で取る",
+        "上側の足の甲で腿を支える",
+        "下側の脚で相手の脚との接点を残す"
+      ],
+      "mechanics": {
+        "weight": "相手を横へ崩せる位置に荷重が来るかを見る",
+        "support": "相手が床につく手が主な支え",
+        "pressure": "手を浮かせる動きと腿を持ち上げる動きを合わせる",
+        "angle": "相手の手が支えられない斜め横へ向ける"
+      },
+      "goal": "脇を差せない場面で、倒す側の手を床につかせず横へ返す。",
+      "steps_ja": [
+        "足の甲を太腿の下に置き、相手の手首に両手が届く位置を作る。",
+        "倒す側の手を床から浮かせるタイミングに合わせて、太腿を足の甲で浮かせる。",
+        "横へ崩れてから上を取り、まだ重心が反対に残るならフックを戻してやり直す。"
+      ],
+      "success_conditions": [
+        "自分の胸と腰を相手に押さえられ切っていない",
+        "倒す側の手首と太腿の両方に接点がある"
+      ],
+      "opponent_reactions": [
+        {
+          "id": "weight-away",
+          "cue": "相手が反対側に体重を移す",
+          "answer": "相手が反対側へ体重を移したら、足だけで持ち上げ続けずフックと前腕の位置を戻します。次の反復では、どの手を床につこうとしたかを見ます。",
+          "next_id": "half-butterfly",
+          "match": [
+            "反対",
+            "体重を移",
+            "腰を引"
+          ]
+        }
+      ],
+      "common_errors": [
+        {
+          "cause": "相手の倒す側の手を床につかせたまま脚で持ち上げる",
+          "fix": "手首を浮かせるタイミングとフックを同時にする。"
+        }
+      ],
+      "beginner_instruction": "相手に一度だけ手をついてもらい、手首を浮かせて腿も少し上がるところまで、ゆっくり反復します。",
+      "safety_notes": "手首をひねらず、相手を落とさない速度で角度を確認します。",
+      "source_refs": [
+        {
+          "source_id": "ga-half-butterfly",
+          "location": "Sweep from Half Butterfly Sweep with Two-On-One Grip",
+          "scope": "両手で手首を管理して支えを外す公開解説"
+        }
+      ],
+      "confirmation": {
+        "status": "public_body_cross_check",
+        "confidence": "moderate",
+        "practical_instructor_review": false
+      },
+      "rights": {
+        "basis": "independently_authored_coaching",
+        "gemini_inference": true
+      },
+      "legacy_ids": [],
+      "related_ids": [
+        "half-butterfly"
+      ],
+      "public_youtube_ids": [],
+      "answer": {
+        "summary": "ハーフバタフライのツーオンワンは、下から両手で相手の手首を持ち、倒す側に手をつかせず、太腿を足の甲で浮かせて横に返すスイープです。",
+        "tips": [
+          "脇が差せず、相手の手首を取れる場面で使います。手を浮かせる動きと足の甲を合わせ、胸まで押さえられたら先に空間を取り直します。"
+        ],
+        "why": "手を床につけると相手は傾いた重心を受け止められます。同じ側の手を浮かせてから腿を持ち上げると横に崩れやすくなります。"
+      },
+      "recognition": {
+        "names": [
+          "ハーフバタフライのツーオンワン",
+          "ハーフバタフライ2オン1",
+          "ハーフバタフライの両手取り"
+        ],
+        "role": "apply"
       }
     }
   ],

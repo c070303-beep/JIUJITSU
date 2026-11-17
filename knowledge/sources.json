@@ -1364,6 +1364,22 @@
         "ai_inference_use": "not_authorized_or_verified",
         "reproduction": "external_reference_only"
       }
+    },
+    {
+      "id": "openbjj-dogfight",
+      "display_title": "Open BJJ／Dogfight",
+      "source_url": "https://www.open-bjj.com/positions/dogfight",
+      "author": "Kornel Dubieniecki",
+      "checked_on": "2026-11-17",
+      "checked_section": "What is the Dogfight? / How to Exit",
+      "review_note": "公開本文の開始位置とニータップを確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
     }
   ]
 }
