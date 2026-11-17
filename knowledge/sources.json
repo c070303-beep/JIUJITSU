@@ -612,6 +612,758 @@
         "ai_inference_use": "not_authorized_or_verified",
         "reproduction": "external_reference_only"
       }
+    },
+    {
+      "id": "tf-basic-index",
+      "display_title": "トライフォース公式／BASIC Curriculum",
+      "source_url": "https://triforce-online.com/contents/category/basic-en",
+      "author": "トライフォース柔術アカデミー",
+      "checked_on": "2026-11-17",
+      "checked_section": "カリキュラム説明と公開レッスン名",
+      "review_note": "カリキュラム構成・名称の照合。会員向け本編は確認対象外。",
+      "scope": "public_catalog_only",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "cd-aoyama-basics",
+      "display_title": "カルペディエム青山／クラス・スケジュール",
+      "source_url": "https://www.carpediem-aoyama.com/class-schedule",
+      "author": "カルペディエム青山",
+      "checked_on": "2026-11-17",
+      "checked_section": "白帯・ベーシッククラス",
+      "review_note": "クラス構成の照合。個々の技の根拠には使用しない。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "shrapnel-public-basics",
+      "display_title": "シュラプネル柔術公式案内",
+      "source_url": "https://shrapnel-bjj.com/",
+      "author": "金古一朗／シュラプネル柔術",
+      "checked_on": "2026-11-17",
+      "checked_section": "道場代表・指導方針・公開案内",
+      "review_note": "教室の公開案内を確認。シュラプネルオンラインの会員教材は取り込んでいない。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-roadmap-text",
+      "display_title": "Grapplearts／A Roadmap for Grappling",
+      "source_url": "https://www.grapplearts.com/a-roadmap-for-grappling/",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文の主要ポジションと移行の説明",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-side-posture",
+      "display_title": "Grapplearts／Posture Under Side Mount",
+      "source_url": "https://www.grapplearts.com/posture-under-side-mount/",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文の3種類のフレームとガード回復への接続",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-knee-belly",
+      "display_title": "Grapplearts／Movements and Transitions from Knee on Belly",
+      "source_url": "https://www.grapplearts.com/movements-transitions-knee-belly/",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文のニーオンベリーからサイド・マウントへの移行",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-knee-belly-escape",
+      "display_title": "Grapplearts／2 Favorite Knee on Belly Escapes",
+      "source_url": "https://www.grapplearts.com/2-favorite-knee-belly-escapes/",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文の下側の危険と回復の方向性",
+      "review_note": "公開本文を確認。動画内の個別手順は確認していない。",
+      "scope": "public_video_companion",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "openbjj-torreando",
+      "display_title": "Open BJJ／Torreando Pass",
+      "source_url": "https://www.open-bjj.com/transitions/torreando-pass",
+      "author": "Open BJJ（記事ページに個人著者の表示なし）",
+      "checked_on": "2026-11-17",
+      "checked_section": "Key Grips、Timing、Typical Counters",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-over-under-gurgel",
+      "display_title": "Grapplearts／How To Do the Over-Under Pass",
+      "source_url": "https://www.grapplearts.com/how-to-do-the-over-under-pass/",
+      "author": "Stephan Kesting（Fabio Gurgelの公開解説を紹介）",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文の片脚ずつの制御と肩で腰・腿の向きを抑える説明",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-over-under-faria",
+      "display_title": "Grapplearts／Bernardo Faria’s guard pass",
+      "source_url": "https://www.grapplearts.com/bernardo-farias-guard-pass-the-over-under/",
+      "author": "Stephan Kesting（Bernardo Fariaへの取材・技の紹介）",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文の片腕を下・片腕を上から使う開始条件",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "openbjj-double-under",
+      "display_title": "Open BJJ／Double-Under Pass",
+      "source_url": "https://www.open-bjj.com/transitions/double-under-pass",
+      "author": "Open BJJ（記事ページに個人著者の表示なし）",
+      "checked_on": "2026-11-17",
+      "checked_section": "Grips、Timing、Common Mistakes、Counters",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "andy-john-wayne",
+      "display_title": "柔術哲学／ジョンウェインスイープ",
+      "source_url": "https://note.com/andy_s_rocky/n/n985421b2020b",
+      "author": "柔術哲学（note: andy_s_rocky）",
+      "checked_on": "2026-11-17",
+      "checked_section": "導入、ニーシールドからの開始、かばい手、脇差しへの例",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "lets-abc-sweeps",
+      "display_title": "Let’s BJJ／A/B Sweep Decision Systems",
+      "source_url": "https://letsbjj.com/en/news/news-20260615-guide-jordan-ab-sweep-systems/",
+      "author": "Let’s BJJ編集部（Jordan Teaches Jiujitsuの解説紹介）",
+      "checked_on": "2026-11-17",
+      "checked_section": "Half GuardのJohn Wayne Sweepと反応別の選択",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "bjjf-giles-knee-lever",
+      "display_title": "BJJ Fanatics／Counter A Common Half Guard Sweep",
+      "source_url": "https://bjjfanatics.com/blogs/news/counter-a-common-half-guard-sweep",
+      "author": "BJJ Fanatics編集部（Lachlan Gilesの解説紹介）",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文の上側が相手の腰の入りと自分の膝の角度を管理する話",
+      "review_note": "時刻は記事に言及があるが、再生確認済みの時刻としては登録しない。",
+      "scope": "public_video_companion",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "flo-wardzinski-butterfly",
+      "display_title": "FloGrappling／How Adam Wardzinski Funnels The Best In The World Into His Butterfly Guard",
+      "source_url": "https://www.flograppling.com/articles/13546176-how-adam-wardzinski-funnels-the-best-in-the-world-into-his-butterfly-guard",
+      "author": "FloGrappling編集部（Adam Wardzińskiの試合分析）",
+      "checked_on": "2026-11-17",
+      "checked_section": "Knee lever / John Wayne と Single Leg X の本文",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "bjjf-wardzinski-knee-catalog",
+      "display_title": "BJJ Fanatics／Knee Lever John Wayne Sweep Engineering",
+      "source_url": "https://bjjfanatics.com/products/knee-lever-john-wayne-sweep-engineering-by-adam-wardzinski",
+      "author": "BJJ Fanatics（Adam Wardzińskiの教則販売ページ）",
+      "checked_on": "2026-11-17",
+      "checked_section": "教則名と公開目次",
+      "review_note": "商品ページのみ。教則内の手順や映像は取り込んでいない。",
+      "scope": "public_catalog_only",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "yonekura-outside-public-note",
+      "display_title": "米倉大貴／アウトサイドパスの公開文",
+      "source_url": "https://www.patreon.com/daikibjj/posts/172442284",
+      "author": "米倉大貴",
+      "checked_on": "2026-11-17",
+      "checked_section": "公開本文の左右へ動くときの手の位置と相手の膝の伸縮",
+      "review_note": "表示された公開本文を確認。会員向け解説と動画の中身は未確認。",
+      "scope": "public_snippet_only",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "yonekura-retention-public-note",
+      "display_title": "米倉大貴／ガードリテンションセミナーの技術を一部紹介",
+      "source_url": "https://note.com/daikibjj/n/n980709dd5c72",
+      "author": "米倉大貴",
+      "checked_on": "2026-11-17",
+      "checked_section": "公開導入とアウトサイドパスに対するフレーム・グリップカットの見出し",
+      "review_note": "導入と項目を確認。購入者専用動画の手順は未確認。",
+      "scope": "public_snippet_only",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-bridge-marcelo",
+      "display_title": "Grapplearts／A Simple Tweak to Develop a Powerful Bridge in BJJ",
+      "source_url": "https://www.grapplearts.com/develop-powerful-bridge-bjj/",
+      "author": "Stephan Kesting（Marcelo Garciaの動きに言及）",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文の首に乗らないブリッジ、足の支持と腰の持ち上げ",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-roadmap-v15",
+      "display_title": "Grapplearts／A Roadmap for BJJ 1.5",
+      "source_url": "https://www.grapplearts.com/wp-content/uploads/2018/03/Roadmap-for-BJJ-1.5-1.pdf",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "Mount章のDefensive Transitions（upa と elbow-knee escape）",
+      "review_note": "公開PDFの該当節の本文を確認。PDFは転載しない。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "gracie-elbow-escape",
+      "display_title": "Gracie University／Elbow Escape (Mount)",
+      "source_url": "https://www.gracieuniversity.com/Pages/Public/Lesson?enc=y3d1ZdpD9gBGMD9tpU5Z%2Fg%3D%3D",
+      "author": "Gracie University（Ryron Gracie・Rener Gracieの公開講座案内）",
+      "checked_on": "2026-11-17",
+      "checked_section": "公開導入のTrap and RollとElbow Escapeの使い分け",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_snippet_only",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-rnc",
+      "display_title": "Grapplearts／A Roadmap for the Rear Naked Choke",
+      "source_url": "https://www.grapplearts.com/a-roadmap-for-the-rear-naked-choke-2/",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文のバックからの裸絞めと腕を通すまでの難しさ",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-rnc-defense",
+      "display_title": "Grapplearts／How to Defend and Escape the Rear Naked Choke",
+      "source_url": "https://www.grapplearts.com/how-to-defend-and-escape-the-rear-naked-choke/",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文の絞めの完成前に守る段階",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-back-defense",
+      "display_title": "Grapplearts／Defending and Escaping When Someone is On Your Back!",
+      "source_url": "https://www.grapplearts.com/defending-and-escaping-when-someone-is-on-your-back/",
+      "author": "Stephan Kesting（Burton Richardsonの解説）",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文の絞め側の腕と安全に離脱する方向",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ijf-okuri-eri",
+      "display_title": "国際柔道連盟／Okuri-eri-jime",
+      "source_url": "https://judo.ijf.org/techniques/Okuri-eri-jime",
+      "author": "International Judo Federation",
+      "checked_on": "2026-11-17",
+      "checked_section": "技名と背後から左右の襟を制御する説明",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-front-guillotine",
+      "display_title": "Grapplearts／Transitioning from a Front Headlock to Guillotine",
+      "source_url": "https://www.grapplearts.com/transitioning-from-a-front-headlock-to-guillotine/",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文のフロントヘッドロック、姿勢を崩す順序、グリップ移行",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-straight-ankle",
+      "display_title": "Grapplearts／The Most Common Ankle Lock Mistake",
+      "source_url": "https://www.grapplearts.com/the-most-common-ankle-lock-mistake/",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文の同義語と前腕を置く高さ、低強度での確認",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-leglock-defense",
+      "display_title": "Grapplearts／Shutting Down the Leglock Game",
+      "source_url": "https://www.grapplearts.com/shutting-down-the-leglock-game/",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文の足関節に入られる前からの段階別防御",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-wrestling-bjj",
+      "display_title": "Grapplearts／Top 10 Wrestling Moves for BJJ",
+      "source_url": "https://www.grapplearts.com/wrestling-moves-for-bjj/",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文のDouble Leg、Single Leg、Sprawl Defence",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ijf-de-ashi",
+      "display_title": "国際柔道連盟／De-ashi-harai",
+      "source_url": "https://judo.ijf.org/techniques/De-ashi-harai",
+      "author": "International Judo Federation",
+      "checked_on": "2026-11-17",
+      "checked_section": "技名と進む足へ完全に荷重が移る前に払う定義",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ijf-tsubame",
+      "display_title": "国際柔道連盟／Tsubame-gaeshi",
+      "source_url": "https://judo.ijf.org/techniques/Tsubame-gaeshi",
+      "author": "International Judo Federation",
+      "checked_on": "2026-11-17",
+      "checked_section": "出足払に対して反対脚へ荷重し、狙われた脚を引く定義",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ijf-okuri-ashi",
+      "display_title": "国際柔道連盟／Okuri-ashi-harai",
+      "source_url": "https://judo.ijf.org/techniques/Okuri-ashi-harai",
+      "author": "International Judo Federation",
+      "checked_on": "2026-11-17",
+      "checked_section": "送足払の名称と横移動に合わせる定義",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ibjjf-rulebook-official",
+      "display_title": "IBJJF／Books and Videos",
+      "source_url": "https://ibjjf.com/books-videos/",
+      "author": "International Brazilian Jiu-Jitsu Federation",
+      "checked_on": "2026-11-17",
+      "checked_section": "ルールブックと禁止技一覧の公式公開窓口",
+      "review_note": "公式索引を確認。大会要項が指定する版を使用する。",
+      "scope": "official_rule_source",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ibjjf-rule-2027",
+      "display_title": "IBJJF／Rule Changes 2027",
+      "source_url": "https://ibjjf.com/rule-changes-2027/",
+      "author": "International Brazilian Jiu-Jitsu Federation",
+      "checked_on": "2026-11-17",
+      "checked_section": "施行日 2027-01-01、Straight foot lockの禁止区分",
+      "review_note": "変更告知を確認。2026年の大会や他団体に自動適用しない。",
+      "scope": "official_rule_source",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ijf-hadaka",
+      "display_title": "国際柔道連盟／Hadaka-jime",
+      "source_url": "https://judo.ijf.org/techniques/Hadaka-jime",
+      "author": "International Judo Federation",
+      "checked_on": "2026-11-17",
+      "checked_section": "襟を使わず背後から首を絞める柔道の技名。BJJの組み手とは区別する。",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "bjjmedia-guillotine",
+      "display_title": "BJJ Media／Guillotine",
+      "source_url": "https://bjj.media/technique/guillotine",
+      "author": "BJJ Media（ページに個人著者の表示なし）",
+      "checked_on": "2026-11-17",
+      "checked_section": "本文の首だけ／腕入りの区別と、手が閉じる前の守り",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "jbjjf-rulebook-ja",
+      "display_title": "JBJJF／IBJJFルールブック日本語版2024",
+      "source_url": "https://www.jbjjf.com/wp-content/uploads/2024/11/JP_IBJJF_RulesBook_JUN2024_1.pdf",
+      "author": "日本ブラジリアン柔術連盟",
+      "checked_on": "2026-11-17",
+      "checked_section": "採点と禁止行為についての旧公開日本語版",
+      "review_note": "用語の照合用。対象大会の現行版は大会要項を確認する。",
+      "scope": "official_rule_source",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-triangle-posture",
+      "display_title": "Grapplearts／Pre-planning the Tap",
+      "source_url": "https://www.grapplearts.com/pre-planning-the-tap-and-climbing-everest/",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "スパイダーからの三角に対する姿勢・組み手と、完成前後の防御",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "evolve-triangle",
+      "display_title": "Evolve Daily／The Triangle Choke In BJJ Explained",
+      "source_url": "https://evolve-mma.com/blog/bjj-101-the-triangle-choke/",
+      "author": "Evolve MMA編集部",
+      "checked_on": "2026-11-17",
+      "checked_section": "クローズドの片腕と首、姿勢の崩し、角度",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "bjjf-osiander-armbar",
+      "display_title": "BJJ Fanatics／How To Defend And Escape The Arm Bar Every Time",
+      "source_url": "https://bjjfanatics.com/blogs/news/how-to-defend-and-escape-the-arm-bar-every-time",
+      "author": "BJJ Fanatics編集部（Kurt Osianderの解説紹介）",
+      "checked_on": "2026-11-17",
+      "checked_section": "肘を体に近づける早期の防御",
+      "review_note": "公開本文を確認。映像と後半の脱出手順は採用していない。",
+      "scope": "public_video_companion",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "bjjf-sakuraba-kimura",
+      "display_title": "BJJ Fanatics／Fine-Tuning the Basics: The Kimura",
+      "source_url": "https://bjjfanatics.com/blogs/news/fine-tuning-the-basics-the-kimura",
+      "author": "BJJ Fanatics編集部（桜庭和志への取材）",
+      "checked_on": "2026-11-17",
+      "checked_section": "サイドからのキムラと、下の人が腕を体に寄せた場合",
+      "review_note": "公開本文を参照。実演動画の時刻は確認していない。",
+      "scope": "public_video_companion",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "method-americana",
+      "display_title": "Method Jiu-Jitsu／Americana Submission in BJJ",
+      "source_url": "https://www.methodjjtulsa.com/blog/americana-bjj-tulsa",
+      "author": "Method Jiu-Jitsu（Tulsa）",
+      "checked_on": "2026-11-17",
+      "checked_section": "How to Defend the Americanaの手首固定と肘を戻す話",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "method-arm-triangle",
+      "display_title": "Method Jiu-Jitsu／Arm Triangle Choke in BJJ",
+      "source_url": "https://www.methodjjtulsa.com/blog/arm-triangle-choke-bjj-tulsa",
+      "author": "Method Jiu-Jitsu（Tulsa）",
+      "checked_on": "2026-11-17",
+      "checked_section": "How to Defend the Arm Triangleの肘、前腕、肩と首の位置",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ga-kimura-control",
+      "display_title": "Grapplearts／The Kimura as a Position",
+      "source_url": "https://www.grapplearts.com/the-kimura-as-a-position/",
+      "author": "Stephan Kesting",
+      "checked_on": "2026-11-17",
+      "checked_section": "公開本文の4の字グリップによる位置制御とトップからのバックテイク",
+      "review_note": "公開本文を確認。動画の再生・時刻は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "avellan-kimura-trap",
+      "display_title": "Kimura Trap System／About",
+      "source_url": "https://kimuratrap.com/about/",
+      "author": "David Avellan／Kimura Trap System",
+      "checked_on": "2026-11-17",
+      "checked_section": "開発者自身の公式紹介と、組み手を使った技の組み立て",
+      "review_note": "本人の公開説明のみ。スクール教材内の手順は扱わない。",
+      "scope": "public_catalog_only",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ijf-yoko-shiho",
+      "display_title": "国際柔道連盟／Yoko-shiho-gatame",
+      "source_url": "https://judo.ijf.org/techniques/Yoko-shiho-gatame",
+      "author": "International Judo Federation",
+      "checked_on": "2026-11-17",
+      "checked_section": "公式の分類とグリップの説明",
+      "review_note": "本文を確認。動画の再生は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
+    },
+    {
+      "id": "ijf-kata-gatame",
+      "display_title": "国際柔道連盟／Kata-gatame",
+      "source_url": "https://judo.ijf.org/techniques/Kata-gatame",
+      "author": "International Judo Federation",
+      "checked_on": "2026-11-17",
+      "checked_section": "公式の分類とグリップの説明",
+      "review_note": "本文を確認。動画の再生は未確認。",
+      "scope": "public_full_body",
+      "source_access_status": "verified",
+      "ai_enabled": false,
+      "rights": {
+        "ai_inference_use": "not_authorized_or_verified",
+        "reproduction": "external_reference_only"
+      }
     }
   ]
 }

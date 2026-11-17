@@ -59,7 +59,6 @@
 #page-coach .chat-turn{width:100%;display:flex;flex-direction:column;gap:12px;padding:11px 0;border-bottom:1px solid #344253}
 #page-coach .chat-turn:last-child{border-bottom:0}
 #page-coach .chat-row{width:100%}
-#page-coach .video-suggestions{align-self:stretch;margin-left:59px;max-width:calc(100% - 59px)}
 @media(max-width:760px){
  .app:has(#page-coach.active){max-width:none;padding:12px 8px 90px}
  #page-coach .coach-only-panel{padding:12px 10px;border-radius:12px}
@@ -72,7 +71,6 @@
  #page-coach .rangel-coach-avatar{width:76px;height:76px;border-radius:18px}
  #page-coach .rangel-hero img{width:90px;height:90px}
  #page-coach .chat-avatar,#page-coach .chat-self{width:38px;height:38px;border-radius:12px}
- #page-coach .video-suggestions{margin-left:0;max-width:100%;padding:10px}
  #page-coach .chat-turn{padding:7px 0 14px;gap:10px}
 }
 
@@ -89,7 +87,6 @@
 .video-channel-note{font-size:11px;color:#9eafc3;line-height:1.5;margin:11px 0 0}
 
 /* Verified public video recommendations (external links; no video hosted). */
-.video-suggestions{margin:2px 0 12px 50px;padding:12px;border:1px solid #445164;background:#1a2633;border-radius:14px;max-width:min(100% - 50px,610px)}
 .video-suggestions h3{font-size:13px;color:#e6ecf5;margin:0 0 11px;font-weight:800}
 .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
 .video-item{display:block;background:#222e3c;border:1px solid #475a70;border-radius:11px;overflow:hidden;text-decoration:none;color:#fff}
@@ -99,7 +96,7 @@
 .video-title{font-size:12px;font-weight:800;line-height:1.45;margin:0 0 5px;overflow-wrap:anywhere}
 .video-sub{font-size:11px;color:#b2c5d5;line-height:1.5;overflow-wrap:anywhere;margin:0}
 .video-search{font-size:12px;display:inline-block;margin-top:10px;color:#9dd5ff;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
-@media(max-width:760px){.video-suggestions{margin-left:0;max-width:100%}.video-grid{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}}
+@media(max-width:760px){.video-grid{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}}
 
 /* Rangel teacher inspired AI identity. No real-person portrait used. */
 .rangel-coach-head{display:flex;align-items:center;gap:13px;margin:4px 0 14px;flex-wrap:wrap}
@@ -130,7 +127,7 @@ body.shared-review .role-switch,body.shared-review .admin-only{display:none!impo
 <div class="app">
  <header class="header"><div class="logo-wrap"><div class="logo" aria-hidden="true">RRT</div><div><div class="brand">RRT BJJ</div><div class="subbrand">MEMBERS · ATTENDANCE & AI COACH</div></div></div><div class="demo-pill">生成AI連携版・個人用</div></header>
  <section class="topline"><div><div class="overline">PERSONAL PREVIEW / 体験版</div><h1 id="screen-title">らんじぇる先生 AIコーチ</h1><p id="screen-subtitle">柔術の疑問を文章で相談できます。</p></div><div class="role-switch" aria-label="デモ用の画面切替"><button type="button" id="role-member" class="active">会員画面</button><button type="button" id="role-admin">管理者画面</button></div></section>
- <nav class="tabs" id="tabs"><button type="button" data-page="checkin">出席</button><button type="button" data-page="ranking">ランキング</button><button type="button" data-page="coach" class="active">AIコーチ</button><button type="button" data-page="admin" class="admin-only" hidden>出席管理</button></nav>
+ <nav class="tabs" id="tabs"><button type="button" data-page="checkin">出席</button><button type="button" data-page="ranking">ランキング</button><button type="button" data-page="coach" class="active">AIコーチ</button><button type="button" data-page="library">動画</button><button type="button" data-page="admin" class="admin-only" hidden>出席管理</button></nav>
  <div class="review-banner"><strong>個人試用版 v13</strong> ｜ AIコーチはGemini接続。出席とランキングは端末内のサンプルで、本番データではありません。入力した質問はGoogleのAPIに送信されます。</div>
  <main>
   <section class="page" id="page-checkin">
@@ -175,9 +172,9 @@ body.shared-review .role-switch,body.shared-review .admin-only{display:none!impo
         </div>
         <span id="ai-connection" class="pill">接続確認中</span>
       </div>
-      <p class="hint">柔術の悩みを文章で聞いてください。初心者にもわかりやすく、今日の練習で試せるポイントを答えます。関連する無料YouTube動画も確認できます。</p>
+      <p class="hint">柔術の悩みを文章で聞いてください。初心者にもわかりやすく、今日の練習で試せるポイントを答えます。</p>
       <div class="rangel-hero"><img data-rrt-mascot src="" alt="らんじぇる先生のイラスト"><div class="rangel-hero-text"><strong>らんじぇる先生とチャット</strong><p>気になることをそのまま文章で聞いてください。やさしく整理して、次に意識するとよいポイントを文字で返します。</p></div></div>
-      <div class="notice-box" id="ai-system-note">生成AIはGemini APIを通じて応答します。有料教則は目次データのみ登録済みです。本編の動画・字幕は未解析です。競技ルールは団体・開催日などによって異なります。</div>
+      <div class="notice-box" id="ai-system-note">確認した技術資料をもとに回答します。有料教則は目次データのみ登録済みです。本編の動画・字幕は未解析です。競技ルールは団体・開催日などによって異なります。</div>
       <div class="quick-prompts" id="quick-prompts">
         <button type="button" data-q="ハーフガードでクロスフェイスを取られて潰されます。どうすればいい？">ハーフガードで潰される</button>
         <button type="button" data-q="パスガードで相手の脚が戻ってきます。基本の考え方を教えて">パスガード</button>
@@ -195,7 +192,7 @@ body.shared-review .role-switch,body.shared-review .admin-only{display:none!impo
           <button class="ghostbtn" id="ai-submit" type="submit">送信する</button>
         </div>
       </form>
-      <div class="coach-bottom"><button type="button" class="ghostbtn" id="ai-clear">会話をクリア</button><span class="hint">質問はGemini APIに送信されます（無料枠ではサービス改善に使用される場合があります）</span></div>
+      <div class="coach-bottom"><button type="button" class="ghostbtn" id="ai-clear">会話をクリア</button><span class="hint">質問の解釈にGeminiを使う場合があります。</span></div>
     </div>
     <div class="panel review-panel">
       <div class="panel-title">PERSONAL FEEDBACK</div>
@@ -210,10 +207,24 @@ body.shared-review .role-switch,body.shared-review .admin-only{display:none!impo
       </div>
     </div>
   </section>
+  <section class="page" id="page-library">
+    <div class="panel">
+      <h2 class="section-heading">動画ライブラリ</h2>
+      <form id="video-form">
+        <label for="video-query">技や場面で探す</label>
+        <div class="ai-question-box">
+          <input type="search" class="input" id="video-query" maxlength="150" placeholder="例　ボトムのハーフガード">
+          <button class="ghostbtn" type="submit">検索する</button>
+        </div>
+      </form>
+      <p id="video-status" class="hint" role="status"></p>
+      <div id="video-library" class="video-grid"></div>
+    </div>
+  </section>
  </main>
  <div class="footer">個人用のローカル試作版。AIはAPIキー設定時のみ利用可能です。会員認証・クラウド出欠共有・実際の道場内にいることの証明は未実装です。</div>
 </div>
-<nav class="navbar-bottom" aria-label="ページ切り替え"><button type="button" data-page="checkin">出席</button><button type="button" data-page="ranking">ランキング</button><button type="button" data-page="coach" class="active">AIコーチ</button><button type="button" data-page="admin" class="admin-only" hidden>出席管理</button></nav>
+<nav class="navbar-bottom" aria-label="ページ切り替え"><button type="button" data-page="checkin">出席</button><button type="button" data-page="ranking">ランキング</button><button type="button" data-page="coach" class="active">AIコーチ</button><button type="button" data-page="library">動画</button><button type="button" data-page="admin" class="admin-only" hidden>出席管理</button></nav>
 <div class="modal" id="camera-modal" role="dialog" aria-modal="true" aria-labelledby="camera-title"><div class="modal-card"><div class="modal-top"><h2 id="camera-title">QRコードをスキャン</h2><button id="close-camera" type="button" class="iconbtn" aria-label="閉じる">×</button></div><p class="hint">道場のQRコードを枠内に映してください。</p><div class="camera-scan-frame"><video id="camera-video" class="camera-video" autoplay muted playsinline></video><div class="scan-outline"></div></div><div id="camera-message" class="hint">カメラを準備しています…</div><button type="button" class="ghostbtn" id="camera-cancel" style="margin-top:15px;width:100%">キャンセル</button></div></div>
 <div class="toast" role="status" aria-live="polite" id="toast"></div>
 <script>
@@ -278,7 +289,7 @@ function createCheckin(memberId,classId,date,offset,source){
 function activeDayCount(records,memberId,filter){return new Set(records.filter(r=>r.memberId===memberId&&(r.technique||r.sparring)&&filter(r.date)).map(r=>r.date)).size}
 const thisMonth=(s)=>s.slice(0,7)===today().slice(0,7);
 const thisYear=(s)=>s.slice(0,4)===today().slice(0,4);
-function changePage(next){if(next==='admin'&&role!=='admin')return;page=next;all('.page').forEach(e=>e.classList.toggle('active',e.id===`page-${page}`));all('[data-page]').forEach(e=>e.classList.toggle('active',e.dataset.page===page));const titles={checkin:'出席チェックイン',ranking:'出席ランキング',admin:'出席管理',coach:'らんじぇる先生 AIコーチ'};const sub={checkin:'QRを読み取るだけで出席を登録できます。',ranking:'練習した日数から自動でランキングを作成。',admin:'管理者が出席を確認・修正できます。',coach:'らんじぇる先生と対話しているような雰囲気で、文章だけで柔術の相談ができます。'};$('screen-title').textContent=titles[page];$('screen-subtitle').textContent=sub[page];renderAll();window.scrollTo({top:0,behavior:'smooth'});}
+function changePage(next){if(next==='admin'&&role!=='admin')return;page=next;all('.page').forEach(e=>e.classList.toggle('active',e.id===`page-${page}`));all('[data-page]').forEach(e=>e.classList.toggle('active',e.dataset.page===page));const titles={checkin:'出席チェックイン',ranking:'出席ランキング',admin:'出席管理',coach:'らんじぇる先生 AIコーチ',library:'動画ライブラリ'};const sub={checkin:'QRを読み取るだけで出席を登録できます。',ranking:'練習した日数から自動でランキングを作成。',admin:'管理者が出席を確認・修正できます。',coach:'らんじぇる先生と対話しているような雰囲気で、文章だけで柔術の相談ができます。',library:'確認した無料公開の柔術動画を探せます。'};$('screen-title').textContent=titles[page];$('screen-subtitle').textContent=sub[page];renderAll();if(page==='library')loadVideoLibrary();window.scrollTo({top:0,behavior:'smooth'});}
 function changeRole(next){role=next;$('role-member').classList.toggle('active',role==='member');$('role-admin').classList.toggle('active',role==='admin');all('.admin-only').forEach(e=>e.hidden=role!=='admin');changePage(role==='admin'?'admin':'checkin')}
 function checkinMessage(result){const box=$('checkin-status');const ok=!!result.record;box.innerHTML=`<div class="status ${ok?'':'fail'}"><div class="status-symbol">${ok?'✓':'!'}</div><div><b>${ok?'出席登録完了！':'確認してください'}</b><span>${ok?'今日も練習お疲れさまです。':esc(result.error)}</span></div></div>`;notify(ok?'出席を登録しました':result.error)}
 function renderCheckin(){
@@ -387,19 +398,14 @@ function appendBubble(role,content,turn=activeChatTurn){
     const self=document.createElement('div');self.className='chat-self';self.textContent='YOU';
     row.appendChild(self);
   }
-  const firstVideo=turn.querySelector('.video-suggestions');
-  if(role!=='user' && firstVideo)turn.insertBefore(row,firstVideo);
-  else turn.appendChild(row);
+  turn.appendChild(row);
   keepLatestVisible();
   return turn;
 }
-function appendVideoReferences(videos,turn){
-  if(!turn?.isConnected)return;
-  const items=Array.isArray(videos)?videos.slice(0,3):[];
-  if(!items.length)return;
-  const section=document.createElement('section');section.className='video-suggestions';
-  const heading=document.createElement('h3');heading.textContent='関連する無料YouTube動画';section.appendChild(heading);
-  const grid=document.createElement('div');grid.className='video-grid';
+function renderLibraryVideos(videos){
+  const grid=$('video-library');
+  grid.replaceChildren();
+  const items=Array.isArray(videos)?videos:[];
   for(const video of items){
     if(!video||!/^[a-zA-Z0-9_-]{11}$/.test(video.id||''))continue;
     if(video.url!=='https://www.youtube.com/watch?v='+video.id)continue;
@@ -411,11 +417,27 @@ function appendVideoReferences(videos,turn){
     const sub=document.createElement('p');sub.className='video-sub';sub.textContent=(video.channel||'YouTube')+(video.preview_only?'｜教則の紹介・サンプル映像':'');
     meta.append(title,sub);link.append(img,meta);grid.appendChild(link);
   }
-  if(!grid.children.length)return;
-  section.appendChild(grid);
-  turn.appendChild(section);
-  keepLatestVisible();
+  return grid.childElementCount;
 }
+let librarySequence=0;
+async function loadVideoLibrary(){
+  const request=++librarySequence;
+  const q=$('video-query').value.trim();
+  const status=$('video-status');
+  status.textContent='読み込み中…';
+  renderLibraryVideos([]);
+  try{
+    const url='/api/videos?'+new URLSearchParams(q?{q}:{library:'1'});
+    const response=await fetch(url,{cache:'no-store'});
+    if(!response.ok)throw Error('library request');
+    const data=await response.json();
+    if(request!==librarySequence)return;
+    status.textContent=renderLibraryVideos(data.videos)?'':'一致する公開動画はありません。';
+  }catch{
+    if(request===librarySequence)status.textContent='動画一覧を取得できませんでした。';
+  }
+}
+$('video-form').addEventListener('submit',event=>{event.preventDefault();loadVideoLibrary();});
 function setChatError(value){const node=$('ai-error');node.hidden=!value;node.textContent=value||'';}
 function updateChatBusy(flag){
   chatBusy=flag;$('ai-submit').disabled=flag;
@@ -445,13 +467,6 @@ async function askCoach(question,selection){
   chatBox.querySelectorAll('.coach-choices button').forEach(button=>{button.disabled=true;});
   const turn=appendBubble('user',q);chatHistory.push({role:'user',content:q,...(selection?{selection}:{})});
   $('ai-question').value='';updateChatBusy(true);
-  // Independent free public-video lookup; cards appear even when Gemini returns an error.
-  const lastUser=previous.slice().reverse().find(m=>m?.role==='user'&&typeof m.content==='string');
-  fetch('/api/videos',{method:'POST',headers:{'Content-Type':'application/json'},cache:'no-store',body:JSON.stringify({question:q,context:lastUser?.content||'',selection})})
-    .then(r=>{if(!r.ok)throw Error('video lookup');return r.json()})
-    .then(v=>appendVideoReferences(v.videos,turn))
-    .catch(()=>{});
-
   if(window.matchMedia('(max-width:760px)').matches)$('ai-question').blur();
   try{
     const resp=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,history:previous,selection})});
@@ -461,7 +476,6 @@ async function askCoach(question,selection){
     if(!turn?.isConnected)return;
     appendBubble('assistant',body.answer,turn);
     appendCoachChoices(body.choices,turn);
-    // Videos load independently from /api/videos.
     chatHistory.push({role:'assistant',content:body.answer,topic:body.topic});
     if(chatHistory.length>30)chatHistory.splice(0,chatHistory.length-30);
     if(body.mode==='gemini')setConnected('yes','AI接続中');

@@ -116,13 +116,12 @@ async function chat(req, res, id) {
   }
   if (!reserveQuestion(id, res)) return;
   const route = coach.resolveRequest(data.question, data.history, data.selection);
-  const videos = coach.videoCards(route);
   const payload = API_KEY.length >= 12 ? coach.selectPayload(route, data.question) : null;
   const choice = payload ? await selectWithGemini(payload, route) : null;
-  const resolved = coach.interpretRoute(route, choice);
-  const answer = coach.renderAnswer(resolved, route.semantic ? null : choice, videos);
-  const mode = choice ? 'gemini' : resolved.kind === 'guidance' || resolved.videoOnly ? 'guidance' : 'knowledge';
-  return out(res, 200, {answer, model:MODEL, mode, videos, choices:resolved.choices || [], topic:coach.topicForRoute(resolved)});
+  const resolved = coach.textOnlyRoute(coach.interpretRoute(route, choice));
+  const answer = coach.renderAnswer(resolved, route.semantic ? null : choice, []);
+  const mode = choice ? 'gemini' : resolved.kind === 'guidance' ? 'guidance' : 'knowledge';
+  return out(res, 200, {answer, model:MODEL, mode, videos:[], choices:resolved.choices || [], topic:coach.topicForRoute(resolved)});
 }
 
 function videosForQuestion(question, context, selection) {
@@ -134,7 +133,7 @@ function videosForQuestion(question, context, selection) {
 
 const server=http.createServer((req,res)=>{(async()=>{
  const u=new URL(req.url,'https://localhost');const p=u.pathname;
- if(req.method==='GET' && p==='/healthz')return out(res,200,{ok:true, knowledge:'2.0'});
+ if(req.method==='GET' && p==='/healthz')return out(res,200,{ok:true, knowledge:'3.0'});
  if(req.method==='GET'&&p==='/robots.txt'){res.writeHead(200,{'Content-Type':'text/plain','Cache-Control':'no-store'});return res.end('User-agent: *\nDisallow: /\n')}
  if (req.method === 'GET' && p === '/open') {
   return bearer(req) ? redirect(res, '/members/') : page(res, trialOpenPage);
@@ -175,6 +174,7 @@ const server=http.createServer((req,res)=>{(async()=>{
    return out(res, 200, videosForQuestion(data?.question, data?.context, data?.selection));
  }
  if (p === '/api/videos' && req.method === 'GET') {
+   if (u.searchParams.get('library') === '1') return out(res, 200, {videos:coach.videoLibrary()});
    return out(res, 200, videosForQuestion(u.searchParams.get('q'), u.searchParams.get('context')));
  }
 

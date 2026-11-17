@@ -1,0 +1,669 @@
+{
+  "threeForms": [
+    [
+      "knee-on-belly",
+      "ニーオンベリーとは？",
+      "KOB",
+      "横に回って相手のお腹に膝を乗せ、反対足で床を支えるのは何？",
+      "片膝"
+    ],
+    [
+      "side-control",
+      "サイドコントロールとは？",
+      "サイドキープの基本",
+      "自分が上で相手の横から胸を合わせて押さえたい",
+      "胸"
+    ],
+    [
+      "torreando-pass",
+      "トレアンドって何？",
+      "ブルファイターではなく bullfighter pass の意味",
+      "自分が上。両足首を持って脚を横へ流し、反対側を回りたい",
+      "脚"
+    ],
+    [
+      "over-under-pass",
+      "オーバーアンダーパスとは？",
+      "over under guard pass",
+      "片腕は相手の脚の下、反対の腕はもう一方の脚の上に被せてパスしたい",
+      "片"
+    ],
+    [
+      "stack-pass",
+      "担ぎパスって何？",
+      "ダブルアンダーパス",
+      "自分は上で、両腕を相手の両脚の下から入れて肩に担いでパスしたい",
+      "両"
+    ],
+    [
+      "john-wayne",
+      "ジョンウェインとは？",
+      "ニーリーバー",
+      "片脚を挟んだ下から腰と膝を横に倒して、上の人をひっくり返したい",
+      "膝"
+    ],
+    [
+      "mount-trap-roll",
+      "ブリッジ返しって何？",
+      "ウパエスケープ",
+      "上にまたがれ、同じ側の腕と足を止めて腰を上げて返したい",
+      "同じ側"
+    ],
+    [
+      "mount-elbow-knee",
+      "エルボーニーエスケープって何？",
+      "elbow escape",
+      "胴体をまたがれて、ひじで相手の腰を受けて膝を間に戻したい",
+      "膝"
+    ],
+    [
+      "bridge-basics",
+      "ブリッジとは？",
+      "hip bridge",
+      "マットに仰向けになり、足を床に置いて腰だけ浮かせる練習は何？",
+      "腰"
+    ],
+    [
+      "hip-escape-basics",
+      "エビ運動とは？",
+      "shrimping",
+      "床で肩を残して腰を横へ引き、ひざを胸に近づける動きは何ですか",
+      "腰"
+    ],
+    [
+      "rear-naked-choke",
+      "裸絞めとは？",
+      "RNC",
+      "背後から襟を使わず腕で相手の首を絞める形の呼び方は？",
+      "腕"
+    ],
+    [
+      "sliding-collar-choke",
+      "送り襟絞めって何？",
+      "sliding collar choke",
+      "道着で背中から相手の左右の襟を持って、一方を首に沿わせて絞めるのは何？",
+      "襟"
+    ],
+    [
+      "guillotine",
+      "ギロチンとは？",
+      "フロントチョーク",
+      "正面で頭が下がった相手の首に腕を回して、脇に抱える絞めは？",
+      "首"
+    ],
+    [
+      "straight-ankle-lock",
+      "ストレートアンクルロックって何？",
+      "アキレス腱固め",
+      "かかとのすぐ上に前腕を置いて相手の足首を伸ばす関節技って何？",
+      "足首"
+    ],
+    [
+      "single-leg-takedown",
+      "シングルレッグテイクダウンとは？",
+      "片足タックル",
+      "立ちで相手の片方の脚を抱えたい。残ったほうで立っている",
+      "片脚"
+    ],
+    [
+      "double-leg-takedown",
+      "ダブルレッグテイクダウンって何？",
+      "両足タックル",
+      "立っていて相手の両方の足をいっぺんにまとめたい",
+      "両脚"
+    ],
+    [
+      "de-ashi-harai",
+      "出足払って何？",
+      "であしばらい",
+      "立ちで相手が一歩出す足に体重が乗る前、足首をずらして崩したい",
+      "足"
+    ],
+    [
+      "okuri-ashi-harai",
+      "送足払とは？",
+      "おくりあしばらい",
+      "立ちで相手と横に歩いて両足が寄ったら足裏で送る技を教えて",
+      "横"
+    ],
+    [
+      "closed-guard",
+      "クローズドガードとは？",
+      "closed guard",
+      "相手の腰の後ろで足首を組んでいる形の名前は？",
+      "姿勢"
+    ],
+    [
+      "half-butterfly",
+      "ハーフバタフライとは？",
+      "バタフライハーフ",
+      "片足を挟んで下から足の甲を相手のももの内側に入れて持ち上げたい",
+      "フック"
+    ],
+    [
+      "butterfly-sweep",
+      "バタフライスイープとは？",
+      "フックスイープ",
+      "座った状態で足の甲を内ももに当て、相手を横へ返したい",
+      "フック"
+    ],
+    [
+      "spider",
+      "スパイダーガードとは？",
+      "スパイダー",
+      "相手の両袖を取って、二の腕に足の裏を当てたら上の人が立ってきた",
+      "袖"
+    ],
+    [
+      "lasso",
+      "ラッソーガードとは？",
+      "lasso",
+      "袖を持って、相手の腕の外に脚を回して内側に巻くガードは？",
+      "袖"
+    ],
+    [
+      "de-la-riva",
+      "デラヒーバガードとは？",
+      "DLR",
+      "相手が立ち、脚の外から内に足を回して足の甲を引っ掛けるガードは？",
+      "外"
+    ],
+    [
+      "single-leg-x",
+      "シングルレッグXガードとは？",
+      "SLX",
+      "相手の片脚を両脚で囲い、足裏を相手の腰へ当て、もう片方の足をからめる形は？",
+      "足"
+    ],
+    [
+      "x-guard",
+      "Xガードとは？",
+      "フルX",
+      "相手の片脚を肩で支え、反対の脚に足を交差させたガードは何？",
+      "脚"
+    ],
+    [
+      "scissor-sweep",
+      "シザースイープとは？",
+      "ハサミスイープ",
+      "すねを相手の胸に置いて、反対の脚で相手の足を払って返したい",
+      "脚"
+    ],
+    [
+      "hip-bump",
+      "ヒップバンプスイープとは？",
+      "シットアップスイープ",
+      "足首を相手の背中で組むところから上体を起こし、お尻を上げて上を取りたい",
+      "腰"
+    ],
+    [
+      "flower-sweep",
+      "フラワースイープとは？",
+      "ペンデュラムスイープ",
+      "相手を両脚で囲って足首を組み、太腿の裏に腕を入れ、反対の手を止めてひっくり返したい",
+      "脚"
+    ],
+    [
+      "knee-cut",
+      "ニーカットとは？",
+      "ニースライスって何？",
+      "自分が上で、相手の太腿に膝を斜めに滑らせて抜けたい",
+      "膝"
+    ],
+    [
+      "leg-drag",
+      "レッグドラッグとは？",
+      "leg drag",
+      "相手の脚を対角に流してから腰の横を押さえたい",
+      "腰"
+    ],
+    [
+      "back-take",
+      "バックテイクとは？",
+      "back take",
+      "相手の背後から胸を合わせ、左右の足を内に入れて背中を取りたい",
+      "背中"
+    ],
+    [
+      "guard-retention",
+      "ガードリテンションとは？",
+      "guard retention",
+      "相手が横に回り込む前に膝を間に入れ直したい",
+      "膝"
+    ],
+    [
+      "general-mount-top",
+      "マウントとは？",
+      "mount position",
+      "相手の胴をまたいで両膝を床に置く形は？",
+      "胴をまた"
+    ],
+    [
+      "general-turtle-bottom",
+      "タートルとは？",
+      "亀の姿勢",
+      "両肘と両膝をつき、頭を下げて丸くなっている形は？",
+      "両膝"
+    ],
+    [
+      "open-guard",
+      "オープンガードとは？",
+      "open guard",
+      "仰向けで足を組まず、相手との間に足を添えて距離を取りたい",
+      "足首を背中側で組まず"
+    ],
+    [
+      "half-underhook",
+      "ハーフガードって何？",
+      "half guard",
+      "相手の片足だけを両脚で挟む位置の名前は？",
+      "片脚"
+    ],
+    [
+      "triangle",
+      "三角絞めって何？",
+      "triangle choke",
+      "自分は下で相手の首と片腕を脚で囲って絞めたい",
+      "脚"
+    ],
+    [
+      "armbar",
+      "腕十字って何？",
+      "armbar",
+      "クローズドの下から相手の片腕を腿で挟んで伸ばす技は？",
+      "肘"
+    ],
+    [
+      "kimura",
+      "キムラロックって何？",
+      "逆腕がらみ",
+      "下で曲がった腕の手首を取って、相手の背中側に動かして肩を狙う技は？",
+      "肩"
+    ],
+    [
+      "americana",
+      "アメリカーナって何？",
+      "keylock",
+      "自分が上、曲げた手首を頭側の床に押さえ、肘の下から腕を通す技は？",
+      "肘"
+    ],
+    [
+      "arm-triangle",
+      "肩固めって何？",
+      "アームトライアングル",
+      "相手の上で相手の腕を顔の横に持っていき、腕と首をこちらの腕で囲う絞めは？",
+      "肩"
+    ],
+    [
+      "kimura-trap-control",
+      "キムラトラップとは？",
+      "キムラコントロール",
+      "自分の手首を握る形で曲がった腕を止め、相手の背後に回りたい",
+      "背中"
+    ]
+  ],
+  "edgeCases": [
+    {
+      "id": "s01",
+      "type": "direction",
+      "question": "上からおなかにひざを乗せられた。どこに手を置く？",
+      "entry": "knee-on-belly-escape",
+      "must": "肘"
+    },
+    {
+      "id": "s02",
+      "type": "direction",
+      "question": "相手にトレアンドされるとき、どこを見る？",
+      "entry": "torreando-defense",
+      "must": "脚"
+    },
+    {
+      "id": "s03",
+      "type": "direction",
+      "question": "自分がトレアンドを仕掛けたけど、相手に袖を取られた",
+      "entry": "torreando-pass",
+      "must": "脚"
+    },
+    {
+      "id": "s04",
+      "type": "direction",
+      "question": "ダブルアンダーで担がれた",
+      "entry": "stack-defense",
+      "must": "腰"
+    },
+    {
+      "id": "s05",
+      "type": "direction",
+      "question": "相手のオーバーアンダーを防ぐには？",
+      "entry": "over-under-defense",
+      "must": "膝"
+    },
+    {
+      "id": "s06",
+      "type": "direction",
+      "question": "立ちで相手に片方の足だけつかまれた。何を見る？",
+      "entry": "single-leg-defense",
+      "must": "足"
+    },
+    {
+      "id": "s07",
+      "type": "direction",
+      "question": "相手が立っているときに、私の両足をまとめようと取りに来た",
+      "entry": "double-leg-defense",
+      "must": "腰"
+    },
+    {
+      "id": "s08",
+      "type": "direction",
+      "question": "立って組んで一歩出したとき前に出た足をすくわれた",
+      "entry": "de-ashi-defense",
+      "must": "反対"
+    },
+    {
+      "id": "s09",
+      "type": "direction",
+      "question": "相手の膝が、私のももの上を斜めに滑ってきた",
+      "entry": "knee-cut-defense",
+      "must": "膝"
+    },
+    {
+      "id": "s10",
+      "type": "direction",
+      "question": "下で相手の片足に絡んだまま、肩で顔をよこへ押されて起きられません",
+      "entry": "half-crossface",
+      "must": "前腕"
+    },
+    {
+      "id": "s11",
+      "type": "phase",
+      "question": "上で相手の脚の外まで回れたと思ったら、すぐひざを間に差し直された",
+      "entry": "pass-settle-top",
+      "must": "膝"
+    },
+    {
+      "id": "s12",
+      "type": "negation",
+      "question": "上から相手の脚をまだ越えていない。向こうの膝が間にあって横へ行けない",
+      "entry": "passing-grips",
+      "must": "膝"
+    },
+    {
+      "id": "s13",
+      "type": "negation",
+      "question": "スタックパスではなくオーバーアンダーのやり方",
+      "entry": "over-under-pass",
+      "must": "片"
+    },
+    {
+      "id": "s14",
+      "type": "negation",
+      "question": "横から胸を押さえられ肘が抜けない。相手の脚はもう挟んでいない",
+      "entry": "side-bottom",
+      "must": "膝"
+    },
+    {
+      "id": "s15",
+      "type": "description",
+      "question": "背中に乗られて、相手の腕が首に伸びてくる。まず何を守る？",
+      "entry": "rear-naked-choke-defense",
+      "must": "腕"
+    },
+    {
+      "id": "s16",
+      "type": "description",
+      "question": "正面から自分の頭を相手のわきに抱えられた。立っていて首に腕が回っている",
+      "entry": "guillotine-defense",
+      "must": "首"
+    },
+    {
+      "id": "s17",
+      "type": "description",
+      "question": "足首を脇に取られて、足の位置が固まってきた",
+      "entry": "straight-ankle-defense",
+      "must": "タップ"
+    },
+    {
+      "id": "s18",
+      "type": "catalog",
+      "question": "米倉選手のJポイントの手の位置を詳しく",
+      "entry": null,
+      "must": "教則での定義",
+      "also": "Jozef Chen"
+    },
+    {
+      "id": "s19",
+      "type": "variant",
+      "question": "ワジンスキのバタフライで相手がフックを外したら？",
+      "entry": "wardzinski-butterfly",
+      "must": "フック",
+      "also": "公開"
+    },
+    {
+      "id": "s20",
+      "type": "variant",
+      "question": "米倉選手のアウトサイドキャンピングで膝が伸びるとき、手の位置はどこを見る？",
+      "entry": "yonekura-outside-clue",
+      "must": "公開",
+      "also": "膝"
+    },
+    {
+      "id": "s21",
+      "type": "variant",
+      "question": "RRTのサイドからマウント、肩固めへの連携を知りたい",
+      "entry": "rrt-pin-chain",
+      "must": "練習"
+    },
+    {
+      "id": "s22",
+      "type": "scope",
+      "question": "米倉選手のアウトサイドキャンピング中、相手がインバーテッドしたら？",
+      "entry": "outside-inversion",
+      "must": "指定の教則",
+      "choices": 2
+    },
+    {
+      "id": "s23",
+      "type": "comparison",
+      "question": "裸絞めと送り襟絞めはどう違う？",
+      "entries": [
+        "rear-naked-choke",
+        "sliding-collar-choke"
+      ],
+      "must": "襟"
+    },
+    {
+      "id": "s24",
+      "type": "competition",
+      "question": "IBJJFの2027年のアダルト白帯はストレートアンクルロック使える？",
+      "entry": "general-ibjjf-straight-foot-lock",
+      "must": "2027年1月1日",
+      "also": "禁止"
+    },
+    {
+      "id": "s25",
+      "type": "competition",
+      "question": "JBJJFの2027年の白帯でもストレートアンクルロックが使えるの？",
+      "entry": null,
+      "must": "どの大会",
+      "exclude": "禁止です",
+      "choices": 2
+    },
+    {
+      "id": "s26",
+      "type": "competition",
+      "question": "IBJJFの2026年の白帯大会でストレートフットロックは反則？",
+      "entry": "general-ibjjf-straight-foot-lock",
+      "must": "開催日がそれより前",
+      "also": "大会要項"
+    },
+    {
+      "id": "s27",
+      "type": "comparison",
+      "question": "出足払と送足払は同じ技？",
+      "entries": [
+        "de-ashi-harai",
+        "okuri-ashi-harai"
+      ],
+      "must": "横"
+    },
+    {
+      "id": "s28",
+      "type": "clarification",
+      "question": "横から胸を押さえられて、ひじが抜けない",
+      "entry": null,
+      "must": "片脚",
+      "choices": 2
+    },
+    {
+      "id": "s29",
+      "type": "out of scope",
+      "question": "米倉大貴のJポイントで使う会員動画の動きを再現して",
+      "entry": null,
+      "must": "確認待ち",
+      "exclude": "ピンして"
+    },
+    {
+      "id": "s30",
+      "type": "direction",
+      "question": "送り襟絞めをかけられたとき、首に伸びる手をどうする？",
+      "entry": "sliding-collar-defense",
+      "must": "襟"
+    },
+    {
+      "id": "s31",
+      "type": "direction",
+      "question": "下から首に巻かれた。アンクルロックじゃなくギロチンをかけられた",
+      "entry": "guillotine-defense",
+      "must": "首"
+    },
+    {
+      "id": "s32",
+      "type": "direction",
+      "question": "自分がトップハーフ。ニーレバーを相手に仕掛けられたとき何を見る？",
+      "entry": "john-wayne-defense",
+      "must": "膝"
+    },
+    {
+      "id": "s33",
+      "type": "direction",
+      "question": "キムラをかけられたとき腕が背中側に運ばれる",
+      "entry": "kimura-defense",
+      "must": "肘"
+    },
+    {
+      "id": "s34",
+      "type": "direction",
+      "question": "自分が上で、相手の足で首と片腕を囲まれた",
+      "entry": "triangle-defense",
+      "must": "肘"
+    },
+    {
+      "id": "s35",
+      "type": "direction",
+      "question": "腕十字で肘を伸ばされるときの守り方は？",
+      "entry": "armbar-defense",
+      "must": "タップ"
+    },
+    {
+      "id": "s36",
+      "type": "direction",
+      "question": "曲げた腕の手首を耳の近くで床に押しつけられた",
+      "entry": "americana-defense",
+      "must": "肘"
+    },
+    {
+      "id": "s37",
+      "type": "direction",
+      "question": "またがれて、腕を顔の横へ押し上げられたら首が窮屈になる",
+      "entry": "arm-triangle-defense",
+      "must": "首"
+    },
+    {
+      "id": "s38",
+      "type": "comparison",
+      "question": "肩固めと三角絞めは同じ技？",
+      "entries": [
+        "arm-triangle",
+        "triangle"
+      ],
+      "must": "肩"
+    },
+    {
+      "id": "s39",
+      "type": "competition",
+      "question": "IBJJF 2027年のジュブナイルノーギ青帯でストレートフットロックは反則？",
+      "entry": "general-ibjjf-straight-foot-lock",
+      "must": "全帯",
+      "also": "禁止"
+    },
+    {
+      "id": "s40",
+      "type": "wording",
+      "question": "にーりーばーは何を使って返す技？",
+      "entry": "john-wayne",
+      "must": "膝"
+    },
+    {
+      "id": "s41",
+      "type": "wording",
+      "question": "顔をそむけられている。相手の片脚はまだ自分の脚に挟んでいる。横から胸を潰されて上を向けない",
+      "entry": "half-crossface",
+      "must": "前腕"
+    },
+    {
+      "id": "s42",
+      "type": "wording",
+      "question": "上のとき、脚の外に回った途端に相手のひざが間に戻っちゃう",
+      "entry": "pass-settle-top",
+      "must": "膝"
+    },
+    {
+      "id": "s43",
+      "type": "scope",
+      "question": "ディープハーフをラッソーからやるときの流れを教えて",
+      "entry": null,
+      "must": "確認できていません",
+      "exclude": "YouTube"
+    },
+    {
+      "id": "s44",
+      "type": "catalog",
+      "question": "アダムのニーレバー教則を全部詳しく",
+      "entry": null,
+      "must": "公開目次",
+      "also": "確認待ち"
+    },
+    {
+      "id": "s45",
+      "type": "negation",
+      "question": "バタフライガードで相手は手をついていない。腰を引いてきた",
+      "entry": "butterfly-sweep",
+      "must": "腰",
+      "branch": "backward"
+    },
+    {
+      "id": "s46",
+      "type": "clarification",
+      "question": "相手に首に腕を回された。どっちに動けばいい？",
+      "entry": null,
+      "must": "正面と背後",
+      "choices": 2
+    },
+    {
+      "id": "s47",
+      "type": "comparison",
+      "question": "横四方固めはサイドコントロールと同じ？",
+      "entry": null,
+      "must": "帯とズボン",
+      "also": "総称"
+    },
+    {
+      "id": "s48",
+      "type": "comparison",
+      "question": "柔道の肩固めと柔術のアームトライアングルの違いは？",
+      "entry": null,
+      "must": "押さえ込み",
+      "also": "絞め"
+    }
+  ]
+}

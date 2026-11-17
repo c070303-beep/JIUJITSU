@@ -11,6 +11,75 @@ const fixtures = require('./coaching-cases.json');
 const generalCases = require('./general-cases.json');
 const generalKnowledge = require('../knowledge/general.json');
 const beginnerCases = require('./beginner-cases.json');
+const {cases:techniqueCases,evaluate:evaluateTechnique} = require('./technique-evaluation.cjs');
+
+for (const fixture of techniqueCases) {
+  test(fixture.id + ' ' + fixture.question, () => {
+    const result = evaluateTechnique(coach,fixture);
+    assert(result.pass,JSON.stringify(result));
+    assert.equal(result.requestsGemini,false);
+    assert.doesNotMatch(result.answer,/https?:\/\/|\/personal\/|\/open#/);
+    assert(result.answer.length <= 250,result.answer);
+  });
+}
+
+function continueFrom(question, route) {
+  return [
+    {role:'user',content:question},
+    {role:'assistant',content:coach.renderAnswer(route),topic:coach.topicForRoute(route)},
+  ];
+}
+
+test('A clarification supports taps and everyday typed answers without losing the original scene', () => {
+  const question = '横から胸を押さえられて、ひじが抜けない';
+  const first = coach.resolveRequest(question);
+  assert.equal(first.choices.length,2);
+  const history = continueFrom(question,first);
+  const variants = [
+    {answer:'はい、片足はまだ挟んでる',expected:'half-crossface'},
+    {answer:'もう挟んでいません',expected:'side-bottom'},
+  ];
+  for (const [index,{answer,expected}] of variants.entries()) {
+    const option = first.choices[index];
+    const tapped = coach.resolveRequest(option.question,history,option.selection);
+    const typed = coach.resolveRequest(answer,history);
+    assert.equal(coach.topicForRoute(tapped).entry,expected);
+    assert.equal(coach.topicForRoute(typed).entry,expected);
+    assert.equal(coach.renderAnswer(tapped),coach.renderAnswer(typed));
+    assert.equal(coach.selectPayload(typed,answer),null);
+  }
+});
+
+test('A follow-up switches from the applied move to defense, then keeps that side for details', () => {
+  const original = 'ニースライスって何？';
+  const first = coach.resolveRequest(original);
+  const question = '相手にそれをされたときは？';
+  const history = continueFrom(original,first);
+  const second = coach.resolveRequest(question,history);
+  assert.equal(coach.topicForRoute(second).entry,'knee-cut-defense');
+  assert.equal(coach.selectPayload(second,question),null);
+  const detail = coach.resolveRequest('それを詳しく',history.concat(continueFrom(question,second)));
+  assert.equal(coach.topicForRoute(detail).entry,'knee-cut-defense');
+  assert.match(coach.renderAnswer(detail),/成立条件/);
+});
+
+test('Gemini fallback can select a newly registered defense and must use an allowed branch', () => {
+  const question = '稽古で迎えられた形からクビと片腕だけ同じ輪に残った。上半身をどう戻す？';
+  const route = coach.resolveRequest(question);
+  assert(route.semantic);
+  const payload = coach.selectPayload(route,question);
+  const known = JSON.parse(payload.contents[0].parts[0].text).catalog.find(item => item.id === 'triangle-defense');
+  assert.equal(known.role,'top');
+  assert.equal(known.action,'receive');
+  assert(!known.answer && !known.source_refs);
+  const response = (entry,branch) => ({candidates:[{content:{parts:[{text:JSON.stringify({entry,intent:'how',branch})}]}}]});
+  assert.equal(coach.readSelection(response('triangle-defense','invented'),route),null);
+  assert.equal(coach.readSelection(response('secret-technique',''),route),null);
+  const selected = coach.readSelection(response('triangle-defense','forming'),route);
+  const answer = coach.interpretRoute(route,selected);
+  assert.equal(coach.topicForRoute(answer).entry,'triangle-defense');
+  assert.match(coach.renderAnswer(answer),/上体を起こして肘/);
+});
 
 for (const fixture of fixtures) {
   test(fixture.id + ' ' + fixture.question, () => {
@@ -232,7 +301,8 @@ test('A current named technique wins over an unrelated prior question', () => {
   const old = [{role:'user', content:'インサイドキャンピングで制御したい'}];
   const route = coach.resolve('アメリカーナを教えて', old);
   assert.equal(route.records[0].id, 'americana');
-  assert(!coach.selectPayload(route, 'アメリカーナを教えて').contents[0].parts[0].text.includes('インサイドキャンピング'));
+  assert.equal(coach.selectPayload(route, 'アメリカーナを教えて'),null);
+  assert.doesNotMatch(coach.renderAnswer(route),/インサイドキャンピング/);
 });
 
 test('Selection can change the next step only within the allowed record', () => {
@@ -313,7 +383,7 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
     method:'POST', headers:{cookie,origin:requestOrigin,'content-type':'application/json'}, body:JSON.stringify(data),
   });
   const health = await (await get('/healthz')).json();
-  assert.equal(health.knowledge,'2.0');
+  assert.equal(health.knowledge,'3.0');
   assert.equal((await get('/members/')).headers.get('location'),'/login');
   assert.equal((await get('/api/status')).status,401);
   const page = await get('/open');
@@ -344,18 +414,25 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
   const initial = await (await post('/api/chat',cookie,{question})).json();
   assert.equal(initial.mode,'gemini');
   assert.match(initial.answer,/ニータップ/);
-  assert.equal(initial.videos.length,2);
+  assert.deepEqual(initial.videos,[]);
+  assert(!/動画を表示|youtu\.be|youtube\.com/.test(initial.answer));
+  assert.equal((await get('/api/videos?library=1')).status,401);
+  const library = await (await get('/api/videos?library=1',{headers:{cookie}})).json();
+  assert.equal(library.videos.length,8);
+  assert(library.videos.every(video => video.url === 'https://www.youtube.com/watch?v=' + video.id));
+  assert.equal(calls,1);
   for (const state of ['503','429','invalid']) {
     simulate = state;
     const before = calls;
     const media = await (await post('/api/videos',cookie,{question})).json();
-    assert.deepEqual(media.videos,initial.videos);
+    assert.equal(media.videos.length,2);
+    assert(media.videos.every(video=>library.videos.some(item=>item.id===video.id)));
     assert.equal(calls,before);
     const fallback = await (await post('/api/chat',cookie,{question})).json();
     assert.equal(calls,before+1);
     assert.equal(fallback.mode,'knowledge');
     assert.match(fallback.answer,/ロールアンダー/);
-    assert.deepEqual(fallback.videos,media.videos);
+    assert.deepEqual(fallback.videos,[]);
   }
   const secondCookie = await login();
   simulate = 'ok';
@@ -378,6 +455,11 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
   assert.equal(rule.choices.length,2);
   const ruleHelp = await (await post('/api/chat',secondCookie,{question:rule.choices[0].question})).json();
   assert.match(ruleHelp.answer,/公式ルール/);
+  assert.equal(calls,beforeReaction);
+  const videoQuestion = await (await post('/api/chat',cookie,{question:'ドッグファイト 動画'})).json();
+  assert.deepEqual(videoQuestion.videos,[]);
+  assert.match(videoQuestion.answer,/ドッグファイト/);
+  assert(!/動画を表示|登録にありません|YouTube/.test(videoQuestion.answer));
   assert.equal(calls,beforeReaction);
 
   simulate = 'general';
@@ -402,16 +484,18 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
   await Promise.all(batch.map(response=>response.arrayBuffer()));
 });
 
-test('Chat layout and background media lookup keep the v13 entry points', () => {
+test('Chat order, automatic scrolling, and separate library entry point', () => {
   const html = readFileSync(path.join(__dirname,'..','public','index.html'),'utf8');
   assert(html.indexOf('id="ai-chat"') >= 0);
   assert(html.indexOf('id="ai-chat"') < html.indexOf('id="ai-form"'));
   assert.match(html, /chatBox\.scrollTop=chatBox\.scrollHeight/);
   assert.match(html,/topic:body.topic/);
   assert.match(html, /appendCoachChoices\(body\.choices,turn\)/);
-  assert.match(html, /appendVideoReferences\(v\.videos,turn\)/);
-  assert.match(html, /if\(!turn\?\.isConnected\)return/);
-  assert.match(html, /fetch\('\/api\/videos',\{method:'POST'/);
+  assert.match(html, /renderLibraryVideos\(data\.videos\)/);
+  assert.match(html, /id="page-library"/);
+  assert.match(html, /data-page="library"/);
+  const chatFunction = html.split('async function askCoach')[1].split("$('ai-form')")[0];
+  assert(!chatFunction.includes('/api/videos'));
 });
 
 test('Promotion questions distinguish conditions, duration, and the named academy', () => {
@@ -465,7 +549,7 @@ test('Shared intent matching covers unlisted phrasing across coaching topics', (
     ['手も足も抑えられて横を向けないんだけど、最初に守る場所はどこ？','general-pinned-triage','first', /肘/],
     ['回した動画じゃなくて対戦の写真をグループに流してもいい感じ？','general-filming','how', /公開してよいか/],
     ['白から一つ色を上げるときに先生は何を見るもの？','general-belt-path','overview', /昇格/],
-    ['相手が背中のほうに乗ったままで、首に手がきそう。最初に何を塞ぐ？','general-back-bottom','first', /首に近い腕/],
+    ['背を見せたら相手が後ろで離れなくなった。どう守る？','general-back-bottom','first', /首に近い腕/],
     ['タートルの中でずっと固まっちゃう。手足がほどける前にどう動く？','general-turtle-bottom','how', /膝/],
     ['シングルレッグえっくすのやり方','single-leg-x','how', /片脚/],
     ['2本目の練習前、濡れたままの道着で相手と組むのはあり？','general-hygiene','how', /洗って乾かした/],
