@@ -1,0 +1,1665 @@
+[
+  {
+    "id": "B01",
+    "category": "入会・初参加",
+    "question": "柔術って何をするの？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "ブラジリアン柔術は、相手と組み合い、寝技の位置取りや抜け方、抑え方などを練習する格闘技です。未経験なら、まず初心者向けの体験クラスを予約し、受付で「初めてです」と伝えましょう。基本動作や相手と交代で行う反復から参加し、スパーは見学できるか先生に聞いておくと当日の流れが分かります。体験後は通いやすい曜日も聞いてみましょう。",
+      "entry": "general-intro",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B02",
+    "category": "入会・初参加",
+    "question": "運動経験がなくても始められる？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "ブラジリアン柔術は、相手と組み合い、寝技の位置取りや抜け方、抑え方などを練習する格闘技です。未経験なら、まず初心者向けの体験クラスを予約し、受付で「初めてです」と伝えましょう。基本動作や相手と交代で行う反復から参加し、スパーは見学できるか先生に聞いておくと当日の流れが分かります。体験後は通いやすい曜日も聞いてみましょう。",
+      "entry": "general-intro",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B03",
+    "category": "入会・初参加",
+    "question": "初日は何を持っていけばいい？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "体験前に、道場へ予約の要否、道着のレンタル、ウェアの指定を確認しましょう。水、タオル、着替えを用意し、道着の下に着るTシャツやラッシュガードが必要かも聞きます。例えばカルペディエム自由が丘は体験のときに道着とタオルの貸出を案内しています。最初の費用や貸出の条件は参加する道場に確認してください。見学か体験かを最初に伝えると案内がスムーズです。",
+      "entry": "general-first-class-kit",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B04",
+    "category": "入会・初参加",
+    "question": "道着なしで体験できる？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "体験前に、道場へ予約の要否、道着のレンタル、ウェアの指定を確認しましょう。水、タオル、着替えを用意し、道着の下に着るTシャツやラッシュガードが必要かも聞きます。例えばカルペディエム自由が丘は体験のときに道着とタオルの貸出を案内しています。最初の費用や貸出の条件は参加する道場に確認してください。見学か体験かを最初に伝えると案内がスムーズです。",
+      "entry": "general-first-class-kit",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B05",
+    "category": "入会・初参加",
+    "question": "ギとノーギはどっちから始める？",
+    "method": "local",
+    "before": {
+      "answer": "ギは道着を着る柔術で、襟や袖などを使った組み手があります。ノーギは道着を着ず、手首や腕、脇の下に腕を入れる組み手などで相手を制御します。初参加なら道場に服装を聞き、習った動きのどこで布を持っているかを一つ確認すると、違いがつかみやすくなります。服装以外では、相手の何を持って動きを止めるかに注目しましょう。",
+      "entry": "general-gi-nogi",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "初めてなら、通う道場で未経験者を受け入れているクラスから始めましょう。ギは道着の襟や袖を使う組み手があり、ノーギは手首や腕などを制御します。両方あるなら、体験のときに装備と練習の流れを確認し、自分が通いやすい曜日と楽しめる方を選んでください。慣れてきたら、もう一方も試すと組み手の違いを理解しやすくなります。",
+      "entry": "general-choose-class",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B06",
+    "category": "道場マナー",
+    "question": "道場のまなーは？",
+    "method": "local",
+    "before": {
+      "answer": "マットは練習相手や隣の組と共有します。練習の前後に挨拶し、始める前に相手と強度を合わせます。隣の組が近づいたらいったん動きを止め、場所を移して再開しましょう。入退場や挨拶の決まりは道場によるので、初めての場所では受付や先生に確認してください。練習する場所が狭ければ、空くまで待つか先生に相談しましょう。",
+      "entry": "general-mat-etiquette",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "マットは練習相手や隣の組と共有します。練習の前後に挨拶し、始める前に相手と強度を合わせます。隣の組が近づいたらいったん動きを止め、場所を移して再開しましょう。入退場や挨拶の決まりは道場によるので、初めての場所では受付や先生に確認してください。練習する場所が狭ければ、空くまで待つか先生に相談しましょう。",
+      "entry": "general-mat-etiquette",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B07",
+    "category": "道場マナー",
+    "question": "道着は毎回洗う？",
+    "method": "local",
+    "before": {
+      "answer": "毎回、洗って乾かした道着やラッシュガードを用意し、手足の爪を短く整えます。指輪などのアクセサリーも練習前に外しましょう。汗を含んだウェアは乾いた着替えと分け、帰宅したら洗濯すると、次の練習の準備も楽です。着用できるウェアの条件は各道場の案内を確認してください。準備の段階で、着替えと爪の両方をチェックしておくと安心です。",
+      "entry": "general-hygiene",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "毎回、洗って乾かした道着やラッシュガードを用意し、手足の爪を短く整えます。指輪などのアクセサリーも練習前に外しましょう。汗を含んだウェアは乾いた着替えと分け、帰宅したら洗濯すると、次の練習の準備も楽です。着用できるウェアの条件は各道場の案内を確認してください。準備の段階で、着替えと爪の両方をチェックしておくと安心です。",
+      "entry": "general-hygiene",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B08",
+    "category": "道場マナー",
+    "question": "出稽古って誰に連絡？",
+    "method": "local",
+    "before": {
+      "answer": "出稽古の前に、訪問先へ予約の要否、参加できるクラス、料金、道着やウェアの条件を確認しましょう。当日は所属と経験を手短に伝え、現地のルールに合わせます。見学のときは受付に声をかけ、案内された場所から見ます。所属道場にも連絡の決まりがあれば従ってください。訪問後は、組んだ相手と指導者に練習のお礼を伝えましょう。",
+      "entry": "general-visit",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "出稽古の前に、訪問先へ予約の要否、参加できるクラス、料金、道着やウェアの条件を確認しましょう。当日は所属と経験を手短に伝え、現地のルールに合わせます。見学のときは受付に声をかけ、案内された場所から見ます。所属道場にも連絡の決まりがあれば従ってください。訪問後は、組んだ相手と指導者に練習のお礼を伝えましょう。",
+      "entry": "general-visit",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B09",
+    "category": "道場マナー",
+    "question": "スパーを撮影してSNSに上げていい？",
+    "method": "local",
+    "before": {
+      "answer": "練習を撮る前に、道場と映る相手に確認しましょう。SNSに出したいときは、撮影の許可とは別に、公開してよいかも聞きます。後ろの組や見学者が映る場合は、角度を変えるか、その部分を使わないようにします。撮影できる時間や場所は道場の案内に従ってください。撮影と投稿のどちらかで迷ったら、その場で確認してから進めましょう。",
+      "entry": "general-filming",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "練習を撮る前に、道場と映る相手に確認しましょう。SNSに出したいときは、撮影の許可とは別に、公開してよいかも聞きます。後ろの組や見学者が映る場合は、角度を変えるか、その部分を使わないようにします。撮影できる時間や場所は道場の案内に従ってください。撮影と投稿のどちらかで迷ったら、その場で確認してから進めましょう。",
+      "entry": "general-filming",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B10",
+    "category": "道場マナー",
+    "question": "遅刻して途中から入っていい？",
+    "method": "local",
+    "before": {
+      "answer": "クラスに遅れたら、マットの端で待ち、先生に声をかけてから入るのが無難です。途中で抜けるときも、練習相手に伝え、必要に応じて先生に一声かけます。履物を脱ぐ場所など、初めての道場で迷ったら、練習前に入口や受付で確認しておきましょう。入室時に先生の説明や実演が始まっていたら、話が切れるところで声をかけます。",
+      "entry": "general-mat-arrival",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "クラスに遅れたら、マットの端で待ち、先生に声をかけてから入るのが無難です。途中で抜けるときも、練習相手に伝え、必要に応じて先生に一声かけます。履物を脱ぐ場所など、初めての道場で迷ったら、練習前に入口や受付で確認しておきましょう。入室時に先生の説明や実演が始まっていたら、話が切れるところで声をかけます。",
+      "entry": "general-mat-arrival",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B11",
+    "category": "スパーと安全",
+    "question": "初スパーはどうする？",
+    "method": "local",
+    "before": {
+      "answer": "最初は先生に初スパーだと伝え、相手にも「初めてなので軽めでお願いします」と声をかけましょう。始める姿勢を確認し、最初の一本は「下なら相手との間に腕を置いて距離を作る」など、課題を一つに絞ります。怖さや無理を感じたら途中で止めて大丈夫です。最初の一本を見学し、スパーの進め方を見てから参加しても大丈夫です。",
+      "entry": "general-first-roll",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "最初は先生に初スパーだと伝え、相手にも「初めてなので軽めでお願いします」と声をかけましょう。始める姿勢を確認し、最初の一本は「下なら相手との間に腕を置いて距離を作る」など、課題を一つに絞ります。怖さや無理を感じたら途中で止めて大丈夫です。最初の一本を見学し、スパーの進め方を見てから参加しても大丈夫です。",
+      "entry": "general-first-roll",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B12",
+    "category": "スパーと安全",
+    "question": "今日はスパーを休みたい",
+    "method": "local",
+    "before": {
+      "answer": "始める前に「今日は軽めでお願いします」「この形から練習したいです」と希望を伝えましょう。速さや体重のかけ方が合わないと感じたら、途中で止めて調整できます。休みたいときは「この一本は休みます」で十分です。自分で強度を合わせづらいときは、先生に相手選びを相談してください。次に組む相手にも、練習を始める前に同じ希望を伝えましょう。",
+      "entry": "general-spar-intensity",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "始める前に「今日は軽めでお願いします」「この形から練習したいです」と希望を伝えましょう。速さや体重のかけ方が合わないと感じたら、途中で止めて調整できます。休みたいときは「この一本は休みます」で十分です。自分で強度を合わせづらいときは、先生に相手選びを相談してください。次に組む相手にも、練習を始める前に同じ希望を伝えましょう。",
+      "entry": "general-spar-intensity",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B13",
+    "category": "スパーと安全",
+    "question": "相手からタップされたら？",
+    "method": "local",
+    "before": {
+      "answer": "タップは「そこで止めて」の合図です。技が決まりそうなときや危ないと感じたときは早めに、相手に伝わるよう叩くか、声で「タップ」と言います。相手のタップに気づいた側はすぐ力を抜いて技を解きます。合図か迷ったときも、いったん止めて確認しましょう。始める前に、手が使えない場面では声で合図することも確認しておくと安心です。",
+      "entry": "general-tap",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "タップは「そこで止めて」の合図です。技が決まりそうなときや危ないと感じたときは早めに、相手に伝わるよう叩くか、声で「タップ」と言います。相手のタップに気づいた側はすぐ力を抜いて技を解きます。合図か迷ったときも、いったん止めて確認しましょう。始める前に、手が使えない場面では声で合図することも確認しておくと安心です。",
+      "entry": "general-tap",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B14",
+    "category": "スパーと安全",
+    "question": "相手と体重差があるけどどう練習する？",
+    "method": "local",
+    "before": {
+      "answer": "始める前に「今日は軽めでお願いします」「この形から練習したいです」と希望を伝えましょう。速さや体重のかけ方が合わないと感じたら、途中で止めて調整できます。休みたいときは「この一本は休みます」で十分です。自分で強度を合わせづらいときは、先生に相手選びを相談してください。次に組む相手にも、練習を始める前に同じ希望を伝えましょう。",
+      "entry": "general-spar-intensity",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "始める前に「今日は軽めでお願いします」「この形から練習したいです」と希望を伝えましょう。速さや体重のかけ方が合わないと感じたら、途中で止めて調整できます。休みたいときは「この一本は休みます」で十分です。自分で強度を合わせづらいときは、先生に相手選びを相談してください。次に組む相手にも、練習を始める前に同じ希望を伝えましょう。",
+      "entry": "general-spar-intensity",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B15",
+    "category": "基本ポジション",
+    "question": "横から押さえられてるのは何？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "横から胸や肩を押さえられ、相手の脚を自分の脚で挟めていないなら、サイドコントロールの下にいる可能性があります。相手の片脚を挟めているならハーフガード、相手が胴体をまたいで両膝を床に置いているならマウントを疑います。練習では先に相手の胸と脚の位置を見て、今の位置がどれか先生に確認してみてください。動きの名前はその場で確かめましょう。",
+      "entry": "general-side-recognize",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B16",
+    "category": "基本ポジション",
+    "question": "トップとボトムの違いは？",
+    "method": "local",
+    "before": {
+      "answer": "自分が上ならトップ、下ならボトムです。まず相手との間に脚があるかを見ましょう。下が脚で相手の進み方を制御できればガード、上が脚を越えて横から抑えればサイド、上が胴体をまたいで抑えればマウントです。背後を取ったらバックとして整理すると練習中に位置を見分けやすくなります。習った技の始めと終わりで、自分が上か下かを言葉にしてみましょう。",
+      "entry": "general-top-bottom",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "自分が上ならトップ、下ならボトムです。まず相手との間に脚があるかを見ましょう。下が脚で相手の進み方を制御できればガード、上が脚を越えて横から抑えればサイド、上が胴体をまたいで抑えればマウントです。背後を取ったらバックとして整理すると練習中に位置を見分けやすくなります。習った技の始めと終わりで、自分が上か下かを言葉にしてみましょう。",
+      "entry": "general-top-bottom",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B17",
+    "category": "基本ポジション",
+    "question": "スイープとエスケープはどう違う？",
+    "method": "local",
+    "before": {
+      "answer": "スイープは、下のガードから相手を崩して上を取る動きです。エスケープは、横から抑えられた状態やマウントなどの不利な位置から抜ける動きで、ガードに戻るだけの場合もあります。練習中は、どの位置から始めてどこまで動いたかを見ると、二つの意味を区別できます。次に技を習うときは、開始位置とゴールを先生に聞いてみましょう。",
+      "entry": "general-sweep-escape",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "スイープは、下のガードから相手を崩して上を取る動きです。エスケープは、横から抑えられた状態やマウントなどの不利な位置から抜ける動きで、ガードに戻るだけの場合もあります。練習中は、どの位置から始めてどこまで動いたかを見ると、二つの意味を区別できます。次に技を習うときは、開始位置とゴールを先生に聞いてみましょう。",
+      "entry": "general-sweep-escape",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B18",
+    "category": "基本ポジション",
+    "question": "ガードとパスの違いは？",
+    "method": "local",
+    "before": {
+      "answer": "ガードは、下の人が脚を使って相手の前進を制御し、守りや攻めにつなげる位置です。パスガードは、上の人がその脚を越え、横から抑えるなどして位置を安定させる動きです。見分けるときは、下の人の膝や足がまだ二人の間に戻れるかを見ると分かりやすくなります。練習では、脚を越えた場面と抑えが安定した場面を順に確認します。",
+      "entry": "general-guard-pass",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "ガードは、下の人が脚を使って相手の前進を制御し、守りや攻めにつなげる位置です。パスガードは、上の人がその脚を越え、横から抑えるなどして位置を安定させる動きです。見分けるときは、下の人の膝や足がまだ二人の間に戻れるかを見ると分かりやすくなります。練習では、脚を越えた場面と抑えが安定した場面を順に確認します。",
+      "entry": "general-guard-pass",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B19",
+    "category": "攻防",
+    "question": "下でつぶされたらまず何する？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "下で潰されたら、まず肘を身体の近くに置き、自分と相手の間にどこなら隙間を作れるかを見ます。相手が横にいるか、胴をまたいでいるか、片脚をまだ挟めているかで次の動きが変わります。無理に腕を伸ばして押さず、肩や腰の前に腕を置ける場所を探してください。今の位置に近いものを一つ選ぶと、次に試す動きを絞れます。",
+      "entry": "general-pinned-triage",
+      "choices": [
+        "横から押さえられている",
+        "胴体をまたがれている",
+        "相手の片脚を挟んでいる"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B20",
+    "category": "攻防",
+    "question": "マウント下の守り方",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "マウントを取られたら、まず肘を胴に寄せて腕を守ります。相手の腰が低く、膝を差し込む隙間があるなら、前腕で距離を保ちながら腰を横にずらし、まず相手の片脚を挟んでハーフガードへ戻す練習をします。相手が胸の近くまで上がって腕が離れそうなら先に肘を戻し、足を入れる余裕を作ります。練習では先生と軽い強度で形を確かめてください。",
+      "entry": "general-mount-bottom",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B21",
+    "category": "攻防",
+    "question": "マウントを取った後に返される",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "マウントを取ったら、まず自分の膝が相手の胴の両側にあり、体重を左右へ移せるかを確認します。相手が腰を持ち上げてきたら、必要に応じて手で床を支え、倒れない位置に戻ります。相手の膝が入ってきたら、上体だけ前に倒れず、脚が抜けかけていないか確認します。最初は技を狙う前に、崩された姿勢から戻れることを練習しましょう。",
+      "entry": "general-mount-top",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B22",
+    "category": "攻防",
+    "question": "上で相手の脚を越えた後はどうする？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "上から相手の脚を越えたら、攻めに移る前に、相手の膝が二人の間に戻らない位置を作ります。例えば横に回ったら、相手の肩と腰の向きを見て、自分の体が浮きすぎないように抑えます。膝が戻ってきたら、いったん脚の位置を整理し、角度を作ってから進み直しましょう。最初は抑えを安定させたところまでを練習のゴールにします。",
+      "entry": "general-pass-settle",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B23",
+    "category": "攻防",
+    "question": "胴体をまたがれたら？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "マウントを取られたら、まず肘を胴に寄せて腕を守ります。相手の腰が低く、膝を差し込む隙間があるなら、前腕で距離を保ちながら腰を横にずらし、まず相手の片脚を挟んでハーフガードへ戻す練習をします。相手が胸の近くまで上がって腕が離れそうなら先に肘を戻し、足を入れる余裕を作ります。練習では先生と軽い強度で形を確かめてください。",
+      "entry": "general-mount-bottom",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B24",
+    "category": "攻防",
+    "question": "後ろから首を取られそう",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "背後を取られたら、まず首に近い腕を両手で管理し、絞めを深く入れさせないようにします。首を守れたら、相手の脚がどこに掛かっているかを見て、背中と腰をマットに近づけられる向きを探します。締まりが深くなったら早めにタップします。練習では首に圧をかけない強度で、上から来る腕を見分けるところから始めてください。",
+      "entry": "general-back-bottom",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B25",
+    "category": "攻防",
+    "question": "バックを取ったらどうキープする？",
+    "method": "local",
+    "before": {
+      "answer": "バックは自分の胸を相手の背中につけ、相手が肩と腰を回して正面へ戻るのを防ぐところからです。\n\nシートベルトなどで肩と脇を確保し、相手の腰を自分の膝で追います。片方のフックを追うために胸を離すと向き直られます。\n\n相手に向き直られたら首を引き続けず、胴と腰への接点を取り直します。胸と背中が離れたら取れている位置に降り直します。",
+      "entry": null,
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [
+        "back-take"
+      ],
+      "passed": false
+    },
+    "after": {
+      "answer": "バックを取ったら、まず胸を相手の背中に近づけ、腰の向きがずれないようにします。脚は相手の太ももの内側へ浅すぎず深すぎない位置に掛けて、相手が腰を回したときに付いていけるかを確認します。腰の角度を作られて脚が外れたら、先に位置を整え直しましょう。白帯の練習では絞めを入れず、相手が横を向いたときに位置を保つ課題から始めます。",
+      "entry": "general-back-top",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B26",
+    "category": "攻防",
+    "question": "自分が亀になったら何から？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "自分が四つんばいのタートルなら、まず肘と膝を近くに置き、首と脇、腰の横の隙間を守ります。相手が脚を差し込みに来たら、その通り道を閉じてから動きます。相手との間に膝を戻せるなら、振り向いてガードへ戻す練習ができます。首を引かれているときは勢いで回らず、首と手の位置を確認して、動ける向きを先生と練習しましょう。",
+      "entry": "general-turtle-bottom",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B27",
+    "category": "攻防",
+    "question": "相手が四つん這いになったら？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "相手が四つんばいになったら、まず自分が相手の横か後ろにいるかを確認し、無理に首を引かず足で姿勢を支えます。相手がこちらを向くなら距離を詰めすぎず、膝の位置を見てパスの攻防に戻ります。背中を向けたまま腰が離れないなら、胸と腰の位置を合わせてバックへ移る練習ができます。最初は相手が向き直るかを見分けましょう。",
+      "entry": "general-turtle-top",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B28",
+    "category": "攻防",
+    "question": "フレームとは何？",
+    "method": "local",
+    "before": {
+      "answer": "フレームは、腕や膝を相手との間に置いて距離を保つ支えです。姿勢は頭・背中・腰の並び、重心は体重がどこに乗っているか、支点は手や足など体を支えている接点です。例えば下から距離を作るときは、前腕で相手との隙間を保ち、その間に膝を二人の間へ戻せるか試します。練習では相手に軽く体重を乗せてもらい、どこを支えると隙間を保てるか確かめます。",
+      "entry": "general-frame-posture",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "フレームは、腕や膝を相手との間に置いて距離を保つ支えです。姿勢は頭・背中・腰の並び、重心は体重がどこに乗っているか、支点は手や足など体を支えている接点です。例えば下から距離を作るときは、前腕で相手との隙間を保ち、その間に膝を二人の間へ戻せるか試します。練習では相手に軽く体重を乗せてもらい、どこを支えると隙間を保てるか確かめます。",
+      "entry": "general-frame-posture",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B29",
+    "category": "技の習得",
+    "question": "習った技を忘れる。何を復習したらいい？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "習った技を忘れるなら、その日に出た技を一つだけ選び、「どの位置から」「何を持つ・どこに置く」「何ができたら終わり」の三つをメモします。次回、相手に開始位置を作ってもらい、先生の説明を思い出しながら一度ゆっくり再現します。止まった箇所だけ先生に確認し、形が作れたら相手に軽く抵抗してもらいましょう。最後は同じ位置からやり直します。",
+      "entry": "general-remember",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B30",
+    "category": "技の習得",
+    "question": "力んでしまって腕がパンパンになる",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "練習で力みやすいなら、どの瞬間に余計な力を使ったかを一つ確認します。例えば握り続けて腕が疲れるなら、今の握りで相手のどの動きを止めているかを言葉にし、役目が終わったら持ち替えます。相手に軽い抵抗をお願いし、腕だけで押す場面では姿勢や足の支えを作ってから動きます。次の一本はこのうち一つだけ意識しましょう。",
+      "entry": "general-too-much-force",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B31",
+    "category": "技の習得",
+    "question": "ドリルとスパーはどう使い分ける？",
+    "method": "local",
+    "before": {
+      "answer": "動きの順番や位置を覚えるなら、まず相手が協力する反復練習です。相手が抵抗すると止まるなら、開始位置と目的を決めた状況スパーを使います。自由スパーでは、その位置へ入るところまで試します。次の練習では、できない動き一つを選び、どの段階で止まるかを見て練習方法を選びましょう。練習後には、形を作れた段階までを一言で残しましょう。",
+      "entry": "general-drilling",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "動きの順番や位置を覚えるなら、まず相手が協力する反復練習です。相手が抵抗すると止まるなら、開始位置と目的を決めた状況スパーを使います。自由スパーでは、その位置へ入るところまで試します。次の練習では、できない動き一つを選び、どの段階で止まるかを見て練習方法を選びましょう。練習後には、形を作れた段階までを一言で残しましょう。",
+      "entry": "general-drilling",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B32",
+    "category": "帯・昇格",
+    "question": "青帯になるには？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "青帯を目指すなら、まず今いる位置と自分の役割を言えるようにしましょう。次に、よく出る位置で守り方と攻め方を一つずつ覚え、相手が軽く抵抗しても試せるかを確かめます。例えばサイドの下からガードに戻す動きを一つ練習し、止まった場所を先生に伝えます。実際の昇格は所属道場の判断なので、次の課題は担当の先生に聞いてみてください。\n\n練習相手に、同じ位置から数回付き合ってもらいます。例えば上なら脚を越えて抑える、下なら膝を戻すなど、成功の目印を一つ決め、できた回と止まった回を振り返ります。",
+      "entry": "general-belt-path",
+      "choices": [
+        "一般的な練習の目安",
+        "RRTの昇格基準"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B33",
+    "category": "帯・昇格",
+    "question": "どれくらいで青帯？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "青帯までの期間は、所属道場の基準や本人の習得状況で変わります。出席回数や年数だけで昇格時期は判断できません。まず無理なく通える曜日を決め、毎回同じ基本動作を一つ確認して、先生に今の課題と昇格の見方を聞きましょう。競技団体が公表する帯制度も、所属道場の評価基準と合わせて確認すると整理しやすくなります。\n\n指導者に聞くなら「今の自分が次に習得すべきことは何ですか？」が具体的です。その動きを練習し、次に見てもらうときの目印を決めます。",
+      "entry": "general-belt-time",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B34",
+    "category": "帯・昇格",
+    "question": "白帯の間に何を覚えたらいい？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "青帯を目指すなら、まず今いる位置と自分の役割を言えるようにしましょう。次に、よく出る位置で守り方と攻め方を一つずつ覚え、相手が軽く抵抗しても試せるかを確かめます。例えばサイドの下からガードに戻す動きを一つ練習し、止まった場所を先生に伝えます。実際の昇格は所属道場の判断なので、次の課題は担当の先生に聞いてみてください。",
+      "entry": "general-belt-path",
+      "choices": [
+        "一般的な練習の目安",
+        "RRTの昇格基準"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B35",
+    "category": "帯・昇格",
+    "question": "RRTではどうしたら上がれる？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "RRTで青帯に上がるための正式な回数・期間・審査項目は、現在の登録資料では確認できていません。普段のクラスの担当インストラクターに、誰が判断するか、今の自分に必要な課題は何かを聞いてください。練習では、苦手なポジションを一つ選び、位置を見分けて基本の守りや攻めを試せるかを確認すると、相談するときに状況を伝えやすくなります。",
+      "entry": "general-rrt-promotion",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B36",
+    "category": "帯・昇格",
+    "question": "RRTの昇格基準",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "RRTで青帯に上がるための正式な回数・期間・審査項目は、現在の登録資料では確認できていません。普段のクラスの担当インストラクターに、誰が判断するか、今の自分に必要な課題は何かを聞いてください。練習では、苦手なポジションを一つ選び、位置を見分けて基本の守りや攻めを試せるかを確認すると、相談するときに状況を伝えやすくなります。",
+      "entry": "general-rrt-promotion",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B37",
+    "category": "帯・昇格",
+    "question": "白帯の間に覚えたい練習の目安",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "青帯を目指すなら、まず今いる位置と自分の役割を言えるようにしましょう。次に、よく出る位置で守り方と攻め方を一つずつ覚え、相手が軽く抵抗しても試せるかを確かめます。例えばサイドの下からガードに戻す動きを一つ練習し、止まった場所を先生に伝えます。実際の昇格は所属道場の判断なので、次の課題は担当の先生に聞いてみてください。",
+      "entry": "general-belt-path",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B38",
+    "category": "帯・昇格",
+    "question": "トライフォースとカルペディエムの帯の昇格はどう違う？",
+    "method": "local",
+    "before": {
+      "answer": "トライフォースは共通の基礎カリキュラムと技の反復を案内しています。カルペディエム青山は白帯クラスと開始位置を決めた練習を設け、青山・自由が丘ではスパーを任意と案内しています。白帯なら同じ基礎を繰り返し、余裕が出てきたら開始位置を絞って相手の抵抗に慣れる、という形で両方を取り入れられます。実際の参加条件は通う支部の案内を確認してください。",
+      "entry": "general-gym-comparison",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "トライフォース公式は、昇格の技能要件を確認するテクニック検定を案内しています。カルペディエム青山と自由が丘の初心者案内では、共通の昇格回数や審査手順は確認できませんでした。自分の条件は所属する支部に聞きましょう。質問するときは、手続きとしての要件と、普段の練習で次に身につけたいことを一つずつ聞くと整理しやすくなります。",
+      "entry": "general-promotion-comparison",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B39",
+    "category": "帯・昇格",
+    "question": "トライフォースで青帯に昇格したい",
+    "method": "local",
+    "before": {
+      "answer": "トライフォースの公式案内では、ベーシッククラスは30レッスン・150技術のカリキュラムに沿って進みます。入門クラスでは基礎動作と技の反復を行い、スパーはレベルに応じて組みます。RRTで取り入れるなら、その日に習った形を一つ選び、次回同じ形でどこまでできるか確かめると練習をつなげられます。行く支部で入門・ベーシックの対象と開催日を確認しましょう。",
+      "entry": "general-triforce",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "トライフォース公式は、テクニック検定を帯昇格の技能要件を確認するためのものとして案内しています。具体的な受験要件や自分が次に受ける区分は、所属支部と最新の公式案内で確認してください。青帯を目指しているなら、日頃の練習で苦手な基本動作を一つ選び、その動きができる条件を担当の先生に見てもらうと課題が明確になります。\n\n検定に関する説明はトライフォースの公開案内に基づいています。帯の総合判断と検定の詳しい扱いは所属支部に確認してください。",
+      "entry": "general-triforce-promotion",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B40",
+    "category": "帯・昇格",
+    "question": "カルペディエムで青帯になるには？",
+    "method": "local",
+    "before": {
+      "answer": "カルペディエム青山は、白帯限定・ベーシッククラスを設け、スパーは任意と案内しています。白帯クラスには開始位置を決めた練習があります。自由が丘も、基礎動作を段階的に教え、スパー参加は自分のペースで始められると案内しています。体験や参加の決まりは、行く支部で確認してください。体験前に、どのクラスから参加できるかを聞くと当日の流れをつかめます。\n\n練習に取り入れるなら、習った動きが出やすい位置に絞って始め、慣れてから開始位置や相手の反応を広げます。",
+      "entry": "general-carpediem",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "確認したカルペディエム青山・自由が丘の初心者案内には、青帯までの一律の回数・期間や審査手順は掲載されていません。自分の所属支部に、昇格を誰が判断するかと、普段のクラスで何を身につけるべきかを確認してください。相談時は、「ガードに戻せない」「パス後に逃げられる」など、練習中に困る場面を一つ伝えると具体的に聞けます。\n\n白帯向けのクラス案内は、参加対象と授業の内容を確認する資料です。昇格基準の有無や運用は所属する支部に確認してください。",
+      "entry": "general-carpediem-promotion",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B41",
+    "category": "帯・昇格",
+    "question": "それはなぜ？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "青帯を目指すなら、まず今いる位置と自分の役割を言えるようにしましょう。次に、よく出る位置で守り方と攻め方を一つずつ覚え、相手が軽く抵抗しても試せるかを確かめます。例えばサイドの下からガードに戻す動きを一つ練習し、止まった場所を先生に伝えます。実際の昇格は所属道場の判断なので、次の課題は担当の先生に聞いてみてください。\n\n練習相手に、同じ位置から数回付き合ってもらいます。例えば上なら脚を越えて抑える、下なら膝を戻すなど、成功の目印を一つ決め、できた回と止まった回を振り返ります。",
+      "entry": "general-belt-path",
+      "choices": [
+        "一般的な練習の目安",
+        "RRTの昇格基準"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B42",
+    "category": "青帯以降",
+    "question": "青帯だけど得意な展開をどう組む？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "得意な展開を作るなら、スパーでよく入れる位置を一つ選び、そこへの入り方、第一の攻め、相手が止めたときの二手目を決めます。例えば下から崩せたら上で脚を抑えるところまでを一続きにして、反対に相手が床へ手をついた場合は別の方向へ切り替えます。自由スパーで使えた回と、入り口で止まった回を区別して練習してください。\n\n参考にしたマルセロ・ガルシアの講話紹介では、技の後に次の技をつなぐ考え方が扱われています。ここでの具体例はRRT向けの練習案です。",
+      "entry": "general-develop-game",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B43",
+    "category": "青帯以降",
+    "question": "得意技が止まる。どう練習する？",
+    "method": "local",
+    "before": {
+      "answer": "得意技が止まるなら、「その位置に入れない」「形は作れるが相手に止められる」「最後を安定させられない」のどれかを振り返ります。次の練習では止まる直前から始め、相手に同じ守りを繰り返してもらいましょう。よく出る反応を一つ見つけ、そこから出せる第二の選択肢を試します。練習後は相手の反応と、自分が試した対処を一つずつ記録します。",
+      "entry": "general-blue-roadmap",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "得意技が止まるなら、「その位置に入れない」「形は作れるが相手に止められる」「最後を安定させられない」のどれかを振り返ります。次の練習では止まる直前から始め、相手に同じ守りを繰り返してもらいましょう。よく出る反応を一つ見つけ、そこから出せる第二の選択肢を試します。練習後は相手の反応と、自分が試した対処を一つずつ記録します。",
+      "entry": "general-blue-roadmap",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B44",
+    "category": "青帯以降",
+    "question": "苦手な場面を練習するには？",
+    "method": "local",
+    "before": {
+      "answer": "次の練習の課題は、「どの位置から」「相手が何をしたら」「何を試すか」を一つに絞ると確認しやすくなります。練習後は勝敗より、狙った位置に入れたか、何をされたときに止まったかをメモしましょう。毎回同じ場所で止まるなら、そこを開始位置にした練習を相手に頼んでみてください。次回も同じ形から始めると、前回との違いを確かめられます。",
+      "entry": "general-training-review",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "次の練習の課題は、「どの位置から」「相手が何をしたら」「何を試すか」を一つに絞ると確認しやすくなります。練習後は勝敗より、狙った位置に入れたか、何をされたときに止まったかをメモしましょう。毎回同じ場所で止まるなら、そこを開始位置にした練習を相手に頼んでみてください。次回も同じ形から始めると、前回との違いを確かめられます。",
+      "entry": "general-training-review",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B45",
+    "category": "初試合",
+    "question": "いつ初試合に出ればいい？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "初試合を考えたら、出たい大会と自分の目的を担当の先生に伝えて相談しましょう。準備の目安として、タップや止まる合図を理解し、練習でよく出る位置から何を試すか一つ決めます。試合の時間や開始姿勢に合わせた練習を一本試し、そのあとで改善点を確認してみてください。出場資格や部門の条件は大会要項で確認します。次の練習で一本試してみましょう。",
+      "entry": "general-first-match",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B46",
+    "category": "初試合",
+    "question": "初試合何を準備する？",
+    "method": "local",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "まず大会要項で、部門、集合・計量の時刻、必要な身分証、着用ウェアの規定を確認します。前日に道着やノーギ用ウェア、帯、飲み物、着替えをまとめ、計量時の服装も確認しましょう。当日は呼び出し方法と試合場を先に把握します。計量のタイミングや持参物は大会で異なるため、申し込んだ大会の案内を見て準備を決めてください。",
+      "entry": "general-match-kit",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B47",
+    "category": "初試合",
+    "question": "試合の得点はどこで確認？",
+    "method": "local",
+    "before": {
+      "answer": "大会名と帯、部門によって使える技や得点の扱いが変わります。どの大会・部門ですか？",
+      "entry": null,
+      "choices": [
+        "IBJJFの大会",
+        "その他・まだ未定"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "試合の得点や禁止技は、まず大会要項で適用団体とルールの版を確認し、その団体の公式ルールブックを開きます。例えばIBJJFなら公式のBooks and Videosにルール資料があります。得点は技名に加えて開始位置や抑えが成立する条件も見てください。禁止技は帯・年齢・ギかノーギかで区分があるため、自分の部門に合う表を確認しましょう。",
+      "entry": "general-score-guide",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B48",
+    "category": "初試合",
+    "question": "白帯でもこの技を使える？",
+    "method": "local",
+    "before": {
+      "answer": "大会名と帯、部門によって使える技や得点の扱いが変わります。どの大会・部門ですか？",
+      "entry": null,
+      "choices": [
+        "IBJJFの大会",
+        "その他・まだ未定"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    },
+    "after": {
+      "answer": "大会名と帯、部門によって使える技や得点の扱いが変わります。どの大会・部門ですか？",
+      "entry": null,
+      "choices": [
+        "IBJJFの大会",
+        "その他・まだ未定"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "H01",
+    "category": "入会・初参加",
+    "question": "初めて行くとき、カバンの中に何を入れとくもの？",
+    "method": "mock-gemini",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "体験前に、道場へ予約の要否、道着のレンタル、ウェアの指定を確認しましょう。水、タオル、着替えを用意し、道着の下に着るTシャツやラッシュガードが必要かも聞きます。例えばカルペディエム自由が丘は体験のときに道着とタオルの貸出を案内しています。最初の費用や貸出の条件は参加する道場に確認してください。見学か体験かを最初に伝えると案内がスムーズです。",
+      "entry": "general-first-class-kit",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": true,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "H02",
+    "category": "帯・昇格",
+    "question": "白の次の色をもらうために身につけることは？",
+    "method": "mock-gemini",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "青帯を目指すなら、まず今いる位置と自分の役割を言えるようにしましょう。次に、よく出る位置で守り方と攻め方を一つずつ覚え、相手が軽く抵抗しても試せるかを確かめます。例えばサイドの下からガードに戻す動きを一つ練習し、止まった場所を先生に伝えます。実際の昇格は所属道場の判断なので、次の課題は担当の先生に聞いてみてください。",
+      "entry": "general-belt-path",
+      "choices": [
+        "一般的な練習の目安",
+        "RRTの昇格基準"
+      ],
+      "videos": [],
+      "mockAccepted": true,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "H03",
+    "category": "攻防",
+    "question": "向こうのお腹が自分の顔の上あたりで、またがれている。まず何を守る？",
+    "method": "mock-gemini",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "マウントを取られたら、まず肘を胴に寄せて腕を守ります。相手の腰が低く、膝を差し込む隙間があるなら、前腕で距離を保ちながら腰を横にずらし、まず相手の片脚を挟んでハーフガードへ戻す練習をします。相手が胸の近くまで上がって腕が離れそうなら先に肘を戻し、足を入れる余裕を作ります。練習では先生と軽い強度で形を確かめてください。",
+      "entry": "general-mount-bottom",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": true,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "H04",
+    "category": "技の習得",
+    "question": "練習で見せてもらったやり方を帰る頃には思い出せない",
+    "method": "mock-gemini",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "習った技を忘れるなら、その日に出た技を一つだけ選び、「どの位置から」「何を持つ・どこに置く」「何ができたら終わり」の三つをメモします。次回、相手に開始位置を作ってもらい、先生の説明を思い出しながら一度ゆっくり再現します。止まった箇所だけ先生に確認し、形が作れたら相手に軽く抵抗してもらいましょう。最後は同じ位置からやり直します。",
+      "entry": "general-remember",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": true,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "H05",
+    "category": "初試合",
+    "question": "試合に行く日に身分証とか着替えとか何が必要かわからない",
+    "method": "mock-gemini",
+    "before": {
+      "answer": "どのことを知りたいですか？ 近い項目を選んでください。",
+      "entry": null,
+      "choices": [
+        "技の意味・手順",
+        "スパーで困った場面",
+        "道場・スパーのマナー",
+        "練習方法"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": false
+    },
+    "after": {
+      "answer": "まず大会要項で、部門、集合・計量の時刻、必要な身分証、着用ウェアの規定を確認します。前日に道着やノーギ用ウェア、帯、飲み物、着替えをまとめ、計量時の服装も確認しましょう。当日は呼び出し方法と試合場を先に把握します。計量のタイミングや持参物は大会で異なるため、申し込んだ大会の案内を見て準備を決めてください。",
+      "entry": "general-match-kit",
+      "choices": [],
+      "videos": [],
+      "mockAccepted": true,
+      "usesGemini": true,
+      "techniques": [],
+      "passed": true
+    }
+  },
+  {
+    "id": "B49",
+    "category": "攻防",
+    "question": "ハーフガードの下で潰されたら？",
+    "method": "local",
+    "before": {
+      "answer": "ボトムのハーフで脇やマクラを取られたら、腕を差し返す前に、胸を重ねられた形から半身に戻る余白を作ります。\n\n肘を体に寄せ、空いた方の上腕や肩に前腕を入れます。足で床を踏んで圧が緩む瞬間に骨盤を横へずらし、上の膝を戻します。\n\n相手の反応はどれに近いですか？",
+      "entry": null,
+      "choices": [
+        "圧が緩んだ",
+        "マクラが入る直前",
+        "相手の脚が抜けた"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [
+        "half-crossface"
+      ],
+      "passed": true
+    },
+    "after": {
+      "answer": "ボトムのハーフで脇やマクラを取られたら、腕を差し返す前に、胸を重ねられた形から半身に戻る余白を作ります。\n\n肘を体に寄せ、空いた方の上腕や肩に前腕を入れます。足で床を踏んで圧が緩む瞬間に骨盤を横へずらし、上の膝を戻します。\n\n相手の反応はどれに近いですか？",
+      "entry": null,
+      "choices": [
+        "圧が緩んだ",
+        "マクラが入る直前",
+        "相手の脚が抜けた"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [
+        "half-crossface"
+      ],
+      "passed": true
+    }
+  },
+  {
+    "id": "B50",
+    "category": "攻防",
+    "question": "サイドを取られた下からどう逃げる？",
+    "method": "local",
+    "before": {
+      "answer": "サイドを固められたボトムは、相手を両手で押す前に肘を体へ戻し、肩や腰の間に前腕を入れる場所を作ります。\n\n足で床を踏んで相手の圧が緩む瞬間に骨盤を横へずらします。腕で作った空間が残っているうちに、近い膝を差します。\n\n相手の反応はどれに近いですか？",
+      "entry": null,
+      "choices": [
+        "腰が動く空間ができる",
+        "相手が膝を跨がせる"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [
+        "side-bottom"
+      ],
+      "passed": true
+    },
+    "after": {
+      "answer": "サイドを固められたボトムは、相手を両手で押す前に肘を体へ戻し、肩や腰の間に前腕を入れる場所を作ります。\n\n足で床を踏んで相手の圧が緩む瞬間に骨盤を横へずらします。腕で作った空間が残っているうちに、近い膝を差します。\n\n相手の反応はどれに近いですか？",
+      "entry": null,
+      "choices": [
+        "腰が動く空間ができる",
+        "相手が膝を跨がせる"
+      ],
+      "videos": [],
+      "mockAccepted": false,
+      "usesGemini": false,
+      "techniques": [
+        "side-bottom"
+      ],
+      "passed": true
+    }
+  },
+  {
+    "id": "B51",
+    "category": "攻防",
+    "question": "ボトムのガードリテンションを教えて",
+    "method": "local",
+    "before": {
+      "answer": "ガードのボトムでは、フレームで相手が入る場所に空間を残し、エビで骨盤を動かして膝を差し戻します。\n\n肘を胴の近くに置いて相手の肩や腰を受けます。相手を押し返し続けると脚が戻らないので、前腕が距離を保てるうちに横へずらします。\n\n脚を越えられた直後は、肩と腰が重なる前に前腕を当て、腰を小さくずらして近い膝を内側へ戻します。",
+      "entry": null,
+      "choices": [],
+      "videos": [
+        "z8pN9PafXTc"
+      ],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [
+        "guard-retention"
+      ],
+      "passed": true
+    },
+    "after": {
+      "answer": "ガードのボトムでは、フレームで相手が入る場所に空間を残し、エビで骨盤を動かして膝を差し戻します。\n\n肘を胴の近くに置いて相手の肩や腰を受けます。相手を押し返し続けると脚が戻らないので、前腕が距離を保てるうちに横へずらします。\n\n脚を越えられた直後は、肩と腰が重なる前に前腕を当て、腰を小さくずらして近い膝を内側へ戻します。",
+      "entry": null,
+      "choices": [],
+      "videos": [
+        "z8pN9PafXTc"
+      ],
+      "mockAccepted": false,
+      "usesGemini": true,
+      "techniques": [
+        "guard-retention"
+      ],
+      "passed": true
+    }
+  }
+]

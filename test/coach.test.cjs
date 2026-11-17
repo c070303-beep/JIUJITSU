@@ -10,6 +10,7 @@ const coach = require('../lib/coach.cjs');
 const fixtures = require('./coaching-cases.json');
 const generalCases = require('./general-cases.json');
 const generalKnowledge = require('../knowledge/general.json');
+const beginnerCases = require('./beginner-cases.json');
 
 for (const fixture of fixtures) {
   test(fixture.id + ' ' + fixture.question, () => {
@@ -58,6 +59,55 @@ for (const item of generalCases) {
   });
 }
 
+for (const item of beginnerCases) {
+  test(item.id + ' ' + item.question, () => {
+    const initial = coach.resolve(item.question, item.history);
+    let route = initial;
+    if (item.mock) {
+      assert(initial.semantic);
+      const payload = coach.selectPayload(initial,item.question);
+      assert(payload.generationConfig.responseSchema.properties.entry.enum.includes(item.mock.entry));
+      const response = {candidates:[{content:{parts:[{text:JSON.stringify(item.mock)}]}}]};
+      const selection = coach.readSelection(response,initial);
+      assert.deepEqual(selection,item.mock);
+      route = coach.interpretRoute(initial,selection);
+      const followup = coach.resolve('それはなぜ？',[
+        {role:'user',content:item.question},
+        {role:'assistant',content:coach.renderAnswer(route)},
+      ]);
+      assert.equal(followup.generalId,item.expected);
+      assert(coach.renderAnswer(followup).length > coach.renderAnswer(route).length);
+      assert.equal(coach.selectPayload(followup,'それはなぜ？'), null);
+    }
+    assert.equal(route.generalId ?? null,item.expected);
+    if (item.tech) assert.equal(route.records[0]?.id,item.tech);
+    const cards = coach.videoCards(route);
+    const answer = coach.renderAnswer(route,null,cards);
+    for (const phrase of item.phrases) assert(answer.includes(phrase),answer);
+    for (const phrase of item.forbidden || []) assert(!answer.includes(phrase),answer);
+    if (item.choiceCount !== undefined) assert.equal(route.choices.length,item.choiceCount);
+    if (item.expected) {
+      assert.deepEqual(cards,[]);
+      if (!item.history.length) assert(answer.length >= 150 && answer.length <= 250, answer);
+      if (!item.mock) assert.equal(coach.selectPayload(initial,item.question),null);
+    }
+  });
+}
+
+test('Beginning questions show relevant choices and each choice resolves to its advertised topic', () => {
+  const promotions = coach.resolve('青帯になるには？');
+  const history = [{role:'user',content:'青帯になるには？'}];
+  assert.deepEqual(promotions.choices.map(option => option.label),['一般的な練習の目安','RRTの昇格基準']);
+  assert.deepEqual(promotions.choices.map(option => coach.resolve(option.question,history).generalId),
+    ['general-belt-path','general-rrt-promotion']);
+  const pinned = coach.resolve('下で潰されたらどうすれば？');
+  const pinnedPaths = pinned.choices.map(option => {
+    const path = coach.resolve(option.question,[{role:'user',content:'下で潰されたらどうすれば？'}]);
+    return path.generalId ?? path.records[0]?.id;
+  });
+  assert.deepEqual(pinnedPaths,['side-bottom','general-mount-bottom','half-crossface']);
+});
+
 test('Gemini general IDs reject a fabricated reaction or additional data', () => {
   const route = coach.resolve('回したやつをリールに流しても平気？');
   const response = item => ({candidates:[{content:{parts:[{text:JSON.stringify(item)}]}}]});
@@ -79,6 +129,11 @@ test('General answers point to registered sources and existing technique IDs', (
     assert(record.scope.trim() && record.answer.length >= 150 && record.detail.trim());
     assert(record.source_ids.length && record.source_ids.every(id => generalKnowledge.sources[id]));
     assert(record.related_ids.every(id => techniquesById.has(id)));
+    for (const group of record.match_groups || []) assert(group.length && group.every(term => typeof term === 'string' && term.trim()));
+    for (const choice of record.choices || []) {
+      const target = coach.resolve(choice.question);
+      assert(target.generalId || target.records.length,choice.question);
+    }
     for (const alias of record.aliases) {
       assert(!aliases.has(alias), alias);
       aliases.add(alias);

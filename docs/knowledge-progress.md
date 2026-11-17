@@ -19,3 +19,9 @@
 | 公開資料調査と比較 | 公開17件と既存RRTルール1件。範囲・出典と残りの確認項目を記録。[調査レポート](beginner-materials.md) |
 | 知識抽出・統合 | マナー、基礎用語、練習、指導方針、競技確認方法の30項目を既存の技術IDに接続。[一般知識](../knowledge/general.json) |
 | 実装・試験 | 既存のGemini分類とNode.jsの回答経路を拡張し、新規43問の更新前後を保存。[品質比較](beginner-quality.md) |
+
+## 初心者の質問からの追加調査（2026-11-17）
+
+- 9分野の現行回答を測定し、入会前・帯の昇格・押さえ込み・初試合の不足を優先した。[範囲・根拠](beginner-coverage.md)
+- 一般知識を30件から55件へ更新し、不明な位置や昇格で選べる確認項目を追加した。[知識データ](../knowledge/general.json)
+- 同じ56問で更新前後のローカル処理と模擬Geminiを比較した。[質問と判定](../test/beginner-cases.json)・[更新前後の回答](beginner-coverage-results.json)

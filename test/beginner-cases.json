@@ -1,0 +1,672 @@
+[
+  {
+    "id": "B01",
+    "category": "入会・初参加",
+    "question": "柔術って何をするの？",
+    "expected": "general-intro",
+    "phrases": [
+      "位置取り",
+      "反復"
+    ],
+    "history": []
+  },
+  {
+    "id": "B02",
+    "category": "入会・初参加",
+    "question": "運動経験がなくても始められる？",
+    "expected": "general-intro",
+    "phrases": [
+      "初心者向けの体験クラス",
+      "初めてです"
+    ],
+    "history": []
+  },
+  {
+    "id": "B03",
+    "category": "入会・初参加",
+    "question": "初日は何を持っていけばいい？",
+    "expected": "general-first-class-kit",
+    "phrases": [
+      "水、タオル",
+      "レンタル"
+    ],
+    "history": []
+  },
+  {
+    "id": "B04",
+    "category": "入会・初参加",
+    "question": "道着なしで体験できる？",
+    "expected": "general-first-class-kit",
+    "phrases": [
+      "道場へ",
+      "レンタル"
+    ],
+    "history": []
+  },
+  {
+    "id": "B05",
+    "category": "入会・初参加",
+    "question": "ギとノーギはどっちから始める？",
+    "expected": "general-choose-class",
+    "phrases": [
+      "未経験者を受け入れて",
+      "通いやすい曜日"
+    ],
+    "history": []
+  },
+  {
+    "id": "B06",
+    "category": "道場マナー",
+    "question": "道場のまなーは？",
+    "expected": "general-mat-etiquette",
+    "phrases": [
+      "受付",
+      "強度"
+    ],
+    "history": []
+  },
+  {
+    "id": "B07",
+    "category": "道場マナー",
+    "question": "道着は毎回洗う？",
+    "expected": "general-hygiene",
+    "phrases": [
+      "毎回",
+      "爪"
+    ],
+    "history": []
+  },
+  {
+    "id": "B08",
+    "category": "道場マナー",
+    "question": "出稽古って誰に連絡？",
+    "expected": "general-visit",
+    "phrases": [
+      "訪問先",
+      "所属道場"
+    ],
+    "history": []
+  },
+  {
+    "id": "B09",
+    "category": "道場マナー",
+    "question": "スパーを撮影してSNSに上げていい？",
+    "expected": "general-filming",
+    "phrases": [
+      "映る相手",
+      "公開してよいか"
+    ],
+    "history": []
+  },
+  {
+    "id": "B10",
+    "category": "道場マナー",
+    "question": "遅刻して途中から入っていい？",
+    "expected": "general-mat-arrival",
+    "phrases": [
+      "マットの端",
+      "先生"
+    ],
+    "history": []
+  },
+  {
+    "id": "B11",
+    "category": "スパーと安全",
+    "question": "初スパーはどうする？",
+    "expected": "general-first-roll",
+    "phrases": [
+      "軽めで",
+      "課題を一つ"
+    ],
+    "history": []
+  },
+  {
+    "id": "B12",
+    "category": "スパーと安全",
+    "question": "今日はスパーを休みたい",
+    "expected": "general-spar-intensity",
+    "phrases": [
+      "この一本は休みます"
+    ],
+    "history": []
+  },
+  {
+    "id": "B13",
+    "category": "スパーと安全",
+    "question": "相手からタップされたら？",
+    "expected": "general-tap",
+    "phrases": [
+      "すぐ力を抜いて技を解き"
+    ],
+    "history": []
+  },
+  {
+    "id": "B14",
+    "category": "スパーと安全",
+    "question": "相手と体重差があるけどどう練習する？",
+    "expected": "general-spar-intensity",
+    "phrases": [
+      "相手選び",
+      "軽め"
+    ],
+    "history": []
+  },
+  {
+    "id": "B15",
+    "category": "基本ポジション",
+    "question": "横から押さえられてるのは何？",
+    "expected": "general-side-recognize",
+    "phrases": [
+      "サイドコントロール",
+      "ハーフガード"
+    ],
+    "history": []
+  },
+  {
+    "id": "B16",
+    "category": "基本ポジション",
+    "question": "トップとボトムの違いは？",
+    "expected": "general-top-bottom",
+    "phrases": [
+      "上ならトップ",
+      "下ならボトム"
+    ],
+    "history": []
+  },
+  {
+    "id": "B17",
+    "category": "基本ポジション",
+    "question": "スイープとエスケープはどう違う？",
+    "expected": "general-sweep-escape",
+    "phrases": [
+      "ガードから",
+      "不利な位置"
+    ],
+    "history": []
+  },
+  {
+    "id": "B18",
+    "category": "基本ポジション",
+    "question": "ガードとパスの違いは？",
+    "expected": "general-guard-pass",
+    "phrases": [
+      "下の人",
+      "上の人"
+    ],
+    "history": []
+  },
+  {
+    "id": "B19",
+    "category": "攻防",
+    "question": "下でつぶされたらまず何する？",
+    "expected": "general-pinned-triage",
+    "phrases": [
+      "肘を身体の近く",
+      "またいで"
+    ],
+    "history": [],
+    "choiceCount": 3
+  },
+  {
+    "id": "B20",
+    "category": "攻防",
+    "question": "マウント下の守り方",
+    "expected": "general-mount-bottom",
+    "phrases": [
+      "肘を胴に寄せ",
+      "膝を差し込む"
+    ],
+    "history": [
+      {
+        "role": "user",
+        "content": "下でつぶされたらまず何する？"
+      }
+    ],
+    "choiceCount": 0
+  },
+  {
+    "id": "B21",
+    "category": "攻防",
+    "question": "マウントを取った後に返される",
+    "expected": "general-mount-top",
+    "phrases": [
+      "体重を左右",
+      "手で床を支え"
+    ],
+    "history": []
+  },
+  {
+    "id": "B22",
+    "category": "攻防",
+    "question": "上で相手の脚を越えた後はどうする？",
+    "expected": "general-pass-settle",
+    "phrases": [
+      "膝が二人の間",
+      "肩と腰"
+    ],
+    "history": []
+  },
+  {
+    "id": "B23",
+    "category": "攻防",
+    "question": "胴体をまたがれたら？",
+    "expected": "general-mount-bottom",
+    "phrases": [
+      "膝を差し込む",
+      "ハーフガード"
+    ],
+    "history": []
+  },
+  {
+    "id": "B24",
+    "category": "攻防",
+    "question": "後ろから首を取られそう",
+    "expected": "general-back-bottom",
+    "phrases": [
+      "首に近い腕を両手",
+      "脚がどこ"
+    ],
+    "history": []
+  },
+  {
+    "id": "B25",
+    "category": "攻防",
+    "question": "バックを取ったらどうキープする？",
+    "expected": "general-back-top",
+    "phrases": [
+      "胸を相手の背中",
+      "太ももの内側"
+    ],
+    "history": []
+  },
+  {
+    "id": "B26",
+    "category": "攻防",
+    "question": "自分が亀になったら何から？",
+    "expected": "general-turtle-bottom",
+    "phrases": [
+      "肘と膝",
+      "膝を戻せる"
+    ],
+    "history": []
+  },
+  {
+    "id": "B27",
+    "category": "攻防",
+    "question": "相手が四つん這いになったら？",
+    "expected": "general-turtle-top",
+    "phrases": [
+      "相手の横か後ろ",
+      "こちらを向く"
+    ],
+    "history": []
+  },
+  {
+    "id": "B28",
+    "category": "攻防",
+    "question": "フレームとは何？",
+    "expected": "general-frame-posture",
+    "phrases": [
+      "腕や膝",
+      "距離を保つ"
+    ],
+    "history": []
+  },
+  {
+    "id": "B29",
+    "category": "技の習得",
+    "question": "習った技を忘れる。何を復習したらいい？",
+    "expected": "general-remember",
+    "phrases": [
+      "どの位置から",
+      "軽く抵抗"
+    ],
+    "history": []
+  },
+  {
+    "id": "B30",
+    "category": "技の習得",
+    "question": "力んでしまって腕がパンパンになる",
+    "expected": "general-too-much-force",
+    "phrases": [
+      "握りで相手のどの動き",
+      "足の支え"
+    ],
+    "history": []
+  },
+  {
+    "id": "B31",
+    "category": "技の習得",
+    "question": "ドリルとスパーはどう使い分ける？",
+    "expected": "general-drilling",
+    "phrases": [
+      "反復",
+      "状況スパー"
+    ],
+    "history": []
+  },
+  {
+    "id": "B32",
+    "category": "帯・昇格",
+    "question": "青帯になるには？",
+    "expected": "general-belt-path",
+    "phrases": [
+      "よく出る位置",
+      "所属道場の判断"
+    ],
+    "history": [],
+    "choiceCount": 2
+  },
+  {
+    "id": "B33",
+    "category": "帯・昇格",
+    "question": "どれくらいで青帯？",
+    "expected": "general-belt-time",
+    "phrases": [
+      "習得状況",
+      "出席回数や年数だけ"
+    ],
+    "history": []
+  },
+  {
+    "id": "B34",
+    "category": "帯・昇格",
+    "question": "白帯の間に何を覚えたらいい？",
+    "expected": "general-belt-path",
+    "phrases": [
+      "守り方と攻め方",
+      "軽く抵抗"
+    ],
+    "history": []
+  },
+  {
+    "id": "B35",
+    "category": "帯・昇格",
+    "question": "RRTではどうしたら上がれる？",
+    "expected": "general-rrt-promotion",
+    "phrases": [
+      "担当インストラクター",
+      "確認できていません"
+    ],
+    "history": [],
+    "forbidden": [
+      "週3",
+      "1年"
+    ]
+  },
+  {
+    "id": "B36",
+    "category": "帯・昇格",
+    "question": "RRTの昇格基準",
+    "expected": "general-rrt-promotion",
+    "phrases": [
+      "正式な回数",
+      "今の自分"
+    ],
+    "history": [
+      {
+        "role": "user",
+        "content": "青帯になるには？"
+      }
+    ],
+    "choiceCount": 0,
+    "forbidden": [
+      "週3",
+      "1年"
+    ]
+  },
+  {
+    "id": "B37",
+    "category": "帯・昇格",
+    "question": "白帯の間に覚えたい練習の目安",
+    "expected": "general-belt-path",
+    "phrases": [
+      "よく出る位置",
+      "ガードに戻す"
+    ],
+    "history": [
+      {
+        "role": "user",
+        "content": "青帯になるには？"
+      }
+    ],
+    "choiceCount": 0
+  },
+  {
+    "id": "B38",
+    "category": "帯・昇格",
+    "question": "トライフォースとカルペディエムの帯の昇格はどう違う？",
+    "expected": "general-promotion-comparison",
+    "phrases": [
+      "検定",
+      "青山と自由が丘"
+    ],
+    "history": []
+  },
+  {
+    "id": "B39",
+    "category": "帯・昇格",
+    "question": "トライフォースで青帯に昇格したい",
+    "expected": "general-triforce-promotion",
+    "phrases": [
+      "技能要件",
+      "所属支部"
+    ],
+    "history": []
+  },
+  {
+    "id": "B40",
+    "category": "帯・昇格",
+    "question": "カルペディエムで青帯になるには？",
+    "expected": "general-carpediem-promotion",
+    "phrases": [
+      "青山・自由が丘",
+      "所属支部"
+    ],
+    "history": []
+  },
+  {
+    "id": "B41",
+    "category": "帯・昇格",
+    "question": "それはなぜ？",
+    "expected": "general-belt-path",
+    "phrases": [
+      "成功の目印",
+      "止まった回"
+    ],
+    "history": [
+      {
+        "role": "user",
+        "content": "青帯になるには？"
+      }
+    ]
+  },
+  {
+    "id": "B42",
+    "category": "青帯以降",
+    "question": "青帯だけど得意な展開をどう組む？",
+    "expected": "general-develop-game",
+    "phrases": [
+      "入り方",
+      "二手目"
+    ],
+    "history": []
+  },
+  {
+    "id": "B43",
+    "category": "青帯以降",
+    "question": "得意技が止まる。どう練習する？",
+    "expected": "general-blue-roadmap",
+    "phrases": [
+      "止まる直前",
+      "第二の選択肢"
+    ],
+    "history": []
+  },
+  {
+    "id": "B44",
+    "category": "青帯以降",
+    "question": "苦手な場面を練習するには？",
+    "expected": "general-training-review",
+    "phrases": [
+      "そこを開始位置"
+    ],
+    "history": []
+  },
+  {
+    "id": "B45",
+    "category": "初試合",
+    "question": "いつ初試合に出ればいい？",
+    "expected": "general-first-match",
+    "phrases": [
+      "担当の先生",
+      "大会要項"
+    ],
+    "history": []
+  },
+  {
+    "id": "B46",
+    "category": "初試合",
+    "question": "初試合何を準備する？",
+    "expected": "general-match-kit",
+    "phrases": [
+      "計量の時刻",
+      "身分証"
+    ],
+    "history": []
+  },
+  {
+    "id": "B47",
+    "category": "初試合",
+    "question": "試合の得点はどこで確認？",
+    "expected": "general-score-guide",
+    "phrases": [
+      "公式ルールブック",
+      "自分の部門"
+    ],
+    "history": []
+  },
+  {
+    "id": "B48",
+    "category": "初試合",
+    "question": "白帯でもこの技を使える？",
+    "expected": null,
+    "phrases": [
+      "大会名と帯",
+      "大会・部門"
+    ],
+    "history": [],
+    "choiceCount": 2
+  },
+  {
+    "id": "H01",
+    "category": "入会・初参加",
+    "question": "初めて行くとき、カバンの中に何を入れとくもの？",
+    "expected": "general-first-class-kit",
+    "phrases": [
+      "レンタル"
+    ],
+    "history": [],
+    "mock": {
+      "entry": "general-first-class-kit",
+      "intent": "how",
+      "branch": ""
+    }
+  },
+  {
+    "id": "H02",
+    "category": "帯・昇格",
+    "question": "白の次の色をもらうために身につけることは？",
+    "expected": "general-belt-path",
+    "phrases": [
+      "よく出る位置"
+    ],
+    "history": [],
+    "mock": {
+      "entry": "general-belt-path",
+      "intent": "how",
+      "branch": ""
+    }
+  },
+  {
+    "id": "H03",
+    "category": "攻防",
+    "question": "向こうのお腹が自分の顔の上あたりで、またがれている。まず何を守る？",
+    "expected": "general-mount-bottom",
+    "phrases": [
+      "肘を胴に寄せ"
+    ],
+    "history": [],
+    "mock": {
+      "entry": "general-mount-bottom",
+      "intent": "how",
+      "branch": ""
+    }
+  },
+  {
+    "id": "H04",
+    "category": "技の習得",
+    "question": "練習で見せてもらったやり方を帰る頃には思い出せない",
+    "expected": "general-remember",
+    "phrases": [
+      "三つをメモ"
+    ],
+    "history": [],
+    "mock": {
+      "entry": "general-remember",
+      "intent": "how",
+      "branch": ""
+    }
+  },
+  {
+    "id": "H05",
+    "category": "初試合",
+    "question": "試合に行く日に身分証とか着替えとか何が必要かわからない",
+    "expected": "general-match-kit",
+    "phrases": [
+      "大会要項"
+    ],
+    "history": [],
+    "mock": {
+      "entry": "general-match-kit",
+      "intent": "how",
+      "branch": ""
+    }
+  },
+  {
+    "id": "B49",
+    "category": "攻防",
+    "question": "ハーフガードの下で潰されたら？",
+    "expected": null,
+    "tech": "half-crossface",
+    "phrases": [
+      "ボトムのハーフ",
+      "上の膝を戻し"
+    ],
+    "history": []
+  },
+  {
+    "id": "B50",
+    "category": "攻防",
+    "question": "サイドを取られた下からどう逃げる？",
+    "expected": null,
+    "tech": "side-bottom",
+    "phrases": [
+      "サイドを固められたボトム",
+      "近い膝"
+    ],
+    "history": []
+  },
+  {
+    "id": "B51",
+    "category": "攻防",
+    "question": "ボトムのガードリテンションを教えて",
+    "expected": null,
+    "tech": "guard-retention",
+    "phrases": [
+      "ガードのボトム",
+      "骨盤を動かして"
+    ],
+    "history": []
+  }
+]
