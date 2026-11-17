@@ -397,3 +397,48 @@ test('Chat layout and background media lookup keep the v13 entry points', () => 
   assert.match(html, /if\(!turn\?\.isConnected\)return/);
   assert.match(html, /fetch\('\/api\/videos',\{method:'POST'/);
 });
+
+test('Promotion questions distinguish conditions, duration, and the named academy', () => {
+  const cases = [
+    ['青帯になる条件は？', 'belt-path'],
+    ['必要な条件は何ですか、青帯に上がるときの話です', 'belt-path'],
+    ['ブルーベルトへの昇格条件を教えて', 'belt-path'],
+    ['青帯に なる 条件は？', 'belt-path'],
+    ['あおおびになるための目安って？', 'belt-path'],
+    ['青帯は何か月ぐらいでなれる？', 'belt-time'],
+    ['週3回で青帯になれる？', 'belt-time'],
+    ['RRTで青帯になる条件は？', 'rrt-promotion'],
+    ['RRTの青帯の条件は？', 'rrt-promotion'],
+    ['カルペディエムで青帯を取得するには？', 'carpediem-promotion'],
+    ['RRTで週3回通えば青帯を取れますか？', 'rrt-promotion'],
+    ['ランジェル先生のところで青帯になるための条件は？', 'rrt-promotion'],
+    ['トライフォースで青帯になる条件は？', 'triforce-promotion'],
+    ['カルペディエムの青帯になる基準は？', 'carpediem-promotion'],
+    ['青帯になる条件はトライフォースとカルペディエムで違う？', 'promotion-comparison'],
+    ['青帯になった後の練習は？', null],
+    ['青帯の大会の出場条件は？', null],
+  ];
+  for (const [question, id] of cases) {
+    const route = coach.resolve(question);
+    assert.equal(route.generalId ?? null, id ? 'general-' + id : null, question);
+    if (id) assert.equal(coach.selectPayload(route,question),null,question);
+  }
+  const route = coach.resolve('青帯になる条件は？');
+  assert.match(coach.renderAnswer(route),/^青帯の昇格条件は道場ごとに異なります。/);
+  assert.deepEqual(route.choices.map(choice => choice.label), ['一般的な練習の目安','RRTの昇格基準']);
+});
+
+test('Short promotion follow-ups keep the topic and the academy scope', () => {
+  const ask = (question, previous) => coach.resolve(question, previous);
+  const history = prev => [{role:'user',content:prev}];
+  assert.equal(ask('条件は？',history('青帯になるまで何年？')).generalId,'general-belt-path');
+  assert.equal(ask('次の期間は？',history('初スパーのコツは？')).generalId,undefined);
+  assert.equal(ask('じゃあRRTでは？',history('青帯になる条件は？')).generalId,'general-rrt-promotion');
+  assert.equal(ask('RRTではどう？',history('青帯に昇格するには？')).generalId,'general-rrt-promotion');
+  const rrtHistory = history('RRTで青帯になる条件は？');
+  const localPeriod = ask('何年くらい？',rrtHistory);
+  assert.equal(localPeriod.generalId,'general-rrt-promotion');
+  assert.match(coach.renderAnswer(localPeriod),/確認できていません/);
+  assert.equal(ask('一般的には？',rrtHistory).generalId,'general-belt-path');
+  assert.equal(ask('期間は？',history('青帯になる条件は？')).generalId,'general-belt-time');
+});
