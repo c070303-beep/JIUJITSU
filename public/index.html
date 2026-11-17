@@ -462,7 +462,7 @@ async function askCoach(question,selection){
     appendBubble('assistant',body.answer,turn);
     appendCoachChoices(body.choices,turn);
     // Videos load independently from /api/videos.
-    chatHistory.push({role:'assistant',content:body.answer});
+    chatHistory.push({role:'assistant',content:body.answer,topic:body.topic});
     if(chatHistory.length>30)chatHistory.splice(0,chatHistory.length-30);
     if(body.mode==='gemini')setConnected('yes','AI接続中');
     if(body.mode==='knowledge')setConnected('yes','技術メモで回答');

@@ -378,6 +378,14 @@ test('Trial HTTP keeps authorization, selects through mocked Gemini, and serves 
   assert.equal(filming.mode,'gemini');
   assert.match(filming.answer,/公開してよいか/);
   assert.equal(calls,beforeReaction+1);
+  assert.deepEqual(filming.topic,{entry:'general-filming'});
+  const followup = await (await post('/api/chat',secondCookie,{question:'それを詳しく',history:[
+    {role:'user',content:'回したやつをリールに流しても平気？'},
+    {role:'assistant',content:filming.answer,topic:filming.topic},
+  ]})).json();
+  assert.equal(followup.topic.entry,'general-filming');
+  assert(followup.answer.length > filming.answer.length);
+  assert.equal(calls,beforeReaction+1);
   const limitedCookie = await login();
   const before = calls;
   const batch = await Promise.all(Array.from({length:12},()=>post('/api/chat',limitedCookie,{question:'Jポイントの米倉式は？'})));
@@ -392,6 +400,7 @@ test('Chat layout and background media lookup keep the v13 entry points', () => 
   assert(html.indexOf('id="ai-chat"') >= 0);
   assert(html.indexOf('id="ai-chat"') < html.indexOf('id="ai-form"'));
   assert.match(html, /chatBox\.scrollTop=chatBox\.scrollHeight/);
+  assert.match(html,/topic:body.topic/);
   assert.match(html, /appendCoachChoices\(body\.choices,turn\)/);
   assert.match(html, /appendVideoReferences\(v\.videos,turn\)/);
   assert.match(html, /if\(!turn\?\.isConnected\)return/);
@@ -441,4 +450,74 @@ test('Short promotion follow-ups keep the topic and the academy scope', () => {
   assert.match(coach.renderAnswer(localPeriod),/確認できていません/);
   assert.equal(ask('一般的には？',rrtHistory).generalId,'general-belt-path');
   assert.equal(ask('期間は？',history('青帯になる条件は？')).generalId,'general-belt-time');
+});
+
+test('Shared intent matching covers unlisted phrasing across coaching topics', () => {
+  const examples = [
+    ['運動不足で体力に自信がない。体験に申し込む前に何を伝える？','general-intro','overview', /体験/],
+    ['手も足も抑えられて横を向けないんだけど、最初に守る場所はどこ？','general-pinned-triage','first', /肘/],
+    ['回した動画じゃなくて対戦の写真をグループに流してもいい感じ？','general-filming','how', /公開してよいか/],
+    ['白から一つ色を上げるときに先生は何を見るもの？','general-belt-path','overview', /昇格/],
+    ['相手が背中のほうに乗ったままで、首に手がきそう。最初に何を塞ぐ？','general-back-bottom','first', /首に近い腕/],
+    ['タートルの中でずっと固まっちゃう。手足がほどける前にどう動く？','general-turtle-bottom','how', /膝/],
+    ['シングルレッグえっくすのやり方','single-leg-x','how', /片脚/],
+    ['2本目の練習前、濡れたままの道着で相手と組むのはあり？','general-hygiene','how', /洗って乾かした/],
+    ['抽選のあと会場でどこに行けばいいか分からない','general-match-kit','how', /大会要項/],
+    ['一つの動きを覚えても別の人だと通用しないんだけど、何を変える？','general-training-review','practice', /開始位置/],
+  ];
+  for (const [question,entry,intent,answer] of examples) {
+    const route = coach.resolveRequest(question);
+    assert(route.semantic, question);
+    const payload = coach.selectPayload(route,question);
+    const content = JSON.parse(payload.contents[0].parts[0].text);
+    assert(payload.generationConfig.responseSchema.properties.entry.enum.includes(entry), question);
+    assert(content.catalog.every(item => !item.answer && !item.source_ids));
+    const result = {candidates:[{content:{parts:[{text:JSON.stringify({entry,intent,branch:''})}]}}]};
+    const resolved = coach.interpretRoute(route,coach.readSelection(result,route));
+    assert.equal(coach.topicForRoute(resolved).entry,entry);
+    assert.match(coach.renderAnswer(resolved),answer,question);
+  }
+});
+
+test('Related choices work without Gemini and do not override a new subject', () => {
+  const route = coach.resolveRequest('シングルレッグえっくすのやり方');
+  const option = route.choices.find(choice => choice.selection?.topic === 'single-leg-x');
+  assert(option);
+  const picked = coach.resolveRequest(option.question,[],option.selection);
+  assert.equal(coach.topicForRoute(picked).entry,'single-leg-x');
+  assert.equal(coach.selectPayload(picked,option.question),null);
+  const newQuestion = coach.resolveRequest('青帯になる条件は？',[],option.selection);
+  assert.equal(newQuestion.generalId,'general-belt-path');
+});
+
+test('Topic context preserves technique and reaction and does not disclose private turns', () => {
+  const history = [
+    {role:'user',content:'さっきの連絡先は test@example.invalid'},
+    {role:'user',content:'キャンプ中に相手の膝が戻りました'},
+    {role:'assistant',content:'登録済みの次の一手',topic:{entry:'outside-inversion',branch:'knee-in'}},
+  ];
+  const route = coach.resolveRequest('相手がそこで足を組んだら？',history);
+  const payload = JSON.parse(coach.selectPayload(route,'相手がそこで足を組んだら？').contents[0].parts[0].text);
+  assert.equal(payload.previous_entry,'outside-inversion');
+  assert.deepEqual(payload.recent_questions,['キャンプ中に相手の膝が戻りました']);
+  assert(!JSON.stringify(payload).includes('example.invalid'));
+  const detail = coach.resolveRequest('それを詳しく',history);
+  assert.deepEqual(coach.topicForRoute(detail),{entry:'outside-inversion',branch:'knee-in'});
+  assert(!coach.selectPayload(detail,'それを詳しく'));
+  const changed = coach.resolveRequest('キムラを教えて',history);
+  assert.equal(coach.topicForRoute(changed).entry,'kimura');
+  const score = coach.resolveRequest('スイープしたけど浮かせただけ、試合で点はつく？',history);
+  assert.match(coach.renderAnswer(score),/大会・部門/);
+  assert.equal(coach.selectPayload(score,'試合で点はつく？'),null);
+});
+
+test('Compound requests can refine a local guess and abstain on unregistered material', () => {
+  const question = '今日は軽めで、と先に言うのが気まずい。疲れてるとき断っていい？';
+  const route = coach.resolveRequest(question);
+  assert.equal(route.semantic.localEntry,'general-spar-intensity');
+  const response = (entry, intent = 'topic', branch = '') =>
+    ({candidates:[{content:{parts:[{text:JSON.stringify({entry,intent,branch})}]}}]});
+  assert.equal(coach.interpretRoute(route,coach.readSelection(response('keep'),route)),route);
+  assert.match(coach.renderAnswer(coach.interpretRoute(route,coach.readSelection(response('uncovered'),route))),/確認済みの説明はありません/);
+  assert.equal(coach.readSelection(response('uncovered','topic','fabricated'),route),null);
 });

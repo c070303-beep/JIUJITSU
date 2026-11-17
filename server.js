@@ -115,14 +115,14 @@ async function chat(req, res, id) {
     return out(res, 400, {error:'質問は1〜1500字で入力してください。'});
   }
   if (!reserveQuestion(id, res)) return;
-  const route = coach.resolve(data.question, data.history, data.selection);
+  const route = coach.resolveRequest(data.question, data.history, data.selection);
   const videos = coach.videoCards(route);
   const payload = API_KEY.length >= 12 ? coach.selectPayload(route, data.question) : null;
   const choice = payload ? await selectWithGemini(payload, route) : null;
   const resolved = coach.interpretRoute(route, choice);
   const answer = coach.renderAnswer(resolved, route.semantic ? null : choice, videos);
   const mode = choice ? 'gemini' : resolved.kind === 'guidance' || resolved.videoOnly ? 'guidance' : 'knowledge';
-  return out(res, 200, {answer, model:MODEL, mode, videos, choices:resolved.choices || []});
+  return out(res, 200, {answer, model:MODEL, mode, videos, choices:resolved.choices || [], topic:coach.topicForRoute(resolved)});
 }
 
 function videosForQuestion(question, context, selection) {
